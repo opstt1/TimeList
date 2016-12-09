@@ -17,6 +17,7 @@
 		E2EF37101DFAA3E0001247BE /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF370F1DFAA3E0001247BE /* BaseNavigationViewController.m */; };
 		E2EF37131DFAA46D001247BE /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF37121DFAA46D001247BE /* BaseViewController.m */; };
 		E2EF37161DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF37151DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m */; };
+		E2EF371A1DFAB239001247BE /* UIColor+TAToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF37191DFAB239001247BE /* UIColor+TAToolkit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		E2EF37121DFAA46D001247BE /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		E2EF37141DFAA492001247BE /* UIViewController+AutoNavBtnSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AutoNavBtnSetup.h"; sourceTree = "<group>"; };
 		E2EF37151DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AutoNavBtnSetup.m"; sourceTree = "<group>"; };
+		E2EF37181DFAB239001247BE /* UIColor+TAToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+TAToolkit.h"; sourceTree = "<group>"; };
+		E2EF37191DFAB239001247BE /* UIColor+TAToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TAToolkit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 		E2EF36F21DFA9DA0001247BE /* TimeList */ = {
 			isa = PBXGroup;
 			children = (
+				E2EF37171DFAB225001247BE /* Toolkit */,
 				E2EF370D1DFAA3AB001247BE /* BaseVC */,
 				E2EF36F61DFA9DA0001247BE /* AppDelegate.h */,
 				E2EF36F71DFA9DA0001247BE /* AppDelegate.m */,
@@ -105,6 +109,15 @@
 				E2EF37151DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m */,
 			);
 			name = BaseVC;
+			sourceTree = "<group>";
+		};
+		E2EF37171DFAB225001247BE /* Toolkit */ = {
+			isa = PBXGroup;
+			children = (
+				E2EF37181DFAB239001247BE /* UIColor+TAToolkit.h */,
+				E2EF37191DFAB239001247BE /* UIColor+TAToolkit.m */,
+			);
+			name = Toolkit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2EF36FE1DFA9DA0001247BE /* SecondViewController.m in Sources */,
+				E2EF371A1DFAB239001247BE /* UIColor+TAToolkit.m in Sources */,
 				E2EF37131DFAA46D001247BE /* BaseViewController.m in Sources */,
 				E2EF37161DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m in Sources */,
 				E2EF37101DFAA3E0001247BE /* BaseNavigationViewController.m in Sources */,
@@ -344,6 +358,7 @@
 				E2EF370C1DFA9DA0001247BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

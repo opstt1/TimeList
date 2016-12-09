@@ -21,10 +21,18 @@
 - (void)setUpBackNavigationButtonWithImage:(UIImage *)image tintColor:(UIColor *)tintColor;
 
 - (void)setUpLeftNavigationButtonWithImage:(UIImage *)image tintColor:(UIColor *)tintColor;
-
+- (void)setUpLeftNavigationButtonWithTitle:(NSString *)title tintColor:(UIColor *)tintColor;
+- (void)setUpLeftNavigationButtonWithTitle:(NSString *)title tintColor:(UIColor *)tintColor font:(UIFont *)font;
 
 - (void)setUpRightNavigationButtonWithImage:(UIImage *)image tintColor:(UIColor *)tintColor;
+- (void)setUpRightNavigationButtonWithTitle:(NSString *)title tintColor:(UIColor *)tintColor;
+- (void)setUpRightNavigationButtonWithTitle:(NSString *)title tintColor:(UIColor *)tintColor font:(UIFont *)font;
 
+- (IBAction)backButtonClicked:(id)sender;
+
+- (IBAction)leftNavigationButtonTapped:(id)sender;
+
+- (IBAction)rightNavigationButtonTapped:(id)sender;
 
 
 @end
