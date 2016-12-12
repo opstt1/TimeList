@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "TastListTableViewController.h"
 
 @interface FirstViewController ()
 
@@ -16,7 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self setUpRightNavigationButtonWithTitle:@"2333" tintColor:[UIColor blackColor]];
+    
+    
 }
 
 
@@ -25,5 +28,35 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Task" bundle:nil];
+    
+    TastListTableViewController *vC = [storyboard instantiateViewControllerWithIdentifier:@"TastListTableViewController"];
+    [vC willMoveToParentViewController:self];
+    [self.view insertSubview:vC.view aboveSubview:self.view];
+    [self addChildViewController:vC];
+    [vC didMoveToParentViewController:self];
+    [self layoutViewContrller:vC];
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
+
+}
+- (void)layoutViewContrller:(UIViewController *)pageController
+{
+    UIView *pageView = pageController.view;
+    if ( [pageView respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]){
+        pageView.preservesSuperviewLayoutMargins = YES;
+    }
+    pageView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:pageView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:pageView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:pageView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:pageView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1 constant:0]];
+    
+}
 
 @end

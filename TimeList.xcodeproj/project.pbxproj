@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B6DA5287213F237F383903F /* libPods-TimeList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 476823769E93E6F00C18E4FD /* libPods-TimeList.a */; };
+		E200ED4A1DFE9FCE00AA4DEC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED491DFE9FCE00AA4DEC /* libz.tbd */; };
+		E200ED4C1DFE9FD800AA4DEC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED4B1DFE9FD800AA4DEC /* CFNetwork.framework */; };
+		E200ED4E1DFE9FE100AA4DEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED4D1DFE9FE100AA4DEC /* QuartzCore.framework */; };
+		E200ED501DFE9FE800AA4DEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED4F1DFE9FE800AA4DEC /* CoreGraphics.framework */; };
+		E200ED511DFEA02600AA4DEC /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED471DFE9EB400AA4DEC /* RevealServer.framework */; };
+		E2EC4B521DFE896D0067C0EC /* TaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC4B511DFE896D0067C0EC /* TaskModel.m */; };
+		E2EC4B561DFE8C7D0067C0EC /* TaksDataSuorce.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC4B551DFE8C7D0067C0EC /* TaksDataSuorce.m */; };
+		E2EC4B591DFE904A0067C0EC /* TastListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC4B581DFE904A0067C0EC /* TastListTableViewController.m */; };
+		E2EC4B5B1DFE90770067C0EC /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2EC4B5A1DFE90770067C0EC /* Task.storyboard */; };
 		E2EF36F51DFA9DA0001247BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF36F41DFA9DA0001247BE /* main.m */; };
 		E2EF36F81DFA9DA0001247BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF36F71DFA9DA0001247BE /* AppDelegate.m */; };
 		E2EF36FB1DFA9DA0001247BE /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF36FA1DFA9DA0001247BE /* FirstViewController.m */; };
@@ -21,6 +31,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		476823769E93E6F00C18E4FD /* libPods-TimeList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TimeList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D518DE72740D1E198CF0AF2 /* Pods-TimeList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeList.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeList/Pods-TimeList.release.xcconfig"; sourceTree = "<group>"; };
+		E200ED471DFE9EB400AA4DEC /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
+		E200ED491DFE9FCE00AA4DEC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E200ED4B1DFE9FD800AA4DEC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E200ED4D1DFE9FE100AA4DEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E200ED4F1DFE9FE800AA4DEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E2EC4B4E1DFE84A20067C0EC /* FoundationToolkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoundationToolkit.h; sourceTree = "<group>"; };
+		E2EC4B501DFE896D0067C0EC /* TaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskModel.h; sourceTree = "<group>"; };
+		E2EC4B511DFE896D0067C0EC /* TaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskModel.m; sourceTree = "<group>"; };
+		E2EC4B541DFE8C7D0067C0EC /* TaksDataSuorce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaksDataSuorce.h; sourceTree = "<group>"; };
+		E2EC4B551DFE8C7D0067C0EC /* TaksDataSuorce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaksDataSuorce.m; sourceTree = "<group>"; };
+		E2EC4B571DFE904A0067C0EC /* TastListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TastListTableViewController.h; sourceTree = "<group>"; };
+		E2EC4B581DFE904A0067C0EC /* TastListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TastListTableViewController.m; sourceTree = "<group>"; };
+		E2EC4B5A1DFE90770067C0EC /* Task.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		E2EF36F01DFA9DA0001247BE /* TimeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2EF36F41DFA9DA0001247BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E2EF36F61DFA9DA0001247BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -41,6 +66,7 @@
 		E2EF37151DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AutoNavBtnSetup.m"; sourceTree = "<group>"; };
 		E2EF37181DFAB239001247BE /* UIColor+TAToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+TAToolkit.h"; sourceTree = "<group>"; };
 		E2EF37191DFAB239001247BE /* UIColor+TAToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TAToolkit.m"; sourceTree = "<group>"; };
+		F8DCE3FBECE9C33A57FD72D5 /* Pods-TimeList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeList/Pods-TimeList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,17 +74,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E200ED511DFEA02600AA4DEC /* RevealServer.framework in Frameworks */,
+				E200ED501DFE9FE800AA4DEC /* CoreGraphics.framework in Frameworks */,
+				E200ED4E1DFE9FE100AA4DEC /* QuartzCore.framework in Frameworks */,
+				E200ED4C1DFE9FD800AA4DEC /* CFNetwork.framework in Frameworks */,
+				E200ED4A1DFE9FCE00AA4DEC /* libz.tbd in Frameworks */,
+				6B6DA5287213F237F383903F /* libPods-TimeList.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		577FD3A7347AED8EBCE87938 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F8DCE3FBECE9C33A57FD72D5 /* Pods-TimeList.debug.xcconfig */,
+				7D518DE72740D1E198CF0AF2 /* Pods-TimeList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8E9EA9C835F740646F882DDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E200ED4F1DFE9FE800AA4DEC /* CoreGraphics.framework */,
+				E200ED4D1DFE9FE100AA4DEC /* QuartzCore.framework */,
+				E200ED4B1DFE9FD800AA4DEC /* CFNetwork.framework */,
+				E200ED491DFE9FCE00AA4DEC /* libz.tbd */,
+				E200ED471DFE9EB400AA4DEC /* RevealServer.framework */,
+				476823769E93E6F00C18E4FD /* libPods-TimeList.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2EC4B4F1DFE89190067C0EC /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				E2EC4B501DFE896D0067C0EC /* TaskModel.h */,
+				E2EC4B511DFE896D0067C0EC /* TaskModel.m */,
+				E2EC4B541DFE8C7D0067C0EC /* TaksDataSuorce.h */,
+				E2EC4B551DFE8C7D0067C0EC /* TaksDataSuorce.m */,
+				E2EC4B571DFE904A0067C0EC /* TastListTableViewController.h */,
+				E2EC4B581DFE904A0067C0EC /* TastListTableViewController.m */,
+				E2EC4B5A1DFE90770067C0EC /* Task.storyboard */,
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
 		E2EF36E71DFA9DA0001247BE = {
 			isa = PBXGroup;
 			children = (
 				E2EF36F21DFA9DA0001247BE /* TimeList */,
 				E2EF36F11DFA9DA0001247BE /* Products */,
+				577FD3A7347AED8EBCE87938 /* Pods */,
+				8E9EA9C835F740646F882DDB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +143,7 @@
 		E2EF36F21DFA9DA0001247BE /* TimeList */ = {
 			isa = PBXGroup;
 			children = (
+				E2EC4B4F1DFE89190067C0EC /* Task */,
 				E2EF37171DFAB225001247BE /* Toolkit */,
 				E2EF370D1DFAA3AB001247BE /* BaseVC */,
 				E2EF36F61DFA9DA0001247BE /* AppDelegate.h */,
@@ -116,6 +187,7 @@
 			children = (
 				E2EF37181DFAB239001247BE /* UIColor+TAToolkit.h */,
 				E2EF37191DFAB239001247BE /* UIColor+TAToolkit.m */,
+				E2EC4B4E1DFE84A20067C0EC /* FoundationToolkit.h */,
 			);
 			name = Toolkit;
 			sourceTree = "<group>";
@@ -127,9 +199,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2EF370A1DFA9DA0001247BE /* Build configuration list for PBXNativeTarget "TimeList" */;
 			buildPhases = (
+				4E9901A1A27F0ECE37D0DD29 /* [CP] Check Pods Manifest.lock */,
 				E2EF36EC1DFA9DA0001247BE /* Sources */,
 				E2EF36ED1DFA9DA0001247BE /* Frameworks */,
 				E2EF36EE1DFA9DA0001247BE /* Resources */,
+				66C5A84D9CF5F412D354BE94 /* [CP] Embed Pods Frameworks */,
+				174A1B0DE037E093DF49A841 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -180,12 +255,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2EF37061DFA9DA0001247BE /* LaunchScreen.storyboard in Resources */,
+				E2EC4B5B1DFE90770067C0EC /* Task.storyboard in Resources */,
 				E2EF37031DFA9DA0001247BE /* Assets.xcassets in Resources */,
 				E2EF37011DFA9DA0001247BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		174A1B0DE037E093DF49A841 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeList/Pods-TimeList-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E9901A1A27F0ECE37D0DD29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		66C5A84D9CF5F412D354BE94 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeList/Pods-TimeList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E2EF36EC1DFA9DA0001247BE /* Sources */ = {
@@ -194,9 +318,12 @@
 			files = (
 				E2EF36FE1DFA9DA0001247BE /* SecondViewController.m in Sources */,
 				E2EF371A1DFAB239001247BE /* UIColor+TAToolkit.m in Sources */,
+				E2EC4B521DFE896D0067C0EC /* TaskModel.m in Sources */,
 				E2EF37131DFAA46D001247BE /* BaseViewController.m in Sources */,
 				E2EF37161DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m in Sources */,
+				E2EC4B561DFE8C7D0067C0EC /* TaksDataSuorce.m in Sources */,
 				E2EF37101DFAA3E0001247BE /* BaseNavigationViewController.m in Sources */,
+				E2EC4B591DFE904A0067C0EC /* TastListTableViewController.m in Sources */,
 				E2EF36F81DFA9DA0001247BE /* AppDelegate.m in Sources */,
 				E2EF36FB1DFA9DA0001247BE /* FirstViewController.m in Sources */,
 				E2EF36F51DFA9DA0001247BE /* main.m in Sources */,
@@ -315,12 +442,25 @@
 		};
 		E2EF370B1DFA9DA0001247BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8DCE3FBECE9C33A57FD72D5 /* Pods-TimeList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 59U9PKJ5KW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TimeList",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TimeList/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = lhm.TimeList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -328,9 +468,15 @@
 		};
 		E2EF370C1DFA9DA0001247BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D518DE72740D1E198CF0AF2 /* Pods-TimeList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 59U9PKJ5KW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TimeList",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TimeList/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

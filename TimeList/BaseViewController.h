@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIViewController+AutoNavBtnSetup.h"
 
 @interface BaseViewController : UIViewController
 
