@@ -20,6 +20,16 @@
     [self setUpRightNavigationButtonWithTitle:@"2333" tintColor:[UIColor blackColor]];
     
     
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Task" bundle:nil];
+    
+    TastListTableViewController *vC = [storyboard instantiateViewControllerWithIdentifier:@"TastListTableViewController"];
+    [vC willMoveToParentViewController:self];
+    [self.view insertSubview:vC.view aboveSubview:self.view];
+    [self addChildViewController:vC];
+    [vC didMoveToParentViewController:self];
+    [self layoutViewContrller:vC];
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
 }
 
 
@@ -31,16 +41,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Task" bundle:nil];
-    
-    TastListTableViewController *vC = [storyboard instantiateViewControllerWithIdentifier:@"TastListTableViewController"];
-    [vC willMoveToParentViewController:self];
-    [self.view insertSubview:vC.view aboveSubview:self.view];
-    [self addChildViewController:vC];
-    [vC didMoveToParentViewController:self];
-    [self layoutViewContrller:vC];
-    [self.view setNeedsLayout];
-    [self.view layoutIfNeeded];
 
 }
 - (void)layoutViewContrller:(UIViewController *)pageController

@@ -8,6 +8,7 @@
 
 #import "TastListTableViewController.h"
 #import "TaksDataSuorce.h"
+#import "TastListTableViewCell.h"
 
 @interface TastListTableViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -38,28 +39,38 @@
 
 #pragma mark - UITable
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0.1;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44.0f;
+    return 70.0f;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifer = @"Cell";
-    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellIdentifer];
+    TastListTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellIdentifer];
     if ( !cell ){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
+        cell = [[TastListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
     }
     return cell;
 }
