@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Li Haomiao. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "EditableTableViewCell.h"
 
-@interface TastListTableViewCell : UITableViewCell
+@interface TaskListTableViewCell : EditableTableViewCell
 
 @end

@@ -13,12 +13,13 @@
 		E200ED4E1DFE9FE100AA4DEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED4D1DFE9FE100AA4DEC /* QuartzCore.framework */; };
 		E200ED501DFE9FE800AA4DEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED4F1DFE9FE800AA4DEC /* CoreGraphics.framework */; };
 		E200ED511DFEA02600AA4DEC /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED471DFE9EB400AA4DEC /* RevealServer.framework */; };
-		E2EBB5A41DFFA04700686D70 /* TastListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EBB5A31DFFA04700686D70 /* TastListTableViewCell.m */; };
+		E2166D7A1E0116E40096C821 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2166D791E0116E40096C821 /* EditableTableViewCell.m */; };
+		E2EBB5A41DFFA04700686D70 /* TaskListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EBB5A31DFFA04700686D70 /* TaskListTableViewCell.m */; };
 		E2EBB5A71DFFA24000686D70 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EBB5A61DFFA24000686D70 /* Constants.m */; };
 		E2EBB5AB1DFFDA6E00686D70 /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EBB5AA1DFFDA6E00686D70 /* UIView+Geometry.m */; };
 		E2EC4B521DFE896D0067C0EC /* TaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC4B511DFE896D0067C0EC /* TaskModel.m */; };
 		E2EC4B561DFE8C7D0067C0EC /* TaksDataSuorce.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC4B551DFE8C7D0067C0EC /* TaksDataSuorce.m */; };
-		E2EC4B591DFE904A0067C0EC /* TastListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC4B581DFE904A0067C0EC /* TastListTableViewController.m */; };
+		E2EC4B591DFE904A0067C0EC /* TaskListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC4B581DFE904A0067C0EC /* TaskListTableViewController.m */; };
 		E2EC4B5B1DFE90770067C0EC /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2EC4B5A1DFE90770067C0EC /* Task.storyboard */; };
 		E2EF36F51DFA9DA0001247BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF36F41DFA9DA0001247BE /* main.m */; };
 		E2EF36F81DFA9DA0001247BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF36F71DFA9DA0001247BE /* AppDelegate.m */; };
@@ -41,8 +42,10 @@
 		E200ED4B1DFE9FD800AA4DEC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E200ED4D1DFE9FE100AA4DEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E200ED4F1DFE9FE800AA4DEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		E2EBB5A21DFFA04700686D70 /* TastListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TastListTableViewCell.h; sourceTree = "<group>"; };
-		E2EBB5A31DFFA04700686D70 /* TastListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TastListTableViewCell.m; sourceTree = "<group>"; };
+		E2166D781E0116E40096C821 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
+		E2166D791E0116E40096C821 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
+		E2EBB5A21DFFA04700686D70 /* TaskListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListTableViewCell.h; sourceTree = "<group>"; };
+		E2EBB5A31DFFA04700686D70 /* TaskListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListTableViewCell.m; sourceTree = "<group>"; };
 		E2EBB5A51DFFA24000686D70 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E2EBB5A61DFFA24000686D70 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		E2EBB5A81DFFA34800686D70 /* Toolkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Toolkit.h; sourceTree = "<group>"; };
@@ -53,8 +56,8 @@
 		E2EC4B511DFE896D0067C0EC /* TaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskModel.m; sourceTree = "<group>"; };
 		E2EC4B541DFE8C7D0067C0EC /* TaksDataSuorce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaksDataSuorce.h; sourceTree = "<group>"; };
 		E2EC4B551DFE8C7D0067C0EC /* TaksDataSuorce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaksDataSuorce.m; sourceTree = "<group>"; };
-		E2EC4B571DFE904A0067C0EC /* TastListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TastListTableViewController.h; sourceTree = "<group>"; };
-		E2EC4B581DFE904A0067C0EC /* TastListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TastListTableViewController.m; sourceTree = "<group>"; };
+		E2EC4B571DFE904A0067C0EC /* TaskListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListTableViewController.h; sourceTree = "<group>"; };
+		E2EC4B581DFE904A0067C0EC /* TaskListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListTableViewController.m; sourceTree = "<group>"; };
 		E2EC4B5A1DFE90770067C0EC /* Task.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		E2EF36F01DFA9DA0001247BE /* TimeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2EF36F41DFA9DA0001247BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -118,6 +121,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E2166D771E0116C00096C821 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				E2166D781E0116E40096C821 /* EditableTableViewCell.h */,
+				E2166D791E0116E40096C821 /* EditableTableViewCell.m */,
+			);
+			name = BaseView;
+			sourceTree = "<group>";
+		};
 		E2EC4B4F1DFE89190067C0EC /* Task */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,10 +137,10 @@
 				E2EC4B511DFE896D0067C0EC /* TaskModel.m */,
 				E2EC4B541DFE8C7D0067C0EC /* TaksDataSuorce.h */,
 				E2EC4B551DFE8C7D0067C0EC /* TaksDataSuorce.m */,
-				E2EC4B571DFE904A0067C0EC /* TastListTableViewController.h */,
-				E2EC4B581DFE904A0067C0EC /* TastListTableViewController.m */,
-				E2EBB5A21DFFA04700686D70 /* TastListTableViewCell.h */,
-				E2EBB5A31DFFA04700686D70 /* TastListTableViewCell.m */,
+				E2EC4B571DFE904A0067C0EC /* TaskListTableViewController.h */,
+				E2EC4B581DFE904A0067C0EC /* TaskListTableViewController.m */,
+				E2EBB5A21DFFA04700686D70 /* TaskListTableViewCell.h */,
+				E2EBB5A31DFFA04700686D70 /* TaskListTableViewCell.m */,
 				E2EC4B5A1DFE90770067C0EC /* Task.storyboard */,
 			);
 			name = Task;
@@ -155,6 +167,7 @@
 		E2EF36F21DFA9DA0001247BE /* TimeList */ = {
 			isa = PBXGroup;
 			children = (
+				E2166D771E0116C00096C821 /* BaseView */,
 				E2EC4B4F1DFE89190067C0EC /* Task */,
 				E2EF37171DFAB225001247BE /* Toolkit */,
 				E2EF370D1DFAA3AB001247BE /* BaseVC */,
@@ -339,13 +352,14 @@
 				E2EC4B521DFE896D0067C0EC /* TaskModel.m in Sources */,
 				E2EF37131DFAA46D001247BE /* BaseViewController.m in Sources */,
 				E2EF37161DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m in Sources */,
-				E2EBB5A41DFFA04700686D70 /* TastListTableViewCell.m in Sources */,
+				E2EBB5A41DFFA04700686D70 /* TaskListTableViewCell.m in Sources */,
 				E2EC4B561DFE8C7D0067C0EC /* TaksDataSuorce.m in Sources */,
 				E2EBB5A71DFFA24000686D70 /* Constants.m in Sources */,
 				E2EF37101DFAA3E0001247BE /* BaseNavigationViewController.m in Sources */,
-				E2EC4B591DFE904A0067C0EC /* TastListTableViewController.m in Sources */,
+				E2EC4B591DFE904A0067C0EC /* TaskListTableViewController.m in Sources */,
 				E2EF36F81DFA9DA0001247BE /* AppDelegate.m in Sources */,
 				E2EF36FB1DFA9DA0001247BE /* FirstViewController.m in Sources */,
+				E2166D7A1E0116E40096C821 /* EditableTableViewCell.m in Sources */,
 				E2EF36F51DFA9DA0001247BE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

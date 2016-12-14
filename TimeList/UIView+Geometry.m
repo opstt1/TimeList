@@ -162,4 +162,12 @@
     }
     return YES;
 }
+
+- (BOOL)pointIsInSelf:(CGPoint)point rect:(CGRect)rect
+{
+    if ( point.x >= rect.origin.x && point.x <= rect.origin.x +rect.size.width && point.y >= rect.origin.y && point.y <= rect.origin.y + rect.size.height){
+        return YES;
+    }
+    return NO;
+}
 @end

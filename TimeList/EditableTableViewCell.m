@@ -1,87 +1,66 @@
 //
-//  TastListTableViewCell.m
+//  EditableTableViewCell.m
 //  TimeList
 //
-//  Created by LiHaomiao on 2016/12/13.
+//  Created by LiHaomiao on 2016/12/14.
 //  Copyright © 2016年 Li Haomiao. All rights reserved.
 //
 
-#import "TastListTableViewCell.h"
+#import "EditableTableViewCell.h"
 #import "Constants.h"
 #import "Toolkit.h"
 
 #define OPSSideslipCellLeftLimitScrollMargin 30
-#define OPSSideslipCellRightLimitScrollMargin 60
+#define OPSSideslipCellRightLimitScrollMargin 75
 
-@interface TastListTableViewCell()
+@interface EditableTableViewCell()
 
-@property (nonatomic, readwrite, strong) UILabel *timeLabel;
-@property (nonatomic, readwrite, strong) UILabel *titleLabe1;
-@property (nonatomic, readwrite, strong) NSArray *starsList;
+
 @property (nonatomic, readwrite, strong) UIPanGestureRecognizer *panGesture;
-@property (nonatomic, readwrite, strong) UIView *containView;
 @property (nonatomic, readwrite, strong) UIButton *cancelButton;
+@property (nonatomic, readwrite, copy) NSArray *rightButtons;
+
 @end
 
-@implementation TastListTableViewCell
+@implementation EditableTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+- (void)setCanEditableWithView:(UIView *)containView
+{
+    self.containView = containView;
+    self.cancelButton = [UIButton new];
+    [self.cancelButton addTarget:self action:@selector(cancelButtonTap:forEvent:) forControlEvents:UIControlEventTouchUpInside];
+    self.rightButtons = [NSArray array];
+    self.editable = YES;
 }
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)addButton:(UIButton *)button isLeft:(BOOL)isLeft
 {
-    _containView = [[UIView alloc] initWithFrame:CGRectMake(5, 5, UISCREEN_WIDTH-10, 60)];
-    _containView.backgroundColor = [UIColor redColor];
-    _containView.layer.cornerRadius = 10.0f;
-    _cancelButton = [UIButton new];
-    [_cancelButton addTarget:self action:@selector(canccelButtonTap:) forControlEvents:UIControlEventTouchUpInside];
-
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if ( !self ) return nil;
-    
-    CGFloat width =  UISCREEN_WIDTH - 5 - 5 - 15 - 15;
-    
-    _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, width, 10)];
-    _timeLabel.textColor = COLOR_666666;
-    _timeLabel.font = [UIFont systemFontOfSize:13];
-    
-    _titleLabe1 = [[UILabel alloc] initWithFrame:CGRectMake(15, 25, width, 20)];
-    _titleLabe1.textColor = COLOR_333333;
-    _titleLabe1.font = [UIFont boldSystemFontOfSize:18.0f];
-    
-    [_containView addSubview:_timeLabel];
-    [_containView addSubview:_titleLabe1];
-    
-    CGFloat pointX = 15.0f;
-    NSMutableArray *starsList = [NSMutableArray array];
-    for ( int  i = 0; i < 5; ++i ){
-        UIView *starView = [[UIView alloc] initWithFrame:CGRectMake(pointX, 15+30, 18, 18)];
-        starView.layer.contents = (id)[UIImage imageNamed:@"star_gray"].CGImage;
-        [_containView addSubview:starView];
-        [starsList addObject:starView];
-        pointX += 18 + 0.5;
+    if ( !isLeft ){
+        NSMutableArray *array = [NSMutableArray arrayWithArray:_rightButtons];
+        [array addObject:button];
+        _rightButtons = [NSArray arrayWithArray:array];
     }
-    _starsList = [NSArray arrayWithArray:starsList];
-    
-    _titleLabe1.text = @"学习";
-    _timeLabel.text = @"9:00- 11:00";
-    
-    
+}
+
+- (void)setEditable:(BOOL)editable
+{
+    _editable = editable;
+    if ( editable ){
+        [self p_addPanGestureRecognizer];
+    }
+}
+
+- (void)p_addPanGestureRecognizer
+{
     _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(containViewPan:)];
     _panGesture.delegate = self;
     [_containView addGestureRecognizer:_panGesture];
-    
-    [self addSubview:_containView];
-    
-    return self;
 }
 
 - (void)containViewPan:(UIPanGestureRecognizer *)pan
 {
     CGPoint point = [pan translationInView:pan.view];
-
+    
     [pan setTranslation:CGPointZero inView:pan.view];
     CGRect frame = _containView.frame;
     frame.origin.x += point.x;
@@ -96,7 +75,6 @@
         _containView.frame = frame;
     }
     if ( pan.state == UIGestureRecognizerStateEnded ){
-        NSLog(@"enadddd~~~~~~~~~~");
         if ( frame.origin.x < OPSSideslipCellLeftLimitScrollMargin && frame.origin.x > 5 ){
             frame.origin.x = OPSSideslipCellLeftLimitScrollMargin;
         }
@@ -144,7 +122,7 @@
     
     
 }
-         
+
 - (void)prohibitAction
 {
     for ( UIView *next = [self superview]; next; next = next.superview ){
@@ -158,11 +136,29 @@
     }
 }
 
-- (void)canccelButtonTap:(id)sender
+- (void)cancelButtonTap:(id)sender forEvent:(UIEvent*)event
 {
+    
+    UIView *button = (UIView *)sender;
+    UITouch *touch = [[event touchesForView:button] anyObject];
+    CGPoint location = [touch locationInView:button];
+    
+    if ( _containView.x < 0 ){
+        
+        [_rightButtons enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            UIButton *button = (UIButton *)obj;
+                        CGRect rect  = [_cancelButton convertRect:button.frame fromView:self];
+            if ( [button pointIsInSelf:location rect:rect] ){
+                [button sendActionsForControlEvents:UIControlEventTouchUpInside];
+            }
+        }];
+    }
+    
     [_cancelButton removeFromSuperview];
     _cancelButton.frame = CGRectMake(0, 0, 0, 0);
     
     [self containViewAnimationWithFrame:CGRectMake(5, 5, UISCREEN_WIDTH-10, 60)];
 }
+
+
 @end

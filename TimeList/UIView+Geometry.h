@@ -38,4 +38,6 @@
 
 - (BOOL) isEquelToFrame:(CGRect)frame;
 
+- (BOOL) pointIsInSelf:(CGPoint)point rect:(CGRect)rect;
+
 @end

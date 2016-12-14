@@ -10,7 +10,7 @@
 
 @class TaksDataSuorce;
 
-@interface TastListTableViewController : BaseViewController
+@interface TaskListTableViewController : BaseViewController
 
 
 - (void)configWithData:(TaksDataSuorce *)dataSource;

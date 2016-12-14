@@ -7,7 +7,7 @@
 //
 
 #import "FirstViewController.h"
-#import "TastListTableViewController.h"
+#import "TaskListTableViewController.h"
 
 @interface FirstViewController ()
 
@@ -22,7 +22,7 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Task" bundle:nil];
     
-    TastListTableViewController *vC = [storyboard instantiateViewControllerWithIdentifier:@"TastListTableViewController"];
+    TaskListTableViewController *vC = [storyboard instantiateViewControllerWithIdentifier:@"TastListTableViewController"];
     [vC willMoveToParentViewController:self];
     [self.view insertSubview:vC.view aboveSubview:self.view];
     [self addChildViewController:vC];

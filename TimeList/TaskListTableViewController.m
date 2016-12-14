@@ -6,11 +6,11 @@
 //  Copyright © 2016年 Li Haomiao. All rights reserved.
 //
 
-#import "TastListTableViewController.h"
+#import "TaskListTableViewController.h"
 #import "TaksDataSuorce.h"
-#import "TastListTableViewCell.h"
+#import "TaskListTableViewCell.h"
 
-@interface TastListTableViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface TaskListTableViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation TastListTableViewController
+@implementation TaskListTableViewController
 
 
 - (void)viewDidLoad
@@ -68,9 +68,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifer = @"Cell";
-    TastListTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellIdentifer];
+    TaskListTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:cellIdentifer];
     if ( !cell ){
-        cell = [[TastListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
+        cell = [[TaskListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
     }
     return cell;
 }

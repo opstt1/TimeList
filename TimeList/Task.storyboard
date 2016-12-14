@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tast List Table View Controller-->
+        <!--Task List Table View Controller-->
         <scene sceneID="QH5-rX-GMz">
             <objects>
-                <viewController storyboardIdentifier="TastListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Uc-L5-09t" customClass="TastListTableViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TastListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Uc-L5-09t" customClass="TaskListTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oqy-Ww-91R"/>
                         <viewControllerLayoutGuide type="bottom" id="w48-rA-lQp"/>
