@@ -11,7 +11,8 @@
 typedef NS_ENUM(NSInteger, TaskModelStatus)
 {
     TaskUndone,
-    TaskHasBeenDone
+    TaskHasBeenDone,
+    TaskDefaultStauts
 };
 
 @interface TaskModel : NSObject

@@ -10,9 +10,12 @@
 #import "TaskListTableViewController.h"
 #import "TaskListSessionManager.h"
 #import "TaskCreateViewController.h"
+#import "Constants.h"
+#import "TaksDataSuorce.h"
 
 @interface FirstViewController ()
 
+@property (nonatomic, readwrite, strong) TaskListTableViewController *currentVC;
 @end
 
 @implementation FirstViewController
@@ -31,6 +34,7 @@
     [self addChildViewController:vC];
     [vC didMoveToParentViewController:self];
     [self layoutViewContrller:vC];
+    _currentVC = vC;
     [self.view setNeedsLayout];
     [self.view layoutIfNeeded];
 }
@@ -69,7 +73,17 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Task" bundle:nil];
     
     TaskCreateViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TaskCreateViewController"];
+    WEAK_OBJ_REF(self);
+    [vc createComplete:^(TaskModel *model) {
+        STRONG_OBJ_REF(weak_self);
+        if ( strong_weak_self ){
+            [(TaksDataSuorce *)[[TaskListSessionManager sharedManager] dataSource] insertModel:model];
+            if ( _currentVC ){
+                [_currentVC updateViewController];
+            }
+        }
+    }];
     [self.navigationController pushViewController:vc animated:YES];
-
+    
 }
 @end

@@ -33,7 +33,10 @@
     [super viewDidLoad];
     self.contentViewHeight.constant = UISCREEN_HEIGHT-65;
     [self setUpRightNavigationButtonWithTitle:@"Save" tintColor:nil];
-    _model = [[TaskModel alloc] init];
+    if ( !_model ){
+        _model = [[TaskModel alloc] init];
+        _model.status = TaskUndone;
+    }
     [self p_addSubView];
     
 }
@@ -96,6 +99,7 @@
     _complete = complate;
     if ( !_model ){
         _model = [[TaskModel alloc] init];
+        _model.status = TaskUndone;
     }
 }
 
@@ -103,6 +107,15 @@
 
 - (void)rightNavigationButtonTapped:(id)sender
 {
-    NSLog(@"%@",_model);
+    NSLog(@"%@ %d",_model,[_model dataIntegrity]);
+    
+    if ( [_model dataIntegrity] ) {
+        if ( _complete ){
+            _complete(_model);
+        }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
+    }
 }
 @end

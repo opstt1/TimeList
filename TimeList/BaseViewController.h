@@ -12,4 +12,6 @@
 
 @interface BaseViewController : UIViewController
 
+- (void)updateViewController;
+
 @end

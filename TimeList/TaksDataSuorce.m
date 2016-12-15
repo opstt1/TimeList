@@ -38,7 +38,7 @@
 
 - (void)addTaskModel:(TaskModel *)taskModel
 {
-    if ( !taskModel || [taskModel dataIntegrity] ){
+    if ( !taskModel || ![taskModel dataIntegrity] ){
         return;
     }
     NSMutableArray *array = [NSMutableArray arrayWithArray:_taskList];
@@ -47,6 +47,20 @@
     self.taskList = [NSArray arrayWithArray:array];
 }
 
+- (void)insertModel:(TaskModel *)taskModel
+{
+    [self insertAtIndex:0 model:taskModel];
+}
+
+- (void)insertAtIndex:(NSInteger)index model:(TaskModel *)taskModel
+{
+    if ( index < 0 || index >= _taskList.count ){
+        return;
+    }
+    NSMutableArray *array = [NSMutableArray arrayWithArray:_taskList];
+    [array insertObject:taskModel atIndex:index];
+    _taskList = [NSArray arrayWithArray:array];
+}
 - (NSInteger)count
 {
     return _taskList.count;
@@ -59,5 +73,6 @@
     }
     return  [_taskList objectAtIndex:index];
 }
+
 
 @end

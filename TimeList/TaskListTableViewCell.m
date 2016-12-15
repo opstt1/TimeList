@@ -63,8 +63,9 @@
     CGFloat pointX = 15.0f;
     NSMutableArray *starsList = [NSMutableArray array];
     for ( int  i = 0; i < 5; ++i ){
-        UIView *starView = [[UIView alloc] initWithFrame:CGRectMake(pointX, 15+30, 18, 18)];
-        starView.layer.contents = (id)[UIImage imageNamed:@"star_gray"].CGImage;
+        UIView *starView = [[UIView alloc] initWithFrame:CGRectMake(pointX, 15+30, 14, 14)];
+        starView.layer.contents = (id)[UIImage imageNamed:@"star-gray-big"].CGImage;
+        starView.contentMode = UIViewContentModeScaleAspectFit;
         [containView addSubview:starView];
         [starsList addObject:starView];
         pointX += 18 + 0.5;
@@ -105,14 +106,14 @@
     [_starsList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIView *starView = (UIView *)obj;
         if ( idx + 1 <= weak_self.taskModel.fullStarCount ){
-            starView.layer.contents = (id)[UIImage imageNamed:@"star_yellow"].CGImage;
+            starView.layer.contents = (id)[UIImage imageNamed:@"star-yellow-big"].CGImage;
             return;
         }
-        if ( idx + 1 == weak_self.taskModel.fullStarCount){
+        if ( idx  == weak_self.taskModel.fullStarCount && weak_self.taskModel.hasHalfStar ){
             starView.layer.contents = (id)[UIImage imageNamed:@"star-half-yellow"].CGImage;
             return;
         }
-        starView.layer.contents = (id)[UIImage imageNamed:@"star_gray"].CGImage;
+        starView.layer.contents = (id)[UIImage imageNamed:@"star-gray-big"].CGImage;
     }];
     
     switch (_taskModel.status) {

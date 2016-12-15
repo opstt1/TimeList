@@ -37,6 +37,10 @@
     NSLog(@"config");
 }
 
+- (void)updateViewController
+{
+    [self.tableView reloadData];
+}
 
 #pragma mark - UITable
 
@@ -55,7 +59,7 @@
     if ( !_dataSource ){
         return 0;
     }
-    return _dataSource.count;;
+    return [_dataSource count];;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
