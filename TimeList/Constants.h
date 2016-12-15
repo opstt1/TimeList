@@ -38,8 +38,6 @@
 static const CGFloat normCellHeight = 44.0f;
 static NSString *const defaultNumberString = @"---";
 
-static NSString *myOrderVCSBID = @"MyOrdersViewController";   //我的预约
-static NSString * const getMoneyRuleUrl = @"http://url.cn/41ZMjXK"; //提现规则url
 
 
 #ifndef weakify
@@ -75,60 +73,12 @@ static NSString * const getMoneyRuleUrl = @"http://url.cn/41ZMjXK"; //提现规�
 #endif
 
 
-typedef enum{
-    CardTypeCommen = 0,     //三次通卡
-    CardTypeGym,            //场馆卡
-    CardTypeAerobic      //有氧空间卡
+#define WEAK_OBJ_REF(obj) __weak typeof(obj) weak_##obj = obj
+#define STRONG_OBJ_REF(obj) __strong typeof(obj) strong_##obj = obj
 
-    
-}CardType;
-
-typedef enum{
-    GymFeatureOnLine = 1,  //在线人数
-    GymFeatureOpenDoor,    //开店进门
-    GymFeatureUnlock,       //锁柜解锁
-    GymFeatureShower,        //淋浴
-    GymFeatrueTreadmill     //跑步机
-}GymFeature;
-
-typedef NS_ENUM(NSInteger, OpenDoorActionState){
-    
-    OpenDoorActionStateEnter = 1,       //进店
-    OpenDoorActionStateLeft,            //离店
-    OpenDoorActionStatePause            //暂时离店
-};
-
-typedef NS_ENUM(NSInteger, OutDoorState){
-    
-    OutDoorStateDefault = 0,       //默认
-    OutDoorStatePause,              //暂时离店
-    OutDoorStateLeft,               //结束健身
-};
-
-typedef enum{
-    CardButtonTypeOpenDoor = 1,
-    CardButtonTypeMyOrder,
-    CardButtonTypeOrderCourse,
-    CardButtonTypeCoach,    //教练列表
-    CardButtonTypeMyCoach,  //我的私教
-    CardButtonTypeGymDaily,
-    CardButtonTypeBuyVIP,
-    CardButtonTypeMyCare,
-    CardButtonTypeKonwAbout,
-    CardButtonTypeBuyPersonalCoach,
-    CardButtonTypeActiveCard,
-    CardButtonTypeShower,
-    CardButtonTypeBodyMeasure,
-    CardButtonTypeTreadMill,    //跑步机
-    CardButtonTypePromotion,     //推广佣金
-} CardButtonType;
+#define PRINT_CALL_STACK NSLog(@"%@",[NSThread callStackSymbols])
 
 
-extern NSString *const kWeiboRedirectURI;
-extern NSString *const kBasicCellIdentifier;
-extern NSInteger const kDefaultCardPrice;
-extern NSString *const kServiceTel;
-extern NSString *const kGymMessageIdDic;       //场馆最新消息的ID 用于获取场馆动态数 格式: 字典(gymID,msgID)
-extern NSString *const kCaculateDatePoint;      //健身计时页退出存储当时的时间戳
+#define IMPORTANCE_ARRAY [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10", nil]
 
 

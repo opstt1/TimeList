@@ -8,6 +8,8 @@
 
 #import "FirstViewController.h"
 #import "TaskListTableViewController.h"
+#import "TaskListSessionManager.h"
+#import "TaskCreateViewController.h"
 
 @interface FirstViewController ()
 
@@ -18,11 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpRightNavigationButtonWithTitle:@"2333" tintColor:[UIColor blackColor]];
-    
+    [self setUpLeftNavigationButtonWithTitle:@"+" tintColor:nil];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Task" bundle:nil];
     
     TaskListTableViewController *vC = [storyboard instantiateViewControllerWithIdentifier:@"TastListTableViewController"];
+    [vC configWithData:[[TaskListSessionManager sharedManager] dataSource]];
     [vC willMoveToParentViewController:self];
     [self.view insertSubview:vC.view aboveSubview:self.view];
     [self addChildViewController:vC];
@@ -59,4 +62,14 @@
     
 }
 
+#pragma mark - action
+
+- (void)leftNavigationButtonTapped:(id)sender
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Task" bundle:nil];
+    
+    TaskCreateViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TaskCreateViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+
+}
 @end

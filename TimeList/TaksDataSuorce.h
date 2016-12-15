@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class TaskModel;
+
 @interface TaksDataSuorce : NSObject
+
++ (TaksDataSuorce *)creatTaksDataWithDate:(NSDate *)date;
+
+- (void)addTaskModel:(TaskModel *)taskModel;
+- (NSInteger)count;
+- (TaskModel *)objectAtInde:(NSUInteger)index;
 
 @end

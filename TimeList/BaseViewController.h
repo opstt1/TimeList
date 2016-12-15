@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIViewController+AutoNavBtnSetup.h"
+#import "UINavigationController+CustomAnimation.h"
 
 @interface BaseViewController : UIViewController
 

@@ -9,6 +9,7 @@
 #import "TaskListTableViewCell.h"
 #import "Constants.h"
 #import "Toolkit.h"
+#import "TaskModel.h"
 
 #define OPSSideslipCellLeftLimitScrollMargin 30
 #define OPSSideslipCellRightLimitScrollMargin 60
@@ -18,9 +19,9 @@
 @property (nonatomic, readwrite, strong) UILabel *timeLabel;
 @property (nonatomic, readwrite, strong) UILabel *titleLabe1;
 @property (nonatomic, readwrite, strong) NSArray *starsList;
-//@property (nonatomic, readwrite, strong) UIPanGestureRecognizer *panGesture;
-//@property (nonatomic, readwrite, strong) UIView *containView;
-//@property (nonatomic, readwrite, strong) UIButton *cancelButton;
+@property (nonatomic, readwrite, strong) TaskModel *taskModel;
+
+
 @end
 
 @implementation TaskListTableViewCell
@@ -32,13 +33,20 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    UIView *containView = [[UIView alloc] initWithFrame:CGRectMake(5, 5, UISCREEN_WIDTH-10, 60)];
-    containView.backgroundColor = [UIColor redColor];
-    containView.layer.cornerRadius = 10.0f;
+   
 
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if ( !self ) return nil;
-    
+    [self p_initCell];
+    return self;
+}
+
+#pragma mark  - p_init
+- (void)p_initCell
+{
+    UIView *containView = [[UIView alloc] initWithFrame:CGRectMake(5, 5, UISCREEN_WIDTH-10, 60)];
+    containView.backgroundColor = [UIColor redColor];
+    containView.layer.cornerRadius = 10.0f;
     CGFloat width =  UISCREEN_WIDTH - 5 - 5 - 15 - 15;
     
     _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, width, 10)];
@@ -63,16 +71,11 @@
     }
     _starsList = [NSArray arrayWithArray:starsList];
     
-    _titleLabe1.text = @"学习";
-    _timeLabel.text = @"9:00- 11:00";
-    
     [self setCanEditableWithView:containView];
     [self addEditButtons];
     
     [self addSubview:containView];
-    return self;
 }
-
 
 - (void)addEditButtons
 {
@@ -83,6 +86,46 @@
     [taskDoneButton setTitle:@"Done" forState:UIControlStateNormal];
     [self addSubview:taskDoneButton];
     [self addButton:taskDoneButton isLeft:NO];
+}
+
+
+
+#pragma mark - config
+
+- (void)configWithData:(id)data
+{
+    if ( !data || ![data isKindOfClass:[TaskModel class]]  ){
+        return;
+    }
+    self.taskModel = (TaskModel *)data;
+    _titleLabe1.text = _taskModel.title ?: @"";
+    _timeLabel.text = _taskModel.starTimeStr ? : @"";
+    
+    WEAK_OBJ_REF(self);
+    [_starsList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIView *starView = (UIView *)obj;
+        if ( idx + 1 <= weak_self.taskModel.fullStarCount ){
+            starView.layer.contents = (id)[UIImage imageNamed:@"star_yellow"].CGImage;
+            return;
+        }
+        if ( idx + 1 == weak_self.taskModel.fullStarCount){
+            starView.layer.contents = (id)[UIImage imageNamed:@"star-half-yellow"].CGImage;
+            return;
+        }
+        starView.layer.contents = (id)[UIImage imageNamed:@"star_gray"].CGImage;
+    }];
+    
+    switch (_taskModel.status) {
+        case TaskUndone:
+            self.containView.backgroundColor = [UIColor redColor];
+            break;
+            
+        default:
+            self.containView.backgroundColor = [UIColor greenColor];
+            break;
+    }
+    
+    
 }
 
 #pragma mark - action

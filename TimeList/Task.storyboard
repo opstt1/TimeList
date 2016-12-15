@@ -42,5 +42,72 @@
             </objects>
             <point key="canvasLocation" x="-362" y="-50"/>
         </scene>
+        <!--Task Create View Controller-->
+        <scene sceneID="WwD-c8-thR">
+            <objects>
+                <viewController storyboardIdentifier="TaskCreateViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aSO-AR-LCC" customClass="TaskCreateViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DnD-cW-bV2"/>
+                        <viewControllerLayoutGuide type="bottom" id="rnz-Mi-8NJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o86-f9-nla">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLo-md-Gvh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zCQ-pf-Q9v">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="580" id="8wQ-mM-c8J"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zCQ-pf-Q9v" firstAttribute="leading" secondItem="eLo-md-Gvh" secondAttribute="leading" id="0Yd-Xx-iSD"/>
+                                    <constraint firstItem="zCQ-pf-Q9v" firstAttribute="top" secondItem="eLo-md-Gvh" secondAttribute="top" id="8cw-V0-9ym"/>
+                                    <constraint firstAttribute="bottom" secondItem="zCQ-pf-Q9v" secondAttribute="bottom" id="eU5-FQ-wfx"/>
+                                    <constraint firstAttribute="trailing" secondItem="zCQ-pf-Q9v" secondAttribute="trailing" id="ird-HX-NJj"/>
+                                    <constraint firstItem="zCQ-pf-Q9v" firstAttribute="width" secondItem="eLo-md-Gvh" secondAttribute="width" id="w0u-HG-aFU"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eLo-md-Gvh" firstAttribute="centerY" secondItem="o86-f9-nla" secondAttribute="centerY" id="Lzi-uD-Hjx"/>
+                            <constraint firstItem="eLo-md-Gvh" firstAttribute="centerX" secondItem="o86-f9-nla" secondAttribute="centerX" id="Mdk-pT-H4s"/>
+                            <constraint firstItem="eLo-md-Gvh" firstAttribute="width" secondItem="o86-f9-nla" secondAttribute="width" id="nVT-DF-2NS"/>
+                            <constraint firstItem="eLo-md-Gvh" firstAttribute="height" secondItem="o86-f9-nla" secondAttribute="height" id="uUh-5G-bCs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="G6c-4T-T2R"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="contentView" destination="zCQ-pf-Q9v" id="V8d-1a-nNB"/>
+                        <outlet property="contentViewHeight" destination="8wQ-mM-c8J" id="pTM-Xq-10w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pyb-Wz-jxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="398" y="-51"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xQv-J5-vuo">
+            <objects>
+                <navigationController id="LB6-we-Eho" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eGD-8b-9HK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aSO-AR-LCC" kind="relationship" relationship="rootViewController" id="A0b-4k-I8a"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chY-oF-cWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1182" y="-51"/>
+        </scene>
     </scenes>
 </document>

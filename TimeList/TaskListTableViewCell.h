@@ -10,4 +10,6 @@
 
 @interface TaskListTableViewCell : EditableTableViewCell
 
+- (void)configWithData:(id)data;
+
 @end

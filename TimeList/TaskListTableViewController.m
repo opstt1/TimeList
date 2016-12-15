@@ -33,6 +33,7 @@
 - (void)configWithData:(TaksDataSuorce *)dataSource
 {
     _dataSource = dataSource;
+    [self.tableView reloadData];
     NSLog(@"config");
 }
 
@@ -51,7 +52,10 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    if ( !_dataSource ){
+        return 0;
+    }
+    return _dataSource.count;;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -72,6 +76,8 @@
     if ( !cell ){
         cell = [[TaskListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
     }
+    [cell configWithData:[_dataSource objectAtInde:indexPath.section]];
+    
     return cell;
 }
 @end

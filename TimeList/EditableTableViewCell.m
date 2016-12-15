@@ -10,7 +10,7 @@
 #import "Constants.h"
 #import "Toolkit.h"
 
-#define OPSSideslipCellLeftLimitScrollMargin 30
+#define OPSSideslipCellLeftLimitScrollMargin 5
 #define OPSSideslipCellRightLimitScrollMargin 75
 
 @interface EditableTableViewCell()

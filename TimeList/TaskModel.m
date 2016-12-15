@@ -10,4 +10,24 @@
 
 @implementation TaskModel
 
+- (void)setImportance:(NSInteger)importance
+{
+    if ( importance > 10 ){
+        importance = 10;
+    }
+    if ( importance < 0 ){
+        importance = 0;
+    }
+    
+    _importance = importance;
+    _fullStarCount = importance / 2;
+    _hasHalfStar = importance % 2;
+}
+
+- (BOOL)dataIntegrity
+{
+    return NO;
+}
+
+
 @end

@@ -54,6 +54,14 @@ typedef NS_ENUM(NSInteger, TaskModelStatus)
 @property (nonatomic, readwrite, strong) NSString *summarize;
 
 
+#pragma mark - viewmodel
+
+@property (nonatomic, readwrite, assign ) NSInteger fullStarCount;
+
+@property (nonatomic, readwrite, assign) BOOL hasHalfStar;
+
+@property (nonatomic, readwrite, strong) NSString *starTimeStr;
+
 #pragma mark - 
 
 - (BOOL)dataIntegrity;
