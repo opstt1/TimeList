@@ -10,7 +10,7 @@
 #import "Constants.h"
 #import "Toolkit.h"
 
-#define OPSSideslipCellLeftLimitScrollMargin 5
+#define OPSSideslipCellLeftLimitScrollMargin 80
 #define OPSSideslipCellRightLimitScrollMargin 75
 
 @interface EditableTableViewCell()
@@ -19,7 +19,7 @@
 @property (nonatomic, readwrite, strong) UIPanGestureRecognizer *panGesture;
 @property (nonatomic, readwrite, strong) UIButton *cancelButton;
 @property (nonatomic, readwrite, copy) NSArray *rightButtons;
-
+@property (nonatomic, readwrite, copy) NSArray *leftButtons;
 @end
 
 @implementation EditableTableViewCell
@@ -30,6 +30,7 @@
     self.cancelButton = [UIButton new];
     [self.cancelButton addTarget:self action:@selector(cancelButtonTap:forEvent:) forControlEvents:UIControlEventTouchUpInside];
     self.rightButtons = [NSArray array];
+    self.leftButtons = [NSArray array];
     self.editable = YES;
 }
 
@@ -39,6 +40,10 @@
         NSMutableArray *array = [NSMutableArray arrayWithArray:_rightButtons];
         [array addObject:button];
         _rightButtons = [NSArray arrayWithArray:array];
+    }else{
+        NSMutableArray *array = [NSMutableArray arrayWithArray:_leftButtons];
+        [array addObject:button];
+        _leftButtons = [NSArray arrayWithArray:array];
     }
 }
 
@@ -92,18 +97,27 @@
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
     NSLog(@"2333");
+
     
     CGRect frame = CGRectMake(5, 5, UISCREEN_WIDTH-10, 60);
     if ( ![_containView isEquelToFrame:frame] ){
         [self containViewAnimationWithFrame:frame];
         return NO;
     }
-    if ( gestureRecognizer == _panGesture ){
-        UIPanGestureRecognizer *gesture = (UIPanGestureRecognizer *)gestureRecognizer;
-        CGPoint translation = [gesture translationInView:gesture.view];
-        return fabs(translation.y) <= fabs(translation.x);
+    
+    if ( gestureRecognizer != _panGesture ){
+        return YES;
     }
-    return YES;
+    
+    UIPanGestureRecognizer *gesture = (UIPanGestureRecognizer *)gestureRecognizer;
+    CGPoint translation = [gesture translationInView:gesture.view];
+    
+    if ( !_canSlideToLeft && translation.x < 0  ){
+        NSLog(@"!!!!!");
+        return NO;
+    }
+    return fabs(translation.y) <= fabs(translation.x);
+
 }
 
 
@@ -154,6 +168,15 @@
         }];
     }
     
+    if ( _containView.y > 0 ){
+        [_leftButtons enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            UIButton *button = (UIButton *)obj;
+            CGRect rect  = [_cancelButton convertRect:button.frame fromView:self];
+            if ( [button pointIsInSelf:location rect:rect] ){
+                [button sendActionsForControlEvents:UIControlEventTouchUpInside];
+            }
+        }];
+    }
     [_cancelButton removeFromSuperview];
     _cancelButton.frame = CGRectMake(0, 0, 0, 0);
     

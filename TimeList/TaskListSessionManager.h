@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class TaksDataSuorce;
+@class TaskDataSource;
 
 @interface TaskListSessionManager : NSObject
 
 + (instancetype)sharedManager;
 
-- (TaksDataSuorce *)dataSource;
+- (TaskDataSource *)dataSource;
 
 @end

@@ -7,9 +7,22 @@
 //
 
 #import "TaskModel.h"
+#import "TaskModel+FMDB.h"
 
 @implementation TaskModel
 
+- (instancetype)init
+{
+    self = [super init];
+    if ( !self ) return nil;
+    _importance = -1;
+    _title = @"";
+    _localId = @"1";
+    _status = TaskDefaultStauts;
+    _createDate = [NSDate date];
+    [TaskModel insert:self];
+    return self;
+}
 - (void)setImportance:(NSInteger)importance
 {
     if ( importance > 10 ){
@@ -26,7 +39,18 @@
 
 - (BOOL)dataIntegrity
 {
-    return NO;
+    if ( _importance == -1 ){
+        return NO;
+    }
+    
+    if ( !_title || [_title isEqualToString:@""] ){
+        return NO;
+    }
+    
+    if ( _status == TaskDefaultStauts ){
+        return NO;
+    }
+    return YES;
 }
 
 
