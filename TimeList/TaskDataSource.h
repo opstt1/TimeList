@@ -10,9 +10,20 @@
 
 @class TaskModel;
 
-@interface TaksDataSuorce : NSObject
+@class TaskDataSource;
 
-+ (TaksDataSuorce *)creatTaksDataWithDate:(NSDate *)date;
+@protocol TaskDataSourceDelegate <NSObject>
+
+@optional
+- (void)taskDataSource:(TaskDataSource *)taskDataSource update:(BOOL)update;
+
+@end
+
+@interface TaskDataSource : NSObject
+
+@property (nonatomic, readwrite, weak) id<TaskDataSourceDelegate> delegate;
+
++ (TaskDataSource *)creatTaksDataWithDate:(NSDate *)date;
 
 - (void)addTaskModel:(TaskModel *)taskModel;
 
@@ -21,5 +32,7 @@
 
 - (NSInteger)count;
 - (TaskModel *)objectAtInde:(NSUInteger)index;
+- (void)dataSourceHasDoneAtIndex:(NSInteger)index;
+- (void)deleteAtIndex:(NSInteger)index;
 
 @end

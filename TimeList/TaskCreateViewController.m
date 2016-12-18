@@ -107,7 +107,6 @@
 
 - (void)rightNavigationButtonTapped:(id)sender
 {
-    NSLog(@"%@ %d",_model,[_model dataIntegrity]);
     
     if ( [_model dataIntegrity] ) {
         if ( _complete ){

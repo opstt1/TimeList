@@ -7,6 +7,7 @@
 //
 
 #import "TaskModel.h"
+#import "TaskModel+FMDB.h"
 
 @implementation TaskModel
 
@@ -16,7 +17,13 @@
     if ( !self ) return nil;
     _importance = -1;
     _title = @"";
+    _localId = @"-1";
     _status = TaskDefaultStauts;
+    _createDate = [NSDate date];
+    _desc = @"";
+    _summarize = @"";
+    _startTime = [NSDate date];
+//    [TaskModel insert:self];
     return self;
 }
 - (void)setImportance:(NSInteger)importance

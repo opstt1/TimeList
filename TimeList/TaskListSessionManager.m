@@ -7,12 +7,12 @@
 //
 
 #import "TaskListSessionManager.h"
-#import "TaksDataSuorce.h"
+#import "TaskDataSource.h"
 #import "TaskModel.h"
 
 @interface TaskListSessionManager()
 
-@property (nonatomic, readwrite, strong) TaksDataSuorce *dataSource;
+@property (nonatomic, readwrite, strong) TaskDataSource *dataSource;
 
 @end
 
@@ -35,9 +35,9 @@
     self = [super init];
     if ( !self ) return nil;
     
-    _dataSource = [TaksDataSuorce creatTaksDataWithDate:[NSDate date]];
+    _dataSource = [TaskDataSource creatTaksDataWithDate:[NSDate date]];
     
-    [self addDatajia];
+//    [self addDatajia];
     
     return self;
 }
@@ -68,7 +68,7 @@
 }
 
 
-- (TaksDataSuorce *)dataSource
+- (TaskDataSource *)dataSource
 {
     return _dataSource;
 }

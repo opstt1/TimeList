@@ -19,6 +19,9 @@ typedef NS_ENUM(NSInteger, TaskModelStatus)
 
 
 #pragma mark - Required
+
+@property (nonatomic, readwrite, strong  ) NSString *localId;
+
 /**
  task title（Required）
  */
@@ -35,6 +38,7 @@ typedef NS_ENUM(NSInteger, TaskModelStatus)
  */
 @property (nonatomic, readwrite, assign) NSInteger importance;
 
+@property (nonatomic, readwrite, strong) NSDate *createDate;
 
 #pragma mark - Optional
 

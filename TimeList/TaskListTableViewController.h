@@ -8,11 +8,11 @@
 
 #import "BaseViewController.h"
 
-@class TaksDataSuorce;
+@class TaskDataSource;
 
 @interface TaskListTableViewController : BaseViewController
 
 
-- (void)configWithData:(TaksDataSuorce *)dataSource;
+- (void)configWithData:(TaskDataSource *)dataSource;
 
 @end

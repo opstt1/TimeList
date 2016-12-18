@@ -12,7 +12,7 @@
 
 @property (nonatomic, readwrite, assign) BOOL editable;
 @property (nonatomic, readwrite, strong) UIView *containView;
-
+@property (nonatomic, readwrite, assign) BOOL canSlideToLeft;
 
 - (void)setCanEditableWithView:(UIView *)containView;
 

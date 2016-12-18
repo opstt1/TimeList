@@ -7,14 +7,14 @@
 //
 
 #import "TaskListTableViewController.h"
-#import "TaksDataSuorce.h"
+#import "TaskDataSource.h"
 #import "TaskListTableViewCell.h"
 
-@interface TaskListTableViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface TaskListTableViewController ()<UITableViewDelegate,UITableViewDataSource,TaskListTableViewCellDelegate,TaskDataSourceDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (nonatomic, readwrite, strong) TaksDataSuorce *dataSource;
+@property (nonatomic, readwrite, strong) TaskDataSource *dataSource;
 
 
 @end
@@ -30,9 +30,10 @@
     NSLog(@"viewDidLoad");
 }
 
-- (void)configWithData:(TaksDataSuorce *)dataSource
+- (void)configWithData:(TaskDataSource *)dataSource
 {
     _dataSource = dataSource;
+    _dataSource.delegate = self;
     [self.tableView reloadData];
     NSLog(@"config");
 }
@@ -80,8 +81,29 @@
     if ( !cell ){
         cell = [[TaskListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
     }
-    [cell configWithData:[_dataSource objectAtInde:indexPath.section]];
+    [cell configWithData:[_dataSource objectAtInde:indexPath.section] indexPath:indexPath delegateTarget:self];
     
     return cell;
+}
+
+#pragma mark - TaskListTableViewCellDelegate
+
+- (void)taskListTableViewCell:(TaskListTableViewCell *)cell cellDidTapDoneAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_dataSource dataSourceHasDoneAtIndex:indexPath.section];
+}
+
+- (void)taskListTableViewCell:(TaskListTableViewCell *)cell cellDidTapDeleteAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_dataSource deleteAtIndex:indexPath.section];
+}
+
+#pragma mark - TaskDataSourceDelegate
+
+- (void)taskDataSource:(TaskDataSource *)taskDataSource update:(BOOL)update
+{
+    if ( update ){
+        [self.tableView reloadData];
+    }
 }
 @end

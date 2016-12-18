@@ -6,6 +6,10 @@ target 'TimeList' do
   # use_frameworks!
   pod 'Reveal-SDK', :configurations => ['Debug']
   pod 'IQKeyboardManager'
+  pod 'FMDB'
+  pod 'MBProgressHUD', '~> 1.0.0'
+  pod 'KVNProgress'
+  pod 'Toast', '~> 3.0.0'
   # Pods for TimeList
 
 end

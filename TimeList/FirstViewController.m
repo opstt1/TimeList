@@ -11,7 +11,7 @@
 #import "TaskListSessionManager.h"
 #import "TaskCreateViewController.h"
 #import "Constants.h"
-#import "TaksDataSuorce.h"
+#import "TaskDataSource.h"
 
 @interface FirstViewController ()
 
@@ -77,10 +77,7 @@
     [vc createComplete:^(TaskModel *model) {
         STRONG_OBJ_REF(weak_self);
         if ( strong_weak_self ){
-            [(TaksDataSuorce *)[[TaskListSessionManager sharedManager] dataSource] insertModel:model];
-            if ( _currentVC ){
-                [_currentVC updateViewController];
-            }
+            [(TaskDataSource *)[[TaskListSessionManager sharedManager] dataSource] insertModel:model];
         }
     }];
     [self.navigationController pushViewController:vc animated:YES];
