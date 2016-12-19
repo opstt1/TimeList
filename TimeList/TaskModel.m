@@ -9,7 +9,13 @@
 #import "TaskModel.h"
 #import "TaskModel+FMDB.h"
 
+
+
 @implementation TaskModel
+
+NSString * const TaskModelStatusKey = @"status";
+NSString * const TaskModelImportanceKey = @"importance";
+NSString * const TaskModelLocalIdKey = @"localId";
 
 - (instancetype)init
 {

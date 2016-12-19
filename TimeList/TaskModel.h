@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 typedef NS_ENUM(NSInteger, TaskModelStatus)
 {
     TaskUndone,
@@ -72,3 +73,8 @@ typedef NS_ENUM(NSInteger, TaskModelStatus)
 - (BOOL)dataIntegrity;
 
 @end
+
+
+extern NSString *const TaskModelStatusKey;
+extern NSString *const TaskModelImportanceKey;
+extern NSString *const TaskModelLocalIdKey;

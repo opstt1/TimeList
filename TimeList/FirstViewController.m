@@ -66,6 +66,11 @@
     
 }
 
+
+- (void)rightNavigationButtonTapped:(id)sender
+{
+    [[[TaskListSessionManager sharedManager] dataSource] sortDefault];
+}
 #pragma mark - action
 
 - (void)leftNavigationButtonTapped:(id)sender
@@ -83,4 +88,6 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+
+
 @end

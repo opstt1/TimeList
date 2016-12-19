@@ -111,6 +111,11 @@
     return  [_taskList objectAtIndex:index];
 }
 
+- (void)dataSourceWithArray:(NSArray *)array
+{
+    [self p_setTaskList:array];
+}
+
 - (void)p_setTaskList:(NSArray *)taskList
 {
     _taskList = [NSArray arrayWithArray:taskList];

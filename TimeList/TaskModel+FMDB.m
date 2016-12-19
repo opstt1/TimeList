@@ -11,6 +11,8 @@
 #import "KVNProgress.h"
 
 TaskModel * rs2logkeeper(FMResultSet *rs) {
+    [rs resultDictionary];
+    
     TaskModel *obj = [[TaskModel alloc] init];
 
     obj.localId     = [rs stringForColumn:@"local_id"];

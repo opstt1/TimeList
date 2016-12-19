@@ -15,12 +15,14 @@
 @protocol TaskDataSourceDelegate <NSObject>
 
 @optional
+
 - (void)taskDataSource:(TaskDataSource *)taskDataSource update:(BOOL)update;
 
 @end
 
 @interface TaskDataSource : NSObject
 
+@property (nonatomic, readonly, copy) NSArray *taskList;
 @property (nonatomic, readwrite, weak) id<TaskDataSourceDelegate> delegate;
 
 + (TaskDataSource *)creatTaksDataWithDate:(NSDate *)date;
@@ -34,5 +36,6 @@
 - (TaskModel *)objectAtInde:(NSUInteger)index;
 - (void)dataSourceHasDoneAtIndex:(NSInteger)index;
 - (void)deleteAtIndex:(NSInteger)index;
+- (void)dataSourceWithArray:(NSArray *)array;
 
 @end

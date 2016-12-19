@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TaskDataSource+Sort.h"
 
 @class TaskDataSource;
 
