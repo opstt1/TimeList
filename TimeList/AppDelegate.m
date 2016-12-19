@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Constants.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if ( ![userDefaults stringForKey:userDefautlIdKey] ){
+        [userDefaults setObject:@"0" forKey:userDefautlIdKey];
+        [userDefaults synchronize];
+    }
     return YES;
 }
 
@@ -46,6 +52,8 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
 
 
 @end

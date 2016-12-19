@@ -71,4 +71,8 @@ typedef NS_ENUM(NSInteger, TaskModelStatus)
 
 - (BOOL)dataIntegrity;
 
+- (void)createSuccess;
+
+- (void)remove;
+
 @end

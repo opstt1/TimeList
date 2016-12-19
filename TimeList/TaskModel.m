@@ -8,6 +8,7 @@
 
 #import "TaskModel.h"
 #import "TaskModel+FMDB.h"
+#import "Constants.h"
 
 @implementation TaskModel
 
@@ -23,9 +24,9 @@
     _desc = @"";
     _summarize = @"";
     _startTime = [NSDate date];
-//    [TaskModel insert:self];
     return self;
 }
+
 - (void)setImportance:(NSInteger)importance
 {
     if ( importance > 10 ){
@@ -56,5 +57,25 @@
     return YES;
 }
 
+- (void)allocIdentifier
+{
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSString *nowId = [userDefault stringForKey:userDefautlIdKey];
+    NSInteger indentifier = [nowId integerValue];
+    NSString *nextIdentifier = [NSString stringWithFormat:@"%d",(int)++indentifier];
+    self.localId = nextIdentifier;
+    [userDefault setObject:nextIdentifier forKey:userDefautlIdKey];
+    [userDefault synchronize];
+    
+}
+- (void)createSuccess
+{
+    [self allocIdentifier];
+    [TaskModel insert:self];
+}
 
+- (void)remove
+{
+    [TaskModel remove:self];
+}
 @end

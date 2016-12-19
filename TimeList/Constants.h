@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-//#import "TypeDefines.h"
 #import "Toolkit.h"
+
+static NSString *const userDefautlIdKey = @"UserDefautlIdKey";
 
 #define UISCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define UISCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height

@@ -26,10 +26,9 @@
     //
     //
     NSDate *begin = [date beginningOfDay];
-    NSDate *end = [date endOfDay];
-//    NSLog(@"%@ %@",[NSDate stringFromDay:begin],[NSDate stringFromDay:end]);
-   NSArray *array =  [TaskModel findOfStartDate:begin toDate:end];
+    NSDate *end = [date endOfDay];   NSArray *array =  [TaskModel findOfStartDate:begin toDate:end];
     dataSource.taskList = [NSArray arrayWithArray:array];
+    
     return dataSource;
 }
 
@@ -52,7 +51,6 @@
     }
     NSMutableArray *array = [NSMutableArray arrayWithArray:_taskList];
     [array addObject:taskModel];
-//    [TaskModel insert:taskModel];
     [self p_setTaskList:array];
 }
 
@@ -69,7 +67,6 @@
     NSMutableArray *array = [NSMutableArray arrayWithArray:_taskList];
     [array insertObject:taskModel atIndex:index];
     
-    [TaskModel insert:taskModel];
     [self p_setTaskList:array];
     
 }
@@ -93,6 +90,8 @@
         return;
     }
     NSMutableArray *array = [NSMutableArray arrayWithArray:_taskList];
+    TaskModel *removeModel = [array objectAtIndex:index];
+    [removeModel remove];
     [array removeObjectAtIndex:index];
     [self p_setTaskList:array];
 }
@@ -133,6 +132,7 @@
     }
     TaskModel *hasDoneModel = [_taskList objectAtIndex:index];
     hasDoneModel.status = TaskHasBeenDone;
+    [hasDoneModel upadteSQL];
     for ( int i = (int)index + 1; i < _taskList.count; ++i ){
         TaskModel *model = _taskList[i];
         if ( model.status == TaskHasBeenDone ){

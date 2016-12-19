@@ -12,7 +12,7 @@
 
 TaskModel * rs2logkeeper(FMResultSet *rs) {
     
-    NSDictionary *dict = [rs columnNameToIndexMap];
+//    NSDictionary *dict = [rs columnNameToIndexMap];
     
     TaskModel *obj = [[TaskModel alloc] init];
 
@@ -80,17 +80,28 @@ TaskModel * rs2logkeeper(FMResultSet *rs) {
     [db close];
 }
 
-
 + (BOOL) insert: (TaskModel *) logkeeper {
+    return [logkeeper insertSQL];
+}
+
++ (BOOL) updateContent:(TaskModel *)taskModel
+               localId: (NSString *)localId
+{
+    return [taskModel upadteSQL];
+}
+
++ (BOOL) remove: (TaskModel *) logkeeper
+{
+    return [logkeeper removeSQL];
+}
+
+- (BOOL)insertSQL
+{
     NSLog(@"insert logkeeper");
     NSLog(@"convert int value to NSNumber ...");
-//    logkeeper.localId = [DYUUID uuidString];
-    
-    
-    NSNumber *statusNum = [NSNumber numberWithInt:logkeeper.status];
-    NSLog(@"-- channelNum: %@", statusNum);
-    NSNumber *importanceNum = [NSNumber numberWithInteger:logkeeper.importance];
-    NSLog(@"-- deviceType: %@", importanceNum);
+
+    NSNumber *statusNum = [NSNumber numberWithInt:self.status];
+    NSNumber *importanceNum = [NSNumber numberWithInteger:self.importance];
     
     NSString *sql = @"insert into log_keepers(local_id, title, status, importance, desc, start_date, summarize, create_date) values(?, ?, ?, ?, ?, ?, ?, ?)";
     
@@ -98,39 +109,43 @@ TaskModel * rs2logkeeper(FMResultSet *rs) {
     if (db == nil) {
         NSLog(@"fail to create db..");
     }
-    BOOL ret = [db executeUpdate:sql, logkeeper.localId, logkeeper.title,statusNum, importanceNum,logkeeper.desc, logkeeper.startTime, logkeeper.summarize, logkeeper.createDate];
+    BOOL ret = [db executeUpdate:sql, self.localId, self.title,statusNum, importanceNum,self.desc, self.startTime, self.summarize, self.createDate];
     if ( ret ){
-        NSLog(@"successsssssss--------");
+        NSLog(@"success insertSQL");
     }
     [db close];
     
     return ret;
 }
 
-+ (BOOL) updateContent:(NSString *)content
-               localId: (NSString *)localId {
-    
+- (BOOL)upadteSQL
+{
     NSLog(@"update logkeeper content");
-    NSString *sql = @"update log_keepers set content = ? where local_id = ?";
+    NSString *sql = @"update log_keepers set local_id = ?,title = ?, status = ?, importance = ?, desc = ?, start_date = ?, summarize = ?, create_date = ?  where local_id = ?";
+    NSNumber *statusNum = [NSNumber numberWithInt:self.status];
+    NSNumber *importanceNum = [NSNumber numberWithInteger:self.importance];
     
     FMDatabase *db = [[FMDBManager shareManager] connect];
-    BOOL ret = [db executeUpdate:sql, content, localId];
+    BOOL ret = [db executeUpdate:sql, self.localId, self.title,statusNum, importanceNum,self.desc, self.startTime, self.summarize, self.createDate, self.localId];
     
     [db close];
     return ret;
+
 }
 
-+ (BOOL) remove: (TaskModel *) logkeeper {
-    NSLog(@"remove logkeeper: %@", logkeeper.localId);
+- (BOOL)removeSQL
+{
+    NSLog(@"remove logkeeper: %@", self.localId);
     NSString *sql = @"delete from log_keepers where local_id = ?";
     
     FMDatabase *db = [[FMDBManager shareManager] connect];
-    BOOL ret = [db executeUpdate:sql, logkeeper.localId];
+    BOOL ret = [db executeUpdate:sql, self.localId];
     
     [db close];
     
     return ret;
 }
+
 
 + (TaskModel *) findById:(NSString *)localId {
     NSLog(@"find logkeeper by id: %@", localId);

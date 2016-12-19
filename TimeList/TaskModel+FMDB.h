@@ -17,12 +17,17 @@ TaskModel * rs2logkeeper(FMResultSet *rs);
 
 + (BOOL) insert: (TaskModel *) logkeeper;
 
-+ (BOOL) updateContent: (NSString *) content localId: (NSString *) localId;
++ (BOOL) updateContent:(TaskModel *)taskModel localId: (NSString *)localId;
 
 + (BOOL) remove: (TaskModel *) logkeeperId;
 
 + (TaskModel *) findById: (NSString *) localId;
 
 + (NSArray *) findOfStartDate: (NSDate *) start toDate:(NSDate *) toDate;
+
+
+- (BOOL)upadteSQL;
+- (BOOL)removeSQL;
+- (BOOL)insertSQL;
 
 @end

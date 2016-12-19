@@ -77,6 +77,7 @@
     [vc createComplete:^(TaskModel *model) {
         STRONG_OBJ_REF(weak_self);
         if ( strong_weak_self ){
+            [model createSuccess];
             [(TaskDataSource *)[[TaskListSessionManager sharedManager] dataSource] insertModel:model];
         }
     }];
