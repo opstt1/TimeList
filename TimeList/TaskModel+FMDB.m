@@ -10,9 +10,7 @@
 #import "FMDBManager.h"
 #import "KVNProgress.h"
 
-TaskModel * rs2logkeeper(FMResultSet *rs) {
-    
-//    NSDictionary *dict = [rs columnNameToIndexMap];
+TaskModel * rs2logkeeper(FMResultSet *rs) { 
     
     TaskModel *obj = [[TaskModel alloc] init];
 

@@ -84,7 +84,7 @@
             frame.origin.x = OPSSideslipCellLeftLimitScrollMargin;
         }
         
-        if ( frame.origin.x < 0 ){
+        if ( frame.origin.x < 5 ){
             frame.origin.x = -OPSSideslipCellRightLimitScrollMargin;
         }
         [self containViewAnimationWithFrame:frame];

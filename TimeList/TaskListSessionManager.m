@@ -37,8 +37,6 @@
     
     _dataSource = [TaskDataSource creatTaksDataWithDate:[NSDate date]];
     
-//    [self addDatajia];
-    
     return self;
 }
 

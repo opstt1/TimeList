@@ -10,7 +10,13 @@
 #import "TaskModel+FMDB.h"
 #import "Constants.h"
 
+
+
 @implementation TaskModel
+
+NSString * const TaskModelStatusKey = @"status";
+NSString * const TaskModelImportanceKey = @"importance";
+NSString * const TaskModelLocalIdKey = @"localId";
 
 - (instancetype)init
 {
@@ -24,6 +30,8 @@
     _desc = @"";
     _summarize = @"";
     _startTime = [NSDate date];
+    _leftLimitMargin = 80.0f;
+    _rightLimitMargin = 75.0f;
     return self;
 }
 
@@ -39,6 +47,14 @@
     _importance = importance;
     _fullStarCount = importance / 2;
     _hasHalfStar = importance % 2;
+}
+
+- (void)setStatus:(TaskModelStatus)status
+{
+    _status = status;
+    if ( _status == TaskHasBeenDone ){
+        _rightLimitMargin = -5;
+    }
 }
 
 - (BOOL)dataIntegrity

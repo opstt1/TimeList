@@ -10,6 +10,7 @@
 #import "TaskModel+FMDB.h"
 #import "Toolkit.h"
 #import "FMDatabase.h"
+#import "TaskDataSource+Sort.h"
 
 @interface TaskDataSource()
 
@@ -28,7 +29,7 @@
     NSDate *begin = [date beginningOfDay];
     NSDate *end = [date endOfDay];   NSArray *array =  [TaskModel findOfStartDate:begin toDate:end];
     dataSource.taskList = [NSArray arrayWithArray:array];
-    
+    [dataSource sortDefault];
     return dataSource;
 }
 
@@ -107,6 +108,11 @@
         return nil;
     }
     return  [_taskList objectAtIndex:index];
+}
+
+- (void)dataSourceWithArray:(NSArray *)array
+{
+    [self p_setTaskList:array];
 }
 
 - (void)p_setTaskList:(NSArray *)taskList

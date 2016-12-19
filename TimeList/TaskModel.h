@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, TaskModelStatus)
 {
@@ -67,7 +68,11 @@ typedef NS_ENUM(NSInteger, TaskModelStatus)
 
 @property (nonatomic, readwrite, strong) NSString *starTimeStr;
 
-#pragma mark - 
+@property (nonatomic, readwrite, assign) CGFloat leftLimitMargin;
+
+@property (nonatomic, readwrite, assign) CGFloat rightLimitMargin;
+
+#pragma mark -
 
 - (BOOL)dataIntegrity;
 
@@ -76,3 +81,8 @@ typedef NS_ENUM(NSInteger, TaskModelStatus)
 - (void)remove;
 
 @end
+
+
+extern NSString *const TaskModelStatusKey;
+extern NSString *const TaskModelImportanceKey;
+extern NSString *const TaskModelLocalIdKey;
