@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-1457" y="526"/>
         </scene>
-        <!--First-->
+        <!--每日任务管理-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
@@ -48,14 +48,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="每日任务管理" image="first" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="C2p-49-woJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1458" y="1225"/>
         </scene>
-        <!--Item-->
+        <!--其他-->
         <scene sceneID="yzy-CY-8hT">
             <objects>
                 <viewController id="KBy-ht-TlO" sceneMemberID="viewController">
@@ -68,14 +68,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="GVp-YW-1nv"/>
+                    <tabBarItem key="tabBarItem" title="其他" image="IQButtonBarArrowUp.png" id="GVp-YW-1nv"/>
                     <navigationItem key="navigationItem" id="PfF-Cm-rwR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okN-PO-3WK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1156" y="1225"/>
         </scene>
-        <!--Second-->
+        <!--每小时任务记录-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
@@ -109,7 +109,7 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="每小时任务记录" image="second" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" id="i2o-7Q-oHe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -173,6 +173,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="IQButtonBarArrowUp.png" width="21" height="12"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

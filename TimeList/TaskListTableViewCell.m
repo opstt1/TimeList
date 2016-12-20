@@ -11,10 +11,7 @@
 #import "Toolkit.h"
 #import "TaskModel.h"
 
-#define OPSSideslipCellLeftLimitScrollMargin 30
-#define OPSSideslipCellRightLimitScrollMargin 60
-
-@interface TaskListTableViewCell()
+@interface TaskListTableViewCell()<UIAlertViewDelegate>
 
 @property (nonatomic, readwrite, strong) UILabel *timeLabel;
 @property (nonatomic, readwrite, strong) UILabel *titleLabe1;
@@ -29,7 +26,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -112,6 +108,8 @@
     _titleLabe1.text = _taskModel.title ?: @"";
     _timeLabel.text = _taskModel.starTimeStr ? : @"";
     self.canSlideToLeft = (_taskModel.status == TaskHasBeenDone ) ? NO : YES;
+    self.sideslipLeftLimitMargin = _taskModel.leftLimitMargin;
+    self.sideslipRightLimitMargin = _taskModel.rightLimitMargin;
     
     WEAK_OBJ_REF(self);
     [_starsList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -149,10 +147,10 @@
     if( !self.containView ){
         return;
     }
-//    self.containView.backgroundColor = [UIColor greenColor];
-    if ( _delegate && [_delegate respondsToSelector:@selector(taskListTableViewCell:cellDidTapDoneAtIndexPath:)] ){
-        [_delegate taskListTableViewCell:self cellDidTapDoneAtIndexPath:_indexPath];
-    }
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"你真的完成了么？" message:_taskModel.title delegate:self cancelButtonTitle:@"其实还没有" otherButtonTitles:@"必须的", nil];
+    alertView.tag = 1;
+    [alertView show];
+    
 }
 
 - (void)didTapDeleteButton:(id)sender
@@ -161,8 +159,27 @@
         return;
     }
     NSLog(@"delete");
-    if ( _delegate && [_delegate respondsToSelector:@selector(taskListTableViewCell:cellDidTapDeleteAtIndexPath:)] ){
-        [_delegate taskListTableViewCell:self cellDidTapDeleteAtIndexPath:_indexPath];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"确定删除?" message:_taskModel.title delegate:self cancelButtonTitle:@"别别别" otherButtonTitles:@"删！", nil];
+    alertView.tag = 0;
+    [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ( buttonIndex <= 0 ){
+        return;
+    }
+    if ( alertView.tag == 0 ){
+        if ( _delegate && [_delegate respondsToSelector:@selector(taskListTableViewCell:cellDidTapDeleteAtIndexPath:)] ){
+            [_delegate taskListTableViewCell:self cellDidTapDeleteAtIndexPath:_indexPath];
+        }
+        return;
+    }
+    if ( alertView.tag == 1 ){
+        if ( _delegate && [_delegate respondsToSelector:@selector(taskListTableViewCell:cellDidTapDoneAtIndexPath:)] ){
+            [_delegate taskListTableViewCell:self cellDidTapDoneAtIndexPath:_indexPath];
+        }
+        return;
     }
 }
 

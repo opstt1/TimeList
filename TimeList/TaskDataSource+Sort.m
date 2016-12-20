@@ -7,6 +7,7 @@
 //
 
 #import "TaskDataSource+Sort.h"
+#import "TaskDataSource+Func.h"
 #import "TaskModel.h"
 
 @implementation TaskDataSource (Sort)
