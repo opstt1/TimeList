@@ -10,7 +10,7 @@
 #import "Constants.h"
 #import "Toolkit.h"
 
-#define OPSSideslipCellLeftLimitScrollMargin 80
+
 #define OPSSideslipCellRightLimitScrollMargin 75
 
 @interface EditableTableViewCell()
@@ -31,7 +31,38 @@
     [self.cancelButton addTarget:self action:@selector(cancelButtonTap:forEvent:) forControlEvents:UIControlEventTouchUpInside];
     self.rightButtons = [NSArray array];
     self.leftButtons = [NSArray array];
+    _sideslipLeftLimitMargin = 5.0f;
+    _sideslipRightLimitMargin = 5.0f;
     self.editable = YES;
+}
+
+#pragma mark - set
+
+- (void)setEditable:(BOOL)editable
+{
+    _editable = editable;
+    if ( editable ){
+        [self p_addPanGestureRecognizer];
+    }
+}
+
+- (void)setSideslipLeftLimitMargin:(CGFloat)sideslipLeftLimitMargin
+{
+    _sideslipLeftLimitMargin = OPSSideslipCellLimitScrollMargin + sideslipLeftLimitMargin;
+}
+
+- (void)setSideslipRightLimitMargin:(CGFloat)sideslipRightLimitMargin
+{
+    _sideslipRightLimitMargin = OPSSideslipCellLimitScrollMargin - sideslipRightLimitMargin;
+}
+
+#pragma  mark - add 
+
+- (void)p_addPanGestureRecognizer
+{
+    _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(containViewPan:)];
+    _panGesture.delegate = self;
+    [_containView addGestureRecognizer:_panGesture];
 }
 
 - (void)addButton:(UIButton *)button isLeft:(BOOL)isLeft
@@ -47,21 +78,10 @@
     }
 }
 
-- (void)setEditable:(BOOL)editable
-{
-    _editable = editable;
-    if ( editable ){
-        [self p_addPanGestureRecognizer];
-    }
-}
 
-- (void)p_addPanGestureRecognizer
-{
-    _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(containViewPan:)];
-    _panGesture.delegate = self;
-    [_containView addGestureRecognizer:_panGesture];
-}
+#pragma mark - touch action
 
+//监听手势同时更改位置
 - (void)containViewPan:(UIPanGestureRecognizer *)pan
 {
     CGPoint point = [pan translationInView:pan.view];
@@ -70,35 +90,34 @@
     CGRect frame = _containView.frame;
     frame.origin.x += point.x;
     if ( pan.state == UIGestureRecognizerStateChanged ){
-        if ( frame.origin.x > OPSSideslipCellLeftLimitScrollMargin ){
-            frame.origin.x = OPSSideslipCellLeftLimitScrollMargin;
+        if ( frame.origin.x > _sideslipLeftLimitMargin ){
+            frame.origin.x = _sideslipLeftLimitMargin;
         }
-        if( frame.origin.x < -OPSSideslipCellRightLimitScrollMargin){
-            frame.origin.x = -OPSSideslipCellRightLimitScrollMargin;
+        if( frame.origin.x < _sideslipRightLimitMargin){
+            frame.origin.x = _sideslipRightLimitMargin;
         }
         
         _containView.frame = frame;
     }
     if ( pan.state == UIGestureRecognizerStateEnded ){
-        if ( frame.origin.x < OPSSideslipCellLeftLimitScrollMargin && frame.origin.x > 5 ){
-            frame.origin.x = OPSSideslipCellLeftLimitScrollMargin;
+        if ( frame.origin.x < _sideslipLeftLimitMargin && frame.origin.x > OPSSideslipCellLimitScrollMargin ){
+            frame.origin.x = _sideslipLeftLimitMargin;
         }
         
-        if ( frame.origin.x < 5 ){
-            frame.origin.x = -OPSSideslipCellRightLimitScrollMargin;
+        if ( frame.origin.x < OPSSideslipCellLimitScrollMargin ){
+            frame.origin.x = _sideslipRightLimitMargin;
         }
         [self containViewAnimationWithFrame:frame];
-        [self prohibitAction];
+        if ( frame.origin.x > OPSSideslipCellLimitScrollMargin + 1.0f || frame.origin.x < OPSSideslipCellLimitScrollMargin - 1.0f ){
+            [self prohibitAction];
+        }
     }
     
 }
 
-
+//
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-    NSLog(@"2333");
-
-    
     CGRect frame = CGRectMake(5, 5, UISCREEN_WIDTH-10, 60);
     if ( ![_containView isEquelToFrame:frame] ){
         [self containViewAnimationWithFrame:frame];
@@ -113,7 +132,6 @@
     CGPoint translation = [gesture translationInView:gesture.view];
     
     if ( !_canSlideToLeft && translation.x < 0  ){
-        NSLog(@"!!!!!");
         return NO;
     }
     return fabs(translation.y) <= fabs(translation.x);
@@ -121,22 +139,7 @@
 }
 
 
-- (void)containViewAnimationWithFrame:(CGRect)frame;
-{
-    //设置速度，以后在弄
-    CGFloat length = fabs(_containView.origin.x - frame.origin.x);
-    
-    [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
-        _containView.frame = frame;
-        [self layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        _containView.frame = frame;
-    }];
-    
-    
-    
-}
-
+//禁止所有无关手势操作，处于可编辑状态
 - (void)prohibitAction
 {
     for ( UIView *next = [self superview]; next; next = next.superview ){
@@ -150,6 +153,7 @@
     }
 }
 
+//取消可编辑状态，识别触发了那一个事件
 - (void)cancelButtonTap:(id)sender forEvent:(UIEvent*)event
 {
     
@@ -183,5 +187,21 @@
     [self containViewAnimationWithFrame:CGRectMake(5, 5, UISCREEN_WIDTH-10, 60)];
 }
 
+#pragma mark - animation
+
+//是否可编辑状态动画
+- (void)containViewAnimationWithFrame:(CGRect)frame;
+{
+    //设置速度，以后在弄
+    CGFloat length = fabs(_containView.origin.x - frame.origin.x);
+    
+    [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+        _containView.frame = frame;
+        [self layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        _containView.frame = frame;
+    }];
+    
+}
 
 @end

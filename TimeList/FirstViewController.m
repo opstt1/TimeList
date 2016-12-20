@@ -11,7 +11,7 @@
 #import "TaskListSessionManager.h"
 #import "TaskCreateViewController.h"
 #import "Constants.h"
-#import "TaskDataSource.h"
+#import "TaskDataSource+Func.h"
 
 @interface FirstViewController ()
 
@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setUpRightNavigationButtonWithTitle:@"2333" tintColor:[UIColor blackColor]];
+    [self setUpRightNavigationButtonWithTitle:@"排序" tintColor:[UIColor blackColor]];
     [self setUpLeftNavigationButtonWithTitle:@"+" tintColor:nil];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Task" bundle:nil];
