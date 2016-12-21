@@ -18,17 +18,17 @@
 
 @implementation TaskTitleTwoSelectView
 
-+ (id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame actionHandler:(TaskTitleViewHandler)handler
++ (id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame content:(NSString *)content actionHandler:(TaskTitleViewHandler)handler
 {
     TaskTitleTwoSelectView *taskTitleTwoSelectView = [[TaskTitleTwoSelectView alloc] initWithFrame:frame];
     [taskTitleTwoSelectView creatPublicViewWithTitle:title isMust:isMust];
     taskTitleTwoSelectView.handler = handler;
-    [taskTitleTwoSelectView createSelectButton];
+    [taskTitleTwoSelectView createSelectButtonWitContent:content];
     return taskTitleTwoSelectView;
 }
 
 
-- (void)createSelectButton
+- (void)createSelectButtonWitContent:(NSString *)content;
 {
     CGFloat pointX = 15+kTitleLableWidth+10;
     _doneButton = [[UIButton alloc] initWithFrame:CGRectMake(pointX, (self.frame.size.height-34)/2, 80, 34)];
@@ -49,6 +49,12 @@
     
     [self addSubview:_doneButton];
     [self addSubview:_unDoneButton];
+    
+    if  ( [content isEqualToString:@"done"] ){
+        [_doneButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    }else{
+        [_unDoneButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    }
 }
 
 #pragma mark - action

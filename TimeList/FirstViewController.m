@@ -9,7 +9,7 @@
 #import "FirstViewController.h"
 #import "TaskListTableViewController.h"
 #import "TaskListSessionManager.h"
-#import "TaskCreateViewController.h"
+#import "TaskDetailViewController.h"
 #import "Constants.h"
 #import "TaskDataSource+Func.h"
 
@@ -77,7 +77,7 @@
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Task" bundle:nil];
     
-    TaskCreateViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TaskCreateViewController"];
+    TaskDetailViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TaskDetailViewController"];
     WEAK_OBJ_REF(self);
     [vc createComplete:^(TaskModel *model) {
         STRONG_OBJ_REF(weak_self);

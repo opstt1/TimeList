@@ -91,6 +91,14 @@
     [deleteButton setTitle:@"Delete" forState:UIControlStateNormal];
     [self addSubview:deleteButton];
     [self addButton:deleteButton isLeft:YES];
+    
+    UIButton *editButton = [[UIButton alloc] initWithFrame:CGRectMake(80, 5, 70, 60)];
+    [editButton addTarget:self action:@selector(didTapEditButton:) forControlEvents:UIControlEventTouchUpInside];
+    editButton.backgroundColor = [UIColor grayColor];
+    editButton.layer.cornerRadius = 10.0f;
+    [editButton setTitle:@"edit" forState:UIControlStateNormal];
+    [self addSubview:editButton];
+    [self addButton:editButton isLeft:YES];
 }
 
 
@@ -164,6 +172,14 @@
     [alertView show];
 }
 
+- (void)didTapEditButton:(id)sender
+{
+    if ( _delegate && [_delegate respondsToSelector:@selector(taskListTableViewCell:cellDidTapEditAtIndexPath:)] ){
+        [_delegate taskListTableViewCell:self cellDidTapEditAtIndexPath:_indexPath];
+    }
+
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if ( buttonIndex <= 0 ){
@@ -182,5 +198,6 @@
         return;
     }
 }
+
 
 @end

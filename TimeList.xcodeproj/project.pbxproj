@@ -12,7 +12,6 @@
 		E200ED4C1DFE9FD800AA4DEC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED4B1DFE9FD800AA4DEC /* CFNetwork.framework */; };
 		E200ED4E1DFE9FE100AA4DEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED4D1DFE9FE100AA4DEC /* QuartzCore.framework */; };
 		E200ED501DFE9FE800AA4DEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED4F1DFE9FE800AA4DEC /* CoreGraphics.framework */; };
-		E200ED511DFEA02600AA4DEC /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED471DFE9EB400AA4DEC /* RevealServer.framework */; };
 		E20CC4351E03ADDD0013BEC7 /* NSArray+Toolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CC4341E03ADDD0013BEC7 /* NSArray+Toolkit.m */; };
 		E20CC4371E03C9B90013BEC7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E20CC4361E03C9B90013BEC7 /* libsqlite3.tbd */; };
 		E20CC43D1E03CFB80013BEC7 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E20CC43C1E03CFB80013BEC7 /* libFMDB.a */; };
@@ -23,7 +22,7 @@
 		E2A0A4AE1E03F93F009621A2 /* libKVNProgress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A0A4AD1E03F93F009621A2 /* libKVNProgress.a */; };
 		E2A0A4B11E03FB68009621A2 /* NSDate+Day.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A0A4B01E03FB68009621A2 /* NSDate+Day.m */; };
 		E2B924891E08D9B400E1D3AE /* TaskDataSource+Func.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B924881E08D9B400E1D3AE /* TaskDataSource+Func.m */; };
-		E2B98ECE1E0262F200405C14 /* TaskCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98ECD1E0262F200405C14 /* TaskCreateViewController.m */; };
+		E2B98ECE1E0262F200405C14 /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98ECD1E0262F200405C14 /* TaskDetailViewController.m */; };
 		E2B98ED21E02668B00405C14 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98ED11E02668B00405C14 /* BaseView.m */; };
 		E2B98ED51E0266B600405C14 /* TaskTitleTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98ED41E0266B600405C14 /* TaskTitleTextView.m */; };
 		E2B98ED81E0266D400405C14 /* TaskTitleButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98ED71E0266D400405C14 /* TaskTitleButtonView.m */; };
@@ -53,12 +52,14 @@
 		E2EF37161DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF37151DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m */; };
 		E2EF371A1DFAB239001247BE /* UIColor+TAToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF37191DFAB239001247BE /* UIColor+TAToolkit.m */; };
 		E2F079B01E02476B000163C7 /* TaskListSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F079AF1E02476B000163C7 /* TaskListSessionManager.m */; };
+		E2F9FE771E0A32FF00AA7C1A /* libToast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F9FE761E0A32FF00AA7C1A /* libToast.a */; };
+		E2F9FE7A1E0A5D1900AA7C1A /* TaskDetailSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F9FE791E0A5D1900AA7C1A /* TaskDetailSubView.m */; };
+		E2F9FE7F1E0A696700AA7C1A /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F9FE7D1E0A692900AA7C1A /* RevealServer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		476823769E93E6F00C18E4FD /* libPods-TimeList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TimeList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D518DE72740D1E198CF0AF2 /* Pods-TimeList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeList.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeList/Pods-TimeList.release.xcconfig"; sourceTree = "<group>"; };
-		E200ED471DFE9EB400AA4DEC /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
 		E200ED491DFE9FCE00AA4DEC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E200ED4B1DFE9FD800AA4DEC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E200ED4D1DFE9FE100AA4DEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -81,8 +82,8 @@
 		E2A0A4B01E03FB68009621A2 /* NSDate+Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Day.m"; sourceTree = "<group>"; };
 		E2B924871E08D9B400E1D3AE /* TaskDataSource+Func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TaskDataSource+Func.h"; sourceTree = "<group>"; };
 		E2B924881E08D9B400E1D3AE /* TaskDataSource+Func.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TaskDataSource+Func.m"; sourceTree = "<group>"; };
-		E2B98ECC1E0262F200405C14 /* TaskCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCreateViewController.h; sourceTree = "<group>"; };
-		E2B98ECD1E0262F200405C14 /* TaskCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCreateViewController.m; sourceTree = "<group>"; };
+		E2B98ECC1E0262F200405C14 /* TaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
+		E2B98ECD1E0262F200405C14 /* TaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailViewController.m; sourceTree = "<group>"; };
 		E2B98ED01E02668B00405C14 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		E2B98ED11E02668B00405C14 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		E2B98ED31E0266B600405C14 /* TaskTitleTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTitleTextView.h; sourceTree = "<group>"; };
@@ -139,6 +140,10 @@
 		E2EF37191DFAB239001247BE /* UIColor+TAToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TAToolkit.m"; sourceTree = "<group>"; };
 		E2F079AE1E02476B000163C7 /* TaskListSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListSessionManager.h; sourceTree = "<group>"; };
 		E2F079AF1E02476B000163C7 /* TaskListSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListSessionManager.m; sourceTree = "<group>"; };
+		E2F9FE761E0A32FF00AA7C1A /* libToast.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libToast.a; path = "../../Library/Developer/Xcode/DerivedData/TimeList-akiumsedqafylxekndmczvklrzut/Build/Products/Debug-iphoneos/Toast/libToast.a"; sourceTree = "<group>"; };
+		E2F9FE781E0A5D1900AA7C1A /* TaskDetailSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailSubView.h; sourceTree = "<group>"; };
+		E2F9FE791E0A5D1900AA7C1A /* TaskDetailSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailSubView.m; sourceTree = "<group>"; };
+		E2F9FE7D1E0A692900AA7C1A /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
 		F8DCE3FBECE9C33A57FD72D5 /* Pods-TimeList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeList/Pods-TimeList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,11 +152,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2F9FE7F1E0A696700AA7C1A /* RevealServer.framework in Frameworks */,
+				E2F9FE771E0A32FF00AA7C1A /* libToast.a in Frameworks */,
 				E2A0A4AE1E03F93F009621A2 /* libKVNProgress.a in Frameworks */,
 				E20CC43D1E03CFB80013BEC7 /* libFMDB.a in Frameworks */,
 				E20CC4371E03C9B90013BEC7 /* libsqlite3.tbd in Frameworks */,
 				E2B98EEA1E028F9400405C14 /* libIQKeyboardManager.a in Frameworks */,
-				E200ED511DFEA02600AA4DEC /* RevealServer.framework in Frameworks */,
 				E200ED501DFE9FE800AA4DEC /* CoreGraphics.framework in Frameworks */,
 				E200ED4E1DFE9FE100AA4DEC /* QuartzCore.framework in Frameworks */,
 				E200ED4C1DFE9FD800AA4DEC /* CFNetwork.framework in Frameworks */,
@@ -175,6 +181,8 @@
 		8E9EA9C835F740646F882DDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2F9FE7D1E0A692900AA7C1A /* RevealServer.framework */,
+				E2F9FE761E0A32FF00AA7C1A /* libToast.a */,
 				E2A0A4AD1E03F93F009621A2 /* libKVNProgress.a */,
 				E20CC43C1E03CFB80013BEC7 /* libFMDB.a */,
 				E20CC43A1E03CE790013BEC7 /* libsqlite3.0.tbd */,
@@ -184,7 +192,6 @@
 				E200ED4D1DFE9FE100AA4DEC /* QuartzCore.framework */,
 				E200ED4B1DFE9FD800AA4DEC /* CFNetwork.framework */,
 				E200ED491DFE9FCE00AA4DEC /* libz.tbd */,
-				E200ED471DFE9EB400AA4DEC /* RevealServer.framework */,
 				476823769E93E6F00C18E4FD /* libPods-TimeList.a */,
 			);
 			name = Frameworks;
@@ -213,8 +220,8 @@
 		E2B98ECF1E02650F00405C14 /* TaskDetail */ = {
 			isa = PBXGroup;
 			children = (
-				E2B98ECC1E0262F200405C14 /* TaskCreateViewController.h */,
-				E2B98ECD1E0262F200405C14 /* TaskCreateViewController.m */,
+				E2B98ECC1E0262F200405C14 /* TaskDetailViewController.h */,
+				E2B98ECD1E0262F200405C14 /* TaskDetailViewController.m */,
 				E2B98EDF1E02678600405C14 /* TaskTitleView.h */,
 				E2B98EE01E02678600405C14 /* TaskTitleView.m */,
 				E2B98ED31E0266B600405C14 /* TaskTitleTextView.h */,
@@ -225,6 +232,8 @@
 				E2B98EDA1E02670700405C14 /* TaskTitleTwoSelectView.m */,
 				E2B98EDC1E02674600405C14 /* TaksTitleLongTextView.h */,
 				E2B98EDD1E02674600405C14 /* TaksTitleLongTextView.m */,
+				E2F9FE781E0A5D1900AA7C1A /* TaskDetailSubView.h */,
+				E2F9FE791E0A5D1900AA7C1A /* TaskDetailSubView.m */,
 			);
 			name = TaskDetail;
 			sourceTree = "<group>";
@@ -478,6 +487,7 @@
 				E2B98EE51E02783F00405C14 /* SheetMaskView.m in Sources */,
 				E20CC4441E03DAB00013BEC7 /* FMDBManager.m in Sources */,
 				E20CC4401E03D8DC0013BEC7 /* TaskModel+FMDB.m in Sources */,
+				E2F9FE7A1E0A5D1900AA7C1A /* TaskDetailSubView.m in Sources */,
 				E2B924891E08D9B400E1D3AE /* TaskDataSource+Func.m in Sources */,
 				E2F079B01E02476B000163C7 /* TaskListSessionManager.m in Sources */,
 				E2EF36FE1DFA9DA0001247BE /* SecondViewController.m in Sources */,
@@ -498,7 +508,7 @@
 				E2EF37101DFAA3E0001247BE /* BaseNavigationViewController.m in Sources */,
 				E20CC4351E03ADDD0013BEC7 /* NSArray+Toolkit.m in Sources */,
 				E2B98ED21E02668B00405C14 /* BaseView.m in Sources */,
-				E2B98ECE1E0262F200405C14 /* TaskCreateViewController.m in Sources */,
+				E2B98ECE1E0262F200405C14 /* TaskDetailViewController.m in Sources */,
 				E2EC4B591DFE904A0067C0EC /* TaskListTableViewController.m in Sources */,
 				E2EF36F81DFA9DA0001247BE /* AppDelegate.m in Sources */,
 				E2EF36FB1DFA9DA0001247BE /* FirstViewController.m in Sources */,

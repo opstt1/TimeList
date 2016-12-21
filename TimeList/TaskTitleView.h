@@ -17,9 +17,11 @@ static CGFloat const kTitleLableWidth = 110.0f;
 
 @property (nonatomic, readwrite, copy) TaskTitleViewHandler handler;
 
-+ (id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame actionHandler:(TaskTitleViewHandler)handler;
+@property (nonatomic, readwrite, assign) BOOL canEdit;
 
-+ (id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame;
++ (id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame content:(NSString *)content actionHandler:(TaskTitleViewHandler)handler;
+
++ (id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame content:(NSString *)content;
 
 - (void)creatPublicViewWithTitle:(NSString *)title isMust:(BOOL)isMust;
 

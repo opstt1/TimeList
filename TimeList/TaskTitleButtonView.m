@@ -18,23 +18,23 @@
 
 @implementation TaskTitleButtonView
 
-+(id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame actionHandler:(TaskTitleViewHandler)handler
++(id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame content:(NSString *)content actionHandler:(TaskTitleViewHandler)handler
 {
-    TaskTitleButtonView *taskTitleButtonView = [self creatWithTitle:title isMust:isMust frame:frame];
+    TaskTitleButtonView *taskTitleButtonView = [self creatWithTitle:title isMust:isMust frame:frame content:content];
     taskTitleButtonView.handler = handler;
     return taskTitleButtonView;
 }
 
 
-+ (id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame
++ (id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame content:(NSString *)content
 {
     TaskTitleButtonView *taskTitleButtonView = [[TaskTitleButtonView alloc] initWithFrame:frame];
     [taskTitleButtonView creatPublicViewWithTitle:title isMust:isMust];
-    [taskTitleButtonView creatButtonView];
+    [taskTitleButtonView creatButtonViewWithContent:content];
     return  taskTitleButtonView;
 }
 
-- (void)creatButtonView
+- (void)creatButtonViewWithContent:(NSString *)content
 {
     CGFloat pointX = 15+kTitleLableWidth+10;
     
@@ -45,6 +45,7 @@
     _showLable = [[UILabel alloc] initWithFrame:button.frame];
     _showLable.textAlignment = NSTextAlignmentCenter;
     
+    _showLable.text = content;
     [self addSubview:_showLable];
     [self addSubview:button];
 }

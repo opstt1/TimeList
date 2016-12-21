@@ -16,23 +16,23 @@
 
 @implementation TaskTitleTextView
 
-+ (id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame actionHandler:(TaskTitleViewHandler)handler
++ (id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame content:(NSString *)content actionHandler:(TaskTitleViewHandler)handler
 {
-    TaskTitleTextView *taskTitleTextView = [self creatWithTitle:title isMust:isMust frame:frame];
+    TaskTitleTextView *taskTitleTextView = [self creatWithTitle:title isMust:isMust frame:frame content:content];
     taskTitleTextView.handler = handler;
     return taskTitleTextView;
 }
 
 
-+ (id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame
++ (id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame content:(NSString *)content
 {
     TaskTitleTextView *taskTitleTextView = [[TaskTitleTextView alloc] initWithFrame:frame];
     [taskTitleTextView creatPublicViewWithTitle:title isMust:isMust];
-    [taskTitleTextView creatTextView];
+    [taskTitleTextView creatTextViewWithContent:content];
     return taskTitleTextView;
 }
 
-- (void)creatTextView
+- (void)creatTextViewWithContent:(NSString *)content
 {
     CGFloat pointX = 15+kTitleLableWidth+10;
     
@@ -42,6 +42,7 @@
     textFiled.textAlignment = NSTextAlignmentCenter;
     textFiled.delegate = self;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    textFiled.text = content;
     [self addSubview:textFiled];
 }
 

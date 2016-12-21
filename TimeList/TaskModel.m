@@ -30,7 +30,7 @@ NSString * const TaskModelLocalIdKey = @"localId";
     _desc = @"";
     _summarize = @"";
     _startTime = [NSDate date];
-    _leftLimitMargin = 80.0f;
+    _leftLimitMargin = 75+75.0f;
     _rightLimitMargin = 75.0f;
     return self;
 }

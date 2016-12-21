@@ -9,6 +9,10 @@
 #import "TaskListTableViewController.h"
 #import "TaskDataSource+Func.h"
 #import "TaskListTableViewCell.h"
+#import "TaskDetailViewController.h"
+#import "Constants.h"
+#import "Toolkit.h"
+#import "TaskModel+FMDB.h"
 
 @interface TaskListTableViewController ()<UITableViewDelegate,UITableViewDataSource,TaskListTableViewCellDelegate,TaskDataSourceDelegate>
 
@@ -98,6 +102,21 @@
     [_dataSource deleteAtIndex:indexPath.section];
 }
 
+- (void)taskListTableViewCell:(TaskListTableViewCell *)cell cellDidTapEditAtIndexPath:(NSIndexPath *)indexPath
+{
+    TaskModel *taskModel = [_dataSource objectAtInde:indexPath.section];
+    TaskDetailViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskDetailViewController"];
+    
+    WEAK_OBJ_REF(self);
+    [vc updateTask:taskModel complete:^(TaskModel *model) {
+        STRONG_OBJ_REF(weak_self);
+        if ( strong_weak_self ){
+            [model upadteSQL];
+            [strong_weak_self.tableView reloadData];
+        }
+    }];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark - TaskDataSourceDelegate
 
 - (void)taskDataSource:(TaskDataSource *)taskDataSource update:(BOOL)update
