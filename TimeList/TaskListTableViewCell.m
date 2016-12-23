@@ -155,7 +155,7 @@
     if( !self.containView ){
         return;
     }
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"你真的完成了么？" message:_taskModel.title delegate:self cancelButtonTitle:@"其实还没有" otherButtonTitles:@"必须的", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"你真的完成了么？" message:_taskModel.title delegate:self cancelButtonTitle:@"其实还没有" otherButtonTitles:@"必须的",@"必须滴，顺便写个总结", nil];
     alertView.tag = 1;
     [alertView show];
     
@@ -185,6 +185,7 @@
     if ( buttonIndex <= 0 ){
         return;
     }
+    //删除操作
     if ( alertView.tag == 0 ){
         if ( _delegate && [_delegate respondsToSelector:@selector(taskListTableViewCell:cellDidTapDeleteAtIndexPath:)] ){
             [_delegate taskListTableViewCell:self cellDidTapDeleteAtIndexPath:_indexPath];
@@ -192,8 +193,14 @@
         return;
     }
     if ( alertView.tag == 1 ){
-        if ( _delegate && [_delegate respondsToSelector:@selector(taskListTableViewCell:cellDidTapDoneAtIndexPath:)] ){
-            [_delegate taskListTableViewCell:self cellDidTapDoneAtIndexPath:_indexPath];
+        
+        BOOL needSumary = NO;
+        if ( buttonIndex == 2 ){
+            needSumary = YES;
+        }
+        
+        if ( _delegate && [_delegate respondsToSelector:@selector(taskListTableViewCell:cellDidTapDoneAtIndexPath:needSummary:)] ){
+            [_delegate taskListTableViewCell:self cellDidTapDoneAtIndexPath:_indexPath needSummary:needSumary];
         }
         return;
     }

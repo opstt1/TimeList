@@ -38,7 +38,7 @@
     if ( isMust ){
         str = [NSString stringWithFormat:@"* %@ :",title];
     }else{
-        str = [NSString stringWithFormat:@"  %@ :",title];
+        str = [NSString stringWithFormat:@"   %@ :",title];
     }
     
     titleLabel.text = str;

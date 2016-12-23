@@ -13,6 +13,8 @@
 #import "TaskTitleTwoSelectView.h"
 #import "UIView+Toast.h"
 #import "Constants.h"
+#import "TaskModel+FMDB.h"
+#import "TaskTitleLongTextView.h"
 
 @interface TaskDetailViewController ()
 
@@ -45,6 +47,7 @@
 {
     WEAK_OBJ_REF(self);
     
+    //填写任务名称
     TaskTitleTextView *view1 = [TaskDetailSubView creatTaskTitleViewWithFrame:CGRectMake(0,20,UISCREEN_WIDTH,40)
                                                                          type:_type
                                                                       content:_model.title
@@ -56,6 +59,7 @@
         }
     }];
     
+    //填写任务重要度
     _importanceView = [TaskDetailSubView creatImportanceViewWithFrame:CGRectMake(0, 40+10+20, UISCREEN_WIDTH, 40)
                                                                  type:_type
                                                               content:(_model.importance < 0) ? @"" :[NSString stringWithFormat:@"%d",(int)_model.importance]
@@ -74,6 +78,7 @@
 
     }];
     
+    //选择任务是否完成
     TaskTitleTwoSelectView *view2 = [TaskDetailSubView creatIsCompleteTaskViewWithFrame:CGRectMake(0, (40+10) * 2 +20, UISCREEN_WIDTH, 40)
                                                                                    type:_type
                                                                                 hasDone:(BOOL)_model.status == TaskHasBeenDone
@@ -88,9 +93,18 @@
         }
     }];
 
+    TaskTitleLongTextView *summaryView = [TaskDetailSubView creatTaskSummaryViewWithFrame:CGRectMake(0, (40+10) * 3 + 20, UISCREEN_WIDTH, 150) type:_type content:_model.summarize actionHandler:^(id result) {
+        NSLog(@"");
+        STRONG_OBJ_REF(weak_self);
+        if ( strong_weak_self && result ){
+            _model.summarize = result;
+        }
+    }];
+    
     [_contentView addSubview:view1];
     [_contentView addSubview:_importanceView];
     [_contentView addSubview:view2];
+    [_contentView addSubview:summaryView];
     
     
 }
@@ -142,7 +156,9 @@
         [self.view makeToast:@"请填写全信息" duration:1.5f position:[NSValue valueWithCGPoint:self.view.center] ];
         return;
     }
-    
+    if ( _type != TaskDetail_Creat ){
+        [_model upadteSQL];
+    }
     if ( _detailBlock ){
         _detailBlock(_model);
     }

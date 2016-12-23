@@ -92,31 +92,30 @@
 
 #pragma mark - TaskListTableViewCellDelegate
 
-- (void)taskListTableViewCell:(TaskListTableViewCell *)cell cellDidTapDoneAtIndexPath:(NSIndexPath *)indexPath
+//点击了完成 或者总结
+- (void)taskListTableViewCell:(TaskListTableViewCell *)cell cellDidTapDoneAtIndexPath:(NSIndexPath *)indexPath needSummary:(BOOL)needSumary
 {
     [_dataSource dataSourceHasDoneAtIndex:indexPath.section];
+    
+    if ( !needSumary ){
+        return;
+    }
+    
+    [self navigationToTaskDetialWithType:TaskDetail_Summary taskModel:[_dataSource objectAtInde:indexPath.section]];
 }
 
+//点击了删除功能
 - (void)taskListTableViewCell:(TaskListTableViewCell *)cell cellDidTapDeleteAtIndexPath:(NSIndexPath *)indexPath
 {
     [_dataSource deleteAtIndex:indexPath.section];
 }
 
+//点击了编辑修改功能
 - (void)taskListTableViewCell:(TaskListTableViewCell *)cell cellDidTapEditAtIndexPath:(NSIndexPath *)indexPath
 {
-    TaskModel *taskModel = [_dataSource objectAtInde:indexPath.section];
-    TaskDetailViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskDetailViewController"];
-    
-    WEAK_OBJ_REF(self);
-    [vc updateTask:taskModel complete:^(TaskModel *model) {
-        STRONG_OBJ_REF(weak_self);
-        if ( strong_weak_self ){
-            [model upadteSQL];
-            [strong_weak_self.tableView reloadData];
-        }
-    }];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self navigationToTaskDetialWithType:TaskDetail_Update taskModel:[_dataSource objectAtInde:indexPath.section]];
 }
+
 #pragma mark - TaskDataSourceDelegate
 
 - (void)taskDataSource:(TaskDataSource *)taskDataSource update:(BOOL)update
@@ -124,5 +123,33 @@
     if ( update ){
         [self.tableView reloadData];
     }
+}
+
+#pragma mark - turn 
+
+- (void)navigationToTaskDetialWithType:(TaskDetailType)type taskModel:(TaskModel *)taskModel
+{
+    TaskDetailViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskDetailViewController"];
+    WEAK_OBJ_REF(self);
+    TaskDetailBlock comlete = ^(TaskModel *model){
+        STRONG_OBJ_REF(weak_self);
+        if ( strong_weak_self ){
+            [strong_weak_self.tableView reloadData];
+        }
+    };
+    switch (type) {
+        case TaskDetail_Update:{
+            [vc updateTask:taskModel complete:comlete];
+            break;
+        }
+        case TaskDetail_Summary:{
+            [vc summaryTask:taskModel complete:comlete];
+        }
+        default:
+            break;
+    }
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 @end

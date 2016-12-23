@@ -54,6 +54,8 @@ NSString * const TaskModelLocalIdKey = @"localId";
     _status = status;
     if ( _status == TaskHasBeenDone ){
         _rightLimitMargin = 0;
+    }else if ( _status == TaskUndone ){
+        _rightLimitMargin = 75.0f;
     }
 }
 

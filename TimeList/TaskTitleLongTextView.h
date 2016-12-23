@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Li Haomiao. All rights reserved.
 //
 
-#import "BaseView.h"
+#import "TaskTitleView.h"
 
-@interface TaksTitleLongTextView : BaseView
+@interface TaskTitleLongTextView : TaskTitleView
 
 @end

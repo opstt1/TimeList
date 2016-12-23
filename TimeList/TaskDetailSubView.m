@@ -12,6 +12,7 @@
 #import "TaskTitleTwoSelectView.h"
 #import "TaskTitleButtonView.h"
 #import "TaskTitleTwoSelectView.h"
+#import "TaskTitleLongTextView.h"
 
 @implementation TaskDetailSubView
 
@@ -56,6 +57,15 @@
     }
     return view;
     
+}
+
++ (TaskTitleLongTextView *)creatTaskSummaryViewWithFrame:(CGRect)frame type:(TaskDetailType)type content:(NSString *)content actionHandler:(TaskTitleViewHandler)actionHandler
+{
+    TaskTitleLongTextView *view = [TaskTitleLongTextView creatWithTitle:@"总结" isMust:NO frame:frame content:content actionHandler:actionHandler];
+    if ( type == TaskDetail_Creat || type == TaskDetail_Show ){
+        view.canEdit = NO;
+    }
+    return view;
 }
 
 @end

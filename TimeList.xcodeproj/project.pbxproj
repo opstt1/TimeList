@@ -27,7 +27,7 @@
 		E2B98ED51E0266B600405C14 /* TaskTitleTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98ED41E0266B600405C14 /* TaskTitleTextView.m */; };
 		E2B98ED81E0266D400405C14 /* TaskTitleButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98ED71E0266D400405C14 /* TaskTitleButtonView.m */; };
 		E2B98EDB1E02670700405C14 /* TaskTitleTwoSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98EDA1E02670700405C14 /* TaskTitleTwoSelectView.m */; };
-		E2B98EDE1E02674600405C14 /* TaksTitleLongTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98EDD1E02674600405C14 /* TaksTitleLongTextView.m */; };
+		E2B98EDE1E02674600405C14 /* TaskTitleLongTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98EDD1E02674600405C14 /* TaskTitleLongTextView.m */; };
 		E2B98EE11E02678600405C14 /* TaskTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98EE01E02678600405C14 /* TaskTitleView.m */; };
 		E2B98EE51E02783F00405C14 /* SheetMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98EE41E02783F00405C14 /* SheetMaskView.m */; };
 		E2B98EE81E027C6800405C14 /* PickerSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98EE71E027C6800405C14 /* PickerSheetView.m */; };
@@ -92,8 +92,8 @@
 		E2B98ED71E0266D400405C14 /* TaskTitleButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTitleButtonView.m; sourceTree = "<group>"; };
 		E2B98ED91E02670700405C14 /* TaskTitleTwoSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTitleTwoSelectView.h; sourceTree = "<group>"; };
 		E2B98EDA1E02670700405C14 /* TaskTitleTwoSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTitleTwoSelectView.m; sourceTree = "<group>"; };
-		E2B98EDC1E02674600405C14 /* TaksTitleLongTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaksTitleLongTextView.h; sourceTree = "<group>"; };
-		E2B98EDD1E02674600405C14 /* TaksTitleLongTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaksTitleLongTextView.m; sourceTree = "<group>"; };
+		E2B98EDC1E02674600405C14 /* TaskTitleLongTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTitleLongTextView.h; sourceTree = "<group>"; };
+		E2B98EDD1E02674600405C14 /* TaskTitleLongTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTitleLongTextView.m; sourceTree = "<group>"; };
 		E2B98EDF1E02678600405C14 /* TaskTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTitleView.h; sourceTree = "<group>"; };
 		E2B98EE01E02678600405C14 /* TaskTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTitleView.m; sourceTree = "<group>"; };
 		E2B98EE31E02783F00405C14 /* SheetMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SheetMaskView.h; sourceTree = "<group>"; };
@@ -230,8 +230,8 @@
 				E2B98ED71E0266D400405C14 /* TaskTitleButtonView.m */,
 				E2B98ED91E02670700405C14 /* TaskTitleTwoSelectView.h */,
 				E2B98EDA1E02670700405C14 /* TaskTitleTwoSelectView.m */,
-				E2B98EDC1E02674600405C14 /* TaksTitleLongTextView.h */,
-				E2B98EDD1E02674600405C14 /* TaksTitleLongTextView.m */,
+				E2B98EDC1E02674600405C14 /* TaskTitleLongTextView.h */,
+				E2B98EDD1E02674600405C14 /* TaskTitleLongTextView.m */,
 				E2F9FE781E0A5D1900AA7C1A /* TaskDetailSubView.h */,
 				E2F9FE791E0A5D1900AA7C1A /* TaskDetailSubView.m */,
 			);
@@ -498,7 +498,7 @@
 				E2EF37161DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m in Sources */,
 				E2B98EE11E02678600405C14 /* TaskTitleView.m in Sources */,
 				E2B98ED81E0266D400405C14 /* TaskTitleButtonView.m in Sources */,
-				E2B98EDE1E02674600405C14 /* TaksTitleLongTextView.m in Sources */,
+				E2B98EDE1E02674600405C14 /* TaskTitleLongTextView.m in Sources */,
 				E2EBB5A41DFFA04700686D70 /* TaskListTableViewCell.m in Sources */,
 				E2EC4B561DFE8C7D0067C0EC /* TaskDataSource.m in Sources */,
 				E2EBB5A71DFFA24000686D70 /* Constants.m in Sources */,
