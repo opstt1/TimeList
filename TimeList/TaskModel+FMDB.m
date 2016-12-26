@@ -52,10 +52,10 @@ TaskModel * rs2logkeeper(FMResultSet *rs) {
     
     
     NSLog(@"create table ....");
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"log_keepers_table" ofType:@"sql"];
-    NSLog(@"logkeeper sql file: %@", filePath);
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"log_keepers_table" ofType:@"sql"];
+////    NSLog(@"logkeeper sql file: %@", filePath);
     
-    NSError *error;
+//    NSError *error;
     NSString *sql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS log_keepers(local_id text, title text, status INTEGER, importance INTEGER, desc text, start_date date, summarize text, create_date date);"];
     //[NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
     

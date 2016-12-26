@@ -9,10 +9,12 @@
 #import "TaskListSessionManager.h"
 #import "TaskDataSource.h"
 #import "TaskModel.h"
+#import "DailySummaryDataSource.h"
 
 @interface TaskListSessionManager()
 
 @property (nonatomic, readwrite, strong) TaskDataSource *dataSource;
+@property (nonatomic, readwrite, strong) DailySummaryDataSource *dailySummaryDateSource;
 
 @end
 
@@ -36,7 +38,7 @@
     if ( !self ) return nil;
     
     _dataSource = [TaskDataSource creatTaksDataWithDate:[NSDate date]];
-    
+    _dailySummaryDateSource = [DailySummaryDataSource createWithDate:[NSDate date]];
     return self;
 }
 
@@ -69,6 +71,11 @@
 - (TaskDataSource *)dataSource
 {
     return _dataSource;
+}
+
+- (DailySummaryDataSource *)dailySummaryDataSource
+{
+    return _dailySummaryDateSource;
 }
 
 @end

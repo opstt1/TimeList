@@ -21,6 +21,10 @@
 		E29F406C1E07B7ED0044D961 /* TaskDataSource+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = E29F406B1E07B7ED0044D961 /* TaskDataSource+Sort.m */; };
 		E2A0A4AE1E03F93F009621A2 /* libKVNProgress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A0A4AD1E03F93F009621A2 /* libKVNProgress.a */; };
 		E2A0A4B11E03FB68009621A2 /* NSDate+Day.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A0A4B01E03FB68009621A2 /* NSDate+Day.m */; };
+		E2A8149C1E11095E0068B88C /* DailySummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A8149B1E11095E0068B88C /* DailySummaryViewController.m */; };
+		E2A8149E1E110A180068B88C /* Summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A8149D1E110A180068B88C /* Summary.storyboard */; };
+		E2A814A11E110D320068B88C /* DailySummaryDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A814A01E110D320068B88C /* DailySummaryDataSource.m */; };
+		E2A814A41E110E260068B88C /* DailySummaryDataSource+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A814A31E110E260068B88C /* DailySummaryDataSource+FMDB.m */; };
 		E2B924891E08D9B400E1D3AE /* TaskDataSource+Func.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B924881E08D9B400E1D3AE /* TaskDataSource+Func.m */; };
 		E2B98ECE1E0262F200405C14 /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98ECD1E0262F200405C14 /* TaskDetailViewController.m */; };
 		E2B98ED21E02668B00405C14 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98ED11E02668B00405C14 /* BaseView.m */; };
@@ -80,6 +84,13 @@
 		E2A0A4AD1E03F93F009621A2 /* libKVNProgress.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKVNProgress.a; path = "../../../Library/Developer/Xcode/DerivedData/TimeList-acspqkjrrlseatbfzfmmkxlqhhfj/Build/Products/Debug-iphoneos/KVNProgress/libKVNProgress.a"; sourceTree = "<group>"; };
 		E2A0A4AF1E03FB68009621A2 /* NSDate+Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Day.h"; sourceTree = "<group>"; };
 		E2A0A4B01E03FB68009621A2 /* NSDate+Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Day.m"; sourceTree = "<group>"; };
+		E2A8149A1E11095E0068B88C /* DailySummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailySummaryViewController.h; sourceTree = "<group>"; };
+		E2A8149B1E11095E0068B88C /* DailySummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailySummaryViewController.m; sourceTree = "<group>"; };
+		E2A8149D1E110A180068B88C /* Summary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Summary.storyboard; sourceTree = "<group>"; };
+		E2A8149F1E110D320068B88C /* DailySummaryDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailySummaryDataSource.h; sourceTree = "<group>"; };
+		E2A814A01E110D320068B88C /* DailySummaryDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailySummaryDataSource.m; sourceTree = "<group>"; };
+		E2A814A21E110E260068B88C /* DailySummaryDataSource+FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DailySummaryDataSource+FMDB.h"; sourceTree = "<group>"; };
+		E2A814A31E110E260068B88C /* DailySummaryDataSource+FMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DailySummaryDataSource+FMDB.m"; sourceTree = "<group>"; };
 		E2B924871E08D9B400E1D3AE /* TaskDataSource+Func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TaskDataSource+Func.h"; sourceTree = "<group>"; };
 		E2B924881E08D9B400E1D3AE /* TaskDataSource+Func.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TaskDataSource+Func.m"; sourceTree = "<group>"; };
 		E2B98ECC1E0262F200405C14 /* TaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
@@ -217,6 +228,20 @@
 			name = BaseView;
 			sourceTree = "<group>";
 		};
+		E2A814991E1109370068B88C /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				E2A8149A1E11095E0068B88C /* DailySummaryViewController.h */,
+				E2A8149B1E11095E0068B88C /* DailySummaryViewController.m */,
+				E2A8149D1E110A180068B88C /* Summary.storyboard */,
+				E2A8149F1E110D320068B88C /* DailySummaryDataSource.h */,
+				E2A814A01E110D320068B88C /* DailySummaryDataSource.m */,
+				E2A814A21E110E260068B88C /* DailySummaryDataSource+FMDB.h */,
+				E2A814A31E110E260068B88C /* DailySummaryDataSource+FMDB.m */,
+			);
+			name = Summary;
+			sourceTree = "<group>";
+		};
 		E2B98ECF1E02650F00405C14 /* TaskDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +319,7 @@
 		E2EF36F21DFA9DA0001247BE /* TimeList */ = {
 			isa = PBXGroup;
 			children = (
+				E2A814991E1109370068B88C /* Summary */,
 				E20CC4411E03DA5E0013BEC7 /* Manager */,
 				E2B98ECF1E02650F00405C14 /* TaskDetail */,
 				E2166D771E0116C00096C821 /* BaseView */,
@@ -424,6 +450,7 @@
 				E2EC4B5B1DFE90770067C0EC /* Task.storyboard in Resources */,
 				E2EF37031DFA9DA0001247BE /* Assets.xcassets in Resources */,
 				E2EF37011DFA9DA0001247BE /* Main.storyboard in Resources */,
+				E2A8149E1E110A180068B88C /* Summary.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +516,7 @@
 				E20CC4401E03D8DC0013BEC7 /* TaskModel+FMDB.m in Sources */,
 				E2F9FE7A1E0A5D1900AA7C1A /* TaskDetailSubView.m in Sources */,
 				E2B924891E08D9B400E1D3AE /* TaskDataSource+Func.m in Sources */,
+				E2A8149C1E11095E0068B88C /* DailySummaryViewController.m in Sources */,
 				E2F079B01E02476B000163C7 /* TaskListSessionManager.m in Sources */,
 				E2EF36FE1DFA9DA0001247BE /* SecondViewController.m in Sources */,
 				E2A0A4B11E03FB68009621A2 /* NSDate+Day.m in Sources */,
@@ -513,7 +541,9 @@
 				E2EF36F81DFA9DA0001247BE /* AppDelegate.m in Sources */,
 				E2EF36FB1DFA9DA0001247BE /* FirstViewController.m in Sources */,
 				E2166D7A1E0116E40096C821 /* EditableTableViewCell.m in Sources */,
+				E2A814A41E110E260068B88C /* DailySummaryDataSource+FMDB.m in Sources */,
 				E2B98EDB1E02670700405C14 /* TaskTitleTwoSelectView.m in Sources */,
+				E2A814A11E110D320068B88C /* DailySummaryDataSource.m in Sources */,
 				E2EF36F51DFA9DA0001247BE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

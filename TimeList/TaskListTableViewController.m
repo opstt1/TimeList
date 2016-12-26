@@ -13,12 +13,15 @@
 #import "Constants.h"
 #import "Toolkit.h"
 #import "TaskModel+FMDB.h"
+#import "DailySummaryViewController.h"
+#import "DailySummaryDataSource+FMDB.h"
 
 @interface TaskListTableViewController ()<UITableViewDelegate,UITableViewDataSource,TaskListTableViewCellDelegate,TaskDataSourceDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, readwrite, strong) TaskDataSource *dataSource;
+@property (nonatomic, readwrite, strong) DailySummaryDataSource *dailySummaryDataSource;
 
 
 @end
@@ -31,9 +34,15 @@
     [super viewDidLoad];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    [self p_addDailySummaryButtton];
     NSLog(@"viewDidLoad");
 }
 
+- (void)configWithData:(TaskDataSource *)dataSource dailySummaryDataSource:(DailySummaryDataSource *)dailySummaryDataSource
+{
+    _dailySummaryDataSource = dailySummaryDataSource;
+    [self configWithData:dataSource];
+}
 - (void)configWithData:(TaskDataSource *)dataSource
 {
     _dataSource = dataSource;
@@ -47,6 +56,30 @@
     [self.tableView reloadData];
 }
 
+#pragma mark - DailySummary
+
+//添加每日总结button
+- (void)p_addDailySummaryButtton
+{
+    UIButton *dailySummaryButton = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH-70, UISCREEN_HEIGHT-125, 50, 50)];
+    dailySummaryButton.layer.cornerRadius = 25.0f;
+    dailySummaryButton.layer.shadowColor = [UIColor blackColor].CGColor;
+    dailySummaryButton.layer.shadowOffset =  CGSizeMake(1, 0.5);
+    dailySummaryButton.layer.shadowOpacity = 0.8;
+    dailySummaryButton.backgroundColor = [UIColor redColor];
+    [dailySummaryButton setTitle:@"总结" forState:UIControlStateNormal];
+    [dailySummaryButton addTarget:self action:@selector(didTapDailySummaryButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:dailySummaryButton];
+}
+
+- (void)didTapDailySummaryButton:(id)sender
+{
+    DailySummaryViewController *vc = [[UIStoryboard storyboardWithName:@"Summary" bundle:nil] instantiateViewControllerWithIdentifier:@"DailySummaryViewController"];
+    [vc data:_dailySummaryDataSource complete:^(BOOL complete) {
+        
+    }];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark - UITable
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

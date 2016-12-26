@@ -9,10 +9,11 @@
 #import "BaseViewController.h"
 
 @class TaskDataSource;
+@class DailySummaryDataSource;
 
 @interface TaskListTableViewController : BaseViewController
 
-
+- (void)configWithData:(TaskDataSource *)dataSource dailySummaryDataSource:(DailySummaryDataSource *)dailySummaryDataSource;
 - (void)configWithData:(TaskDataSource *)dataSource;
 
 @end

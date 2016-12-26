@@ -28,7 +28,7 @@
 {
     self.containView = containView;
     self.cancelButton = [UIButton new];
-    [self.cancelButton addTarget:self action:@selector(cancelButtonTap:forEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [self.cancelButton addTarget:self action:@selector(cancelButtonTap:forEvent:) forControlEvents:UIControlEventTouchDown];
     self.rightButtons = [NSArray array];
     self.leftButtons = [NSArray array];
     _sideslipLeftLimitMargin = 5.0f;
@@ -161,6 +161,7 @@
     UITouch *touch = [[event touchesForView:button] anyObject];
     CGPoint location = [touch locationInView:button];
     
+    
     if ( _containView.x < 0 ){
         
         [_rightButtons enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -181,6 +182,7 @@
             }
         }];
     }
+
     [_cancelButton removeFromSuperview];
     _cancelButton.frame = CGRectMake(0, 0, 0, 0);
     

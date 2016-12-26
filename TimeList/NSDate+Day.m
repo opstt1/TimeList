@@ -193,12 +193,20 @@
 
 + (NSString *)stringFromDay:(NSDate *)date
 {
+   return  [self stringFromDay:date formatStr:nil];
+}
+
++ (NSString *)stringFromDay:(NSDate *)date formatStr:(NSString *)formatStr
+{
+    if ( !formatStr ){
+        formatStr = @"yyyy-MM-dd HH:mm:dd";
+    }
     static NSDateFormatter *formatter;
     if (!formatter) {
         formatter = [[NSDateFormatter alloc]init];
-        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:dd"];
+        [formatter setDateFormat:formatStr];
     }
     return [formatter stringFromDate:date];
-}
 
+}
 @end

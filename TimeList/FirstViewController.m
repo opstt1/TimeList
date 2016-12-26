@@ -28,7 +28,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Task" bundle:nil];
     
     TaskListTableViewController *vC = [storyboard instantiateViewControllerWithIdentifier:@"TastListTableViewController"];
-    [vC configWithData:[[TaskListSessionManager sharedManager] dataSource]];
+    [vC configWithData:[[TaskListSessionManager sharedManager] dataSource] dailySummaryDataSource:[[TaskListSessionManager sharedManager] dailySummaryDataSource]];
     [vC willMoveToParentViewController:self];
     [self.view insertSubview:vC.view aboveSubview:self.view];
     [self addChildViewController:vC];

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Daily Summary View Controller-->
+        <scene sceneID="Bzm-9d-wFL">
+            <objects>
+                <viewController storyboardIdentifier="DailySummaryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1kE-PB-xZA" customClass="DailySummaryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5FT-Qs-cea"/>
+                        <viewControllerLayoutGuide type="bottom" id="y2T-ir-c0g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="udb-ok-ZgG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYn-ky-cRL">
+                                <rect key="frame" x="16" y="35" width="37" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ell-EF-4XM">
+                                <rect key="frame" x="15" y="70" width="345" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="KYn-ky-cRL" secondAttribute="leading" id="2x5-GL-dR9"/>
+                            <constraint firstItem="KYn-ky-cRL" firstAttribute="top" secondItem="5FT-Qs-cea" secondAttribute="bottom" constant="15" id="9L7-vp-gSR"/>
+                            <constraint firstItem="Ell-EF-4XM" firstAttribute="centerX" secondItem="udb-ok-ZgG" secondAttribute="centerX" id="MrO-xH-Nwk"/>
+                            <constraint firstItem="Ell-EF-4XM" firstAttribute="top" secondItem="KYn-ky-cRL" secondAttribute="bottom" constant="15" id="NAW-Pi-afG"/>
+                            <constraint firstItem="Ell-EF-4XM" firstAttribute="width" secondItem="udb-ok-ZgG" secondAttribute="width" constant="-30" id="NMR-NZ-oD1"/>
+                            <constraint firstItem="y2T-ir-c0g" firstAttribute="top" secondItem="Ell-EF-4XM" secondAttribute="bottom" constant="30" id="nTO-yD-k31"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="Ell-EF-4XM" id="ta6-mM-XRO"/>
+                        <outlet property="timeLabel" destination="KYn-ky-cRL" id="rT6-ED-KkF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YPX-er-a2t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-234.40000000000001" y="-95.802098950524751"/>
+        </scene>
+    </scenes>
+</document>

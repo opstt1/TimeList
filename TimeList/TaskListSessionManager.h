@@ -10,11 +10,13 @@
 #import "TaskDataSource+Sort.h"
 
 @class TaskDataSource;
+@class DailySummaryDataSource;
 
 @interface TaskListSessionManager : NSObject
 
 + (instancetype)sharedManager;
 
 - (TaskDataSource *)dataSource;
+- (DailySummaryDataSource *)dailySummaryDataSource;
 
 @end

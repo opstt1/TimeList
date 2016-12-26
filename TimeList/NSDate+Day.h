@@ -113,5 +113,6 @@
 
 + (NSString *)stringFromDay:(NSDate *)date;
 
++ (NSString *)stringFromDay:(NSDate *)date formatStr:(NSString *)formatStr;
 @end
 
