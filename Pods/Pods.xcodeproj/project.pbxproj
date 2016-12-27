@@ -719,13 +719,6 @@
 			path = "IQKeyboardManager/Categories/IQUIScrollView+Additions.m";
 			sourceTree = "<group>";
 		};
-		5267152E6BFB4089993E2475100E1869 = {
-			isa = PBXFileReference;
-			lastKnownFileType = wrapper.framework;
-			name = RevealServer.framework;
-			path = "RevealServer-4/iOS/RevealServer.framework";
-			sourceTree = "<group>";
-		};
 		537C67B4EECC4B80362B5A8E913629E8 = {
 			isa = PBXFileReference;
 			includeInIndex = 1;
@@ -957,6 +950,13 @@
 			lastKnownFileType = sourcecode.c.h;
 			name = IQTitleBarButtonItem.h;
 			path = IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.h;
+			sourceTree = "<group>";
+		};
+		ADBFF3C29F05FDC013EF02905A8678B4 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = RevealServer.framework;
+			path = "RevealServer-5/iOS/RevealServer.framework";
 			sourceTree = "<group>";
 		};
 		AE5F11EA16F4E45DB5A0D0AFEB4D43E0 = {
@@ -1308,7 +1308,7 @@
 		034F3ADB393E6E8B907B8C903F890EAC = {
 			isa = PBXGroup;
 			children = (
-				D8231B1CFAA72647E78348864744C8EF,
+				28AD1904A55EB3F09DFAD1A5452F499C,
 			);
 			name = "Reveal-SDK";
 			path = "Reveal-SDK";
@@ -1351,6 +1351,14 @@
 			isa = PBXGroup;
 			children = (
 				8930C6E20AD77B5C27BC4A0B5F29D8F9,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28AD1904A55EB3F09DFAD1A5452F499C = {
+			isa = PBXGroup;
+			children = (
+				ADBFF3C29F05FDC013EF02905A8678B4,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1559,14 +1567,6 @@
 				89A9C19CF0B48CE2163548ECC10C1C7B,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		D8231B1CFAA72647E78348864744C8EF = {
-			isa = PBXGroup;
-			children = (
-				5267152E6BFB4089993E2475100E1869,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F13507B83EF8F0C5060C80D5E61EF0E8 = {

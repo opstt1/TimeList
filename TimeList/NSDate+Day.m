@@ -201,7 +201,7 @@
     if ( !formatStr ){
         formatStr = @"yyyy-MM-dd HH:mm:dd";
     }
-    static NSDateFormatter *formatter;
+    NSDateFormatter *formatter;
     if (!formatter) {
         formatter = [[NSDateFormatter alloc]init];
         [formatter setDateFormat:formatStr];

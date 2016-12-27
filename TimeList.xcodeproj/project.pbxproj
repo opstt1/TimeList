@@ -44,6 +44,8 @@
 		E2EC4B561DFE8C7D0067C0EC /* TaskDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC4B551DFE8C7D0067C0EC /* TaskDataSource.m */; };
 		E2EC4B591DFE904A0067C0EC /* TaskListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC4B581DFE904A0067C0EC /* TaskListTableViewController.m */; };
 		E2EC4B5B1DFE90770067C0EC /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2EC4B5A1DFE90770067C0EC /* Task.storyboard */; };
+		E2EE330C1E12565200D6C0EB /* HourlyRecordCreateView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE330B1E12565200D6C0EB /* HourlyRecordCreateView.m */; };
+		E2EE330E1E125B4600D6C0EB /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EE330D1E125B4600D6C0EB /* RevealServer.framework */; };
 		E2EF36F51DFA9DA0001247BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF36F41DFA9DA0001247BE /* main.m */; };
 		E2EF36F81DFA9DA0001247BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF36F71DFA9DA0001247BE /* AppDelegate.m */; };
 		E2EF36FB1DFA9DA0001247BE /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF36FA1DFA9DA0001247BE /* FirstViewController.m */; };
@@ -58,7 +60,6 @@
 		E2F079B01E02476B000163C7 /* TaskListSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F079AF1E02476B000163C7 /* TaskListSessionManager.m */; };
 		E2F9FE771E0A32FF00AA7C1A /* libToast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F9FE761E0A32FF00AA7C1A /* libToast.a */; };
 		E2F9FE7A1E0A5D1900AA7C1A /* TaskDetailSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F9FE791E0A5D1900AA7C1A /* TaskDetailSubView.m */; };
-		E2F9FE7F1E0A696700AA7C1A /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F9FE7D1E0A692900AA7C1A /* RevealServer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +130,9 @@
 		E2EC4B571DFE904A0067C0EC /* TaskListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListTableViewController.h; sourceTree = "<group>"; };
 		E2EC4B581DFE904A0067C0EC /* TaskListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListTableViewController.m; sourceTree = "<group>"; };
 		E2EC4B5A1DFE90770067C0EC /* Task.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
+		E2EE330A1E12565200D6C0EB /* HourlyRecordCreateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyRecordCreateView.h; sourceTree = "<group>"; };
+		E2EE330B1E12565200D6C0EB /* HourlyRecordCreateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordCreateView.m; sourceTree = "<group>"; };
+		E2EE330D1E125B4600D6C0EB /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
 		E2EF36F01DFA9DA0001247BE /* TimeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2EF36F41DFA9DA0001247BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E2EF36F61DFA9DA0001247BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -154,7 +158,6 @@
 		E2F9FE761E0A32FF00AA7C1A /* libToast.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libToast.a; path = "../../Library/Developer/Xcode/DerivedData/TimeList-akiumsedqafylxekndmczvklrzut/Build/Products/Debug-iphoneos/Toast/libToast.a"; sourceTree = "<group>"; };
 		E2F9FE781E0A5D1900AA7C1A /* TaskDetailSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailSubView.h; sourceTree = "<group>"; };
 		E2F9FE791E0A5D1900AA7C1A /* TaskDetailSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailSubView.m; sourceTree = "<group>"; };
-		E2F9FE7D1E0A692900AA7C1A /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
 		F8DCE3FBECE9C33A57FD72D5 /* Pods-TimeList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeList/Pods-TimeList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,7 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2F9FE7F1E0A696700AA7C1A /* RevealServer.framework in Frameworks */,
+				E2EE330E1E125B4600D6C0EB /* RevealServer.framework in Frameworks */,
 				E2F9FE771E0A32FF00AA7C1A /* libToast.a in Frameworks */,
 				E2A0A4AE1E03F93F009621A2 /* libKVNProgress.a in Frameworks */,
 				E20CC43D1E03CFB80013BEC7 /* libFMDB.a in Frameworks */,
@@ -192,7 +195,7 @@
 		8E9EA9C835F740646F882DDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E2F9FE7D1E0A692900AA7C1A /* RevealServer.framework */,
+				E2EE330D1E125B4600D6C0EB /* RevealServer.framework */,
 				E2F9FE761E0A32FF00AA7C1A /* libToast.a */,
 				E2A0A4AD1E03F93F009621A2 /* libKVNProgress.a */,
 				E20CC43C1E03CFB80013BEC7 /* libFMDB.a */,
@@ -298,6 +301,15 @@
 			name = Task;
 			sourceTree = "<group>";
 		};
+		E2EE33091E1255C700D6C0EB /* HourlyRecord */ = {
+			isa = PBXGroup;
+			children = (
+				E2EE330A1E12565200D6C0EB /* HourlyRecordCreateView.h */,
+				E2EE330B1E12565200D6C0EB /* HourlyRecordCreateView.m */,
+			);
+			name = HourlyRecord;
+			sourceTree = "<group>";
+		};
 		E2EF36E71DFA9DA0001247BE = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +331,7 @@
 		E2EF36F21DFA9DA0001247BE /* TimeList */ = {
 			isa = PBXGroup;
 			children = (
+				E2EE33091E1255C700D6C0EB /* HourlyRecord */,
 				E2A814991E1109370068B88C /* Summary */,
 				E20CC4411E03DA5E0013BEC7 /* Manager */,
 				E2B98ECF1E02650F00405C14 /* TaskDetail */,
@@ -545,6 +558,7 @@
 				E2B98EDB1E02670700405C14 /* TaskTitleTwoSelectView.m in Sources */,
 				E2A814A11E110D320068B88C /* DailySummaryDataSource.m in Sources */,
 				E2EF36F51DFA9DA0001247BE /* main.m in Sources */,
+				E2EE330C1E12565200D6C0EB /* HourlyRecordCreateView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

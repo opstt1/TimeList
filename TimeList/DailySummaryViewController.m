@@ -34,6 +34,8 @@
         [_dataSource insertSQL];
     }
     _textView.text = _dataSource.summaryContent;
+    _textView.layer.borderWidth = 0.5f;
+    _textView.layer.borderColor = [UIColor blackColor].CGColor;
     _textView.delegate = self;
 }
 

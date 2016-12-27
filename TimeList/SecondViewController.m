@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "HourlyRecordCreateView.h"
 
 @interface SecondViewController ()
 
@@ -16,14 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self setUpLeftNavigationButtonWithTitle:@"+" tintColor:nil];
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)leftNavigationButtonTapped:(id)sender
+{
+    HourlyRecordCreateView *view = [HourlyRecordCreateView create];
 }
-
-
 @end
