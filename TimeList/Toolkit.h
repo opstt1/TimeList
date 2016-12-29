@@ -13,3 +13,4 @@
 #import "UIView+Geometry.h"
 #import "NSArray+Toolkit.h"
 #import "NSDate+Day.h"
+#import "NSString+Toolkit.h"

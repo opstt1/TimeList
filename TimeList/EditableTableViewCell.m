@@ -18,8 +18,8 @@
 
 @property (nonatomic, readwrite, strong) UIPanGestureRecognizer *panGesture;
 @property (nonatomic, readwrite, strong) UIButton *cancelButton;
-@property (nonatomic, readwrite, copy) NSArray *rightButtons;
-@property (nonatomic, readwrite, copy) NSArray *leftButtons;
+@property (nonatomic, readwrite, assign) CGRect contentFrame;
+
 @end
 
 @implementation EditableTableViewCell
@@ -33,6 +33,7 @@
     self.leftButtons = [NSArray array];
     _sideslipLeftLimitMargin = 5.0f;
     _sideslipRightLimitMargin = 5.0f;
+    _sideslipCellLimitScrollMargin = 5.0f;
     self.editable = YES;
 }
 
@@ -48,12 +49,12 @@
 
 - (void)setSideslipLeftLimitMargin:(CGFloat)sideslipLeftLimitMargin
 {
-    _sideslipLeftLimitMargin = OPSSideslipCellLimitScrollMargin + sideslipLeftLimitMargin;
+    _sideslipLeftLimitMargin = _sideslipCellLimitScrollMargin + sideslipLeftLimitMargin;
 }
 
 - (void)setSideslipRightLimitMargin:(CGFloat)sideslipRightLimitMargin
 {
-    _sideslipRightLimitMargin = OPSSideslipCellLimitScrollMargin - sideslipRightLimitMargin;
+    _sideslipRightLimitMargin = _sideslipCellLimitScrollMargin - sideslipRightLimitMargin;
 }
 
 #pragma  mark - add 
@@ -100,34 +101,29 @@
         _containView.frame = frame;
     }
     if ( pan.state == UIGestureRecognizerStateEnded ){
-        if ( frame.origin.x < _sideslipLeftLimitMargin && frame.origin.x > OPSSideslipCellLimitScrollMargin ){
+        if ( frame.origin.x < _sideslipLeftLimitMargin && frame.origin.x > _sideslipCellLimitScrollMargin ){
             frame.origin.x = _sideslipLeftLimitMargin;
         }
         
-        if ( frame.origin.x < OPSSideslipCellLimitScrollMargin ){
+        if ( frame.origin.x < _sideslipCellLimitScrollMargin ){
             frame.origin.x = _sideslipRightLimitMargin;
         }
         [self containViewAnimationWithFrame:frame];
-        if ( frame.origin.x > OPSSideslipCellLimitScrollMargin + 1.0f || frame.origin.x < OPSSideslipCellLimitScrollMargin - 1.0f ){
+        if ( frame.origin.x > _sideslipCellLimitScrollMargin + 1.0f || frame.origin.x < _sideslipCellLimitScrollMargin - 1.0f ){
             [self prohibitAction];
         }
     }
     
 }
 
-//
+//手势开始时
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-    CGRect frame = CGRectMake(5, 5, UISCREEN_WIDTH-10, 60);
-    if ( ![_containView isEquelToFrame:frame] ){
-        [self containViewAnimationWithFrame:frame];
-        return NO;
-    }
-    
     if ( gestureRecognizer != _panGesture ){
         return YES;
     }
     
+    _contentFrame = _containView.frame;
     UIPanGestureRecognizer *gesture = (UIPanGestureRecognizer *)gestureRecognizer;
     CGPoint translation = [gesture translationInView:gesture.view];
     
@@ -153,7 +149,7 @@
     }
 }
 
-//取消可编辑状态，识别触发了那一个事件
+//取消可编辑状态，识别触发了哪一个事件
 - (void)cancelButtonTap:(id)sender forEvent:(UIEvent*)event
 {
     
@@ -173,7 +169,7 @@
         }];
     }
     
-    if ( _containView.y > 0 ){
+    if ( _containView.x > 0 ){
         [_leftButtons enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             UIButton *button = (UIButton *)obj;
             CGRect rect  = [_cancelButton convertRect:button.frame fromView:self];
@@ -186,7 +182,7 @@
     [_cancelButton removeFromSuperview];
     _cancelButton.frame = CGRectMake(0, 0, 0, 0);
     
-    [self containViewAnimationWithFrame:CGRectMake(5, 5, UISCREEN_WIDTH-10, 60)];
+    [self containViewAnimationWithFrame:_contentFrame];
 }
 
 #pragma mark - animation
@@ -206,4 +202,16 @@
     
 }
 
+
+#pragma mark -
+
+- (void)configWithData:(id)data indexPath:(NSIndexPath *)indexPath delegateTarget:(id)delegateTarget
+{
+    return;
+}
+
+- (void)configWithData:(id)data deleteBlock:(EditableCellDeleteBlock)deleteBlock editBlock:(EditableCellEditBlock)editBlock
+{
+    return;
+}
 @end

@@ -12,6 +12,10 @@
 		E200ED4C1DFE9FD800AA4DEC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED4B1DFE9FD800AA4DEC /* CFNetwork.framework */; };
 		E200ED4E1DFE9FE100AA4DEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED4D1DFE9FE100AA4DEC /* QuartzCore.framework */; };
 		E200ED501DFE9FE800AA4DEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED4F1DFE9FE800AA4DEC /* CoreGraphics.framework */; };
+		E20CAAD51E13AFF400DA07C7 /* HourlyRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CAAD41E13AFF400DA07C7 /* HourlyRecordModel.m */; };
+		E20CAAD81E13B0C300DA07C7 /* HourlyRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CAAD71E13B0C300DA07C7 /* HourlyRecordCell.m */; };
+		E20CAADB1E13BADF00DA07C7 /* NSString+Toolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CAADA1E13BADF00DA07C7 /* NSString+Toolkit.m */; };
+		E20CAADF1E13BEF900DA07C7 /* TLDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CAADE1E13BEF900DA07C7 /* TLDataSource.m */; };
 		E20CC4351E03ADDD0013BEC7 /* NSArray+Toolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CC4341E03ADDD0013BEC7 /* NSArray+Toolkit.m */; };
 		E20CC4371E03C9B90013BEC7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E20CC4361E03C9B90013BEC7 /* libsqlite3.tbd */; };
 		E20CC43D1E03CFB80013BEC7 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E20CC43C1E03CFB80013BEC7 /* libFMDB.a */; };
@@ -69,6 +73,14 @@
 		E200ED4B1DFE9FD800AA4DEC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E200ED4D1DFE9FE100AA4DEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E200ED4F1DFE9FE800AA4DEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E20CAAD31E13AFF400DA07C7 /* HourlyRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyRecordModel.h; sourceTree = "<group>"; };
+		E20CAAD41E13AFF400DA07C7 /* HourlyRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordModel.m; sourceTree = "<group>"; };
+		E20CAAD61E13B0C300DA07C7 /* HourlyRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyRecordCell.h; sourceTree = "<group>"; };
+		E20CAAD71E13B0C300DA07C7 /* HourlyRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordCell.m; sourceTree = "<group>"; };
+		E20CAAD91E13BADF00DA07C7 /* NSString+Toolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Toolkit.h"; sourceTree = "<group>"; };
+		E20CAADA1E13BADF00DA07C7 /* NSString+Toolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Toolkit.m"; sourceTree = "<group>"; };
+		E20CAADD1E13BEF900DA07C7 /* TLDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDataSource.h; sourceTree = "<group>"; };
+		E20CAADE1E13BEF900DA07C7 /* TLDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLDataSource.m; sourceTree = "<group>"; };
 		E20CC4331E03ADDD0013BEC7 /* NSArray+Toolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Toolkit.h"; sourceTree = "<group>"; };
 		E20CC4341E03ADDD0013BEC7 /* NSArray+Toolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Toolkit.m"; sourceTree = "<group>"; };
 		E20CC4361E03C9B90013BEC7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -211,6 +223,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E20CAADC1E13BEE600DA07C7 /* BaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				E20CAADD1E13BEF900DA07C7 /* TLDataSource.h */,
+				E20CAADE1E13BEF900DA07C7 /* TLDataSource.m */,
+			);
+			name = BaseModel;
+			sourceTree = "<group>";
+		};
 		E20CC4411E03DA5E0013BEC7 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +327,10 @@
 			children = (
 				E2EE330A1E12565200D6C0EB /* HourlyRecordCreateView.h */,
 				E2EE330B1E12565200D6C0EB /* HourlyRecordCreateView.m */,
+				E20CAAD31E13AFF400DA07C7 /* HourlyRecordModel.h */,
+				E20CAAD41E13AFF400DA07C7 /* HourlyRecordModel.m */,
+				E20CAAD61E13B0C300DA07C7 /* HourlyRecordCell.h */,
+				E20CAAD71E13B0C300DA07C7 /* HourlyRecordCell.m */,
 			);
 			name = HourlyRecord;
 			sourceTree = "<group>";
@@ -331,6 +356,7 @@
 		E2EF36F21DFA9DA0001247BE /* TimeList */ = {
 			isa = PBXGroup;
 			children = (
+				E20CAADC1E13BEE600DA07C7 /* BaseModel */,
 				E2EE33091E1255C700D6C0EB /* HourlyRecord */,
 				E2A814991E1109370068B88C /* Summary */,
 				E20CC4411E03DA5E0013BEC7 /* Manager */,
@@ -393,6 +419,8 @@
 				E20CC4341E03ADDD0013BEC7 /* NSArray+Toolkit.m */,
 				E2A0A4AF1E03FB68009621A2 /* NSDate+Day.h */,
 				E2A0A4B01E03FB68009621A2 /* NSDate+Day.m */,
+				E20CAAD91E13BADF00DA07C7 /* NSString+Toolkit.h */,
+				E20CAADA1E13BADF00DA07C7 /* NSString+Toolkit.m */,
 			);
 			name = Toolkit;
 			sourceTree = "<group>";
@@ -523,7 +551,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2B98ED51E0266B600405C14 /* TaskTitleTextView.m in Sources */,
+				E20CAAD51E13AFF400DA07C7 /* HourlyRecordModel.m in Sources */,
 				E2EBB5AB1DFFDA6E00686D70 /* UIView+Geometry.m in Sources */,
+				E20CAAD81E13B0C300DA07C7 /* HourlyRecordCell.m in Sources */,
 				E2B98EE51E02783F00405C14 /* SheetMaskView.m in Sources */,
 				E20CC4441E03DAB00013BEC7 /* FMDBManager.m in Sources */,
 				E20CC4401E03D8DC0013BEC7 /* TaskModel+FMDB.m in Sources */,
@@ -558,6 +588,8 @@
 				E2B98EDB1E02670700405C14 /* TaskTitleTwoSelectView.m in Sources */,
 				E2A814A11E110D320068B88C /* DailySummaryDataSource.m in Sources */,
 				E2EF36F51DFA9DA0001247BE /* main.m in Sources */,
+				E20CAADB1E13BADF00DA07C7 /* NSString+Toolkit.m in Sources */,
+				E20CAADF1E13BEF900DA07C7 /* TLDataSource.m in Sources */,
 				E2EE330C1E12565200D6C0EB /* HourlyRecordCreateView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
