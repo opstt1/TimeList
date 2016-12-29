@@ -8,6 +8,11 @@
 
 #import "HourlyRecordModel.h"
 #import "Constants.h"
+#import "HourlyRecordModel+FMDB.h"
+
+@interface HourlyRecordModel()
+
+@end
 
 @implementation HourlyRecordModel
 
@@ -29,6 +34,13 @@
     _endDate = endDate;
     _endTime = [NSDate stringFromDay:endDate formatStr:@"HH:mm"];
 }
+
+- (void)setCreateDate:(NSDate *)createDate
+{
+    _createDate = createDate;
+    _identifier = [NSDate stringFromDay:createDate formatStr:@"yyy-MMM-dd HH:mm:ss"];
+    NSLog(@"hourly Model identifier : %@", _identifier);
+}
 @end
 
 
@@ -40,6 +52,20 @@
 @end
 
 @implementation HourlyRecordDataSource
+
++ (HourlyRecordDataSource *)createWithDate:(NSDate *)date
+{
+    [HourlyRecordModel createSqliteTable];
+    
+    NSDate *begin = [date beginningOfDay];
+    NSDate *end = [date endOfDay];
+    NSArray *array =  [HourlyRecordModel findOfStartDate:begin toDate:end];
+    
+    HourlyRecordDataSource *dataSource = [[HourlyRecordDataSource alloc] init];
+    
+    [dataSource dataSourceWithArray:array];
+    return dataSource;
+}
 
 - (instancetype)init
 {

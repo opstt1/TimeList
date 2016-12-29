@@ -15,7 +15,15 @@
 
 @property (nonatomic, readwrite, copy) NSString *content;
 
-@property (nonatomic, readwrite, strong) NSDate *creatDate;
+@property (nonatomic, readwrite, strong) NSDate *createDate;
+
+@property (nonatomic, readwrite, strong) NSDate *startDate;
+
+@property (nonatomic, readwrite, strong) NSDate *endDate;
+
+@property (nonatomic, readwrite, copy) NSString *identifier;
+
+#pragma mark - calculate property
 
 @property (nonatomic, readwrite, copy) NSString *startTime;
 
@@ -23,9 +31,6 @@
 
 @property (nonatomic, readonly, assign) CGFloat cellHeight;
 
-@property (nonatomic, readwrite, strong) NSDate *startDate;
-
-@property (nonatomic, readwrite, strong) NSDate *endDate;
 
 @end
 
@@ -33,5 +38,6 @@
 
 @interface HourlyRecordDataSource : TLDataSource
 
++ (HourlyRecordDataSource *)createWithDate:(NSDate *)date;
 
 @end

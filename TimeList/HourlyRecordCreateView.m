@@ -9,6 +9,7 @@
 #import "HourlyRecordCreateView.h"
 #import "Constants.h"
 #import "HourlyRecordModel.h"
+#import "IQKeyboardManager.h"
 
 @interface HourlyRecordCreateView()
 
@@ -89,6 +90,7 @@
     _textView.font = [UIFont systemFontOfSize:16.0f];
     _textView.textColor = COLOR_333333;
     [self addSubview:_textView];
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
 }
 
 - (void)creatTimeSelectView
@@ -215,7 +217,10 @@
     _model.content = _textView.text;
     _model.startDate = _startDate?:[NSDate date];
     _model.endDate = _endDate?:[NSDate date];
-    _model.creatDate = [NSDate date];
+   
+    if ( !_model.createDate ){
+        _model.createDate = [NSDate date];
+    }
     
     if ( _complete ){
         _complete(_model);

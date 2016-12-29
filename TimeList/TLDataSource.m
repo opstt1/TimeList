@@ -100,6 +100,9 @@
 
 - (void)p_setList:(NSArray *)taskList
 {
+    if ( !taskList ){
+        return;
+    }
     self.list = [NSArray arrayWithArray:taskList];
     [self p_dataUpdate];
 }

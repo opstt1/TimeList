@@ -22,6 +22,7 @@
 		E20CC4401E03D8DC0013BEC7 /* TaskModel+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CC43F1E03D8DC0013BEC7 /* TaskModel+FMDB.m */; };
 		E20CC4441E03DAB00013BEC7 /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CC4431E03DAB00013BEC7 /* FMDBManager.m */; };
 		E2166D7A1E0116E40096C821 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2166D791E0116E40096C821 /* EditableTableViewCell.m */; };
+		E23C954A1E1507D000CEBFAF /* HourlyRecordModel+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E23C95491E1507D000CEBFAF /* HourlyRecordModel+FMDB.m */; };
 		E29F406C1E07B7ED0044D961 /* TaskDataSource+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = E29F406B1E07B7ED0044D961 /* TaskDataSource+Sort.m */; };
 		E2A0A4AE1E03F93F009621A2 /* libKVNProgress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A0A4AD1E03F93F009621A2 /* libKVNProgress.a */; };
 		E2A0A4B11E03FB68009621A2 /* NSDate+Day.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A0A4B01E03FB68009621A2 /* NSDate+Day.m */; };
@@ -92,6 +93,8 @@
 		E20CC4431E03DAB00013BEC7 /* FMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBManager.m; sourceTree = "<group>"; };
 		E2166D781E0116E40096C821 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
 		E2166D791E0116E40096C821 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
+		E23C95481E1507D000CEBFAF /* HourlyRecordModel+FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HourlyRecordModel+FMDB.h"; sourceTree = "<group>"; };
+		E23C95491E1507D000CEBFAF /* HourlyRecordModel+FMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HourlyRecordModel+FMDB.m"; sourceTree = "<group>"; };
 		E29F406A1E07B7ED0044D961 /* TaskDataSource+Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TaskDataSource+Sort.h"; sourceTree = "<group>"; };
 		E29F406B1E07B7ED0044D961 /* TaskDataSource+Sort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TaskDataSource+Sort.m"; sourceTree = "<group>"; };
 		E2A0A4AD1E03F93F009621A2 /* libKVNProgress.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKVNProgress.a; path = "../../../Library/Developer/Xcode/DerivedData/TimeList-acspqkjrrlseatbfzfmmkxlqhhfj/Build/Products/Debug-iphoneos/KVNProgress/libKVNProgress.a"; sourceTree = "<group>"; };
@@ -329,6 +332,8 @@
 				E2EE330B1E12565200D6C0EB /* HourlyRecordCreateView.m */,
 				E20CAAD31E13AFF400DA07C7 /* HourlyRecordModel.h */,
 				E20CAAD41E13AFF400DA07C7 /* HourlyRecordModel.m */,
+				E23C95481E1507D000CEBFAF /* HourlyRecordModel+FMDB.h */,
+				E23C95491E1507D000CEBFAF /* HourlyRecordModel+FMDB.m */,
 				E20CAAD61E13B0C300DA07C7 /* HourlyRecordCell.h */,
 				E20CAAD71E13B0C300DA07C7 /* HourlyRecordCell.m */,
 			);
@@ -552,6 +557,7 @@
 			files = (
 				E2B98ED51E0266B600405C14 /* TaskTitleTextView.m in Sources */,
 				E20CAAD51E13AFF400DA07C7 /* HourlyRecordModel.m in Sources */,
+				E23C954A1E1507D000CEBFAF /* HourlyRecordModel+FMDB.m in Sources */,
 				E2EBB5AB1DFFDA6E00686D70 /* UIView+Geometry.m in Sources */,
 				E20CAAD81E13B0C300DA07C7 /* HourlyRecordCell.m in Sources */,
 				E2B98EE51E02783F00405C14 /* SheetMaskView.m in Sources */,

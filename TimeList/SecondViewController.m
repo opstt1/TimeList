@@ -8,7 +8,7 @@
 
 #import "SecondViewController.h"
 #import "HourlyRecordCreateView.h"
-#import "HourlyRecordModel.h"
+#import "HourlyRecordModel+FMDB.h"
 #import "HourlyRecordCell.h"
 #import "Constants.h"
 
@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpLeftNavigationButtonWithTitle:@"+" tintColor:nil];
-    self.dataSource = [[HourlyRecordDataSource alloc] init];
+    self.dataSource = [HourlyRecordDataSource createWithDate:[NSDate date]];
     
     self.dataSource.delegate = self;
 }
@@ -36,6 +36,7 @@
     [HourlyRecordCreateView createWithComplete:^(HourlyRecordModel *model) {
         STRONG_OBJ_REF(weak_self);
         if ( strong_weak_self ){
+            [model insertSQL];
             [strong_weak_self.dataSource insertmodel:model];
         }
     }];;
@@ -100,7 +101,8 @@
     [cell configWithData:[_dataSource objectAtInde:indexPath.section] deleteBlock:^(id result) {
         STRONG_OBJ_REF(weak_self);
         if  ( strong_weak_self){
-            [strong_weak_self.dataSource deleteAtIndex:indexPath.section];
+            HourlyRecordModel *model = [strong_weak_self.dataSource deleteAtIndex:indexPath.section];
+            [model removeSQL];
         }
     } editBlock:^(id result) {
         STRONG_OBJ_REF(weak_self);
@@ -118,10 +120,10 @@
 - (void)editHourlyRecordWithModel:(HourlyRecordModel *)model
 {
     [HourlyRecordCreateView editWithModel:model complete:^(HourlyRecordModel *model) {
+        [model upadteSQL];
         [_tableView reloadData];
     }];
 }
-
 
 #pragma mark - TLDataSourceDelegate
 //数据更新
