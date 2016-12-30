@@ -10,22 +10,7 @@
 #import "FMDBManager.h"
 #import "KVNProgress.h"
 
-TaskModel * rs2logkeeper(FMResultSet *rs) { 
-    
-    TaskModel *obj = [[TaskModel alloc] init];
 
-    obj.localId     = [rs stringForColumn:@"local_id"];
-    
-    obj.title       = [rs stringForColumn:@"title"];
-    obj.status      = [rs intForColumn:@"status"];
-    obj.importance  = [rs intForColumn:@"importance"];
-    obj.desc        = [rs stringForColumn:@"desc"];
-    obj.startTime   = [rs dateForColumn:@"start_date"];
-    obj.summarize   = [rs stringForColumn:@"summarize"];
-    obj.createDate  = [rs dateForColumn:@"create_date"];
-    
-    return obj;
-}
 
 @implementation TaskModel (FMDB)
 

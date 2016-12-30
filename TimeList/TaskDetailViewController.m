@@ -156,9 +156,6 @@
         [self.view makeToast:@"请填写全信息" duration:1.5f position:[NSValue valueWithCGPoint:self.view.center] ];
         return;
     }
-    if ( _type != TaskDetail_Creat ){
-        [_model upadteSQL];
-    }
     if ( _detailBlock ){
         _detailBlock(_model);
     }

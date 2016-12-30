@@ -49,6 +49,9 @@
 		E2EC4B561DFE8C7D0067C0EC /* TaskDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC4B551DFE8C7D0067C0EC /* TaskDataSource.m */; };
 		E2EC4B591DFE904A0067C0EC /* TaskListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC4B581DFE904A0067C0EC /* TaskListTableViewController.m */; };
 		E2EC4B5B1DFE90770067C0EC /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2EC4B5A1DFE90770067C0EC /* Task.storyboard */; };
+		E2EC9F5C1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC9F5B1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.m */; };
+		E2EC9F601E162FA1002214B8 /* TaskAlwaysUseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC9F5F1E162FA1002214B8 /* TaskAlwaysUseManager.m */; };
+		E2EC9F631E1631A2002214B8 /* TaskAlwaysUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC9F621E1631A2002214B8 /* TaskAlwaysUseViewController.m */; };
 		E2EE330C1E12565200D6C0EB /* HourlyRecordCreateView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE330B1E12565200D6C0EB /* HourlyRecordCreateView.m */; };
 		E2EE330E1E125B4600D6C0EB /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EE330D1E125B4600D6C0EB /* RevealServer.framework */; };
 		E2EF36F51DFA9DA0001247BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF36F41DFA9DA0001247BE /* main.m */; };
@@ -145,6 +148,12 @@
 		E2EC4B571DFE904A0067C0EC /* TaskListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListTableViewController.h; sourceTree = "<group>"; };
 		E2EC4B581DFE904A0067C0EC /* TaskListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListTableViewController.m; sourceTree = "<group>"; };
 		E2EC4B5A1DFE90770067C0EC /* Task.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
+		E2EC9F5A1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TaskModel+AlwaysUseFMDB.h"; sourceTree = "<group>"; };
+		E2EC9F5B1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TaskModel+AlwaysUseFMDB.m"; sourceTree = "<group>"; };
+		E2EC9F5E1E162FA1002214B8 /* TaskAlwaysUseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskAlwaysUseManager.h; sourceTree = "<group>"; };
+		E2EC9F5F1E162FA1002214B8 /* TaskAlwaysUseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskAlwaysUseManager.m; sourceTree = "<group>"; };
+		E2EC9F611E1631A2002214B8 /* TaskAlwaysUseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskAlwaysUseViewController.h; sourceTree = "<group>"; };
+		E2EC9F621E1631A2002214B8 /* TaskAlwaysUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskAlwaysUseViewController.m; sourceTree = "<group>"; };
 		E2EE330A1E12565200D6C0EB /* HourlyRecordCreateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyRecordCreateView.h; sourceTree = "<group>"; };
 		E2EE330B1E12565200D6C0EB /* HourlyRecordCreateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordCreateView.m; sourceTree = "<group>"; };
 		E2EE330D1E125B4600D6C0EB /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
@@ -304,6 +313,7 @@
 		E2EC4B4F1DFE89190067C0EC /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				E2EC9F5D1E162F69002214B8 /* AlwaysUseTask */,
 				E2EC4B501DFE896D0067C0EC /* TaskModel.h */,
 				E2EC4B511DFE896D0067C0EC /* TaskModel.m */,
 				E20CC43E1E03D8DC0013BEC7 /* TaskModel+FMDB.h */,
@@ -323,6 +333,19 @@
 				E2F079AF1E02476B000163C7 /* TaskListSessionManager.m */,
 			);
 			name = Task;
+			sourceTree = "<group>";
+		};
+		E2EC9F5D1E162F69002214B8 /* AlwaysUseTask */ = {
+			isa = PBXGroup;
+			children = (
+				E2EC9F5A1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.h */,
+				E2EC9F5B1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.m */,
+				E2EC9F5E1E162FA1002214B8 /* TaskAlwaysUseManager.h */,
+				E2EC9F5F1E162FA1002214B8 /* TaskAlwaysUseManager.m */,
+				E2EC9F611E1631A2002214B8 /* TaskAlwaysUseViewController.h */,
+				E2EC9F621E1631A2002214B8 /* TaskAlwaysUseViewController.m */,
+			);
+			name = AlwaysUseTask;
 			sourceTree = "<group>";
 		};
 		E2EE33091E1255C700D6C0EB /* HourlyRecord */ = {
@@ -567,6 +590,7 @@
 				E2B924891E08D9B400E1D3AE /* TaskDataSource+Func.m in Sources */,
 				E2A8149C1E11095E0068B88C /* DailySummaryViewController.m in Sources */,
 				E2F079B01E02476B000163C7 /* TaskListSessionManager.m in Sources */,
+				E2EC9F5C1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.m in Sources */,
 				E2EF36FE1DFA9DA0001247BE /* SecondViewController.m in Sources */,
 				E2A0A4B11E03FB68009621A2 /* NSDate+Day.m in Sources */,
 				E2EF371A1DFAB239001247BE /* UIColor+TAToolkit.m in Sources */,
@@ -579,6 +603,7 @@
 				E2EBB5A41DFFA04700686D70 /* TaskListTableViewCell.m in Sources */,
 				E2EC4B561DFE8C7D0067C0EC /* TaskDataSource.m in Sources */,
 				E2EBB5A71DFFA24000686D70 /* Constants.m in Sources */,
+				E2EC9F601E162FA1002214B8 /* TaskAlwaysUseManager.m in Sources */,
 				E2B98EED1E02A2EC00405C14 /* UINavigationController+CustomAnimation.m in Sources */,
 				E29F406C1E07B7ED0044D961 /* TaskDataSource+Sort.m in Sources */,
 				E2B98EE81E027C6800405C14 /* PickerSheetView.m in Sources */,
@@ -589,6 +614,7 @@
 				E2EC4B591DFE904A0067C0EC /* TaskListTableViewController.m in Sources */,
 				E2EF36F81DFA9DA0001247BE /* AppDelegate.m in Sources */,
 				E2EF36FB1DFA9DA0001247BE /* FirstViewController.m in Sources */,
+				E2EC9F631E1631A2002214B8 /* TaskAlwaysUseViewController.m in Sources */,
 				E2166D7A1E0116E40096C821 /* EditableTableViewCell.m in Sources */,
 				E2A814A41E110E260068B88C /* DailySummaryDataSource+FMDB.m in Sources */,
 				E2B98EDB1E02670700405C14 /* TaskTitleTwoSelectView.m in Sources */,

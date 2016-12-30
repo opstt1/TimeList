@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "FMDBManager.h"
+
+@class TaskModel;
+
+TaskModel * rs2logkeeper(FMResultSet *rs);
 
 typedef NS_ENUM(NSInteger, TaskModelStatus)
 {
@@ -16,7 +21,7 @@ typedef NS_ENUM(NSInteger, TaskModelStatus)
     TaskDefaultStauts
 };
 
-@interface TaskModel : NSObject
+@interface TaskModel : NSObject<NSCopying>
 
 
 #pragma mark - Required

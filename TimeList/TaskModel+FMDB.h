@@ -9,7 +9,7 @@
 #import "TaskModel.h"
 #import "FMDB.h"
 
-TaskModel * rs2logkeeper(FMResultSet *rs);
+
 
 @interface TaskModel (FMDB)
 

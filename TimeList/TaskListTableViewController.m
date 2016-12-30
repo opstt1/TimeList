@@ -15,6 +15,7 @@
 #import "TaskModel+FMDB.h"
 #import "DailySummaryViewController.h"
 #import "DailySummaryDataSource+FMDB.h"
+#import "TaskAlwaysUseViewController.h"
 
 @interface TaskListTableViewController ()<UITableViewDelegate,UITableViewDataSource,TaskListTableViewCellDelegate,TaskDataSourceDelegate>
 
@@ -70,6 +71,19 @@
     [dailySummaryButton setTitle:@"总结" forState:UIControlStateNormal];
     [dailySummaryButton addTarget:self action:@selector(didTapDailySummaryButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:dailySummaryButton];
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(70, UISCREEN_HEIGHT-125, 40, 40)];
+    button.layer.cornerRadius = 20.0f;
+    button.layer.shadowColor = [UIColor blackColor].CGColor;
+    button.layer.shadowOffset =  CGSizeMake(1, 0.5);
+    button.layer.shadowOpacity = 0.8;
+    [button.titleLabel setFont:[UIFont systemFontOfSize:13.0f]];
+    [button.titleLabel setNumberOfLines:2];
+    button.backgroundColor = [UIColor purpleColor];
+    [button setTitle:@"添加\n常用" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(didTapAlawysUseTasButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+
 }
 
 - (void)didTapDailySummaryButton:(id)sender
@@ -80,6 +94,24 @@
     }];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+- (void)didTapAlawysUseTasButton:(UIButton *)sender
+{
+    TaskAlwaysUseViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskAlwaysUseViewController"];
+    WEAK_OBJ_REF(self);
+    vc.selectCompelet = ^(id result){
+        STRONG_OBJ_REF(weak_self);
+        if( !strong_weak_self ){
+            return NO;
+        }
+        TaskModel *model = result;
+        [model createSuccess];
+        [strong_weak_self.dataSource insertModel:model];
+        return YES;
+    };
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 #pragma mark - UITable
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -165,6 +197,7 @@
     TaskDetailViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskDetailViewController"];
     WEAK_OBJ_REF(self);
     TaskDetailBlock comlete = ^(TaskModel *model){
+        [model upadteSQL];
         STRONG_OBJ_REF(weak_self);
         if ( strong_weak_self ){
             [strong_weak_self.tableView reloadData];

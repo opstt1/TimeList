@@ -42,6 +42,43 @@
             </objects>
             <point key="canvasLocation" x="-362" y="-50"/>
         </scene>
+        <!--Task Always Use View Controller-->
+        <scene sceneID="1dY-3h-FZP">
+            <objects>
+                <viewController storyboardIdentifier="TaskAlwaysUseViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MG7-DV-sNe" customClass="TaskAlwaysUseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z5d-bv-zBi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fqq-OG-pAM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SNI-sh-JX3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="JzX-gq-C6j">
+                                <rect key="frame" x="-0.5" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="MG7-DV-sNe" id="ehL-LB-icE"/>
+                                    <outlet property="delegate" destination="MG7-DV-sNe" id="hbx-zP-REj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JzX-gq-C6j" firstAttribute="centerX" secondItem="SNI-sh-JX3" secondAttribute="centerX" id="Pnx-dk-p0e"/>
+                            <constraint firstItem="JzX-gq-C6j" firstAttribute="width" secondItem="SNI-sh-JX3" secondAttribute="width" id="nKR-WR-ccN"/>
+                            <constraint firstItem="JzX-gq-C6j" firstAttribute="centerY" secondItem="SNI-sh-JX3" secondAttribute="centerY" id="t0v-Mk-gju"/>
+                            <constraint firstItem="JzX-gq-C6j" firstAttribute="height" secondItem="SNI-sh-JX3" secondAttribute="height" id="vdM-oq-8HT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="JzX-gq-C6j" id="NGL-gf-4dd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vFN-vj-tjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-362" y="650"/>
+        </scene>
         <!--Task Detail View Controller-->
         <scene sceneID="WwD-c8-thR">
             <objects>

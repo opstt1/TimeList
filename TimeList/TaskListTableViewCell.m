@@ -40,6 +40,8 @@
 #pragma mark  - p_init
 - (void)p_initCell
 {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     UIView *containView = [[UIView alloc] initWithFrame:CGRectMake(5, 5, UISCREEN_WIDTH-10, 60)];
     containView.backgroundColor = [UIColor redColor];
     containView.layer.cornerRadius = 10.0f;

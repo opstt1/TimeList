@@ -11,6 +11,22 @@
 #import "Constants.h"
 
 
+TaskModel * rs2logkeeper(FMResultSet *rs) {
+    
+    TaskModel *obj = [[TaskModel alloc] init];
+    
+    obj.localId     = [rs stringForColumn:@"local_id"];
+    
+    obj.title       = [rs stringForColumn:@"title"];
+    obj.status      = [rs intForColumn:@"status"];
+    obj.importance  = [rs intForColumn:@"importance"];
+    obj.desc        = [rs stringForColumn:@"desc"];
+    obj.startTime   = [rs dateForColumn:@"start_date"];
+    obj.summarize   = [rs stringForColumn:@"summarize"];
+    obj.createDate  = [rs dateForColumn:@"create_date"];
+    
+    return obj;
+}
 
 @implementation TaskModel
 
@@ -24,7 +40,7 @@ NSString * const TaskModelLocalIdKey = @"localId";
     if ( !self ) return nil;
     _importance = -1;
     _title = @"";
-    _localId = @"-1";
+    _localId = [NSDate stringFromDay:[NSDate date]];
     _status = TaskDefaultStauts;
     _createDate = [NSDate date];
     _desc = @"";
@@ -33,6 +49,21 @@ NSString * const TaskModelLocalIdKey = @"localId";
     _leftLimitMargin = 75+75.0f;
     _rightLimitMargin = 75.0f;
     return self;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    TaskModel *model = [[TaskModel allocWithZone:zone] init];
+    if( !model ){
+        return nil;
+    }
+    model.importance = _importance;
+    model.title = [_title mutableCopy];
+    model.status = _status;
+    model.desc = [_desc mutableCopy];
+    model.summarize = [_summarize mutableCopy];
+    model.startTime = [[NSDate alloc] initWithTimeInterval:0.0 sinceDate:_startTime];
+    return model;
 }
 
 - (void)setImportance:(NSInteger)importance
@@ -89,6 +120,7 @@ NSString * const TaskModelLocalIdKey = @"localId";
 - (void)createSuccess
 {
     [self allocIdentifier];
+    self.createDate = [NSDate date];
     [TaskModel insert:self];
 }
 

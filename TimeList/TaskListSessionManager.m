@@ -43,30 +43,6 @@
 }
 
 
-//- (void)addDatajia
-//{
-//    TaskModel *moede1 = [[TaskModel alloc] init];
-//    moede1.title = @"吃饭";
-//    moede1.status = TaskUndone;
-//    moede1.importance = 5;
-//    
-//    [_dataSource addTaskModel:moede1];
-//    
-//    TaskModel *moede2 = [[TaskModel alloc] init];
-//    moede2.title = @"打架";
-//    moede2.status = TaskUndone;
-//    moede2.importance = 10;
-//    
-//    [_dataSource addTaskModel:moede2];
-//    
-//    TaskModel *moede3 = [[TaskModel alloc] init];
-//    moede3.title = @"吹牛";
-//    moede3.status = TaskUndone;
-//    moede3.importance = 1;
-//    
-//    [_dataSource addTaskModel:moede3];
-//}
-
 
 - (TaskDataSource *)dataSource
 {

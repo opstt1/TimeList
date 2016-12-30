@@ -199,7 +199,7 @@
 + (NSString *)stringFromDay:(NSDate *)date formatStr:(NSString *)formatStr
 {
     if ( !formatStr ){
-        formatStr = @"yyyy-MM-dd HH:mm:dd";
+        formatStr = @"yyyy-MM-dd HH:mm:ss";
     }
     NSDateFormatter *formatter;
     if (!formatter) {
