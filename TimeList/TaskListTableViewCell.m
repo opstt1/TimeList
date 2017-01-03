@@ -13,6 +13,7 @@
 
 @interface TaskListTableViewCell()<UIAlertViewDelegate>
 
+@property (nonatomic, readwrite, strong) UIView  *colorShowView;
 @property (nonatomic, readwrite, strong) UILabel *timeLabel;
 @property (nonatomic, readwrite, strong) UILabel *titleLabe1;
 @property (nonatomic, readwrite, strong) NSArray *starsList;
@@ -43,9 +44,14 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     UIView *containView = [[UIView alloc] initWithFrame:CGRectMake(5, 5, UISCREEN_WIDTH-10, 60)];
-    containView.backgroundColor = [UIColor redColor];
+    containView.backgroundColor = [UIColor whiteColor];
     containView.layer.cornerRadius = 10.0f;
     CGFloat width =  UISCREEN_WIDTH - 5 - 5 - 15 - 15;
+    
+    _colorShowView = [[UIView alloc] init];
+    _colorShowView.frame = CGRectMake(0, 0, containView.frame.size.width, containView.frame.size.height);
+    _colorShowView.layer.cornerRadius = 10.0f;
+    [containView addSubview:_colorShowView];
     
     _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, width, 10)];
     _timeLabel.textColor = COLOR_666666;
@@ -55,8 +61,8 @@
     _titleLabe1.textColor = COLOR_333333;
     _titleLabe1.font = [UIFont boldSystemFontOfSize:18.0f];
     
-    [containView addSubview:_timeLabel];
-    [containView addSubview:_titleLabe1];
+    [_colorShowView addSubview:_timeLabel];
+    [_colorShowView addSubview:_titleLabe1];
     
     CGFloat pointX = 15.0f;
     NSMutableArray *starsList = [NSMutableArray array];
@@ -73,6 +79,7 @@
     [self setCanEditableWithView:containView];
     [self addEditButtons];
     
+    
     [self addSubview:containView];
 }
 
@@ -80,7 +87,7 @@
 {
     UIButton *taskDoneButton = [[UIButton alloc] initWithFrame:CGRectMake( UISCREEN_WIDTH-70-5, 5,  70, 60)];
     [taskDoneButton addTarget:self action:@selector(didTapDoneButton:) forControlEvents:UIControlEventTouchUpInside];
-    taskDoneButton.backgroundColor = [UIColor greenColor];
+    taskDoneButton.backgroundColor = TASK_GREEN_COLOR;
     taskDoneButton.layer.cornerRadius = 10.0f;
     [taskDoneButton setTitle:@"Done" forState:UIControlStateNormal];
     [self addSubview:taskDoneButton];
@@ -137,12 +144,12 @@
     
     switch (_taskModel.status) {
         case TaskUndone:
-            self.containView.backgroundColor = [UIColor colorWithRed:0.8 green:0 blue:0 alpha:1];
+            self.colorShowView.backgroundColor = TASK_RED_COLOR;
             self.titleLabe1.textColor = [UIColor whiteColor];
             break;
             
         default:
-            self.containView.backgroundColor = [UIColor colorWithRed:0 green:0.8 blue:0 alpha:1];
+            self.colorShowView.backgroundColor = TASK_GREEN_COLOR;
             self.titleLabe1.textColor = [UIColor blackColor];
             break;
     }
