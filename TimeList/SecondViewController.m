@@ -32,12 +32,14 @@
 
 - (void)leftNavigationButtonTapped:(id)sender
 {
+    NSDate *lastEndDate =((HourlyRecordModel*)[self.dataSource objectAtInde:0]).endDate;
     WEAK_OBJ_REF(self);
-    [HourlyRecordCreateView createWithComplete:^(HourlyRecordModel *model) {
+    [HourlyRecordCreateView createWithStartDate:lastEndDate complete:^(HourlyRecordModel *model) {
         STRONG_OBJ_REF(weak_self);
         if ( strong_weak_self ){
             [model insertSQL];
             [strong_weak_self.dataSource insertmodel:model];
+            [strong_weak_self tableViewReload];
         }
     }];;
 }
@@ -121,7 +123,7 @@
 {
     [HourlyRecordCreateView editWithModel:model complete:^(HourlyRecordModel *model) {
         [model upadteSQL];
-        [_tableView reloadData];
+        [self tableViewReload];
     }];
 }
 
@@ -134,5 +136,9 @@
     }
 }
 
-
+#pragma mark - updateTableView
+- (void)tableViewReload
+{
+    [_dataSource sortStartDateIsAscending:NO];
+}
 @end

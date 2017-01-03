@@ -34,10 +34,18 @@
 
 @end
 
-
+extern NSString *const HourlyRecordModelStartDateKey;
 
 @interface HourlyRecordDataSource : TLDataSource
 
 + (HourlyRecordDataSource *)createWithDate:(NSDate *)date;
+
+
+
+@end
+
+@interface HourlyRecordDataSource (Sort)
+
+- (void)sortStartDateIsAscending:(BOOL)isAscending;
 
 @end

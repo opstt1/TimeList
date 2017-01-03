@@ -36,4 +36,6 @@
 
 - (void)dataSourceWithArray:(NSArray *)array;
 
+- (NSArray *)dataList;
+
 @end

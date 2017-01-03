@@ -16,6 +16,9 @@
 
 @implementation HourlyRecordModel
 
+NSString * const HourlyRecordModelStartDateKey = @"startDate";
+
+
 - (void)setContent:(NSString *)content
 {
     _content = content;
@@ -76,6 +79,17 @@
     return self;
 }
 
+@end
 
 
+@implementation HourlyRecordDataSource (Sort)
+
+- (void)sortStartDateIsAscending:(BOOL)isAscending
+{
+    NSMutableArray *array = [NSMutableArray arrayWithArray:[self dataList]];
+    NSSortDescriptor *startDateDesc = [NSSortDescriptor sortDescriptorWithKey:HourlyRecordModelStartDateKey ascending:isAscending];
+    NSArray *descriptorArray = [NSArray arrayWithObjects:startDateDesc, nil];
+    NSArray *sortArray = [array sortedArrayUsingDescriptors:descriptorArray];
+    [self dataSourceWithArray:sortArray];
+}
 @end

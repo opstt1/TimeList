@@ -29,12 +29,22 @@
 
 @implementation HourlyRecordCreateView
 
+
 + (HourlyRecordCreateView *)editWithModel:(HourlyRecordModel *)model complete:(HourlyRecordCreateBlock)complete
 {
     HourlyRecordCreateView *view = [self create];
     view.complete = complete;
     view.model = model;
     [view editInitView];
+    return view;
+}
++ (HourlyRecordCreateView *)createWithStartDate:(NSDate *)startDate complete:(HourlyRecordCreateBlock)complete
+{
+    HourlyRecordCreateView *view = [self createWithComplete:complete];
+    if ( startDate ){
+        view.startDate = startDate;
+        view.startPicker.date = startDate;
+    }
     return view;
 }
 
@@ -159,26 +169,39 @@
         return;
     }
     _textView.text = _model.content;
-    _startTimeLabel.text = _model.startTime;
-    _endTimeLabel.text = _model.endTime;
     
     _startPicker.date = _model.startDate;
     _endPicker.date = _model.endDate;
+    self.startDate = _model.startDate;
+    self.endDate = _model.endDate;
 }
 
 #pragma mark -
 
 - (void)datePickerValueChanged:(UIDatePicker *)sender
 {
-    NSString *timeStr = [NSDate stringFromDay:[sender date] formatStr:@"HH:mm"];
     if ( sender.tag == 0 ){
-        _startDate = [sender date];
-        _startTimeLabel.text = timeStr;
+        self.startDate = [sender date];
     }
     if ( sender.tag == 1 ){
-        _endDate = [sender date];
-        _endTimeLabel.text = timeStr;
+        self.endDate = [sender date];
     }
+}
+
+#pragma mark - set
+
+- (void)setStartDate:(NSDate *)startDate
+{
+    _startDate = startDate;
+    NSString *timeStr = [NSDate stringFromDay:startDate formatStr:@"HH:mm"];
+    _startTimeLabel.text = timeStr;
+}
+
+- (void)setEndDate:(NSDate *)endDate
+{
+    _endDate = endDate;
+    NSString *timeStr = [NSDate stringFromDay:endDate formatStr:@"HH:mm"];
+    _endTimeLabel.text = timeStr;
 }
 
 #pragma mark - action 

@@ -23,5 +23,6 @@ typedef void(^HourlyRecordCreateBlock)(HourlyRecordModel *model);
 
 + (HourlyRecordCreateView *)editWithModel:(HourlyRecordModel *)model complete:(HourlyRecordCreateBlock)complete;
 
++ (HourlyRecordCreateView *)createWithStartDate:(NSDate *)startDate complete:(HourlyRecordCreateBlock)complete;
 
 @end

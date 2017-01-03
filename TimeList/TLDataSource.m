@@ -98,6 +98,12 @@
     [self p_setList:array];
 }
 
+
+- (NSArray *)dataList
+{
+    return self.list;
+}
+
 - (void)p_setList:(NSArray *)taskList
 {
     if ( !taskList ){
