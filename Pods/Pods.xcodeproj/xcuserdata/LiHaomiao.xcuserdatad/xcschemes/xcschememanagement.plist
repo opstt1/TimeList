@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FSCalendar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1CF9B41B0850C465AF1E5F0829387155</key>
+		<key>222B6F5394EB2CE16F5834077DFC4FB5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>4789BDA0DA41FF5A32F1C496408A2C0E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4D70540979D0D203ACA13E9C5DEE6CCE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DD17CE0B3E9847D0E141F4F5A6C28B8E</key>
+		<key>D4C07D80967D64FEA6058F4D80CC7B51</key>
 		<dict>
 			<key>primary</key>
 			<true/>

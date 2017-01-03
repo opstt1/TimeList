@@ -21,6 +21,10 @@
 		E20CC43D1E03CFB80013BEC7 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E20CC43C1E03CFB80013BEC7 /* libFMDB.a */; };
 		E20CC4401E03D8DC0013BEC7 /* TaskModel+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CC43F1E03D8DC0013BEC7 /* TaskModel+FMDB.m */; };
 		E20CC4441E03DAB00013BEC7 /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CC4431E03DAB00013BEC7 /* FMDBManager.m */; };
+		E2143BD01E1B83F100F0F09C /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2143BCF1E1B83F000F0F09C /* Calendar.storyboard */; };
+		E2143BD31E1B851400F0F09C /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2143BD21E1B851400F0F09C /* ThirdViewController.m */; };
+		E2143BD51E1B861F00F0F09C /* libFSCalendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2143BD41E1B861F00F0F09C /* libFSCalendar.a */; };
+		E2143BD81E1BA20300F0F09C /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2143BD71E1BA20300F0F09C /* CalendarViewController.m */; };
 		E2166D7A1E0116E40096C821 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2166D791E0116E40096C821 /* EditableTableViewCell.m */; };
 		E23C954A1E1507D000CEBFAF /* HourlyRecordModel+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E23C95491E1507D000CEBFAF /* HourlyRecordModel+FMDB.m */; };
 		E29F406C1E07B7ED0044D961 /* TaskDataSource+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = E29F406B1E07B7ED0044D961 /* TaskDataSource+Sort.m */; };
@@ -94,6 +98,12 @@
 		E20CC43F1E03D8DC0013BEC7 /* TaskModel+FMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TaskModel+FMDB.m"; sourceTree = "<group>"; };
 		E20CC4421E03DAB00013BEC7 /* FMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBManager.h; sourceTree = "<group>"; };
 		E20CC4431E03DAB00013BEC7 /* FMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBManager.m; sourceTree = "<group>"; };
+		E2143BCF1E1B83F000F0F09C /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		E2143BD11E1B851400F0F09C /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		E2143BD21E1B851400F0F09C /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		E2143BD41E1B861F00F0F09C /* libFSCalendar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFSCalendar.a; path = "../../Library/Developer/Xcode/DerivedData/TimeList-akiumsedqafylxekndmczvklrzut/Build/Products/Debug-iphoneos/FSCalendar/libFSCalendar.a"; sourceTree = "<group>"; };
+		E2143BD61E1BA20300F0F09C /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		E2143BD71E1BA20300F0F09C /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		E2166D781E0116E40096C821 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
 		E2166D791E0116E40096C821 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
 		E23C95481E1507D000CEBFAF /* HourlyRecordModel+FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HourlyRecordModel+FMDB.h"; sourceTree = "<group>"; };
@@ -190,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2143BD51E1B861F00F0F09C /* libFSCalendar.a in Frameworks */,
 				E2EE330E1E125B4600D6C0EB /* RevealServer.framework in Frameworks */,
 				E2F9FE771E0A32FF00AA7C1A /* libToast.a in Frameworks */,
 				E2A0A4AE1E03F93F009621A2 /* libKVNProgress.a in Frameworks */,
@@ -219,6 +230,7 @@
 		8E9EA9C835F740646F882DDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2143BD41E1B861F00F0F09C /* libFSCalendar.a */,
 				E2EE330D1E125B4600D6C0EB /* RevealServer.framework */,
 				E2F9FE761E0A32FF00AA7C1A /* libToast.a */,
 				E2A0A4AD1E03F93F009621A2 /* libKVNProgress.a */,
@@ -251,6 +263,16 @@
 				E20CC4431E03DAB00013BEC7 /* FMDBManager.m */,
 			);
 			name = Manager;
+			sourceTree = "<group>";
+		};
+		E2143BCE1E1B83D800F0F09C /* Calender */ = {
+			isa = PBXGroup;
+			children = (
+				E2143BCF1E1B83F000F0F09C /* Calendar.storyboard */,
+				E2143BD61E1BA20300F0F09C /* CalendarViewController.h */,
+				E2143BD71E1BA20300F0F09C /* CalendarViewController.m */,
+			);
+			name = Calender;
 			sourceTree = "<group>";
 		};
 		E2166D771E0116C00096C821 /* BaseView */ = {
@@ -384,6 +406,7 @@
 		E2EF36F21DFA9DA0001247BE /* TimeList */ = {
 			isa = PBXGroup;
 			children = (
+				E2143BCE1E1B83D800F0F09C /* Calender */,
 				E20CAADC1E13BEE600DA07C7 /* BaseModel */,
 				E2EE33091E1255C700D6C0EB /* HourlyRecord */,
 				E2A814991E1109370068B88C /* Summary */,
@@ -399,6 +422,8 @@
 				E2EF36FA1DFA9DA0001247BE /* FirstViewController.m */,
 				E2EF36FC1DFA9DA0001247BE /* SecondViewController.h */,
 				E2EF36FD1DFA9DA0001247BE /* SecondViewController.m */,
+				E2143BD11E1B851400F0F09C /* ThirdViewController.h */,
+				E2143BD21E1B851400F0F09C /* ThirdViewController.m */,
 				E2EF36FF1DFA9DA0001247BE /* Main.storyboard */,
 				E2EF37021DFA9DA0001247BE /* Assets.xcassets */,
 				E2EF37041DFA9DA0001247BE /* LaunchScreen.storyboard */,
@@ -516,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2EF37061DFA9DA0001247BE /* LaunchScreen.storyboard in Resources */,
+				E2143BD01E1B83F100F0F09C /* Calendar.storyboard in Resources */,
 				E2EC4B5B1DFE90770067C0EC /* Task.storyboard in Resources */,
 				E2EF37031DFA9DA0001247BE /* Assets.xcassets in Resources */,
 				E2EF37011DFA9DA0001247BE /* Main.storyboard in Resources */,
@@ -580,6 +606,7 @@
 			files = (
 				E2B98ED51E0266B600405C14 /* TaskTitleTextView.m in Sources */,
 				E20CAAD51E13AFF400DA07C7 /* HourlyRecordModel.m in Sources */,
+				E2143BD31E1B851400F0F09C /* ThirdViewController.m in Sources */,
 				E23C954A1E1507D000CEBFAF /* HourlyRecordModel+FMDB.m in Sources */,
 				E2EBB5AB1DFFDA6E00686D70 /* UIView+Geometry.m in Sources */,
 				E20CAAD81E13B0C300DA07C7 /* HourlyRecordCell.m in Sources */,
@@ -601,6 +628,7 @@
 				E2B98ED81E0266D400405C14 /* TaskTitleButtonView.m in Sources */,
 				E2B98EDE1E02674600405C14 /* TaskTitleLongTextView.m in Sources */,
 				E2EBB5A41DFFA04700686D70 /* TaskListTableViewCell.m in Sources */,
+				E2143BD81E1BA20300F0F09C /* CalendarViewController.m in Sources */,
 				E2EC4B561DFE8C7D0067C0EC /* TaskDataSource.m in Sources */,
 				E2EBB5A71DFFA24000686D70 /* Constants.m in Sources */,
 				E2EC9F601E162FA1002214B8 /* TaskAlwaysUseManager.m in Sources */,

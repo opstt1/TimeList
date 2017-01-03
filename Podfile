@@ -10,6 +10,7 @@ target 'TimeList' do
   pod 'MBProgressHUD', '~> 1.0.0'
   pod 'KVNProgress'
   pod 'Toast', '~> 3.0.0'
+  pod 'FSCalendar'
   # Pods for TimeList
 
 end
