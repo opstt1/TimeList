@@ -67,6 +67,7 @@ NSString * const HourlyRecordModelStartDateKey = @"startDate";
     HourlyRecordDataSource *dataSource = [[HourlyRecordDataSource alloc] init];
     
     [dataSource dataSourceWithArray:array];
+    [dataSource sortStartDateIsAscending:NO];
     return dataSource;
 }
 

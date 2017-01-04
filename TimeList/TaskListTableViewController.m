@@ -160,13 +160,14 @@
 //点击了完成 或者总结
 - (void)taskListTableViewCell:(TaskListTableViewCell *)cell cellDidTapDoneAtIndexPath:(NSIndexPath *)indexPath needSummary:(BOOL)needSumary
 {
+    TaskModel *model = [_dataSource objectAtInde:indexPath.section];
     [_dataSource dataSourceHasDoneAtIndex:indexPath.section];
     
     if ( !needSumary ){
         return;
     }
     
-    [self navigationToTaskDetialWithType:TaskDetail_Summary taskModel:[_dataSource objectAtInde:indexPath.section]];
+    [self navigationToTaskDetialWithType:TaskDetail_Summary taskModel:model];
 }
 
 //点击了删除功能
@@ -192,6 +193,7 @@
 
 #pragma mark - turn 
 
+//跳转到任务详情页面
 - (void)navigationToTaskDetialWithType:(TaskDetailType)type taskModel:(TaskModel *)taskModel
 {
     TaskDetailViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskDetailViewController"];
