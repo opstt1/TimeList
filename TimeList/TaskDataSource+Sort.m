@@ -10,6 +10,12 @@
 #import "TaskDataSource+Func.h"
 #import "TaskModel.h"
 
+#define statusSortDescriptor(x) [NSSortDescriptor sortDescriptorWithKey:TaskModelStatusKey ascending:x]
+
+#define importanceSortDescriptor(x) [NSSortDescriptor sortDescriptorWithKey:TaskModelImportanceKey ascending:x]
+#define localIdSortDescriptor(x) [NSSortDescriptor sortDescriptorWithKey:TaskModelLocalIdKey ascending:x]
+
+
 @implementation TaskDataSource (Sort)
 
 
@@ -18,13 +24,11 @@
     if ( !self || !self.taskList || self.taskList.count <= 0 ){
         return;
     }
-    NSArray *array = [NSArray arrayWithArray:self.taskList];
-    NSSortDescriptor *statusDesc = [NSSortDescriptor sortDescriptorWithKey:TaskModelStatusKey ascending:!hasDone];
-    NSSortDescriptor *importanceDesc = [NSSortDescriptor sortDescriptorWithKey:TaskModelImportanceKey ascending:NO];
-    NSSortDescriptor *localIdDesc = [NSSortDescriptor sortDescriptorWithKey:TaskModelLocalIdKey ascending:YES];
     
-    NSArray *descriptorArray = [NSArray arrayWithObjects:statusDesc,importanceDesc,localIdDesc, nil];
+    NSArray *array = [NSArray arrayWithArray:self.taskList];
+    NSArray *descriptorArray = [NSArray arrayWithObjects:statusSortDescriptor(!hasDone),importanceSortDescriptor(NO),localIdSortDescriptor(YES), nil];
     NSArray *sortArray = [array sortedArrayUsingDescriptors:descriptorArray];
+    
     [self dataSourceWithArray:sortArray];
     
 }
@@ -32,6 +36,11 @@
 - (void)sortWithFirstKeyImptanceFromeHeight:(BOOL)isFromeHeight
 {
     
+    NSArray *array = [NSArray arrayWithArray:self.taskList];
+    NSArray *descriptorArray = [NSArray arrayWithObjects:importanceSortDescriptor(!isFromeHeight),statusSortDescriptor(YES),localIdSortDescriptor(YES), nil];
+    NSArray *sortArray = [array sortedArrayUsingDescriptors:descriptorArray];
+    
+    [self dataSourceWithArray:sortArray];
 }
 
 
@@ -47,11 +56,7 @@
         return;
     }
     NSArray *array = [NSArray arrayWithArray:self.taskList];
-    NSSortDescriptor *statusDesc = [NSSortDescriptor sortDescriptorWithKey:TaskModelStatusKey ascending:YES];
-    NSSortDescriptor *importanceDesc = [NSSortDescriptor sortDescriptorWithKey:TaskModelImportanceKey ascending:NO];
-    NSSortDescriptor *localIdDesc = [NSSortDescriptor sortDescriptorWithKey:TaskModelLocalIdKey ascending:YES];
-    
-    NSArray *descriptorArray = [NSArray arrayWithObjects:statusDesc,localIdDesc,importanceDesc, nil];
+    NSArray *descriptorArray = [NSArray arrayWithObjects:statusSortDescriptor(YES),localIdSortDescriptor(YES),importanceSortDescriptor(NO), nil];
     NSArray *sortArray = [array sortedArrayUsingDescriptors:descriptorArray];
     [self dataSourceWithArray:sortArray];
 

@@ -178,6 +178,22 @@
     return [week1 isEqual:week2];
 }
 
+- (BOOL)isSameMinute:(NSDate *)other
+{
+    if ( !other ){
+        return NO;
+    }
+    if ( ![self isSameDay:other] ){
+        return NO;
+    }
+    
+    const NSUInteger flags = (NSCalendarUnitHour | NSCalendarUnitMinute );
+    
+    NSDateComponents *comps1 = [[NSCalendar currentCalendar]components:flags fromDate:self];
+    NSDateComponents *comps2 = [[NSCalendar currentCalendar]components:flags fromDate:other];
+    
+    return (comps1.minute == comps2.minute && comps1.hour == comps2.hour );
+}
 - (NSDate *)beginningOfMonth
 {
     const NSUInteger flags = NSCalendarUnitYear | NSCalendarUnitMonth;

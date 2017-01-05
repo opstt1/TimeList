@@ -9,6 +9,7 @@
 #import "CalendarViewController.h"
 #import "FSCalendar.h"
 #import "Constants.h"
+#import "DailyRecordViewController.h"
 
 @interface CalendarViewController ()<FSCalendarDelegate,FSCalendarDataSource>
 
@@ -26,10 +27,6 @@
     calendar.scope = FSCalendarScopeMonth;
     calendar.scopeGesture.enabled = YES;
     [self.view addSubview:calendar];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [calendar selectDate:[[NSDate date] dayByAddingDays:40]];
-    });
 }
 
 
@@ -40,6 +37,11 @@
     NSString *begin = [NSDate stringFromDay:[date beginningOfDay]];
     NSString *end = [NSDate stringFromDay:[date endOfDay]];
     NSLog(@"\nbegin   %@  \nend:   %@",begin,end);
+    
+    DailyRecordViewController *vc = [[UIStoryboard storyboardWithName:@"Calendar" bundle:nil] instantiateViewControllerWithIdentifier:@"DailyRecordViewController"];
+    [vc initWithDate:date];
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

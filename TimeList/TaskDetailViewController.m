@@ -15,6 +15,8 @@
 #import "Constants.h"
 #import "TaskModel+FMDB.h"
 #import "TaskTitleLongTextView.h"
+#import <objc/runtime.h>
+#import <Foundation/Foundation.h>
 
 @interface TaskDetailViewController ()
 

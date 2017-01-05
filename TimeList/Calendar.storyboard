@@ -9,6 +9,54 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Daily Record View Controller-->
+        <scene sceneID="TjL-dg-AdI">
+            <objects>
+                <viewController storyboardIdentifier="DailyRecordViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VWg-Mu-xmn" customClass="DailyRecordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="71X-4I-Jpy"/>
+                        <viewControllerLayoutGuide type="bottom" id="6SZ-AG-IFo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bjs-ZJ-5QQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GaM-vh-xdv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EV7-7R-rdR">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="667" id="xY1-2V-r6j"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="EV7-7R-rdR" secondAttribute="bottom" id="IcH-w4-bbg"/>
+                                    <constraint firstAttribute="trailing" secondItem="EV7-7R-rdR" secondAttribute="trailing" id="LYT-7Y-7Um"/>
+                                    <constraint firstItem="EV7-7R-rdR" firstAttribute="leading" secondItem="GaM-vh-xdv" secondAttribute="leading" id="Oe8-Wz-zTI"/>
+                                    <constraint firstItem="EV7-7R-rdR" firstAttribute="top" secondItem="GaM-vh-xdv" secondAttribute="top" id="cCP-Cs-aca"/>
+                                    <constraint firstItem="EV7-7R-rdR" firstAttribute="width" secondItem="GaM-vh-xdv" secondAttribute="width" id="uLi-wv-f5b"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GaM-vh-xdv" firstAttribute="centerX" secondItem="bjs-ZJ-5QQ" secondAttribute="centerX" id="bFj-1P-gUu"/>
+                            <constraint firstItem="GaM-vh-xdv" firstAttribute="centerY" secondItem="bjs-ZJ-5QQ" secondAttribute="centerY" id="feU-lF-AJ8"/>
+                            <constraint firstItem="GaM-vh-xdv" firstAttribute="width" secondItem="bjs-ZJ-5QQ" secondAttribute="width" id="ime-VV-WdQ"/>
+                            <constraint firstItem="GaM-vh-xdv" firstAttribute="height" secondItem="bjs-ZJ-5QQ" secondAttribute="height" id="xR5-N4-nAh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="EV7-7R-rdR" id="Hu7-38-FAA"/>
+                        <outlet property="contentViewHeight" destination="xY1-2V-r6j" id="3ng-CJ-XBJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kfW-ev-qQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="94" y="813"/>
+        </scene>
         <!--Calendar View Controller-->
         <scene sceneID="ACk-zi-xR1">
             <objects>

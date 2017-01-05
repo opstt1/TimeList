@@ -90,7 +90,7 @@
  *maxSize : 为限制改字体的最大宽和高(如果显示一行,则宽高都设置为MAXFLOAT, 如果显示为多行,只需将宽设置一个有限定长值,高设置为MAXFLOAT)
  */
 -(CGSize)sizeWithFont:(UIFont *)font;
--(CGSize)sizeWithFont:(UIFont *)font width : (CGFloat)width height : (CGFloat)height;\
+-(CGSize)sizeWithFont:(UIFont *)font width : (CGFloat)width height : (CGFloat)height;
 
 /**
  * 转成 CGFloat

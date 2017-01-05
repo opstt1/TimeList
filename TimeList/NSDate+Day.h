@@ -44,7 +44,7 @@
 - (BOOL)isSameWeek:(NSDate *)other;
 - (BOOL)isSameMonth:(NSDate *)other;
 - (BOOL)isSameYear:(NSDate *)other;
-
+- (BOOL)isSameMinute:(NSDate *)other;
 /**
  *  计算与day之前相差的天数
  *

@@ -26,6 +26,7 @@
 		E2143BD51E1B861F00F0F09C /* libFSCalendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2143BD41E1B861F00F0F09C /* libFSCalendar.a */; };
 		E2143BD81E1BA20300F0F09C /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2143BD71E1BA20300F0F09C /* CalendarViewController.m */; };
 		E2166D7A1E0116E40096C821 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2166D791E0116E40096C821 /* EditableTableViewCell.m */; };
+		E22840C11E1E38C000FC6B07 /* HourlyRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = E22840C01E1E38C000FC6B07 /* HourlyRecordView.m */; };
 		E23C954A1E1507D000CEBFAF /* HourlyRecordModel+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E23C95491E1507D000CEBFAF /* HourlyRecordModel+FMDB.m */; };
 		E29F406C1E07B7ED0044D961 /* TaskDataSource+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = E29F406B1E07B7ED0044D961 /* TaskDataSource+Sort.m */; };
 		E2A0A4AE1E03F93F009621A2 /* libKVNProgress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A0A4AD1E03F93F009621A2 /* libKVNProgress.a */; };
@@ -70,6 +71,8 @@
 		E2EF37161DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF37151DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m */; };
 		E2EF371A1DFAB239001247BE /* UIColor+TAToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF37191DFAB239001247BE /* UIColor+TAToolkit.m */; };
 		E2F079B01E02476B000163C7 /* TaskListSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F079AF1E02476B000163C7 /* TaskListSessionManager.m */; };
+		E2F819641E1C965000F7F9BF /* DailyRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F819631E1C965000F7F9BF /* DailyRecordViewController.m */; };
+		E2F819671E1C989B00F7F9BF /* DailyTaskRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F819661E1C989B00F7F9BF /* DailyTaskRecordView.m */; };
 		E2F9FE771E0A32FF00AA7C1A /* libToast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F9FE761E0A32FF00AA7C1A /* libToast.a */; };
 		E2F9FE7A1E0A5D1900AA7C1A /* TaskDetailSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F9FE791E0A5D1900AA7C1A /* TaskDetailSubView.m */; };
 /* End PBXBuildFile section */
@@ -106,6 +109,8 @@
 		E2143BD71E1BA20300F0F09C /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		E2166D781E0116E40096C821 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
 		E2166D791E0116E40096C821 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
+		E22840BF1E1E38C000FC6B07 /* HourlyRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyRecordView.h; sourceTree = "<group>"; };
+		E22840C01E1E38C000FC6B07 /* HourlyRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordView.m; sourceTree = "<group>"; };
 		E23C95481E1507D000CEBFAF /* HourlyRecordModel+FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HourlyRecordModel+FMDB.h"; sourceTree = "<group>"; };
 		E23C95491E1507D000CEBFAF /* HourlyRecordModel+FMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HourlyRecordModel+FMDB.m"; sourceTree = "<group>"; };
 		E29F406A1E07B7ED0044D961 /* TaskDataSource+Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TaskDataSource+Sort.h"; sourceTree = "<group>"; };
@@ -189,6 +194,10 @@
 		E2EF37191DFAB239001247BE /* UIColor+TAToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TAToolkit.m"; sourceTree = "<group>"; };
 		E2F079AE1E02476B000163C7 /* TaskListSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListSessionManager.h; sourceTree = "<group>"; };
 		E2F079AF1E02476B000163C7 /* TaskListSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListSessionManager.m; sourceTree = "<group>"; };
+		E2F819621E1C965000F7F9BF /* DailyRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyRecordViewController.h; sourceTree = "<group>"; };
+		E2F819631E1C965000F7F9BF /* DailyRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyRecordViewController.m; sourceTree = "<group>"; };
+		E2F819651E1C989B00F7F9BF /* DailyTaskRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyTaskRecordView.h; sourceTree = "<group>"; };
+		E2F819661E1C989B00F7F9BF /* DailyTaskRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyTaskRecordView.m; sourceTree = "<group>"; };
 		E2F9FE761E0A32FF00AA7C1A /* libToast.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libToast.a; path = "../../Library/Developer/Xcode/DerivedData/TimeList-akiumsedqafylxekndmczvklrzut/Build/Products/Debug-iphoneos/Toast/libToast.a"; sourceTree = "<group>"; };
 		E2F9FE781E0A5D1900AA7C1A /* TaskDetailSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailSubView.h; sourceTree = "<group>"; };
 		E2F9FE791E0A5D1900AA7C1A /* TaskDetailSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailSubView.m; sourceTree = "<group>"; };
@@ -271,6 +280,12 @@
 				E2143BCF1E1B83F000F0F09C /* Calendar.storyboard */,
 				E2143BD61E1BA20300F0F09C /* CalendarViewController.h */,
 				E2143BD71E1BA20300F0F09C /* CalendarViewController.m */,
+				E2F819621E1C965000F7F9BF /* DailyRecordViewController.h */,
+				E2F819631E1C965000F7F9BF /* DailyRecordViewController.m */,
+				E2F819651E1C989B00F7F9BF /* DailyTaskRecordView.h */,
+				E2F819661E1C989B00F7F9BF /* DailyTaskRecordView.m */,
+				E22840BF1E1E38C000FC6B07 /* HourlyRecordView.h */,
+				E22840C01E1E38C000FC6B07 /* HourlyRecordView.m */,
 			);
 			name = Calender;
 			sourceTree = "<group>";
@@ -610,7 +625,9 @@
 				E23C954A1E1507D000CEBFAF /* HourlyRecordModel+FMDB.m in Sources */,
 				E2EBB5AB1DFFDA6E00686D70 /* UIView+Geometry.m in Sources */,
 				E20CAAD81E13B0C300DA07C7 /* HourlyRecordCell.m in Sources */,
+				E22840C11E1E38C000FC6B07 /* HourlyRecordView.m in Sources */,
 				E2B98EE51E02783F00405C14 /* SheetMaskView.m in Sources */,
+				E2F819641E1C965000F7F9BF /* DailyRecordViewController.m in Sources */,
 				E20CC4441E03DAB00013BEC7 /* FMDBManager.m in Sources */,
 				E20CC4401E03D8DC0013BEC7 /* TaskModel+FMDB.m in Sources */,
 				E2F9FE7A1E0A5D1900AA7C1A /* TaskDetailSubView.m in Sources */,
@@ -639,6 +656,7 @@
 				E20CC4351E03ADDD0013BEC7 /* NSArray+Toolkit.m in Sources */,
 				E2B98ED21E02668B00405C14 /* BaseView.m in Sources */,
 				E2B98ECE1E0262F200405C14 /* TaskDetailViewController.m in Sources */,
+				E2F819671E1C989B00F7F9BF /* DailyTaskRecordView.m in Sources */,
 				E2EC4B591DFE904A0067C0EC /* TaskListTableViewController.m in Sources */,
 				E2EF36F81DFA9DA0001247BE /* AppDelegate.m in Sources */,
 				E2EF36FB1DFA9DA0001247BE /* FirstViewController.m in Sources */,

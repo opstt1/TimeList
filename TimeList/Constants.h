@@ -41,6 +41,9 @@ static NSString *const userDefautlIdKey = @"UserDefautlIdKey";
 #define TASK_RED_COLOR [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.7];
 
 
+#define SYSTEM_FONT_16 [UIFont systemFontOfSize:16.0f]
+#define SYSTEM_FONT_15 [UIFont systemFontOfSize:15.0f]
+
 static const CGFloat normCellHeight = 44.0f;
 static NSString *const defaultNumberString = @"---";
 

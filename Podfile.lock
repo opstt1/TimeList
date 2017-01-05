@@ -2,14 +2,16 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
-  - IQKeyboardManager (4.0.7)
+  - FSCalendar (2.6.0)
+  - IQKeyboardManager (4.0.8)
   - KVNProgress (2.3.1)
   - MBProgressHUD (1.0.0)
-  - Reveal-SDK (4)
+  - Reveal-SDK (5)
   - Toast (3.0)
 
 DEPENDENCIES:
   - FMDB
+  - FSCalendar
   - IQKeyboardManager
   - KVNProgress
   - MBProgressHUD (~> 1.0.0)
@@ -18,12 +20,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  IQKeyboardManager: 69002bb4fea60596b710e57d426abc00e5063630
+  FSCalendar: c00fa5f4c3ec343ee6f7b804ae19322e9898bb84
+  IQKeyboardManager: 1a8189fa153bf09044355ee0ad36826f6767e7f7
   KVNProgress: 8167b1f19e2758290c0b6143020ed9dcbb0477a1
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  Reveal-SDK: 178c927f1a3230648d3a92b96f6e730a35b2750a
+  Reveal-SDK: 7e3945c0c3649106c3cc8923672ee545e25605c0
   Toast: 32c59229abfcf41850162b83bb9259dc84372473
 
-PODFILE CHECKSUM: e8794a15a8f2fe670ef9cd88bf4525b6b2d4bc2e
+PODFILE CHECKSUM: c938fe0707c7dd6d567a3feb6c19480fc887c1e3
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0.beta.3

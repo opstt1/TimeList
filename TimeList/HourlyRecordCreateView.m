@@ -52,7 +52,9 @@
 {
     HourlyRecordCreateView *view = [self create];
     view.complete = complete;
-    [view textViewBecomeFirstRespender];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [view textViewBecomeFirstRespender];
+    });
     return view;
 }
 
@@ -214,8 +216,8 @@
 - (void)show
 {
     CGPoint center = self.center;
-    self.centerY =  ( self.height ) /2 * 3;
-    [UIView animateWithDuration:1.0 animations:^{
+    self.centerY =  ( self.height ) / 2 * 3;
+    [UIView animateWithDuration:0.5 animations:^{
         self.centerY = center.y;
     } completion:^(BOOL finished) {
         self.centerY = center.y;
