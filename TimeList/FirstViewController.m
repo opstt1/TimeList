@@ -12,8 +12,9 @@
 #import "TaskDetailViewController.h"
 #import "Constants.h"
 #import "TaskDataSource+Func.h"
+#import "TaskDetailPushAnimatedTransitioning.h"
 
-@interface FirstViewController ()
+@interface FirstViewController ()<UINavigationControllerDelegate>
 
 @property (nonatomic, readwrite, strong) TaskListTableViewController *currentVC;
 @end
@@ -40,9 +41,10 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.delegate=self;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -90,5 +92,15 @@
     
 }
 
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    if ( operation == UINavigationControllerOperationPush ){
+        TaskDetailPushAnimatedTransitioning *push = [TaskDetailPushAnimatedTransitioning new];
+        return push;
+    }else{
+        return nil;
+    }
+}
 
 @end

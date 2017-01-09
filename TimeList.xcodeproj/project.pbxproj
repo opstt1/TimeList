@@ -28,6 +28,7 @@
 		E2166D7A1E0116E40096C821 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2166D791E0116E40096C821 /* EditableTableViewCell.m */; };
 		E22840C11E1E38C000FC6B07 /* HourlyRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = E22840C01E1E38C000FC6B07 /* HourlyRecordView.m */; };
 		E23C954A1E1507D000CEBFAF /* HourlyRecordModel+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E23C95491E1507D000CEBFAF /* HourlyRecordModel+FMDB.m */; };
+		E25A71991E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = E25A71981E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.m */; };
 		E29F406C1E07B7ED0044D961 /* TaskDataSource+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = E29F406B1E07B7ED0044D961 /* TaskDataSource+Sort.m */; };
 		E2A0A4AE1E03F93F009621A2 /* libKVNProgress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A0A4AD1E03F93F009621A2 /* libKVNProgress.a */; };
 		E2A0A4B11E03FB68009621A2 /* NSDate+Day.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A0A4B01E03FB68009621A2 /* NSDate+Day.m */; };
@@ -113,6 +114,8 @@
 		E22840C01E1E38C000FC6B07 /* HourlyRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordView.m; sourceTree = "<group>"; };
 		E23C95481E1507D000CEBFAF /* HourlyRecordModel+FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HourlyRecordModel+FMDB.h"; sourceTree = "<group>"; };
 		E23C95491E1507D000CEBFAF /* HourlyRecordModel+FMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HourlyRecordModel+FMDB.m"; sourceTree = "<group>"; };
+		E25A71971E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailPushAnimatedTransitioning.h; sourceTree = "<group>"; };
+		E25A71981E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailPushAnimatedTransitioning.m; sourceTree = "<group>"; };
 		E29F406A1E07B7ED0044D961 /* TaskDataSource+Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TaskDataSource+Sort.h"; sourceTree = "<group>"; };
 		E29F406B1E07B7ED0044D961 /* TaskDataSource+Sort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TaskDataSource+Sort.m"; sourceTree = "<group>"; };
 		E2A0A4AD1E03F93F009621A2 /* libKVNProgress.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKVNProgress.a; path = "../../../Library/Developer/Xcode/DerivedData/TimeList-acspqkjrrlseatbfzfmmkxlqhhfj/Build/Products/Debug-iphoneos/KVNProgress/libKVNProgress.a"; sourceTree = "<group>"; };
@@ -332,6 +335,8 @@
 				E2B98EDD1E02674600405C14 /* TaskTitleLongTextView.m */,
 				E2F9FE781E0A5D1900AA7C1A /* TaskDetailSubView.h */,
 				E2F9FE791E0A5D1900AA7C1A /* TaskDetailSubView.m */,
+				E25A71971E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.h */,
+				E25A71981E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.m */,
 			);
 			name = TaskDetail;
 			sourceTree = "<group>";
@@ -634,6 +639,7 @@
 				E2B924891E08D9B400E1D3AE /* TaskDataSource+Func.m in Sources */,
 				E2A8149C1E11095E0068B88C /* DailySummaryViewController.m in Sources */,
 				E2F079B01E02476B000163C7 /* TaskListSessionManager.m in Sources */,
+				E25A71991E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.m in Sources */,
 				E2EC9F5C1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.m in Sources */,
 				E2EF36FE1DFA9DA0001247BE /* SecondViewController.m in Sources */,
 				E2A0A4B11E03FB68009621A2 /* NSDate+Day.m in Sources */,
