@@ -13,7 +13,7 @@
         <!--Daily Summary View Controller-->
         <scene sceneID="Bzm-9d-wFL">
             <objects>
-                <viewController storyboardIdentifier="DailySummaryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1kE-PB-xZA" customClass="DailySummaryViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DailySummaryViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1kE-PB-xZA" customClass="DailySummaryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5FT-Qs-cea"/>
                         <viewControllerLayoutGuide type="bottom" id="y2T-ir-c0g"/>

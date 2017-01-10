@@ -58,6 +58,7 @@
 		E2EC9F5C1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC9F5B1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.m */; };
 		E2EC9F601E162FA1002214B8 /* TaskAlwaysUseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC9F5F1E162FA1002214B8 /* TaskAlwaysUseManager.m */; };
 		E2EC9F631E1631A2002214B8 /* TaskAlwaysUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC9F621E1631A2002214B8 /* TaskAlwaysUseViewController.m */; };
+		E2ECCD501E24CAC5001A3433 /* RectAnimationTransitionPop.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ECCD4F1E24CAC5001A3433 /* RectAnimationTransitionPop.m */; };
 		E2EE330C1E12565200D6C0EB /* HourlyRecordCreateView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE330B1E12565200D6C0EB /* HourlyRecordCreateView.m */; };
 		E2EE330E1E125B4600D6C0EB /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EE330D1E125B4600D6C0EB /* RevealServer.framework */; };
 		E2EF36F51DFA9DA0001247BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF36F41DFA9DA0001247BE /* main.m */; };
@@ -172,6 +173,8 @@
 		E2EC9F5F1E162FA1002214B8 /* TaskAlwaysUseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskAlwaysUseManager.m; sourceTree = "<group>"; };
 		E2EC9F611E1631A2002214B8 /* TaskAlwaysUseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskAlwaysUseViewController.h; sourceTree = "<group>"; };
 		E2EC9F621E1631A2002214B8 /* TaskAlwaysUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskAlwaysUseViewController.m; sourceTree = "<group>"; };
+		E2ECCD4E1E24CAC5001A3433 /* RectAnimationTransitionPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectAnimationTransitionPop.h; sourceTree = "<group>"; };
+		E2ECCD4F1E24CAC5001A3433 /* RectAnimationTransitionPop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectAnimationTransitionPop.m; sourceTree = "<group>"; };
 		E2EE330A1E12565200D6C0EB /* HourlyRecordCreateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyRecordCreateView.h; sourceTree = "<group>"; };
 		E2EE330B1E12565200D6C0EB /* HourlyRecordCreateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordCreateView.m; sourceTree = "<group>"; };
 		E2EE330D1E125B4600D6C0EB /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
@@ -337,6 +340,8 @@
 				E2F9FE791E0A5D1900AA7C1A /* TaskDetailSubView.m */,
 				E25A71971E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.h */,
 				E25A71981E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.m */,
+				E2ECCD4E1E24CAC5001A3433 /* RectAnimationTransitionPop.h */,
+				E2ECCD4F1E24CAC5001A3433 /* RectAnimationTransitionPop.m */,
 			);
 			name = TaskDetail;
 			sourceTree = "<group>";
@@ -671,6 +676,7 @@
 				E2A814A41E110E260068B88C /* DailySummaryDataSource+FMDB.m in Sources */,
 				E2B98EDB1E02670700405C14 /* TaskTitleTwoSelectView.m in Sources */,
 				E2A814A11E110D320068B88C /* DailySummaryDataSource.m in Sources */,
+				E2ECCD501E24CAC5001A3433 /* RectAnimationTransitionPop.m in Sources */,
 				E2EF36F51DFA9DA0001247BE /* main.m in Sources */,
 				E20CAADB1E13BADF00DA07C7 /* NSString+Toolkit.m in Sources */,
 				E20CAADF1E13BEF900DA07C7 /* TLDataSource.m in Sources */,

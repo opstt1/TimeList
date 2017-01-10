@@ -12,6 +12,10 @@
 
 @interface BaseViewController : UIViewController
 
+@property (nonatomic, readwrite, assign) CGRect selectRect;
+
 - (void)updateViewController;
+
+- (void)addBackGestureRecognizer;
 
 @end

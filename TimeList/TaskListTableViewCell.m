@@ -42,7 +42,7 @@
 - (void)p_initCell
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
     UIView *containView = [[UIView alloc] initWithFrame:CGRectMake(5, 5, UISCREEN_WIDTH-10, 60)];
     containView.backgroundColor = [UIColor whiteColor];
     containView.layer.cornerRadius = 10.0f;

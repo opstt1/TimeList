@@ -13,7 +13,7 @@
 #import "Constants.h"
 #import "TaskModel+AlwaysUseFMDB.h"
 
-@interface TaskAlwaysUseViewController ()<UITableViewDelegate,UITableViewDataSource,TLDataSourceDelegate,TaskListTableViewCellDelegate>
+@interface TaskAlwaysUseViewController ()<UITableViewDelegate,UITableViewDataSource,TLDataSourceDelegate,TaskListTableViewCellDelegate,UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -27,8 +27,14 @@
     [super viewDidLoad];
     [TaskAlwaysUseManager shareManager].dataSource.delegate = self;
     [self setUpRightNavigationButtonWithTitle:@"+" tintColor:[UIColor blackColor]];
+    [self addBackGestureRecognizer];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.delegate = self;
+}
 #pragma mark -
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -86,6 +92,7 @@
 
 - (void)rightNavigationButtonTapped:(id)sender
 {
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Task" bundle:nil];
     
     TaskDetailViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TaskDetailViewController"];

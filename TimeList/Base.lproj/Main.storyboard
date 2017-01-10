@@ -38,18 +38,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="90.5" y="362.5" width="194.5" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7j0-ky-W0T">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7j0-ky-W0T" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="8Ea-bk-mt3"/>
+                            <constraint firstItem="7j0-ky-W0T" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="SYf-AA-RDi"/>
+                            <constraint firstItem="7j0-ky-W0T" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="i7a-l0-fYD"/>
+                            <constraint firstItem="7j0-ky-W0T" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" id="xnu-IE-eMe"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="每日任务管理" image="first" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="C2p-49-woJ"/>
+                    <connections>
+                        <outlet property="tableView" destination="7j0-ky-W0T" id="0uW-WR-ijc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
