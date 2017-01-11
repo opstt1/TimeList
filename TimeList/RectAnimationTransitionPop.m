@@ -10,7 +10,7 @@
 #import "BaseViewController.h"
 #import "Constants.h"
 
-@interface RectAnimationTransitionPop()<CAAnimationDelegate>
+@interface RectAnimationTransitionPop()<CAAnimationDelegate >
 
 @property(nonatomic, readwrite, strong) id<UIViewControllerContextTransitioning> transitionContext;
 @property(nonatomic, readwrite, strong) BaseViewController *toViewController;

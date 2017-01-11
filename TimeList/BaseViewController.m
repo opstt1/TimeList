@@ -22,6 +22,18 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)pushViewController:(UIViewController *)vc animated:(BOOL)animated useCustomAnimation:(BOOL)useCustomAnimation
+{
+    _useCustomAnimation = useCustomAnimation;
+    [self.navigationController pushViewController:vc animated:animated];
+}
+
+- (void)popViewControllerAnimated:(BOOL)animated useCustomAnimation:(BOOL)useCustomAnimation
+{
+    _useCustomAnimation = useCustomAnimation;
+    [self.navigationController popViewControllerAnimated:animated];
+}
+
 - (void)updateViewController
 {
     
@@ -105,12 +117,21 @@
                                    animationControllerForOperation:(UINavigationControllerOperation)operation
                                                 fromViewController:(UIViewController *)fromVC
                                                   toViewController:(UIViewController *)toVC{
-    if (operation == UINavigationControllerOperationPop) {
-        RectAnimationTransitionPop *pingInvert = [RectAnimationTransitionPop new];
-        return pingInvert;
-    }else{
+    if ( !_useCustomAnimation ){
         return nil;
     }
+    
+    
+    if (operation == UINavigationControllerOperationPop && self.popAnimationTransition) {
+        return self.popAnimationTransition;
+    }else if ( operation == UINavigationControllerOperationPush && self.pushAnimationTransition){
+    
+        self.useCustomAnimation = NO;
+        return self.pushAnimationTransition;
+    }
+
+    
+    return nil;
 }
 
 @end

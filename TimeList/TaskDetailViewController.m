@@ -17,8 +17,10 @@
 #import "TaskTitleLongTextView.h"
 #import <objc/runtime.h>
 #import <Foundation/Foundation.h>
+#import "UIViewController+BackButtonHandler.h"
+#import "RectAnimationTransitionPop.h"
 
-@interface TaskDetailViewController ()
+@interface TaskDetailViewController ()<UINavigationControllerDelegate>
 
 @property (nonatomic, readwrite, copy) TaskDetailBlock detailBlock;
 
@@ -42,7 +44,23 @@
         _model.status = TaskUndone;
     }
     [self p_addSubView];
+    self.navigationController.delegate = nil;
     
+    self.popAnimationTransition = [RectAnimationTransitionPop new];
+    [self addBackGestureRecognizer];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.navigationController.delegate = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.delegate = self;
+    self.useCustomAnimation = YES;
 }
 
 - (void)p_addSubView
@@ -165,5 +183,16 @@
         [self.navigationController popViewControllerAnimated:YES];
     });
 
+}
+
+- (void)backButtonClicked:(id)sender
+{
+    NSLog(@"bakkkkk");
+}
+
+- (BOOL)navigationShouldPopOnBackButton
+{
+    self.navigationController.delegate = self;
+    return YES;
 }
 @end

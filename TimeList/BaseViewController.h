@@ -13,9 +13,16 @@
 @interface BaseViewController : UIViewController
 
 @property (nonatomic, readwrite, assign) CGRect selectRect;
+@property (nonatomic, readwrite, strong) id<UIViewControllerAnimatedTransitioning> pushAnimationTransition;
+@property (nonatomic, readwrite, strong) id<UIViewControllerAnimatedTransitioning>popAnimationTransition;
+@property (nonatomic, readwrite, assign) BOOL useCustomAnimation;
+
 
 - (void)updateViewController;
 
 - (void)addBackGestureRecognizer;
 
+- (void)pushViewController:(UIViewController *)vc animated:(BOOL)animated useCustomAnimation:(BOOL)useCustomAnimation;
+
+- (void)popViewControllerAnimated:(BOOL)animated useCustomAnimation:(BOOL)useCustomAnimation;
 @end

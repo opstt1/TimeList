@@ -37,10 +37,13 @@
     
     _dailySummaryDataSource = [[TaskListSessionManager sharedManager] dailySummaryDataSource];
     _dataSource = [[TaskListSessionManager sharedManager] dataSource];
+    _dataSource.delegate = self;
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self p_addDailySummaryButtton];
+    
+    self.pushAnimationTransition = [TaskDetailPushAnimatedTransitioning new];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -53,6 +56,13 @@
 {
     [super viewDidAppear:animated];
     [self.tabBarController.tabBar setHidden:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.tabBarController.tabBar setHidden:YES];
+    self.navigationController.delegate = nil;
 }
 
 #pragma mark - DailySummary
@@ -84,6 +94,7 @@
     
 }
 
+//跳转到每天总结
 - (void)didTapDailySummaryButton:(id)sender
 {
     DailySummaryViewController *vc = [[UIStoryboard storyboardWithName:@"Summary" bundle:nil] instantiateViewControllerWithIdentifier:@"DailySummaryViewController"];
@@ -91,9 +102,11 @@
         
     }];
     self.selectRect = ((UIButton *)sender).frame;
-    [self.navigationController pushViewController:vc animated:YES];
+    [self pushViewController:vc animated:YES useCustomAnimation:YES];
 }
 
+
+//跳转到常使用任务
 - (void)didTapAlawysUseTasButton:(UIButton *)sender
 {
     TaskAlwaysUseViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskAlwaysUseViewController"];
@@ -105,11 +118,12 @@
         }
         TaskModel *model = result;
         [model createSuccess];
+        [strong_weak_self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
         [strong_weak_self.dataSource insertModel:model];
         return YES;
     };
     self.selectRect = sender.frame;
-    [self.navigationController pushViewController:vc animated:YES];
+    [self pushViewController:vc animated:YES useCustomAnimation:YES];
 }
 
 
@@ -121,6 +135,7 @@
 }
 #pragma mark - action
 
+//点击创建一个任务
 - (void)leftNavigationButtonTapped:(id)sender
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Task" bundle:nil];
@@ -135,7 +150,7 @@
         }
     }];
     self.selectRect = CGRectMake(30, 30, 5, 5);
-    [self.navigationController pushViewController:vc animated:YES];
+    [self pushViewController:vc animated:YES useCustomAnimation:YES];
 }
 
 #pragma mark - UITable
@@ -246,17 +261,5 @@
     
 }
 
-#pragma mark - animation
-
-- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
-{
-    if ( operation == UINavigationControllerOperationPush ){
-        [self.tabBarController.tabBar setHidden:YES];
-        TaskDetailPushAnimatedTransitioning *push = [TaskDetailPushAnimatedTransitioning new];
-        return push;
-    }else{
-        return nil;
-    }
-}
 
 @end

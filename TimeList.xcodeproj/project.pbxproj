@@ -21,6 +21,7 @@
 		E20CC43D1E03CFB80013BEC7 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E20CC43C1E03CFB80013BEC7 /* libFMDB.a */; };
 		E20CC4401E03D8DC0013BEC7 /* TaskModel+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CC43F1E03D8DC0013BEC7 /* TaskModel+FMDB.m */; };
 		E20CC4441E03DAB00013BEC7 /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CC4431E03DAB00013BEC7 /* FMDBManager.m */; };
+		E20F95831E26277C0094B190 /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E20F95821E26277C0094B190 /* UIViewController+BackButtonHandler.m */; };
 		E2143BD01E1B83F100F0F09C /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2143BCF1E1B83F000F0F09C /* Calendar.storyboard */; };
 		E2143BD31E1B851400F0F09C /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2143BD21E1B851400F0F09C /* ThirdViewController.m */; };
 		E2143BD51E1B861F00F0F09C /* libFSCalendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2143BD41E1B861F00F0F09C /* libFSCalendar.a */; };
@@ -103,6 +104,8 @@
 		E20CC43F1E03D8DC0013BEC7 /* TaskModel+FMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TaskModel+FMDB.m"; sourceTree = "<group>"; };
 		E20CC4421E03DAB00013BEC7 /* FMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBManager.h; sourceTree = "<group>"; };
 		E20CC4431E03DAB00013BEC7 /* FMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBManager.m; sourceTree = "<group>"; };
+		E20F95811E26277C0094B190 /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
+		E20F95821E26277C0094B190 /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
 		E2143BCF1E1B83F000F0F09C /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		E2143BD11E1B851400F0F09C /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		E2143BD21E1B851400F0F09C /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
@@ -475,6 +478,8 @@
 				E2EF37121DFAA46D001247BE /* BaseViewController.m */,
 				E2EF37141DFAA492001247BE /* UIViewController+AutoNavBtnSetup.h */,
 				E2EF37151DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m */,
+				E20F95811E26277C0094B190 /* UIViewController+BackButtonHandler.h */,
+				E20F95821E26277C0094B190 /* UIViewController+BackButtonHandler.m */,
 				E2B98EEB1E02A2EC00405C14 /* UINavigationController+CustomAnimation.h */,
 				E2B98EEC1E02A2EC00405C14 /* UINavigationController+CustomAnimation.m */,
 			);
@@ -664,6 +669,7 @@
 				E29F406C1E07B7ED0044D961 /* TaskDataSource+Sort.m in Sources */,
 				E2B98EE81E027C6800405C14 /* PickerSheetView.m in Sources */,
 				E2EF37101DFAA3E0001247BE /* BaseNavigationViewController.m in Sources */,
+				E20F95831E26277C0094B190 /* UIViewController+BackButtonHandler.m in Sources */,
 				E20CC4351E03ADDD0013BEC7 /* NSArray+Toolkit.m in Sources */,
 				E2B98ED21E02668B00405C14 /* BaseView.m in Sources */,
 				E2B98ECE1E0262F200405C14 /* TaskDetailViewController.m in Sources */,

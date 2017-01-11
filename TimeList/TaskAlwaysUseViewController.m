@@ -12,6 +12,7 @@
 #import "TaskDetailViewController.h"
 #import "Constants.h"
 #import "TaskModel+AlwaysUseFMDB.h"
+#import "RectAnimationTransitionPop.h"
 
 @interface TaskAlwaysUseViewController ()<UITableViewDelegate,UITableViewDataSource,TLDataSourceDelegate,TaskListTableViewCellDelegate,UINavigationControllerDelegate>
 
@@ -28,6 +29,8 @@
     [TaskAlwaysUseManager shareManager].dataSource.delegate = self;
     [self setUpRightNavigationButtonWithTitle:@"+" tintColor:[UIColor blackColor]];
     [self addBackGestureRecognizer];
+    
+    self.popAnimationTransition = [RectAnimationTransitionPop new];
 }
 
 - (void)viewWillAppear:(BOOL)animated
