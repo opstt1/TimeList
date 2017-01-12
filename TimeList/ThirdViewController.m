@@ -18,6 +18,12 @@
     [super viewDidLoad];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.tabBarController.tabBar setHidden:NO];
+}
+
 
 - (IBAction)didTapButton:(id)sender
 {

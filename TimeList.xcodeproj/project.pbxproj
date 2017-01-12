@@ -49,6 +49,11 @@
 		E2B98EE81E027C6800405C14 /* PickerSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98EE71E027C6800405C14 /* PickerSheetView.m */; };
 		E2B98EEA1E028F9400405C14 /* libIQKeyboardManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B98EE91E028F9400405C14 /* libIQKeyboardManager.a */; };
 		E2B98EED1E02A2EC00405C14 /* UINavigationController+CustomAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98EEC1E02A2EC00405C14 /* UINavigationController+CustomAnimation.m */; };
+		E2EAB4601E27639100DA2A95 /* EventTypeModle.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB45F1E27639100DA2A95 /* EventTypeModle.m */; };
+		E2EAB4631E27667300DA2A95 /* EventTypeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB4621E27667300DA2A95 /* EventTypeManager.m */; };
+		E2EAB4661E27724800DA2A95 /* EventTypeModle+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB4651E27724800DA2A95 /* EventTypeModle+FMDB.m */; };
+		E2EAB4691E27868400DA2A95 /* EventTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB4681E27868400DA2A95 /* EventTypeCell.m */; };
+		E2EAB46C1E278BE900DA2A95 /* EventTypeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB46B1E278BE900DA2A95 /* EventTypeListViewController.m */; };
 		E2EBB5A41DFFA04700686D70 /* TaskListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EBB5A31DFFA04700686D70 /* TaskListTableViewCell.m */; };
 		E2EBB5A71DFFA24000686D70 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EBB5A61DFFA24000686D70 /* Constants.m */; };
 		E2EBB5AB1DFFDA6E00686D70 /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EBB5AA1DFFDA6E00686D70 /* UIView+Geometry.m */; };
@@ -155,6 +160,16 @@
 		E2B98EE91E028F9400405C14 /* libIQKeyboardManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIQKeyboardManager.a; path = "../../../Library/Developer/Xcode/DerivedData/TimeList-acspqkjrrlseatbfzfmmkxlqhhfj/Build/Products/Debug-iphoneos/IQKeyboardManager/libIQKeyboardManager.a"; sourceTree = "<group>"; };
 		E2B98EEB1E02A2EC00405C14 /* UINavigationController+CustomAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CustomAnimation.h"; sourceTree = "<group>"; };
 		E2B98EEC1E02A2EC00405C14 /* UINavigationController+CustomAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CustomAnimation.m"; sourceTree = "<group>"; };
+		E2EAB45E1E27639100DA2A95 /* EventTypeModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypeModle.h; sourceTree = "<group>"; };
+		E2EAB45F1E27639100DA2A95 /* EventTypeModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeModle.m; sourceTree = "<group>"; };
+		E2EAB4611E27667300DA2A95 /* EventTypeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypeManager.h; sourceTree = "<group>"; };
+		E2EAB4621E27667300DA2A95 /* EventTypeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeManager.m; sourceTree = "<group>"; };
+		E2EAB4641E27724800DA2A95 /* EventTypeModle+FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventTypeModle+FMDB.h"; sourceTree = "<group>"; };
+		E2EAB4651E27724800DA2A95 /* EventTypeModle+FMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EventTypeModle+FMDB.m"; sourceTree = "<group>"; };
+		E2EAB4671E27868400DA2A95 /* EventTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypeCell.h; sourceTree = "<group>"; };
+		E2EAB4681E27868400DA2A95 /* EventTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeCell.m; sourceTree = "<group>"; };
+		E2EAB46A1E278BE900DA2A95 /* EventTypeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypeListViewController.h; sourceTree = "<group>"; };
+		E2EAB46B1E278BE900DA2A95 /* EventTypeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeListViewController.m; sourceTree = "<group>"; };
 		E2EBB5A21DFFA04700686D70 /* TaskListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListTableViewCell.h; sourceTree = "<group>"; };
 		E2EBB5A31DFFA04700686D70 /* TaskListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListTableViewCell.m; sourceTree = "<group>"; };
 		E2EBB5A51DFFA24000686D70 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -360,6 +375,23 @@
 			name = CustomView;
 			sourceTree = "<group>";
 		};
+		E2EAB45D1E27630700DA2A95 /* EventType */ = {
+			isa = PBXGroup;
+			children = (
+				E2EAB45E1E27639100DA2A95 /* EventTypeModle.h */,
+				E2EAB45F1E27639100DA2A95 /* EventTypeModle.m */,
+				E2EAB4641E27724800DA2A95 /* EventTypeModle+FMDB.h */,
+				E2EAB4651E27724800DA2A95 /* EventTypeModle+FMDB.m */,
+				E2EAB4611E27667300DA2A95 /* EventTypeManager.h */,
+				E2EAB4621E27667300DA2A95 /* EventTypeManager.m */,
+				E2EAB46A1E278BE900DA2A95 /* EventTypeListViewController.h */,
+				E2EAB46B1E278BE900DA2A95 /* EventTypeListViewController.m */,
+				E2EAB4671E27868400DA2A95 /* EventTypeCell.h */,
+				E2EAB4681E27868400DA2A95 /* EventTypeCell.m */,
+			);
+			name = EventType;
+			sourceTree = "<group>";
+		};
 		E2EC4B4F1DFE89190067C0EC /* Task */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +466,7 @@
 		E2EF36F21DFA9DA0001247BE /* TimeList */ = {
 			isa = PBXGroup;
 			children = (
+				E2EAB45D1E27630700DA2A95 /* EventType */,
 				E2143BCE1E1B83D800F0F09C /* Calender */,
 				E20CAADC1E13BEE600DA07C7 /* BaseModel */,
 				E2EE33091E1255C700D6C0EB /* HourlyRecord */,
@@ -643,6 +676,7 @@
 				E22840C11E1E38C000FC6B07 /* HourlyRecordView.m in Sources */,
 				E2B98EE51E02783F00405C14 /* SheetMaskView.m in Sources */,
 				E2F819641E1C965000F7F9BF /* DailyRecordViewController.m in Sources */,
+				E2EAB46C1E278BE900DA2A95 /* EventTypeListViewController.m in Sources */,
 				E20CC4441E03DAB00013BEC7 /* FMDBManager.m in Sources */,
 				E20CC4401E03D8DC0013BEC7 /* TaskModel+FMDB.m in Sources */,
 				E2F9FE7A1E0A5D1900AA7C1A /* TaskDetailSubView.m in Sources */,
@@ -672,6 +706,8 @@
 				E20F95831E26277C0094B190 /* UIViewController+BackButtonHandler.m in Sources */,
 				E20CC4351E03ADDD0013BEC7 /* NSArray+Toolkit.m in Sources */,
 				E2B98ED21E02668B00405C14 /* BaseView.m in Sources */,
+				E2EAB4601E27639100DA2A95 /* EventTypeModle.m in Sources */,
+				E2EAB4631E27667300DA2A95 /* EventTypeManager.m in Sources */,
 				E2B98ECE1E0262F200405C14 /* TaskDetailViewController.m in Sources */,
 				E2F819671E1C989B00F7F9BF /* DailyTaskRecordView.m in Sources */,
 				E2EC4B591DFE904A0067C0EC /* TaskListTableViewController.m in Sources */,
@@ -681,8 +717,10 @@
 				E2166D7A1E0116E40096C821 /* EditableTableViewCell.m in Sources */,
 				E2A814A41E110E260068B88C /* DailySummaryDataSource+FMDB.m in Sources */,
 				E2B98EDB1E02670700405C14 /* TaskTitleTwoSelectView.m in Sources */,
+				E2EAB4661E27724800DA2A95 /* EventTypeModle+FMDB.m in Sources */,
 				E2A814A11E110D320068B88C /* DailySummaryDataSource.m in Sources */,
 				E2ECCD501E24CAC5001A3433 /* RectAnimationTransitionPop.m in Sources */,
+				E2EAB4691E27868400DA2A95 /* EventTypeCell.m in Sources */,
 				E2EF36F51DFA9DA0001247BE /* main.m in Sources */,
 				E20CAADB1E13BADF00DA07C7 /* NSString+Toolkit.m in Sources */,
 				E20CAADF1E13BEF900DA07C7 /* TLDataSource.m in Sources */,

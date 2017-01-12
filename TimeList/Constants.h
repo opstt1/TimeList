@@ -11,6 +11,7 @@
 #import "Toolkit.h"
 
 static NSString *const userDefautlIdKey = @"UserDefautlIdKey";
+static CGFloat defautlCellHeight = 44.0f;
 
 #define UISCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define UISCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height

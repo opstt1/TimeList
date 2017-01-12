@@ -19,6 +19,8 @@
 #import <Foundation/Foundation.h>
 #import "UIViewController+BackButtonHandler.h"
 #import "RectAnimationTransitionPop.h"
+#import "EventTypeManager.h"
+#import "EventTypeListViewController.h"
 
 @interface TaskDetailViewController ()<UINavigationControllerDelegate>
 
@@ -126,7 +128,18 @@
     [_contentView addSubview:view2];
     [_contentView addSubview:summaryView];
     
-    
+    /////////////////////////////////
+    UIButton *buuuu = [[UIButton alloc] initWithFrame:CGRectMake(100, UISCREEN_HEIGHT-200, 80, 80)];
+    buuuu.backgroundColor = [UIColor purpleColor];
+    [buuuu setTitle:@"不要点我" forState:UIControlStateNormal];
+    [buuuu addTarget:self action:@selector(ssss) forControlEvents:UIControlEventTouchUpInside];
+    [_contentView addSubview:buuuu];
+}
+
+- (void)ssss
+{
+    EventTypeListViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"EventTypeListViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

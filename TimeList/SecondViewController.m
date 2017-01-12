@@ -29,6 +29,11 @@
     self.dataSource.delegate = self;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.tabBarController.tabBar setHidden:NO];
+}
 
 - (void)leftNavigationButtonTapped:(id)sender
 {
