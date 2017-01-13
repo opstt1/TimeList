@@ -24,6 +24,7 @@
 
 @property (nonatomic, readonly, strong) UIColor *color;
 
+- (BOOL)dataIntegrity;
 
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title isDefault:(BOOL)isDefault;
 

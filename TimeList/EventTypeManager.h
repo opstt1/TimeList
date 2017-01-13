@@ -8,13 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+@class EventTypeModle;
+
 @interface EventTypeManager : NSObject
 
 @property (nonatomic, readonly, copy) NSArray *colors;
 
 @property (nonatomic, readonly, copy) NSArray *eventTypes;
 
+@property (nonatomic, readonly, copy) NSArray *unUseColors;
+
+
+
 + (instancetype)shareManager;
 
+
+- (void)insertEventModle:(EventTypeModle *)model;
 
 @end

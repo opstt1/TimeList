@@ -11,10 +11,39 @@
 #import "EventTypeModle.h"
 
 
+
+@implementation EventTypeDetailSubView
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if ( !self ){
+        return nil;
+    }
+    [self p_initCell];
+    return self;
+}
+
+
+- (void)p_initCell
+{
+    _iconView = [[UIView alloc] initWithFrame:CGRectMake(15, (defautlCellHeight-14)/2, 14, 14)];
+    _iconView.layer.cornerRadius = _iconView.width/2;
+    [self addSubview:_iconView];
+    
+    _titleTextField = [[UITextField alloc] initWithFrame:CGRectMake(15+_iconView.width+15, (defautlCellHeight-20)/2, UISCREEN_WIDTH - (15+_iconView.width+15) - 15.0f , 20.0f)];
+    _titleTextField.font = SYSTEM_FONT_15;
+    _titleTextField.textColor = COLOR_666666;
+    
+    [self addSubview:_titleTextField];
+    
+}
+
+@end
+
 @interface EventTypeCell()
 
-@property (nonatomic, readwrite, strong) UIView *iconView;
-@property (nonatomic, readwrite, strong) UILabel *titleLabel;
+@property (nonatomic, readwrite, strong) EventTypeDetailSubView *showView;
 
 @end
 
@@ -34,23 +63,17 @@
 
 - (void)p_initCell
 {
-    _iconView = [[UIView alloc] initWithFrame:CGRectMake(15, (defautlCellHeight-14)/2, 14, 14)];
-    _iconView.layer.cornerRadius = _iconView.width/2;
-    [self addSubview:_iconView];
-    
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15+_iconView.width+15, (defautlCellHeight-20)/2, UISCREEN_WIDTH - (15+_iconView.width+15) - 15.0f , 20.0f)];
-    _titleLabel.font = SYSTEM_FONT_15;
-    _titleLabel.textColor = COLOR_666666;
-    
-    [self addSubview:_titleLabel];
+    _showView = [[EventTypeDetailSubView alloc] initWithFrame:CGRectMake(0, 0, UISCREEN_WIDTH, defautlCellHeight)];
+    _showView.titleTextField.enabled = NO;
+    [self addSubview:_showView];
     
 }
 
 - (void)configWithData:(id)data deleteBlock:(EditableCellDeleteBlock)deleteBlock editBlock:(EditableCellEditBlock)editBlock
 {
     EventTypeModle *model = (EventTypeModle *)data;
-    _titleLabel.text = model.title?:@"";
-    _iconView.backgroundColor = model.color?:[UIColor blackColor];
+    _showView.titleTextField.text = model.title?:@"";
+    _showView.iconView.backgroundColor = model.color?:[UIColor blackColor];
 }
 
 

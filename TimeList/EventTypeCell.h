@@ -7,6 +7,16 @@
 //
 
 #import "EditableTableViewCell.h"
+#import "BaseView.h"
+
+@interface EventTypeDetailSubView : BaseView
+
+@property (nonatomic, readwrite, strong) UIView *iconView;
+@property (nonatomic, readwrite, strong) UITextField *titleTextField;
+
+
+@end
+
 
 @interface EventTypeCell : EditableTableViewCell
 

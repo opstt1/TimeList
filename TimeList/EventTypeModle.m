@@ -39,4 +39,11 @@
     _color = [UIColor colorWithHexString:identifier?:@"#000000"];
 }
 
+- (BOOL)dataIntegrity
+{
+    if ( !_identifier || _identifier.length <= 0 || !_title || _title.length <= 0  ){
+        return NO;
+    }
+    return YES;
+}
 @end

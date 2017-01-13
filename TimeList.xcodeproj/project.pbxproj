@@ -49,6 +49,7 @@
 		E2B98EE81E027C6800405C14 /* PickerSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98EE71E027C6800405C14 /* PickerSheetView.m */; };
 		E2B98EEA1E028F9400405C14 /* libIQKeyboardManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B98EE91E028F9400405C14 /* libIQKeyboardManager.a */; };
 		E2B98EED1E02A2EC00405C14 /* UINavigationController+CustomAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98EEC1E02A2EC00405C14 /* UINavigationController+CustomAnimation.m */; };
+		E2E9A4DE1E28C5FC00CA4C04 /* CreateEvenTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E9A4DD1E28C5FC00CA4C04 /* CreateEvenTypeView.m */; };
 		E2EAB4601E27639100DA2A95 /* EventTypeModle.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB45F1E27639100DA2A95 /* EventTypeModle.m */; };
 		E2EAB4631E27667300DA2A95 /* EventTypeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB4621E27667300DA2A95 /* EventTypeManager.m */; };
 		E2EAB4661E27724800DA2A95 /* EventTypeModle+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB4651E27724800DA2A95 /* EventTypeModle+FMDB.m */; };
@@ -160,6 +161,8 @@
 		E2B98EE91E028F9400405C14 /* libIQKeyboardManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIQKeyboardManager.a; path = "../../../Library/Developer/Xcode/DerivedData/TimeList-acspqkjrrlseatbfzfmmkxlqhhfj/Build/Products/Debug-iphoneos/IQKeyboardManager/libIQKeyboardManager.a"; sourceTree = "<group>"; };
 		E2B98EEB1E02A2EC00405C14 /* UINavigationController+CustomAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CustomAnimation.h"; sourceTree = "<group>"; };
 		E2B98EEC1E02A2EC00405C14 /* UINavigationController+CustomAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CustomAnimation.m"; sourceTree = "<group>"; };
+		E2E9A4DC1E28C5FC00CA4C04 /* CreateEvenTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEvenTypeView.h; sourceTree = "<group>"; };
+		E2E9A4DD1E28C5FC00CA4C04 /* CreateEvenTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEvenTypeView.m; sourceTree = "<group>"; };
 		E2EAB45E1E27639100DA2A95 /* EventTypeModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypeModle.h; sourceTree = "<group>"; };
 		E2EAB45F1E27639100DA2A95 /* EventTypeModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeModle.m; sourceTree = "<group>"; };
 		E2EAB4611E27667300DA2A95 /* EventTypeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypeManager.h; sourceTree = "<group>"; };
@@ -388,6 +391,8 @@
 				E2EAB46B1E278BE900DA2A95 /* EventTypeListViewController.m */,
 				E2EAB4671E27868400DA2A95 /* EventTypeCell.h */,
 				E2EAB4681E27868400DA2A95 /* EventTypeCell.m */,
+				E2E9A4DC1E28C5FC00CA4C04 /* CreateEvenTypeView.h */,
+				E2E9A4DD1E28C5FC00CA4C04 /* CreateEvenTypeView.m */,
 			);
 			name = EventType;
 			sourceTree = "<group>";
@@ -683,6 +688,7 @@
 				E2B924891E08D9B400E1D3AE /* TaskDataSource+Func.m in Sources */,
 				E2A8149C1E11095E0068B88C /* DailySummaryViewController.m in Sources */,
 				E2F079B01E02476B000163C7 /* TaskListSessionManager.m in Sources */,
+				E2E9A4DE1E28C5FC00CA4C04 /* CreateEvenTypeView.m in Sources */,
 				E25A71991E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.m in Sources */,
 				E2EC9F5C1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.m in Sources */,
 				E2EF36FE1DFA9DA0001247BE /* SecondViewController.m in Sources */,
