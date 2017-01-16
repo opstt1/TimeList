@@ -16,7 +16,6 @@
 
 @property (nonatomic, readwrite, copy) NSArray *colors;
 @property (nonatomic, readwrite, copy) NSArray *unUseColors;
-@property (nonatomic, readwrite, copy) NSArray *eventTypes;
 
 @end
 
@@ -28,7 +27,6 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         manager = [[EventTypeManager alloc] init];
-        [manager initColos];
     });
     
     return manager;
@@ -46,13 +44,14 @@
     
     //获取数据库中的任务类型
     [EventTypeModle createSqliteTable];
-    _eventTypes = [EventTypeModle findAll];
-    if ( _eventTypes.count <=0 ){
+    [self dataSourceWithArray:[EventTypeModle findAll]];
+    
+    if ( [self count] <=0 ){
         //如果数据库中没有数据，那就是第一次加载，创建出默认的类型
-        _eventTypes = [self createDefaultType];
+        [self dataSourceWithArray:[self createDefaultType]];
     }
     
-    for ( EventTypeModle *model in _eventTypes ){
+    for ( EventTypeModle *model in [self dataList] ){
         [self colorUsed:model.identifier];
     }
     
@@ -64,8 +63,8 @@
 {
     NSMutableArray *colors = [NSMutableArray arrayWithObjects:color(0x0000FF),color(0x996633),color(0x00FFFF),color(0x00FF00),color(0xFF00FF),color(0xFF7F00),color(0x7F007F),color(0xFF0000),color(0xFFFF00), nil];
 
-    self.colors = [NSArray arrayWithArray:colors];
-    self.unUseColors = [NSArray arrayWithArray:colors];
+    _colors = [NSArray arrayWithArray:colors];
+    _unUseColors = [NSArray arrayWithArray:colors];
 }
 
 
@@ -104,11 +103,21 @@
 }
 
 
-- (void)insertEventModle:(EventTypeModle *)model
+#pragma mark - interface
+
+- (id)deleteAtIndex:(NSInteger)index
 {
-    NSMutableArray *array = [NSMutableArray arrayWithArray:_eventTypes];
-    [array insertObject:model atIndex:0];
-    [self colorUsed:model.identifier];
-    _eventTypes = [NSArray arrayWithArray:array];
+    EventTypeModle *model = [super deleteAtIndex:index];
+    [model removeSQL];
+    return nil;
 }
+
+- (void)insertmodel:(id)model
+{
+    [self colorUsed:((EventTypeModle *)model).identifier];
+    [super insertmodel:model];
+    
+}
+
+
 @end

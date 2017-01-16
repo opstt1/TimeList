@@ -47,6 +47,7 @@ EventTypeModle *rs2EventTypeModle (FMResultSet *rs){
 
 + (NSArray *)findAll
 {
+    NSLog(@" EventTypeModle findAll...");
     
     NSString *sql = @"select * from EventTypeModle";
     FMDatabase *db = [[FMDBManager shareManager] connect];
@@ -66,7 +67,8 @@ EventTypeModle *rs2EventTypeModle (FMResultSet *rs){
 }
 - (BOOL)insertSQL
 {
-
+    NSLog(@" EventTypeModle insertSQL...");
+    
     NSNumber *isDefault = [NSNumber numberWithBool:self.isDefault];
     
     NSString *sql = @"insert into EventTypeModle(identifier, title, isDefault) values(?, ?, ?)";
@@ -87,6 +89,8 @@ EventTypeModle *rs2EventTypeModle (FMResultSet *rs){
 
 - (BOOL)upadteSQL
 {
+    NSLog(@" EventTypeModle upadteSQL...");
+    
     NSString *sql = @"update EventTypeModle set identifier = ?,title = ?, isDefault = ?  where identifier = ?";
     NSNumber *isDefault = [NSNumber numberWithBool:self.isDefault];
     
@@ -102,6 +106,7 @@ EventTypeModle *rs2EventTypeModle (FMResultSet *rs){
 //    if ( self.isDefault ){
 //        return NO;
 //    }
+    NSLog(@" EventTypeModle removeSQL...");
     
     NSString *sql = @"delete from EventTypeModle where identifier = ?";
     

@@ -22,6 +22,8 @@ static CGFloat colorButtonWidth = 30.0f;
 @property (nonatomic, readwrite, strong) EventTypeDetailSubView *contetView;
 @property (nonatomic, readwrite, strong) UIView *colorBackView;
 @property (nonatomic, readwrite, strong) EventTypeModle *model;
+@property (nonatomic, readwrite, strong) UIButton *selectButton;
+
 @end
 
 @implementation CreateEvenTypeView
@@ -55,11 +57,13 @@ static CGFloat colorButtonWidth = 30.0f;
     [self addSubview:_contetView];
     
     _contetView.iconView.backgroundColor = [UIColor whiteColor];
+    _contetView.iconView.layer.borderWidth = 0.5f;
+    _contetView.iconView.layer.borderColor = [UIColor blackColor].CGColor;
     _contetView.titleTextField.delegate = self;
-    _contetView.backgroundColor = [UIColor whiteColor];
     
     [self addSubview:_contetView];
     
+    NSLog(@"couuuuu: __ %d",(int)[EventTypeManager shareManager].unUseColors.count);
     [[EventTypeManager shareManager].unUseColors enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self p_addColorButton:(UIColor *)obj index:idx];
     }];
@@ -71,19 +75,17 @@ static CGFloat colorButtonWidth = 30.0f;
 - (void)addNavigationButton
 {
     UIView *ngView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, UISCREEN_WIDTH, 42.0f)];
-    ngView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8];
+    ngView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
     [self addSubview:ngView];
     
     
-    UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH-15-50, 10, 50, 20)];
-    doneButton.backgroundColor = [UIColor blackColor];
+    UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH-15-50, 0, 50, 42)];
     [doneButton setTitle:@"Done" forState:UIControlStateNormal];
     [doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [doneButton addTarget:self action:@selector(didTapDone:) forControlEvents:UIControlEventTouchUpInside];
     [ngView addSubview:doneButton];
     
-    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(15, 10, 50, 20)];
-    closeButton.backgroundColor = [UIColor blackColor];
+    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(15, 0, 50, 42)];
     [closeButton setTitle:@"Close" forState:UIControlStateNormal];
     [closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [closeButton addTarget:self action:@selector(didTapClose:) forControlEvents:UIControlEventTouchUpInside];
@@ -101,6 +103,8 @@ static CGFloat colorButtonWidth = 30.0f;
     button.backgroundColor = color;
     button.tag = index;
     [button addTarget:self action:@selector(didTapColorButton:) forControlEvents:UIControlEventTouchUpInside];
+    button.layer.cornerRadius = button.width/2;
+    
     [self addSubview:button];
     
 }
@@ -110,13 +114,23 @@ static CGFloat colorButtonWidth = 30.0f;
 
 - (void)didTapColorButton:(UIButton *)button
 {
+    if ( _selectButton ){
+        _selectButton.hidden = NO;
+    }
+    
     UIColor *color = [EventTypeManager shareManager].unUseColors[button.tag];
     _contetView.iconView.backgroundColor = color;
     _model.identifier = [color hexString];
+    _selectButton = button;
+    _selectButton.hidden = YES;
 }
 
 - (void)didTapDone:(UIButton *)button
 {
+    if ( _contetView.titleTextField.text && _contetView.titleTextField.text.length > 0 ){
+        _model.title = _contetView.titleTextField.text;
+    }
+    
     if ( [_model dataIntegrity] ){
         if ( _complete ){
             _complete(_model);
@@ -135,17 +149,22 @@ static CGFloat colorButtonWidth = 30.0f;
 
 - (void)dismiss
 {
-    [self removeFromSuperview];
+    [UIView animateWithDuration:0.7 animations:^{
+        self.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+    }];
 }
 #pragma mark - animation
 
 - (void)show
 {
     self.alpha = 0.0f;
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.7 animations:^{
         self.alpha = 1.0f;
     } completion:^(BOOL finished) {
         self.alpha = 1.0f;
+        [self.contetView.titleTextField becomeFirstResponder];
     }];
 }
 

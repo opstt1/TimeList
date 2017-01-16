@@ -118,7 +118,9 @@
         }
         TaskModel *model = result;
         [model createSuccess];
-        [strong_weak_self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+        if ( [strong_weak_self.dataSource count] > 0 ){
+            [strong_weak_self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+        }
         [strong_weak_self.dataSource insertModel:model];
         return YES;
     };

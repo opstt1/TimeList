@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "HourlyRecordModel.h"
 #import "IQKeyboardManager.h"
+#import "EventTypeCell.h"
 
 @interface HourlyRecordCreateView()
 
@@ -24,6 +25,8 @@
 @property (nonatomic, readwrite, strong) UIDatePicker *startPicker;
 @property (nonatomic, readwrite, strong) UIDatePicker *endPicker;
 
+@property (nonatomic, readwrite, strong) EventTypeDetailSubView *typeView;
+@property (nonatomic, readwrite, strong) UILabel *typeViewTipLabel;
 @end
 
 
@@ -60,7 +63,7 @@
 
 + (HourlyRecordCreateView *)create
 {
-    CGRect frame = CGRectMake(0, 0, UISCREEN_WIDTH, UISCREEN_HEIGHT);
+    CGRect frame = CGRectMake(0, 16, UISCREEN_WIDTH, UISCREEN_HEIGHT-15);
     HourlyRecordCreateView *view = [[HourlyRecordCreateView alloc] initWithFrame:frame];
     view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
     [[[UIApplication sharedApplication].delegate window] addSubview:view];
@@ -74,14 +77,11 @@
     if ( !self ){
         return nil;
     }
-    CALayer *layer = [CALayer layer];
-    layer.frame = CGRectMake(0, 400, UISCREEN_WIDTH, UISCREEN_HEIGHT-400);
-    layer.backgroundColor = [UIColor whiteColor].CGColor;
-    [self.layer addSublayer:layer];
     
     [self creatTextView];
     [self creatTimeSelectView];
     [self creatSaveAndCloseButton];
+    [self createEventTypeSelectView];
     return self;
 }
 
@@ -94,9 +94,10 @@
     return self;
 }
 
+//创建一个内容编写view
 - (void)creatTextView
 {
-    _textView = [[UITextView alloc] initWithFrame:CGRectMake(15, 70, UISCREEN_WIDTH - (15 * 2), 150)];
+    _textView = [[UITextView alloc] initWithFrame:CGRectMake(15, 64+ 60, UISCREEN_WIDTH - (15 * 2), 150)];
     _textView.layer.borderColor = [UIColor blackColor].CGColor;
     _textView.layer.borderWidth = 0.5f;
     _textView.font = [UIFont systemFontOfSize:16.0f];
@@ -105,6 +106,7 @@
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
 }
 
+//创建一个事件选择view
 - (void)creatTimeSelectView
 {
     
@@ -115,7 +117,7 @@
     
     int i = 0;
     for ( UILabel *label in @[_startTimeLabel, _endTimeLabel] ){
-        UIDatePicker *picker = [[UIDatePicker alloc] initWithFrame:CGRectMake(i*(UISCREEN_WIDTH/2), UISCREEN_HEIGHT-281, UISCREEN_WIDTH/2, 200)];
+        UIDatePicker *picker = [[UIDatePicker alloc] initWithFrame:CGRectMake(i*(UISCREEN_WIDTH/2), UISCREEN_HEIGHT-200, UISCREEN_WIDTH/2, 200)];
         picker.datePickerMode = UIDatePickerModeTime;
         picker.backgroundColor = [UIColor whiteColor];
         picker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"];;
@@ -129,7 +131,7 @@
             _endPicker = picker;
         }
         //添加一些显示信息的view
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(i*(UISCREEN_WIDTH/2), UISCREEN_HEIGHT-311, UISCREEN_WIDTH/2, 30)];
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(i*(UISCREEN_WIDTH/2), UISCREEN_HEIGHT-230, UISCREEN_WIDTH/2, 30)];
         view.backgroundColor = [UIColor greenColor];
         label.frame = CGRectMake(view.frame.size.width/2, 5, view.frame.size.width/2-3, 20);
         label.textColor = [UIColor colorWithRed:0.9 green:0 blue:0 alpha:0.8];
@@ -152,17 +154,33 @@
 
 - (void)creatSaveAndCloseButton
 {
-    CGFloat pointY = UISCREEN_HEIGHT - 10 - 45;
-    UIButton *saveButton = [[UIButton alloc] initWithFrame:CGRectMake(50, pointY, 50, 45)];
-    [saveButton setImage:[UIImage imageNamed:@"right"] forState:UIControlStateNormal];
+    UIButton *saveButton = [[UIButton alloc] initWithFrame:CGRectMake(15, 0, 60, 49)];
+    [saveButton setTitle:@"Save" forState:UIControlStateNormal];
     [saveButton addTarget:self action:@selector(didTapSaveButton:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH-50-50, pointY - 5, 45, 50)];
-    [closeButton setImage:[UIImage imageNamed:@"wrong"] forState:UIControlStateNormal];
+    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH-15-60, 0, 60, 49)];
+    [closeButton setTitle:@"Close" forState:UIControlStateNormal];
     [closeButton addTarget:self action:@selector(didTapCloseButton:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:saveButton];
     [self addSubview:closeButton];
+}
+
+
+- (void)createEventTypeSelectView
+{
+    _typeView = [[EventTypeDetailSubView alloc] initWithFrame:CGRectMake(0, UISCREEN_HEIGHT-230-defautlCellHeight-2, UISCREEN_WIDTH, defautlCellHeight)];
+    _typeView.titleTextField.enabled = NO;
+    _typeViewTipLabel = [[UILabel alloc] initWithFrame:_typeView.frame];
+    _typeViewTipLabel.y = 0;
+    _typeViewTipLabel.textColor = COLOR_666666;
+    _typeViewTipLabel.textAlignment = NSTextAlignmentCenter;
+    _typeViewTipLabel.text = @"请点击选择类型";
+    [_typeView addSubview:_typeViewTipLabel];
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapSelectType:)];
+    [_typeView addGestureRecognizer:gesture];
+    
+    [self addSubview:_typeView];
 }
 
 - (void)editInitView
@@ -207,6 +225,11 @@
 }
 
 #pragma mark - action 
+
+- (void)didTapSelectType:(id)sender
+{
+    NSLog(@"ddddd~~~~~");
+}
 
 - (void)textViewBecomeFirstRespender
 {

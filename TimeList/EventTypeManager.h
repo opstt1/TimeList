@@ -7,14 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TLDataSource.h"
 
 @class EventTypeModle;
 
-@interface EventTypeManager : NSObject
+@interface EventTypeManager : TLDataSource
 
 @property (nonatomic, readonly, copy) NSArray *colors;
-
-@property (nonatomic, readonly, copy) NSArray *eventTypes;
 
 @property (nonatomic, readonly, copy) NSArray *unUseColors;
 
@@ -22,7 +21,5 @@
 
 + (instancetype)shareManager;
 
-
-- (void)insertEventModle:(EventTypeModle *)model;
 
 @end

@@ -13,7 +13,7 @@
 #import "CreateEvenTypeView.h"
 #import "EventTypeModle+FMDB.h"
 
-@interface EventTypeListViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface EventTypeListViewController ()<UITableViewDelegate,UITableViewDataSource,TLDataSourceDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, readwrite, assign) BOOL isCreateEvenType;
@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     [self setUpRightNavigationButtonWithTitle:@"+" tintColor:COLOR_666666];
-    [EventTypeManager shareManager];
+    [EventTypeManager shareManager].delegate = self;
 }
 
 #pragma mark - UITableView
@@ -39,7 +39,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [EventTypeManager shareManager].eventTypes.count;
+    return [[EventTypeManager shareManager] count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,10 +62,11 @@
     if ( !cell ){
         cell = [[EventTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
     }
-    [cell configWithData:[EventTypeManager shareManager].eventTypes[indexPath.row] deleteBlock:^(id result) {
+    [cell configWithData:[[EventTypeManager shareManager] objectAtInde:indexPath.row] deleteBlock:^(id result) {
         
+        [[EventTypeManager shareManager] deleteAtIndex:indexPath.row];
     } editBlock:^(id result) {
-        
+        NSLog(@"edti");
     }];
     return cell;
 }
@@ -79,12 +80,20 @@
     [CreateEvenTypeView createWithComplete:^(EventTypeModle *model) {
         if ( model != nil ){
             [model insertSQL];
-            [[EventTypeManager shareManager] insertEventModle:model];
+            [[EventTypeManager shareManager] insertmodel:model];
         }
         _isCreateEvenType = NO;
         [self.tableView reloadData];
     }];
 }
 
+#pragma mark - TLDataSourceDelegate
+
+- (void)TLDataSource:(TLDataSource *)dataSource update:(BOOL)update
+{
+    if ( update ){
+        [self.tableView reloadData];
+    }
+}
 
 @end
