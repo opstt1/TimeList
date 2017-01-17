@@ -15,7 +15,7 @@
 
 @property (nonatomic, readwrite, strong) UIView *showRecordView;
 @property (nonatomic, readwrite, strong) UILabel *showRecordLabel;
-
+@property (nonatomic, readwrite, strong) UIView *showTypeView;
 
 @end
 
@@ -33,15 +33,19 @@
 
 - (void)p_initCell
 {
+    _showTypeView = [[UIView alloc] initWithFrame:CGRectMake(15, 5, 14, 14)];
+    _showTypeView.layer.cornerRadius = 7;
+    
     _showRecordView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, UISCREEN_WIDTH, 1)];
     _showRecordView.backgroundColor = [UIColor whiteColor];
     
-    _showRecordLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 5, UISCREEN_WIDTH-15*2, 1)];
+    _showRecordLabel = [[UILabel alloc] initWithFrame:CGRectMake(14+15+10, 5, UISCREEN_WIDTH-15*2, 1)];
     _showRecordLabel.font = [UIFont systemFontOfSize:16.0f];
     _showRecordLabel.textColor = COLOR_333333;
     _showRecordLabel.numberOfLines = 0;
     
     [_showRecordView addSubview:_showRecordLabel];
+    [_showRecordView addSubview:_showTypeView];
     
     [self setCanEditableWithView:_showRecordView];
     
@@ -50,9 +54,9 @@
     [self addSubview:_showRecordView];
 }
 
+//添加删除，修改按钮
 - (void)addEditButtons
 {
-    
     self.sideslipCellLimitScrollMargin = 0.0f;
     self.sideslipLeftLimitMargin = 0;
     self.sideslipRightLimitMargin = 0;
@@ -88,7 +92,9 @@
     HourlyRecordModel *model = (HourlyRecordModel *)data;
     _showRecordView.height = model.cellHeight;
     _showRecordLabel.height = _showRecordView.height - 10;
+    _showTypeView.centerY = _showRecordLabel.centerY;
     
+    _showTypeView.backgroundColor = model.eventTypeModel.color ? :[UIColor grayColor];
     _showRecordLabel.text = model.content;
     
     for ( UIButton *button in self.rightButtons ){

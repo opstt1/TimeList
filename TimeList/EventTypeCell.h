@@ -20,4 +20,7 @@
 
 @interface EventTypeCell : EditableTableViewCell
 
+
+- (void)enableEdit:(BOOL)enable;
+
 @end

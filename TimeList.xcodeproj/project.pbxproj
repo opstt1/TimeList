@@ -50,9 +50,9 @@
 		E2B98EEA1E028F9400405C14 /* libIQKeyboardManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B98EE91E028F9400405C14 /* libIQKeyboardManager.a */; };
 		E2B98EED1E02A2EC00405C14 /* UINavigationController+CustomAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B98EEC1E02A2EC00405C14 /* UINavigationController+CustomAnimation.m */; };
 		E2E9A4DE1E28C5FC00CA4C04 /* CreateEvenTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E9A4DD1E28C5FC00CA4C04 /* CreateEvenTypeView.m */; };
-		E2EAB4601E27639100DA2A95 /* EventTypeModle.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB45F1E27639100DA2A95 /* EventTypeModle.m */; };
+		E2EAB4601E27639100DA2A95 /* EventTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB45F1E27639100DA2A95 /* EventTypeModel.m */; };
 		E2EAB4631E27667300DA2A95 /* EventTypeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB4621E27667300DA2A95 /* EventTypeManager.m */; };
-		E2EAB4661E27724800DA2A95 /* EventTypeModle+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB4651E27724800DA2A95 /* EventTypeModle+FMDB.m */; };
+		E2EAB4661E27724800DA2A95 /* EventTypeModel+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB4651E27724800DA2A95 /* EventTypeModel+FMDB.m */; };
 		E2EAB4691E27868400DA2A95 /* EventTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB4681E27868400DA2A95 /* EventTypeCell.m */; };
 		E2EAB46C1E278BE900DA2A95 /* EventTypeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EAB46B1E278BE900DA2A95 /* EventTypeListViewController.m */; };
 		E2EBB5A41DFFA04700686D70 /* TaskListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EBB5A31DFFA04700686D70 /* TaskListTableViewCell.m */; };
@@ -80,6 +80,8 @@
 		E2EF37161DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF37151DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m */; };
 		E2EF371A1DFAB239001247BE /* UIColor+TAToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF37191DFAB239001247BE /* UIColor+TAToolkit.m */; };
 		E2F079B01E02476B000163C7 /* TaskListSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F079AF1E02476B000163C7 /* TaskListSessionManager.m */; };
+		E2F2490C1E2DCAC600E15E50 /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F2490B1E2DCAC600E15E50 /* UIViewController+Utils.m */; };
+		E2F2490F1E2DCE4100E15E50 /* EventTypeSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F2490E1E2DCE4100E15E50 /* EventTypeSelectView.m */; };
 		E2F819641E1C965000F7F9BF /* DailyRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F819631E1C965000F7F9BF /* DailyRecordViewController.m */; };
 		E2F819671E1C989B00F7F9BF /* DailyTaskRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F819661E1C989B00F7F9BF /* DailyTaskRecordView.m */; };
 		E2F9FE771E0A32FF00AA7C1A /* libToast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F9FE761E0A32FF00AA7C1A /* libToast.a */; };
@@ -163,12 +165,12 @@
 		E2B98EEC1E02A2EC00405C14 /* UINavigationController+CustomAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CustomAnimation.m"; sourceTree = "<group>"; };
 		E2E9A4DC1E28C5FC00CA4C04 /* CreateEvenTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEvenTypeView.h; sourceTree = "<group>"; };
 		E2E9A4DD1E28C5FC00CA4C04 /* CreateEvenTypeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEvenTypeView.m; sourceTree = "<group>"; };
-		E2EAB45E1E27639100DA2A95 /* EventTypeModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypeModle.h; sourceTree = "<group>"; };
-		E2EAB45F1E27639100DA2A95 /* EventTypeModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeModle.m; sourceTree = "<group>"; };
+		E2EAB45E1E27639100DA2A95 /* EventTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypeModel.h; sourceTree = "<group>"; };
+		E2EAB45F1E27639100DA2A95 /* EventTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeModel.m; sourceTree = "<group>"; };
 		E2EAB4611E27667300DA2A95 /* EventTypeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypeManager.h; sourceTree = "<group>"; };
 		E2EAB4621E27667300DA2A95 /* EventTypeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeManager.m; sourceTree = "<group>"; };
-		E2EAB4641E27724800DA2A95 /* EventTypeModle+FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventTypeModle+FMDB.h"; sourceTree = "<group>"; };
-		E2EAB4651E27724800DA2A95 /* EventTypeModle+FMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EventTypeModle+FMDB.m"; sourceTree = "<group>"; };
+		E2EAB4641E27724800DA2A95 /* EventTypeModel+FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventTypeModel+FMDB.h"; sourceTree = "<group>"; };
+		E2EAB4651E27724800DA2A95 /* EventTypeModel+FMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EventTypeModel+FMDB.m"; sourceTree = "<group>"; };
 		E2EAB4671E27868400DA2A95 /* EventTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypeCell.h; sourceTree = "<group>"; };
 		E2EAB4681E27868400DA2A95 /* EventTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeCell.m; sourceTree = "<group>"; };
 		E2EAB46A1E278BE900DA2A95 /* EventTypeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypeListViewController.h; sourceTree = "<group>"; };
@@ -221,6 +223,10 @@
 		E2EF37191DFAB239001247BE /* UIColor+TAToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TAToolkit.m"; sourceTree = "<group>"; };
 		E2F079AE1E02476B000163C7 /* TaskListSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListSessionManager.h; sourceTree = "<group>"; };
 		E2F079AF1E02476B000163C7 /* TaskListSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListSessionManager.m; sourceTree = "<group>"; };
+		E2F2490A1E2DCAC600E15E50 /* UIViewController+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utils.h"; sourceTree = "<group>"; };
+		E2F2490B1E2DCAC600E15E50 /* UIViewController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utils.m"; sourceTree = "<group>"; };
+		E2F2490D1E2DCE4100E15E50 /* EventTypeSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTypeSelectView.h; sourceTree = "<group>"; };
+		E2F2490E1E2DCE4100E15E50 /* EventTypeSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTypeSelectView.m; sourceTree = "<group>"; };
 		E2F819621E1C965000F7F9BF /* DailyRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyRecordViewController.h; sourceTree = "<group>"; };
 		E2F819631E1C965000F7F9BF /* DailyRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyRecordViewController.m; sourceTree = "<group>"; };
 		E2F819651E1C989B00F7F9BF /* DailyTaskRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyTaskRecordView.h; sourceTree = "<group>"; };
@@ -381,10 +387,10 @@
 		E2EAB45D1E27630700DA2A95 /* EventType */ = {
 			isa = PBXGroup;
 			children = (
-				E2EAB45E1E27639100DA2A95 /* EventTypeModle.h */,
-				E2EAB45F1E27639100DA2A95 /* EventTypeModle.m */,
-				E2EAB4641E27724800DA2A95 /* EventTypeModle+FMDB.h */,
-				E2EAB4651E27724800DA2A95 /* EventTypeModle+FMDB.m */,
+				E2EAB45E1E27639100DA2A95 /* EventTypeModel.h */,
+				E2EAB45F1E27639100DA2A95 /* EventTypeModel.m */,
+				E2EAB4641E27724800DA2A95 /* EventTypeModel+FMDB.h */,
+				E2EAB4651E27724800DA2A95 /* EventTypeModel+FMDB.m */,
 				E2EAB4611E27667300DA2A95 /* EventTypeManager.h */,
 				E2EAB4621E27667300DA2A95 /* EventTypeManager.m */,
 				E2EAB46A1E278BE900DA2A95 /* EventTypeListViewController.h */,
@@ -393,6 +399,8 @@
 				E2EAB4681E27868400DA2A95 /* EventTypeCell.m */,
 				E2E9A4DC1E28C5FC00CA4C04 /* CreateEvenTypeView.h */,
 				E2E9A4DD1E28C5FC00CA4C04 /* CreateEvenTypeView.m */,
+				E2F2490D1E2DCE4100E15E50 /* EventTypeSelectView.h */,
+				E2F2490E1E2DCE4100E15E50 /* EventTypeSelectView.m */,
 			);
 			name = EventType;
 			sourceTree = "<group>";
@@ -542,6 +550,8 @@
 				E2A0A4B01E03FB68009621A2 /* NSDate+Day.m */,
 				E20CAAD91E13BADF00DA07C7 /* NSString+Toolkit.h */,
 				E20CAADA1E13BADF00DA07C7 /* NSString+Toolkit.m */,
+				E2F2490A1E2DCAC600E15E50 /* UIViewController+Utils.h */,
+				E2F2490B1E2DCAC600E15E50 /* UIViewController+Utils.m */,
 			);
 			name = Toolkit;
 			sourceTree = "<group>";
@@ -700,6 +710,7 @@
 				E2B98EE11E02678600405C14 /* TaskTitleView.m in Sources */,
 				E2B98ED81E0266D400405C14 /* TaskTitleButtonView.m in Sources */,
 				E2B98EDE1E02674600405C14 /* TaskTitleLongTextView.m in Sources */,
+				E2F2490C1E2DCAC600E15E50 /* UIViewController+Utils.m in Sources */,
 				E2EBB5A41DFFA04700686D70 /* TaskListTableViewCell.m in Sources */,
 				E2143BD81E1BA20300F0F09C /* CalendarViewController.m in Sources */,
 				E2EC4B561DFE8C7D0067C0EC /* TaskDataSource.m in Sources */,
@@ -712,8 +723,9 @@
 				E20F95831E26277C0094B190 /* UIViewController+BackButtonHandler.m in Sources */,
 				E20CC4351E03ADDD0013BEC7 /* NSArray+Toolkit.m in Sources */,
 				E2B98ED21E02668B00405C14 /* BaseView.m in Sources */,
-				E2EAB4601E27639100DA2A95 /* EventTypeModle.m in Sources */,
+				E2EAB4601E27639100DA2A95 /* EventTypeModel.m in Sources */,
 				E2EAB4631E27667300DA2A95 /* EventTypeManager.m in Sources */,
+				E2F2490F1E2DCE4100E15E50 /* EventTypeSelectView.m in Sources */,
 				E2B98ECE1E0262F200405C14 /* TaskDetailViewController.m in Sources */,
 				E2F819671E1C989B00F7F9BF /* DailyTaskRecordView.m in Sources */,
 				E2EC4B591DFE904A0067C0EC /* TaskListTableViewController.m in Sources */,
@@ -723,7 +735,7 @@
 				E2166D7A1E0116E40096C821 /* EditableTableViewCell.m in Sources */,
 				E2A814A41E110E260068B88C /* DailySummaryDataSource+FMDB.m in Sources */,
 				E2B98EDB1E02670700405C14 /* TaskTitleTwoSelectView.m in Sources */,
-				E2EAB4661E27724800DA2A95 /* EventTypeModle+FMDB.m in Sources */,
+				E2EAB4661E27724800DA2A95 /* EventTypeModel+FMDB.m in Sources */,
 				E2A814A11E110D320068B88C /* DailySummaryDataSource.m in Sources */,
 				E2ECCD501E24CAC5001A3433 /* RectAnimationTransitionPop.m in Sources */,
 				E2EAB4691E27868400DA2A95 /* EventTypeCell.m in Sources */,

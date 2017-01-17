@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "TLDataSource.h"
+#import "EventTypeModel.h"
 
 @interface HourlyRecordModel : NSObject
 
@@ -22,6 +23,8 @@
 @property (nonatomic, readwrite, strong) NSDate *endDate;
 
 @property (nonatomic, readwrite, copy) NSString *identifier;
+
+@property (nonatomic, readwrite, strong) EventTypeModel *eventTypeModel;
 
 #pragma mark - calculate property
 

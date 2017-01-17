@@ -10,12 +10,16 @@
 #import "UIViewController+AutoNavBtnSetup.h"
 #import "UINavigationController+CustomAnimation.h"
 
+typedef void(^BaseViewControllerBlock)(id result);
+
 @interface BaseViewController : UIViewController
 
 @property (nonatomic, readwrite, assign) CGRect selectRect;
 @property (nonatomic, readwrite, strong) id<UIViewControllerAnimatedTransitioning> pushAnimationTransition;
 @property (nonatomic, readwrite, strong) id<UIViewControllerAnimatedTransitioning>popAnimationTransition;
 @property (nonatomic, readwrite, assign) BOOL useCustomAnimation;
+
+@property (nonatomic, readwrite, copy) BaseViewControllerBlock bvcBlock;
 
 
 - (void)updateViewController;

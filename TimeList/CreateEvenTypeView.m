@@ -10,7 +10,7 @@
 #import "EventTypeManager.h"
 #import "Constants.h"
 #import "EventTypeCell.h"
-#import "EventTypeModle.h"
+#import "EventTypeModel.h"
 
 static CGFloat colorButtonTop = 64 + 44.0f + 60;
 static NSInteger onelineButtonCount = 5;
@@ -21,7 +21,7 @@ static CGFloat colorButtonWidth = 30.0f;
 
 @property (nonatomic, readwrite, strong) EventTypeDetailSubView *contetView;
 @property (nonatomic, readwrite, strong) UIView *colorBackView;
-@property (nonatomic, readwrite, strong) EventTypeModle *model;
+@property (nonatomic, readwrite, strong) EventTypeModel *model;
 @property (nonatomic, readwrite, strong) UIButton *selectButton;
 
 @end
@@ -45,7 +45,7 @@ static CGFloat colorButtonWidth = 30.0f;
         return nil;
     }
     [self initView];
-    _model = [[EventTypeModle alloc] initWithIdentifier:@"" title:@"" isDefault:NO];
+    _model = [[EventTypeModel alloc] initWithIdentifier:@"" title:@"" isDefault:NO];
     return self;
 }
 

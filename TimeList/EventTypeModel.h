@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "FMDBManager.h"
                                    
-@interface EventTypeModle : NSObject
+@interface EventTypeModel : NSObject
 
 //颜色的id
 @property (nonatomic, readwrite, copy) NSString *identifier;

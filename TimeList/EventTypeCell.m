@@ -8,7 +8,7 @@
 
 #import "EventTypeCell.h"
 #import "Constants.h"
-#import "EventTypeModle.h"
+#import "EventTypeModel.h"
 
 
 
@@ -78,7 +78,7 @@
 {
     self.deleteBlock = deleteBlock;
     self.editBlock = editBlock;
-    EventTypeModle *model = (EventTypeModle *)data;
+    EventTypeModel *model = (EventTypeModel *)data;
     _showView.titleTextField.text = model.title?:@"";
     _showView.iconView.backgroundColor = model.color?:[UIColor blackColor];
 }
@@ -115,6 +115,7 @@
     self.sideslipRightLimitMargin = 70 + 70;
 }
 
+
 #pragma mark - action
 
 - (void)didTapButton:(UIButton *)sender
@@ -131,4 +132,13 @@
     }
 }
 
+
+- (void)enableEdit:(BOOL)enable
+{
+    if ( !enable ){
+        self.canSlideToLeft = NO;
+    }else{
+        self.canSlideToLeft = YES;
+    }
+}
 @end

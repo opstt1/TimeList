@@ -1,18 +1,18 @@
 //
-//  EventTypeModle+FMDB.m
+//  EventTypeModel+FMDB.m
 //  TimeList
 //
 //  Created by LiHaomiao on 2017/1/12.
 //  Copyright © 2017年 Li Haomiao. All rights reserved.
 //
 
-#import "EventTypeModle+FMDB.h"
+#import "EventTypeModel+FMDB.h"
 #import "FMDBManager.h"
 
-@implementation EventTypeModle (FMDB)
+@implementation EventTypeModel (FMDB)
 
-EventTypeModle *rs2EventTypeModle (FMResultSet *rs){
-    EventTypeModle *obj = [[EventTypeModle alloc] init];
+EventTypeModel *rs2EventTypeModel (FMResultSet *rs){
+    EventTypeModel *obj = [[EventTypeModel alloc] init];
     
     obj.identifier = [rs stringForColumn:@"identifier"];
     obj.title = [rs stringForColumn:@"title"];
@@ -26,7 +26,7 @@ EventTypeModle *rs2EventTypeModle (FMResultSet *rs){
 {
     
     FMDatabase *db = [[FMDBManager shareManager] connect];
-    NSString *existsSql = [NSString stringWithFormat:@"select count(name) as countNum from sqlite_master where type = 'table' and name = '%@'", @"EventTypeModle" ];
+    NSString *existsSql = [NSString stringWithFormat:@"select count(name) as countNum from sqlite_master where type = 'table' and name = '%@'", @"EventTypeModel" ];
 
     FMResultSet *rs = [db executeQuery:existsSql];
     
@@ -38,7 +38,7 @@ EventTypeModle *rs2EventTypeModle (FMResultSet *rs){
             }
     [rs close];
     
-    NSString *sql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS EventTypeModle(identifier text, title text,isDefault bool );"];
+    NSString *sql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS EventTypeModel(identifier text, title text,isDefault bool );"];
 
     [db executeUpdate:sql];
 
@@ -47,16 +47,16 @@ EventTypeModle *rs2EventTypeModle (FMResultSet *rs){
 
 + (NSArray *)findAll
 {
-    NSLog(@" EventTypeModle findAll...");
+    NSLog(@" EventTypeModel findAll...");
     
-    NSString *sql = @"select * from EventTypeModle";
+    NSString *sql = @"select * from EventTypeModel";
     FMDatabase *db = [[FMDBManager shareManager] connect];
     FMResultSet *rs = [db executeQuery:sql];
     
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:32];
     while ([rs next]) {
-        EventTypeModle *eventTypeModle = rs2EventTypeModle(rs);
-        [array addObject:eventTypeModle];
+        EventTypeModel *EventTypeModel = rs2EventTypeModel(rs);
+        [array addObject:EventTypeModel];
     }
     
     [rs close];
@@ -67,11 +67,11 @@ EventTypeModle *rs2EventTypeModle (FMResultSet *rs){
 }
 - (BOOL)insertSQL
 {
-    NSLog(@" EventTypeModle insertSQL...");
+    NSLog(@" EventTypeModel insertSQL...");
     
     NSNumber *isDefault = [NSNumber numberWithBool:self.isDefault];
     
-    NSString *sql = @"insert into EventTypeModle(identifier, title, isDefault) values(?, ?, ?)";
+    NSString *sql = @"insert into EventTypeModel(identifier, title, isDefault) values(?, ?, ?)";
     
     FMDatabase *db = [[FMDBManager shareManager] connect];
     if (db == nil) {
@@ -89,9 +89,9 @@ EventTypeModle *rs2EventTypeModle (FMResultSet *rs){
 
 - (BOOL)upadteSQL
 {
-    NSLog(@" EventTypeModle upadteSQL...");
+    NSLog(@" EventTypeModel upadteSQL...");
     
-    NSString *sql = @"update EventTypeModle set identifier = ?,title = ?, isDefault = ?  where identifier = ?";
+    NSString *sql = @"update EventTypeModel set identifier = ?,title = ?, isDefault = ?  where identifier = ?";
     NSNumber *isDefault = [NSNumber numberWithBool:self.isDefault];
     
     FMDatabase *db = [[FMDBManager shareManager] connect];
@@ -106,9 +106,9 @@ EventTypeModle *rs2EventTypeModle (FMResultSet *rs){
 //    if ( self.isDefault ){
 //        return NO;
 //    }
-    NSLog(@" EventTypeModle removeSQL...");
+    NSLog(@" EventTypeModel removeSQL...");
     
-    NSString *sql = @"delete from EventTypeModle where identifier = ?";
+    NSString *sql = @"delete from EventTypeModel where identifier = ?";
     
     FMDatabase *db = [[FMDBManager shareManager] connect];
     BOOL ret = [db executeUpdate:sql, self.identifier];

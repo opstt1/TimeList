@@ -6,18 +6,31 @@
 //  Copyright © 2017年 Li Haomiao. All rights reserved.
 //
 
-#import "EventTypeModle.h"
+#import "EventTypeModel.h"
 #import "Constants.h"
-#import "EventTypeModle+FMDB.h"
+#import "EventTypeModel+FMDB.h"
 
 
-@interface EventTypeModle()
+@interface EventTypeModel()
 
 @property (nonatomic, readwrite, strong) UIColor *color;
 
 @end
 
-@implementation EventTypeModle
+@implementation EventTypeModel
+
+- (instancetype)init
+{
+    self = [super init];
+    if ( !self ){
+        return nil;
+    }
+    _isDefault = NO;
+    _identifier = @"";
+    _color = [UIColor grayColor];
+    _title = @"";
+    return self;
+}
 
 - (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title isDefault:(BOOL)isDefault
 {

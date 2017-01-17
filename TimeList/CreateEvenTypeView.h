@@ -8,9 +8,9 @@
 
 #import "BaseView.h"
 
-@class EventTypeModle;
+@class EventTypeModel;
 
-typedef void(^CreateEvenTypeViewBlock)(EventTypeModle *model);
+typedef void(^CreateEvenTypeViewBlock)(EventTypeModel *model);
 
 @interface CreateEvenTypeView : BaseView
 

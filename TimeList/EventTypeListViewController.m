@@ -11,7 +11,7 @@
 #import "Constants.h"
 #import "EventTypeCell.h"
 #import "CreateEvenTypeView.h"
-#import "EventTypeModle+FMDB.h"
+#import "EventTypeModel+FMDB.h"
 
 @interface EventTypeListViewController ()<UITableViewDelegate,UITableViewDataSource,TLDataSourceDelegate>
 
@@ -71,13 +71,24 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    EventTypeModle *model = [[EventTypeManager shareManager] objectAtInde:indexPath.row];
+    if ( self.bvcBlock ){
+        self.bvcBlock(model);
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.navigationController popViewControllerAnimated:YES];
+    });
+}
+
 #pragma mark - action
 
 - (void)rightNavigationButtonTapped:(id)sender
 {
     self.isCreateEvenType = YES;
     [self.tableView reloadData];
-    [CreateEvenTypeView createWithComplete:^(EventTypeModle *model) {
+    [CreateEvenTypeView createWithComplete:^(EventTypeModel *model) {
         if ( model != nil ){
             [model insertSQL];
             [[EventTypeManager shareManager] insertmodel:model];

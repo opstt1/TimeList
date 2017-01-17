@@ -16,5 +16,6 @@
 - (BOOL)removeSQL;
 
 + (NSArray *) findOfStartDate: (NSDate *) start toDate:(NSDate *) toDate;
++ (void)addCollmn;
 
 @end

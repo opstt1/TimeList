@@ -11,6 +11,9 @@
 #import "HourlyRecordModel.h"
 #import "IQKeyboardManager.h"
 #import "EventTypeCell.h"
+#import "EventTypeModel.h"
+#import "EventTypeListViewController.h"
+#import "EventTypeSelectView.h"
 
 @interface HourlyRecordCreateView()
 
@@ -25,8 +28,13 @@
 @property (nonatomic, readwrite, strong) UIDatePicker *startPicker;
 @property (nonatomic, readwrite, strong) UIDatePicker *endPicker;
 
+@property (nonatomic, readwrite, strong) EventTypeModel *eventTypeModel;
+
 @property (nonatomic, readwrite, strong) EventTypeDetailSubView *typeView;
 @property (nonatomic, readwrite, strong) UILabel *typeViewTipLabel;
+
+@property (nonatomic, readwrite, strong) EventTypeSelectView *selectTypeView;
+
 @end
 
 
@@ -132,7 +140,7 @@
         }
         //添加一些显示信息的view
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(i*(UISCREEN_WIDTH/2), UISCREEN_HEIGHT-230, UISCREEN_WIDTH/2, 30)];
-        view.backgroundColor = [UIColor greenColor];
+        view.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
         label.frame = CGRectMake(view.frame.size.width/2, 5, view.frame.size.width/2-3, 20);
         label.textColor = [UIColor colorWithRed:0.9 green:0 blue:0 alpha:0.8];
         label.text = timeStr;
@@ -156,10 +164,12 @@
 {
     UIButton *saveButton = [[UIButton alloc] initWithFrame:CGRectMake(15, 0, 60, 49)];
     [saveButton setTitle:@"Save" forState:UIControlStateNormal];
+    [saveButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     [saveButton addTarget:self action:@selector(didTapSaveButton:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH-15-60, 0, 60, 49)];
     [closeButton setTitle:@"Close" forState:UIControlStateNormal];
+    [closeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [closeButton addTarget:self action:@selector(didTapCloseButton:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:saveButton];
@@ -183,6 +193,7 @@
     [self addSubview:_typeView];
 }
 
+//通过编辑进入，修改默认值
 - (void)editInitView
 {
     if ( !_model ){
@@ -194,6 +205,12 @@
     _endPicker.date = _model.endDate;
     self.startDate = _model.startDate;
     self.endDate = _model.endDate;
+    
+    if ( [_model.eventTypeModel.identifier isEqualToString:@""] ){
+        return;
+    }
+    
+    self.eventTypeModel = _model.eventTypeModel;
 }
 
 #pragma mark -
@@ -224,11 +241,54 @@
     _endTimeLabel.text = timeStr;
 }
 
+- (void)setEventTypeModel:(EventTypeModel *)eventTypeModel
+{
+    _eventTypeModel = eventTypeModel;
+    if ( !_typeView || !eventTypeModel ){
+        return;
+    }
+    
+    _typeView.titleTextField.text = eventTypeModel.title;
+    _typeView.iconView.backgroundColor = eventTypeModel.color;
+    _typeViewTipLabel.hidden = YES;
+}
+
 #pragma mark - action 
 
+//点击选择类型
 - (void)didTapSelectType:(id)sender
 {
-    NSLog(@"ddddd~~~~~");
+    WEAK_OBJ_REF(self);
+    CGFloat height = UISCREEN_HEIGHT-_typeView.y-_typeView.height-10-14;
+    if ( !_selectTypeView  ){
+        _selectTypeView = [[EventTypeSelectView alloc] initWithFrame:CGRectMake(_typeView.x, _typeView.y+_typeView.height, _typeView.width, height)];
+        
+        _selectTypeView.bvBlock = ^(id result ){
+            STRONG_OBJ_REF(weak_self);
+            if ( strong_weak_self && result && [result isKindOfClass:[EventTypeModel class]] ){
+                strong_weak_self.eventTypeModel = result;
+                [strong_weak_self didTapSelectType:sender];
+            }
+        };
+        
+        _selectTypeView.height = 0.0f;
+        [self addSubview:_selectTypeView];
+        [UIView animateWithDuration:0.7 animations:^{
+            _selectTypeView.height = height;
+        } completion:^(BOOL finished) {
+            _selectTypeView.height = height;
+        }];
+        
+    }else{
+        
+        [UIView animateWithDuration:0.7 animations:^{
+            _selectTypeView.height = 0;
+        } completion:^(BOOL finished) {
+            [_selectTypeView removeFromSuperview];
+            _selectTypeView = nil;
+        }];
+    }
+    
 }
 
 - (void)textViewBecomeFirstRespender
@@ -265,7 +325,8 @@
     _model.content = _textView.text;
     _model.startDate = _startDate?:[NSDate date];
     _model.endDate = _endDate?:[NSDate date];
-   
+    _model.eventTypeModel = _eventTypeModel?:[[EventTypeModel alloc] init];
+    
     if ( !_model.createDate ){
         _model.createDate = [NSDate date];
     }

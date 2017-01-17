@@ -8,7 +8,7 @@
 
 #import "EventTypeManager.h"
 #import "Constants.h"
-#import "EventTypeModle+FMDB.h"
+#import "EventTypeModel+FMDB.h"
 
 #define color(x) [UIColor colorWithRGB:x]
 
@@ -43,15 +43,15 @@
     [self initColos];
     
     //获取数据库中的任务类型
-    [EventTypeModle createSqliteTable];
-    [self dataSourceWithArray:[EventTypeModle findAll]];
+    [EventTypeModel createSqliteTable];
+    [self dataSourceWithArray:[EventTypeModel findAll]];
     
     if ( [self count] <=0 ){
         //如果数据库中没有数据，那就是第一次加载，创建出默认的类型
         [self dataSourceWithArray:[self createDefaultType]];
     }
     
-    for ( EventTypeModle *model in [self dataList] ){
+    for ( EventTypeModel *model in [self dataList] ){
         [self colorUsed:model.identifier];
     }
     
@@ -90,11 +90,11 @@
 - (NSArray *)createDefaultType
 {
     //学习 红色
-    EventTypeModle *learnModel = [[EventTypeModle alloc] initWithIdentifier:@"#ff0000" title:@"学习" isDefault:YES];
+    EventTypeModel *learnModel = [[EventTypeModel alloc] initWithIdentifier:@"#ff0000" title:@"学习" isDefault:YES];
     [learnModel insertSQL];
     
     //工作 紫色
-    EventTypeModle *workModel = [[EventTypeModle alloc] initWithIdentifier:@"#7f007f" title:@"工作" isDefault:YES];
+    EventTypeModel *workModel = [[EventTypeModel alloc] initWithIdentifier:@"#7f007f" title:@"工作" isDefault:YES];
     [workModel insertSQL];
     
     return [NSArray arrayWithObjects:learnModel,workModel, nil];
@@ -107,14 +107,14 @@
 
 - (id)deleteAtIndex:(NSInteger)index
 {
-    EventTypeModle *model = [super deleteAtIndex:index];
+    EventTypeModel *model = [super deleteAtIndex:index];
     [model removeSQL];
     return nil;
 }
 
 - (void)insertmodel:(id)model
 {
-    [self colorUsed:((EventTypeModle *)model).identifier];
+    [self colorUsed:((EventTypeModel *)model).identifier];
     [super insertmodel:model];
     
 }
