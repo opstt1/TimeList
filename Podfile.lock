@@ -7,6 +7,7 @@ PODS:
   - KVNProgress (2.3.1)
   - MBProgressHUD (1.0.0)
   - Reveal-SDK (5)
+  - TEAChart (1.0.0)
   - Toast (3.0)
 
 DEPENDENCIES:
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - KVNProgress
   - MBProgressHUD (~> 1.0.0)
   - Reveal-SDK
+  - TEAChart (~> 1.0)
   - Toast (~> 3.0.0)
 
 SPEC CHECKSUMS:
@@ -25,8 +27,9 @@ SPEC CHECKSUMS:
   KVNProgress: 8167b1f19e2758290c0b6143020ed9dcbb0477a1
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Reveal-SDK: 7e3945c0c3649106c3cc8923672ee545e25605c0
+  TEAChart: 4bfb34461d9da2672d3e63ccf1a486e5bb4bceb7
   Toast: 32c59229abfcf41850162b83bb9259dc84372473
 
-PODFILE CHECKSUM: c938fe0707c7dd6d567a3feb6c19480fc887c1e3
+PODFILE CHECKSUM: 8e7ac8e3ec92c0b8701182681b623d0f6cbf1907
 
 COCOAPODS: 1.2.0.beta.3

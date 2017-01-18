@@ -114,5 +114,16 @@
 + (NSString *)stringFromDay:(NSDate *)date;
 
 + (NSString *)stringFromDay:(NSDate *)date formatStr:(NSString *)formatStr;
+
+
+
+/**
+ 当前时间距离date 多少分钟
+
+ @param date date
+ @return 间隔分钟数
+ */
+- (NSInteger)minutesIntervalSinceDate:(NSDate *)date;
+
 @end
 

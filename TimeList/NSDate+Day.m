@@ -225,4 +225,9 @@
     return [formatter stringFromDate:date];
 
 }
+
+- (NSInteger)minutesIntervalSinceDate:(NSDate *)date
+{
+    return  abs((int)[self timeIntervalSinceDate:date] / 60);
+}
 @end

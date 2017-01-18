@@ -18,6 +18,17 @@
 
 NSString * const HourlyRecordModelStartDateKey = @"startDate";
 
+- (instancetype)init
+{
+    self = [super init];
+    if ( !self ){
+        return nil;
+    }
+    _content = @"";
+    _eventTypeModel = [[EventTypeModel alloc] init];
+    
+    return self;
+}
 
 - (void)setContent:(NSString *)content
 {

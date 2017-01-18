@@ -7,7 +7,7 @@
 //
 
 #import "ThirdViewController.h"
-
+#import "EventTypeListViewController.h"
 @interface ThirdViewController ()
 
 @end
@@ -28,6 +28,11 @@
 - (IBAction)didTapButton:(id)sender
 {
     UIViewController *vc = [[UIStoryboard storyboardWithName:@"Calendar" bundle:nil] instantiateViewControllerWithIdentifier:@"CalendarViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (IBAction)didTapEventTypeButton:(id)sender
+{
+    EventTypeListViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"EventTypeListViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

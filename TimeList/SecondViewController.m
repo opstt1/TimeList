@@ -11,6 +11,7 @@
 #import "HourlyRecordModel+FMDB.h"
 #import "HourlyRecordCell.h"
 #import "Constants.h"
+#import "HourlyRecordAnalyzeViewController.h"
 
 @interface SecondViewController ()<UITableViewDelegate,UITableViewDataSource,TLDataSourceDelegate>
 
@@ -24,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpLeftNavigationButtonWithTitle:@"+" tintColor:nil];
+    [self setUpRightNavigationButtonWithTitle:@"统计" tintColor:nil];
     self.dataSource = [HourlyRecordDataSource createWithDate:[NSDate date]];
     
     self.dataSource.delegate = self;
@@ -49,6 +51,11 @@
     }];;
 }
 
+- (void)rightNavigationButtonTapped:(id)sender
+{
+    HourlyRecordAnalyzeViewController *vc = [[UIStoryboard storyboardWithName:@"Analyze" bundle:nil] instantiateViewControllerWithIdentifier:@"HourlyRecordAnalyzeViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark - tableView
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {

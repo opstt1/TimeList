@@ -123,7 +123,7 @@ HourlyRecordModel *rs2HourlyRecord(FMResultSet *rs){
     NSLog(@"hourly_recorde_detail update logkeeper content");
     NSString *sql = @"update hourly_recorde_detail set identifier = ?, createDate = ?, startDate = ?, endDate = ?, content = ?, typeIdentifier = ?, typeTitle = ? where identifier = ?";
     FMDatabase *db = [[FMDBManager shareManager] connect];
-    BOOL ret = [db executeUpdate:sql, self.identifier, self.createDate, self.startDate, self.endDate, self.content, self.identifier, self.eventTypeModel.identifier, self.eventTypeModel.title];
+    BOOL ret = [db executeUpdate:sql, self.identifier, self.createDate, self.startDate, self.endDate, self.content, self.eventTypeModel.identifier, self.eventTypeModel.title, self.identifier];
     
     [db close];
     return ret;

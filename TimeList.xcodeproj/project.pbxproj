@@ -12,6 +12,41 @@
 		E200ED4C1DFE9FD800AA4DEC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED4B1DFE9FD800AA4DEC /* CFNetwork.framework */; };
 		E200ED4E1DFE9FE100AA4DEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED4D1DFE9FE100AA4DEC /* QuartzCore.framework */; };
 		E200ED501DFE9FE800AA4DEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E200ED4F1DFE9FE800AA4DEC /* CoreGraphics.framework */; };
+		E20B5D3F1E2F1960008911CC /* NSString+Zirkfied.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5CF11E2F1960008911CC /* NSString+Zirkfied.m */; };
+		E20B5D401E2F1960008911CC /* UIBezierPath+Zirkfied.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5CF31E2F1960008911CC /* UIBezierPath+Zirkfied.m */; };
+		E20B5D411E2F1960008911CC /* UIColor+Zirkfied.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5CF51E2F1960008911CC /* UIColor+Zirkfied.m */; };
+		E20B5D421E2F1960008911CC /* UIView+Zirkfied.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5CF71E2F1960008911CC /* UIView+Zirkfied.m */; };
+		E20B5D431E2F1960008911CC /* ZFLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5CFA1E2F1960008911CC /* ZFLabel.m */; };
+		E20B5D441E2F1960008911CC /* ZFPopoverLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5CFC1E2F1960008911CC /* ZFPopoverLabel.m */; };
+		E20B5D451E2F1960008911CC /* ZFXAxisLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5CFE1E2F1960008911CC /* ZFXAxisLine.m */; };
+		E20B5D461E2F1960008911CC /* ZFYAxisLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D001E2F1960008911CC /* ZFYAxisLine.m */; };
+		E20B5D471E2F1960008911CC /* ZFGradientAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D031E2F1960008911CC /* ZFGradientAttribute.m */; };
+		E20B5D481E2F1960008911CC /* ZFWaveAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D051E2F1960008911CC /* ZFWaveAttribute.m */; };
+		E20B5D491E2F1960008911CC /* ZFConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D0A1E2F1960008911CC /* ZFConst.m */; };
+		E20B5D4A1E2F1960008911CC /* ZFMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D0C1E2F1960008911CC /* ZFMethod.m */; };
+		E20B5D4B1E2F1960008911CC /* ZFBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D0F1E2F1960008911CC /* ZFBar.m */; };
+		E20B5D4C1E2F1960008911CC /* ZFBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D111E2F1960008911CC /* ZFBarChart.m */; };
+		E20B5D4D1E2F1960008911CC /* ZFCirque.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D141E2F1960008911CC /* ZFCirque.m */; };
+		E20B5D4E1E2F1960008911CC /* ZFCirqueChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D161E2F1960008911CC /* ZFCirqueChart.m */; };
+		E20B5D4F1E2F1960008911CC /* ZFGenericAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D191E2F1960008911CC /* ZFGenericAxis.m */; };
+		E20B5D501E2F1960008911CC /* ZFGenericChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D1C1E2F1960008911CC /* ZFGenericChart.m */; };
+		E20B5D511E2F1960008911CC /* ZFHorizontalAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D1F1E2F1960008911CC /* ZFHorizontalAxis.m */; };
+		E20B5D521E2F1960008911CC /* ZFHorizontalBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D221E2F1960008911CC /* ZFHorizontalBar.m */; };
+		E20B5D531E2F1960008911CC /* ZFHorizontalBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D241E2F1960008911CC /* ZFHorizontalBarChart.m */; };
+		E20B5D541E2F1960008911CC /* ZFCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D271E2F1960008911CC /* ZFCircle.m */; };
+		E20B5D551E2F1960008911CC /* ZFLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D291E2F1960008911CC /* ZFLine.m */; };
+		E20B5D561E2F1960008911CC /* ZFLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D2B1E2F1960008911CC /* ZFLineChart.m */; };
+		E20B5D571E2F1960008911CC /* ZFPie.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D2E1E2F1960008911CC /* ZFPie.m */; };
+		E20B5D581E2F1960008911CC /* ZFPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D301E2F1960008911CC /* ZFPieChart.m */; };
+		E20B5D591E2F1960008911CC /* ZFTranslucencePath.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D321E2F1960008911CC /* ZFTranslucencePath.m */; };
+		E20B5D5A1E2F1960008911CC /* ZFPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D351E2F1960008911CC /* ZFPolygon.m */; };
+		E20B5D5B1E2F1960008911CC /* ZFRadar.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D371E2F1960008911CC /* ZFRadar.m */; };
+		E20B5D5C1E2F1960008911CC /* ZFRadarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D391E2F1960008911CC /* ZFRadarChart.m */; };
+		E20B5D5D1E2F1960008911CC /* ZFWave.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D3C1E2F1960008911CC /* ZFWave.m */; };
+		E20B5D5E1E2F1960008911CC /* ZFWaveChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D3E1E2F1960008911CC /* ZFWaveChart.m */; };
+		E20B5D611E2F391E008911CC /* ClockPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D601E2F391E008911CC /* ClockPieChartView.m */; };
+		E20B5D641E2F3DBF008911CC /* Analyze.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20B5D631E2F3DBF008911CC /* Analyze.storyboard */; };
+		E20B5D671E2F3E0B008911CC /* HourlyRecordAnalyzeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B5D661E2F3E0B008911CC /* HourlyRecordAnalyzeViewController.m */; };
 		E20CAAD51E13AFF400DA07C7 /* HourlyRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CAAD41E13AFF400DA07C7 /* HourlyRecordModel.m */; };
 		E20CAAD81E13B0C300DA07C7 /* HourlyRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CAAD71E13B0C300DA07C7 /* HourlyRecordCell.m */; };
 		E20CAADB1E13BADF00DA07C7 /* NSString+Toolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = E20CAADA1E13BADF00DA07C7 /* NSString+Toolkit.m */; };
@@ -95,6 +130,77 @@
 		E200ED4B1DFE9FD800AA4DEC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		E200ED4D1DFE9FE100AA4DEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E200ED4F1DFE9FE800AA4DEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E20B5CF01E2F1960008911CC /* NSString+Zirkfied.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Zirkfied.h"; sourceTree = "<group>"; };
+		E20B5CF11E2F1960008911CC /* NSString+Zirkfied.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Zirkfied.m"; sourceTree = "<group>"; };
+		E20B5CF21E2F1960008911CC /* UIBezierPath+Zirkfied.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Zirkfied.h"; sourceTree = "<group>"; };
+		E20B5CF31E2F1960008911CC /* UIBezierPath+Zirkfied.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Zirkfied.m"; sourceTree = "<group>"; };
+		E20B5CF41E2F1960008911CC /* UIColor+Zirkfied.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Zirkfied.h"; sourceTree = "<group>"; };
+		E20B5CF51E2F1960008911CC /* UIColor+Zirkfied.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Zirkfied.m"; sourceTree = "<group>"; };
+		E20B5CF61E2F1960008911CC /* UIView+Zirkfied.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Zirkfied.h"; sourceTree = "<group>"; };
+		E20B5CF71E2F1960008911CC /* UIView+Zirkfied.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Zirkfied.m"; sourceTree = "<group>"; };
+		E20B5CF91E2F1960008911CC /* ZFLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFLabel.h; sourceTree = "<group>"; };
+		E20B5CFA1E2F1960008911CC /* ZFLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFLabel.m; sourceTree = "<group>"; };
+		E20B5CFB1E2F1960008911CC /* ZFPopoverLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPopoverLabel.h; sourceTree = "<group>"; };
+		E20B5CFC1E2F1960008911CC /* ZFPopoverLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPopoverLabel.m; sourceTree = "<group>"; };
+		E20B5CFD1E2F1960008911CC /* ZFXAxisLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFXAxisLine.h; sourceTree = "<group>"; };
+		E20B5CFE1E2F1960008911CC /* ZFXAxisLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFXAxisLine.m; sourceTree = "<group>"; };
+		E20B5CFF1E2F1960008911CC /* ZFYAxisLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFYAxisLine.h; sourceTree = "<group>"; };
+		E20B5D001E2F1960008911CC /* ZFYAxisLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFYAxisLine.m; sourceTree = "<group>"; };
+		E20B5D021E2F1960008911CC /* ZFGradientAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFGradientAttribute.h; sourceTree = "<group>"; };
+		E20B5D031E2F1960008911CC /* ZFGradientAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFGradientAttribute.m; sourceTree = "<group>"; };
+		E20B5D041E2F1960008911CC /* ZFWaveAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFWaveAttribute.h; sourceTree = "<group>"; };
+		E20B5D051E2F1960008911CC /* ZFWaveAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFWaveAttribute.m; sourceTree = "<group>"; };
+		E20B5D071E2F1960008911CC /* ZFChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFChart.h; sourceTree = "<group>"; };
+		E20B5D081E2F1960008911CC /* ZFColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFColor.h; sourceTree = "<group>"; };
+		E20B5D091E2F1960008911CC /* ZFConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFConst.h; sourceTree = "<group>"; };
+		E20B5D0A1E2F1960008911CC /* ZFConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFConst.m; sourceTree = "<group>"; };
+		E20B5D0B1E2F1960008911CC /* ZFMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFMethod.h; sourceTree = "<group>"; };
+		E20B5D0C1E2F1960008911CC /* ZFMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFMethod.m; sourceTree = "<group>"; };
+		E20B5D0E1E2F1960008911CC /* ZFBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBar.h; sourceTree = "<group>"; };
+		E20B5D0F1E2F1960008911CC /* ZFBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBar.m; sourceTree = "<group>"; };
+		E20B5D101E2F1960008911CC /* ZFBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBarChart.h; sourceTree = "<group>"; };
+		E20B5D111E2F1960008911CC /* ZFBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBarChart.m; sourceTree = "<group>"; };
+		E20B5D131E2F1960008911CC /* ZFCirque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCirque.h; sourceTree = "<group>"; };
+		E20B5D141E2F1960008911CC /* ZFCirque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFCirque.m; sourceTree = "<group>"; };
+		E20B5D151E2F1960008911CC /* ZFCirqueChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCirqueChart.h; sourceTree = "<group>"; };
+		E20B5D161E2F1960008911CC /* ZFCirqueChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFCirqueChart.m; sourceTree = "<group>"; };
+		E20B5D181E2F1960008911CC /* ZFGenericAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFGenericAxis.h; sourceTree = "<group>"; };
+		E20B5D191E2F1960008911CC /* ZFGenericAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFGenericAxis.m; sourceTree = "<group>"; };
+		E20B5D1B1E2F1960008911CC /* ZFGenericChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFGenericChart.h; sourceTree = "<group>"; };
+		E20B5D1C1E2F1960008911CC /* ZFGenericChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFGenericChart.m; sourceTree = "<group>"; };
+		E20B5D1E1E2F1960008911CC /* ZFHorizontalAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFHorizontalAxis.h; sourceTree = "<group>"; };
+		E20B5D1F1E2F1960008911CC /* ZFHorizontalAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFHorizontalAxis.m; sourceTree = "<group>"; };
+		E20B5D211E2F1960008911CC /* ZFHorizontalBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFHorizontalBar.h; sourceTree = "<group>"; };
+		E20B5D221E2F1960008911CC /* ZFHorizontalBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFHorizontalBar.m; sourceTree = "<group>"; };
+		E20B5D231E2F1960008911CC /* ZFHorizontalBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFHorizontalBarChart.h; sourceTree = "<group>"; };
+		E20B5D241E2F1960008911CC /* ZFHorizontalBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFHorizontalBarChart.m; sourceTree = "<group>"; };
+		E20B5D261E2F1960008911CC /* ZFCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCircle.h; sourceTree = "<group>"; };
+		E20B5D271E2F1960008911CC /* ZFCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFCircle.m; sourceTree = "<group>"; };
+		E20B5D281E2F1960008911CC /* ZFLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFLine.h; sourceTree = "<group>"; };
+		E20B5D291E2F1960008911CC /* ZFLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFLine.m; sourceTree = "<group>"; };
+		E20B5D2A1E2F1960008911CC /* ZFLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFLineChart.h; sourceTree = "<group>"; };
+		E20B5D2B1E2F1960008911CC /* ZFLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFLineChart.m; sourceTree = "<group>"; };
+		E20B5D2D1E2F1960008911CC /* ZFPie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPie.h; sourceTree = "<group>"; };
+		E20B5D2E1E2F1960008911CC /* ZFPie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPie.m; sourceTree = "<group>"; };
+		E20B5D2F1E2F1960008911CC /* ZFPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPieChart.h; sourceTree = "<group>"; };
+		E20B5D301E2F1960008911CC /* ZFPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPieChart.m; sourceTree = "<group>"; };
+		E20B5D311E2F1960008911CC /* ZFTranslucencePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTranslucencePath.h; sourceTree = "<group>"; };
+		E20B5D321E2F1960008911CC /* ZFTranslucencePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTranslucencePath.m; sourceTree = "<group>"; };
+		E20B5D341E2F1960008911CC /* ZFPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPolygon.h; sourceTree = "<group>"; };
+		E20B5D351E2F1960008911CC /* ZFPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPolygon.m; sourceTree = "<group>"; };
+		E20B5D361E2F1960008911CC /* ZFRadar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFRadar.h; sourceTree = "<group>"; };
+		E20B5D371E2F1960008911CC /* ZFRadar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFRadar.m; sourceTree = "<group>"; };
+		E20B5D381E2F1960008911CC /* ZFRadarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFRadarChart.h; sourceTree = "<group>"; };
+		E20B5D391E2F1960008911CC /* ZFRadarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFRadarChart.m; sourceTree = "<group>"; };
+		E20B5D3B1E2F1960008911CC /* ZFWave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFWave.h; sourceTree = "<group>"; };
+		E20B5D3C1E2F1960008911CC /* ZFWave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFWave.m; sourceTree = "<group>"; };
+		E20B5D3D1E2F1960008911CC /* ZFWaveChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFWaveChart.h; sourceTree = "<group>"; };
+		E20B5D3E1E2F1960008911CC /* ZFWaveChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFWaveChart.m; sourceTree = "<group>"; };
+		E20B5D5F1E2F391E008911CC /* ClockPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockPieChartView.h; sourceTree = "<group>"; };
+		E20B5D601E2F391E008911CC /* ClockPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockPieChartView.m; sourceTree = "<group>"; };
+		E20B5D631E2F3DBF008911CC /* Analyze.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Analyze.storyboard; sourceTree = "<group>"; };
+		E20B5D651E2F3E0B008911CC /* HourlyRecordAnalyzeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyRecordAnalyzeViewController.h; sourceTree = "<group>"; };
+		E20B5D661E2F3E0B008911CC /* HourlyRecordAnalyzeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordAnalyzeViewController.m; sourceTree = "<group>"; };
 		E20CAAD31E13AFF400DA07C7 /* HourlyRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyRecordModel.h; sourceTree = "<group>"; };
 		E20CAAD41E13AFF400DA07C7 /* HourlyRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordModel.m; sourceTree = "<group>"; };
 		E20CAAD61E13B0C300DA07C7 /* HourlyRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyRecordCell.h; sourceTree = "<group>"; };
@@ -289,6 +395,211 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E20B5CED1E2F1911008911CC /* ThreePartyLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5CEE1E2F1960008911CC /* ZFChart */,
+			);
+			name = ThreePartyLibrary;
+			sourceTree = "<group>";
+		};
+		E20B5CEE1E2F1960008911CC /* ZFChart */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5CEF1E2F1960008911CC /* Category */,
+				E20B5CF81E2F1960008911CC /* Component */,
+				E20B5D011E2F1960008911CC /* Model */,
+				E20B5D061E2F1960008911CC /* Other */,
+				E20B5D0D1E2F1960008911CC /* ZFBarChart */,
+				E20B5D121E2F1960008911CC /* ZFCirqueChart */,
+				E20B5D171E2F1960008911CC /* ZFGenericAxis */,
+				E20B5D1A1E2F1960008911CC /* ZFGenericChart */,
+				E20B5D1D1E2F1960008911CC /* ZFHorizontalAxis */,
+				E20B5D201E2F1960008911CC /* ZFHorizontalBarChart */,
+				E20B5D251E2F1960008911CC /* ZFLineChart */,
+				E20B5D2C1E2F1960008911CC /* ZFPieChart */,
+				E20B5D331E2F1960008911CC /* ZFRadarChart */,
+				E20B5D3A1E2F1960008911CC /* ZFWaveChart */,
+			);
+			path = ZFChart;
+			sourceTree = "<group>";
+		};
+		E20B5CEF1E2F1960008911CC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5CF01E2F1960008911CC /* NSString+Zirkfied.h */,
+				E20B5CF11E2F1960008911CC /* NSString+Zirkfied.m */,
+				E20B5CF21E2F1960008911CC /* UIBezierPath+Zirkfied.h */,
+				E20B5CF31E2F1960008911CC /* UIBezierPath+Zirkfied.m */,
+				E20B5CF41E2F1960008911CC /* UIColor+Zirkfied.h */,
+				E20B5CF51E2F1960008911CC /* UIColor+Zirkfied.m */,
+				E20B5CF61E2F1960008911CC /* UIView+Zirkfied.h */,
+				E20B5CF71E2F1960008911CC /* UIView+Zirkfied.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		E20B5CF81E2F1960008911CC /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5CF91E2F1960008911CC /* ZFLabel.h */,
+				E20B5CFA1E2F1960008911CC /* ZFLabel.m */,
+				E20B5CFB1E2F1960008911CC /* ZFPopoverLabel.h */,
+				E20B5CFC1E2F1960008911CC /* ZFPopoverLabel.m */,
+				E20B5CFD1E2F1960008911CC /* ZFXAxisLine.h */,
+				E20B5CFE1E2F1960008911CC /* ZFXAxisLine.m */,
+				E20B5CFF1E2F1960008911CC /* ZFYAxisLine.h */,
+				E20B5D001E2F1960008911CC /* ZFYAxisLine.m */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		E20B5D011E2F1960008911CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5D021E2F1960008911CC /* ZFGradientAttribute.h */,
+				E20B5D031E2F1960008911CC /* ZFGradientAttribute.m */,
+				E20B5D041E2F1960008911CC /* ZFWaveAttribute.h */,
+				E20B5D051E2F1960008911CC /* ZFWaveAttribute.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E20B5D061E2F1960008911CC /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5D071E2F1960008911CC /* ZFChart.h */,
+				E20B5D081E2F1960008911CC /* ZFColor.h */,
+				E20B5D091E2F1960008911CC /* ZFConst.h */,
+				E20B5D0A1E2F1960008911CC /* ZFConst.m */,
+				E20B5D0B1E2F1960008911CC /* ZFMethod.h */,
+				E20B5D0C1E2F1960008911CC /* ZFMethod.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		E20B5D0D1E2F1960008911CC /* ZFBarChart */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5D0E1E2F1960008911CC /* ZFBar.h */,
+				E20B5D0F1E2F1960008911CC /* ZFBar.m */,
+				E20B5D101E2F1960008911CC /* ZFBarChart.h */,
+				E20B5D111E2F1960008911CC /* ZFBarChart.m */,
+			);
+			path = ZFBarChart;
+			sourceTree = "<group>";
+		};
+		E20B5D121E2F1960008911CC /* ZFCirqueChart */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5D131E2F1960008911CC /* ZFCirque.h */,
+				E20B5D141E2F1960008911CC /* ZFCirque.m */,
+				E20B5D151E2F1960008911CC /* ZFCirqueChart.h */,
+				E20B5D161E2F1960008911CC /* ZFCirqueChart.m */,
+			);
+			path = ZFCirqueChart;
+			sourceTree = "<group>";
+		};
+		E20B5D171E2F1960008911CC /* ZFGenericAxis */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5D181E2F1960008911CC /* ZFGenericAxis.h */,
+				E20B5D191E2F1960008911CC /* ZFGenericAxis.m */,
+			);
+			path = ZFGenericAxis;
+			sourceTree = "<group>";
+		};
+		E20B5D1A1E2F1960008911CC /* ZFGenericChart */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5D1B1E2F1960008911CC /* ZFGenericChart.h */,
+				E20B5D1C1E2F1960008911CC /* ZFGenericChart.m */,
+			);
+			path = ZFGenericChart;
+			sourceTree = "<group>";
+		};
+		E20B5D1D1E2F1960008911CC /* ZFHorizontalAxis */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5D1E1E2F1960008911CC /* ZFHorizontalAxis.h */,
+				E20B5D1F1E2F1960008911CC /* ZFHorizontalAxis.m */,
+			);
+			path = ZFHorizontalAxis;
+			sourceTree = "<group>";
+		};
+		E20B5D201E2F1960008911CC /* ZFHorizontalBarChart */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5D211E2F1960008911CC /* ZFHorizontalBar.h */,
+				E20B5D221E2F1960008911CC /* ZFHorizontalBar.m */,
+				E20B5D231E2F1960008911CC /* ZFHorizontalBarChart.h */,
+				E20B5D241E2F1960008911CC /* ZFHorizontalBarChart.m */,
+			);
+			path = ZFHorizontalBarChart;
+			sourceTree = "<group>";
+		};
+		E20B5D251E2F1960008911CC /* ZFLineChart */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5D261E2F1960008911CC /* ZFCircle.h */,
+				E20B5D271E2F1960008911CC /* ZFCircle.m */,
+				E20B5D281E2F1960008911CC /* ZFLine.h */,
+				E20B5D291E2F1960008911CC /* ZFLine.m */,
+				E20B5D2A1E2F1960008911CC /* ZFLineChart.h */,
+				E20B5D2B1E2F1960008911CC /* ZFLineChart.m */,
+			);
+			path = ZFLineChart;
+			sourceTree = "<group>";
+		};
+		E20B5D2C1E2F1960008911CC /* ZFPieChart */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5D2D1E2F1960008911CC /* ZFPie.h */,
+				E20B5D2E1E2F1960008911CC /* ZFPie.m */,
+				E20B5D2F1E2F1960008911CC /* ZFPieChart.h */,
+				E20B5D301E2F1960008911CC /* ZFPieChart.m */,
+				E20B5D311E2F1960008911CC /* ZFTranslucencePath.h */,
+				E20B5D321E2F1960008911CC /* ZFTranslucencePath.m */,
+				E20B5D5F1E2F391E008911CC /* ClockPieChartView.h */,
+				E20B5D601E2F391E008911CC /* ClockPieChartView.m */,
+			);
+			path = ZFPieChart;
+			sourceTree = "<group>";
+		};
+		E20B5D331E2F1960008911CC /* ZFRadarChart */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5D341E2F1960008911CC /* ZFPolygon.h */,
+				E20B5D351E2F1960008911CC /* ZFPolygon.m */,
+				E20B5D361E2F1960008911CC /* ZFRadar.h */,
+				E20B5D371E2F1960008911CC /* ZFRadar.m */,
+				E20B5D381E2F1960008911CC /* ZFRadarChart.h */,
+				E20B5D391E2F1960008911CC /* ZFRadarChart.m */,
+			);
+			path = ZFRadarChart;
+			sourceTree = "<group>";
+		};
+		E20B5D3A1E2F1960008911CC /* ZFWaveChart */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5D3B1E2F1960008911CC /* ZFWave.h */,
+				E20B5D3C1E2F1960008911CC /* ZFWave.m */,
+				E20B5D3D1E2F1960008911CC /* ZFWaveChart.h */,
+				E20B5D3E1E2F1960008911CC /* ZFWaveChart.m */,
+			);
+			path = ZFWaveChart;
+			sourceTree = "<group>";
+		};
+		E20B5D621E2F3D8F008911CC /* dataAnalyze */ = {
+			isa = PBXGroup;
+			children = (
+				E20B5D631E2F3DBF008911CC /* Analyze.storyboard */,
+				E20B5D651E2F3E0B008911CC /* HourlyRecordAnalyzeViewController.h */,
+				E20B5D661E2F3E0B008911CC /* HourlyRecordAnalyzeViewController.m */,
+			);
+			name = dataAnalyze;
+			sourceTree = "<group>";
+		};
 		E20CAADC1E13BEE600DA07C7 /* BaseModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +790,8 @@
 		E2EF36F21DFA9DA0001247BE /* TimeList */ = {
 			isa = PBXGroup;
 			children = (
+				E20B5D621E2F3D8F008911CC /* dataAnalyze */,
+				E20B5CED1E2F1911008911CC /* ThreePartyLibrary */,
 				E2EAB45D1E27630700DA2A95 /* EventType */,
 				E2143BCE1E1B83D800F0F09C /* Calender */,
 				E20CAADC1E13BEE600DA07C7 /* BaseModel */,
@@ -621,6 +934,7 @@
 				E2EF37061DFA9DA0001247BE /* LaunchScreen.storyboard in Resources */,
 				E2143BD01E1B83F100F0F09C /* Calendar.storyboard in Resources */,
 				E2EC4B5B1DFE90770067C0EC /* Task.storyboard in Resources */,
+				E20B5D641E2F3DBF008911CC /* Analyze.storyboard in Resources */,
 				E2EF37031DFA9DA0001247BE /* Assets.xcassets in Resources */,
 				E2EF37011DFA9DA0001247BE /* Main.storyboard in Resources */,
 				E2A8149E1E110A180068B88C /* Summary.storyboard in Resources */,
@@ -682,17 +996,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E20B5D571E2F1960008911CC /* ZFPie.m in Sources */,
+				E20B5D431E2F1960008911CC /* ZFLabel.m in Sources */,
 				E2B98ED51E0266B600405C14 /* TaskTitleTextView.m in Sources */,
+				E20B5D561E2F1960008911CC /* ZFLineChart.m in Sources */,
 				E20CAAD51E13AFF400DA07C7 /* HourlyRecordModel.m in Sources */,
+				E20B5D491E2F1960008911CC /* ZFConst.m in Sources */,
 				E2143BD31E1B851400F0F09C /* ThirdViewController.m in Sources */,
+				E20B5D401E2F1960008911CC /* UIBezierPath+Zirkfied.m in Sources */,
 				E23C954A1E1507D000CEBFAF /* HourlyRecordModel+FMDB.m in Sources */,
 				E2EBB5AB1DFFDA6E00686D70 /* UIView+Geometry.m in Sources */,
+				E20B5D4F1E2F1960008911CC /* ZFGenericAxis.m in Sources */,
+				E20B5D521E2F1960008911CC /* ZFHorizontalBar.m in Sources */,
+				E20B5D5B1E2F1960008911CC /* ZFRadar.m in Sources */,
 				E20CAAD81E13B0C300DA07C7 /* HourlyRecordCell.m in Sources */,
+				E20B5D5D1E2F1960008911CC /* ZFWave.m in Sources */,
 				E22840C11E1E38C000FC6B07 /* HourlyRecordView.m in Sources */,
 				E2B98EE51E02783F00405C14 /* SheetMaskView.m in Sources */,
 				E2F819641E1C965000F7F9BF /* DailyRecordViewController.m in Sources */,
 				E2EAB46C1E278BE900DA2A95 /* EventTypeListViewController.m in Sources */,
 				E20CC4441E03DAB00013BEC7 /* FMDBManager.m in Sources */,
+				E20B5D671E2F3E0B008911CC /* HourlyRecordAnalyzeViewController.m in Sources */,
 				E20CC4401E03D8DC0013BEC7 /* TaskModel+FMDB.m in Sources */,
 				E2F9FE7A1E0A5D1900AA7C1A /* TaskDetailSubView.m in Sources */,
 				E2B924891E08D9B400E1D3AE /* TaskDataSource+Func.m in Sources */,
@@ -700,43 +1024,67 @@
 				E2F079B01E02476B000163C7 /* TaskListSessionManager.m in Sources */,
 				E2E9A4DE1E28C5FC00CA4C04 /* CreateEvenTypeView.m in Sources */,
 				E25A71991E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.m in Sources */,
+				E20B5D4B1E2F1960008911CC /* ZFBar.m in Sources */,
 				E2EC9F5C1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.m in Sources */,
+				E20B5D5C1E2F1960008911CC /* ZFRadarChart.m in Sources */,
 				E2EF36FE1DFA9DA0001247BE /* SecondViewController.m in Sources */,
 				E2A0A4B11E03FB68009621A2 /* NSDate+Day.m in Sources */,
 				E2EF371A1DFAB239001247BE /* UIColor+TAToolkit.m in Sources */,
 				E2EC4B521DFE896D0067C0EC /* TaskModel.m in Sources */,
+				E20B5D511E2F1960008911CC /* ZFHorizontalAxis.m in Sources */,
+				E20B5D481E2F1960008911CC /* ZFWaveAttribute.m in Sources */,
+				E20B5D5E1E2F1960008911CC /* ZFWaveChart.m in Sources */,
 				E2EF37131DFAA46D001247BE /* BaseViewController.m in Sources */,
 				E2EF37161DFAA492001247BE /* UIViewController+AutoNavBtnSetup.m in Sources */,
+				E20B5D611E2F391E008911CC /* ClockPieChartView.m in Sources */,
+				E20B5D4D1E2F1960008911CC /* ZFCirque.m in Sources */,
 				E2B98EE11E02678600405C14 /* TaskTitleView.m in Sources */,
 				E2B98ED81E0266D400405C14 /* TaskTitleButtonView.m in Sources */,
 				E2B98EDE1E02674600405C14 /* TaskTitleLongTextView.m in Sources */,
+				E20B5D461E2F1960008911CC /* ZFYAxisLine.m in Sources */,
 				E2F2490C1E2DCAC600E15E50 /* UIViewController+Utils.m in Sources */,
 				E2EBB5A41DFFA04700686D70 /* TaskListTableViewCell.m in Sources */,
 				E2143BD81E1BA20300F0F09C /* CalendarViewController.m in Sources */,
+				E20B5D451E2F1960008911CC /* ZFXAxisLine.m in Sources */,
 				E2EC4B561DFE8C7D0067C0EC /* TaskDataSource.m in Sources */,
 				E2EBB5A71DFFA24000686D70 /* Constants.m in Sources */,
+				E20B5D541E2F1960008911CC /* ZFCircle.m in Sources */,
+				E20B5D4C1E2F1960008911CC /* ZFBarChart.m in Sources */,
 				E2EC9F601E162FA1002214B8 /* TaskAlwaysUseManager.m in Sources */,
 				E2B98EED1E02A2EC00405C14 /* UINavigationController+CustomAnimation.m in Sources */,
 				E29F406C1E07B7ED0044D961 /* TaskDataSource+Sort.m in Sources */,
+				E20B5D591E2F1960008911CC /* ZFTranslucencePath.m in Sources */,
 				E2B98EE81E027C6800405C14 /* PickerSheetView.m in Sources */,
 				E2EF37101DFAA3E0001247BE /* BaseNavigationViewController.m in Sources */,
 				E20F95831E26277C0094B190 /* UIViewController+BackButtonHandler.m in Sources */,
 				E20CC4351E03ADDD0013BEC7 /* NSArray+Toolkit.m in Sources */,
+				E20B5D441E2F1960008911CC /* ZFPopoverLabel.m in Sources */,
+				E20B5D4E1E2F1960008911CC /* ZFCirqueChart.m in Sources */,
 				E2B98ED21E02668B00405C14 /* BaseView.m in Sources */,
+				E20B5D501E2F1960008911CC /* ZFGenericChart.m in Sources */,
 				E2EAB4601E27639100DA2A95 /* EventTypeModel.m in Sources */,
 				E2EAB4631E27667300DA2A95 /* EventTypeManager.m in Sources */,
+				E20B5D551E2F1960008911CC /* ZFLine.m in Sources */,
 				E2F2490F1E2DCE4100E15E50 /* EventTypeSelectView.m in Sources */,
+				E20B5D411E2F1960008911CC /* UIColor+Zirkfied.m in Sources */,
+				E20B5D471E2F1960008911CC /* ZFGradientAttribute.m in Sources */,
 				E2B98ECE1E0262F200405C14 /* TaskDetailViewController.m in Sources */,
 				E2F819671E1C989B00F7F9BF /* DailyTaskRecordView.m in Sources */,
 				E2EC4B591DFE904A0067C0EC /* TaskListTableViewController.m in Sources */,
 				E2EF36F81DFA9DA0001247BE /* AppDelegate.m in Sources */,
+				E20B5D421E2F1960008911CC /* UIView+Zirkfied.m in Sources */,
+				E20B5D5A1E2F1960008911CC /* ZFPolygon.m in Sources */,
 				E2EF36FB1DFA9DA0001247BE /* FirstViewController.m in Sources */,
 				E2EC9F631E1631A2002214B8 /* TaskAlwaysUseViewController.m in Sources */,
+				E20B5D581E2F1960008911CC /* ZFPieChart.m in Sources */,
 				E2166D7A1E0116E40096C821 /* EditableTableViewCell.m in Sources */,
 				E2A814A41E110E260068B88C /* DailySummaryDataSource+FMDB.m in Sources */,
 				E2B98EDB1E02670700405C14 /* TaskTitleTwoSelectView.m in Sources */,
+				E20B5D4A1E2F1960008911CC /* ZFMethod.m in Sources */,
 				E2EAB4661E27724800DA2A95 /* EventTypeModel+FMDB.m in Sources */,
 				E2A814A11E110D320068B88C /* DailySummaryDataSource.m in Sources */,
+				E20B5D531E2F1960008911CC /* ZFHorizontalBarChart.m in Sources */,
+				E20B5D3F1E2F1960008911CC /* NSString+Zirkfied.m in Sources */,
 				E2ECCD501E24CAC5001A3433 /* RectAnimationTransitionPop.m in Sources */,
 				E2EAB4691E27868400DA2A95 /* EventTypeCell.m in Sources */,
 				E2EF36F51DFA9DA0001247BE /* main.m in Sources */,

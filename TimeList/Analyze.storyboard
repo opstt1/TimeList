@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hourly Record Analyze View Controller-->
+        <scene sceneID="SAA-cw-cbH">
+            <objects>
+                <viewController storyboardIdentifier="HourlyRecordAnalyzeViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ev2-EU-M0r" customClass="HourlyRecordAnalyzeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VEB-4R-DlP"/>
+                        <viewControllerLayoutGuide type="bottom" id="IcK-eR-JkN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JPo-Vm-DK2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9W-Yw-zln">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OP0-XT-HjQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="667" id="6qH-hd-JgS"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="OP0-XT-HjQ" secondAttribute="trailing" id="0LU-JH-KM5"/>
+                                    <constraint firstItem="OP0-XT-HjQ" firstAttribute="width" secondItem="a9W-Yw-zln" secondAttribute="width" id="2YI-8y-YcI"/>
+                                    <constraint firstAttribute="bottom" secondItem="OP0-XT-HjQ" secondAttribute="bottom" id="Ogf-E0-EBt"/>
+                                    <constraint firstItem="OP0-XT-HjQ" firstAttribute="top" secondItem="a9W-Yw-zln" secondAttribute="top" id="Pk3-uR-h2l"/>
+                                    <constraint firstItem="OP0-XT-HjQ" firstAttribute="leading" secondItem="a9W-Yw-zln" secondAttribute="leading" id="oQP-Gg-VNJ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a9W-Yw-zln" firstAttribute="height" secondItem="JPo-Vm-DK2" secondAttribute="height" id="Gxd-7n-kQg"/>
+                            <constraint firstItem="a9W-Yw-zln" firstAttribute="centerX" secondItem="JPo-Vm-DK2" secondAttribute="centerX" id="HwM-DX-iPW"/>
+                            <constraint firstItem="a9W-Yw-zln" firstAttribute="width" secondItem="JPo-Vm-DK2" secondAttribute="width" id="SJe-Ax-ngq"/>
+                            <constraint firstItem="a9W-Yw-zln" firstAttribute="centerY" secondItem="JPo-Vm-DK2" secondAttribute="centerY" id="w5v-gA-Bi2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="OP0-XT-HjQ" id="uGs-xn-4V9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QuI-94-6XV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65" y="88"/>
+        </scene>
+    </scenes>
+</document>

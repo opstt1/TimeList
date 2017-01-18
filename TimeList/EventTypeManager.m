@@ -51,9 +51,7 @@
         [self dataSourceWithArray:[self createDefaultType]];
     }
     
-    for ( EventTypeModel *model in [self dataList] ){
-        [self colorUsed:model.identifier];
-    }
+    [self changeUnUsedColors];
     
     return self;
 }
@@ -67,6 +65,14 @@
     _unUseColors = [NSArray arrayWithArray:colors];
 }
 
+
+- (void)changeUnUsedColors
+{
+    _unUseColors = [NSArray arrayWithArray:_colors];
+    for ( EventTypeModel *model in [self dataList] ){
+        [self colorUsed:model.identifier];
+    }
+}
 
 //通过colorIdentifier 删除掉已经被使用过的颜色
 - (void)colorUsed:(NSString *)colorIdentifer
@@ -99,7 +105,6 @@
     
     return [NSArray arrayWithObjects:learnModel,workModel, nil];
     
-    
 }
 
 
@@ -109,6 +114,7 @@
 {
     EventTypeModel *model = [super deleteAtIndex:index];
     [model removeSQL];
+    [self changeUnUsedColors];
     return nil;
 }
 

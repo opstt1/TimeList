@@ -11,6 +11,7 @@ target 'TimeList' do
   pod 'KVNProgress'
   pod 'Toast', '~> 3.0.0'
   pod 'FSCalendar'
+  pod 'TEAChart', '~> 1.0'
   # Pods for TimeList
 
 end
