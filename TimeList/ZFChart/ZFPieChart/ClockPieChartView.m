@@ -10,63 +10,10 @@
 #import "ZFChart.h"
 #import "Constants.h"
 #import "HourlyRecordModel.h"
-
-static NSInteger allMinutes = 24 * 60;
-
-@interface HourlyRecordDataShow :HourlyRecordModel
-
-@property (nonatomic, readwrite, assign) NSInteger showMinute;
-@property (nonatomic, readwrite, strong) NSString *minuteStr;
-
-+ (HourlyRecordDataShow *)createUnknownShowWitMinute:(NSInteger)minute startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
-+ (HourlyRecordDataShow *)createShowWithMinute:(NSInteger)minute model:(HourlyRecordModel *)model;
-
-@end
-
-@implementation HourlyRecordDataShow
-
-+ (HourlyRecordDataShow *)createUnknownShowWitMinute:(NSInteger)minute startDate:(NSDate *)startDate endDate:(NSDate *)endDate
-{
-    HourlyRecordDataShow *show = [[HourlyRecordDataShow alloc] init];
-    [show createUnknownShowWitMinute:minute startDate:startDate endDate:endDate];
-    return show;
-}
-
-+ (HourlyRecordDataShow *)createShowWithMinute:(NSInteger)minute model:(HourlyRecordModel *)model
-{
-    HourlyRecordDataShow *show = [[HourlyRecordDataShow alloc] init];
-    [show createShowWithMinute:minute model:model];
-    return show;
-}
-
-- (void)createUnknownShowWitMinute:(NSInteger)minute startDate:(NSDate *)startDate endDate:(NSDate *)endDate
-{
-    self.showMinute = minute;
-    self.content = @"未知";
-    self.startDate = startDate;
-    self.endDate = endDate;
-    self.eventTypeModel.title = @"未知";
-    self.eventTypeModel.identifier = [[UIColor grayColor] hexString];
-    self.minuteStr = [NSString stringWithFormat:@"%d",(int)minute];
-}
+#import "AnalyzeData.h"
 
 
-- (void)createShowWithMinute:(NSInteger)minute model:(HourlyRecordModel *)model
-{
-    self.showMinute = minute;
-    self.content = model.content;
-    self.startDate = model.startDate;
-    self.endDate = model.endDate;
-    self.eventTypeModel = model.eventTypeModel;
-    if ( [self.eventTypeModel.identifier isEqualToString:@""] ){
-        self.eventTypeModel.title = @"未知";
-        self.eventTypeModel.identifier = [[UIColor grayColor] hexString];
-    }
-    
-    self.minuteStr = [NSString stringWithFormat:@"%d",(int)minute];
-}
-
-@end
+#pragma mark - ClockPieChartView
 
 @interface ClockPieChartView()<ZFPieChartDelegate,ZFPieChartDataSource>
 
@@ -76,10 +23,14 @@ static NSInteger allMinutes = 24 * 60;
 
 @property (nonatomic, readwrite, copy) NSArray *data;
 
+@property (nonatomic, readwrite, strong) UILabel *infoShowLabel;
+
+@property (nonatomic, readwrite, strong) UILabel *timeShowLabel;
 
 @end
 
 @implementation ClockPieChartView
+
 
 +(ClockPieChartView *)creatWithFrame:(CGRect)frame hourlyRecordData:(HourlyRecordDataSource *)data
 {
@@ -95,60 +46,20 @@ static NSInteger allMinutes = 24 * 60;
     }
     [self calculateData:data];
     [self addPieChart];
+    [self addShowInfoView];
     return self;
 }
 
+#pragma mark - data
 
+////处理数据，用于统计
 - (void)calculateData:(HourlyRecordDataSource *)data
 {
-    NSMutableArray *timeArray = [NSMutableArray array];
-    if ( !data || data.count <= 0 ){
-        return;
-    }
-    
-    NSInteger residueMinutes = allMinutes;
-    
-    HourlyRecordModel *first = [data objectAtInde:data.count-1];
-    NSLog(@"secont: ----%@ %d",first.startTime,(int)[first.startDate timeIntervalSinceDate:[first.startDate beginningOfDay]]/60);
-    NSInteger minute = [first.startDate minutesIntervalSinceDate:[first.startDate beginningOfDay]];
-    if( minute > 0 ){
-        HourlyRecordDataShow *show = [[HourlyRecordDataShow alloc] init];
-        [show createUnknownShowWitMinute:minute startDate:[first.startDate beginningOfDay] endDate:first.startDate];
-        [timeArray addObject:show];
-        
-        residueMinutes -= minute;
-    }
-    
-    for ( int i = (int)data.count - 1; i >= 0; --i ){
-        HourlyRecordModel *model = [data objectAtInde:i];
-        NSInteger minute = 0;
-        
-        if ( i != data.count - 1 ){
-            HourlyRecordModel *preModel = [data objectAtInde:i+1];
-            if ( ![preModel.endDate isSameMinute:model.startDate] ){
-                minute = [preModel.endDate timeIntervalSinceDate:model.startDate] / 60;
-                HourlyRecordDataShow *show = [HourlyRecordDataShow createUnknownShowWitMinute:minute startDate:preModel.endDate endDate:model.startDate];
-                [timeArray addObject:show];
-                residueMinutes -= minute;
-            }
-        }
-        
-        minute = [model.startDate minutesIntervalSinceDate:model.endDate];
-        HourlyRecordDataShow *show = [HourlyRecordDataShow createShowWithMinute:minute model:model];
-        [timeArray addObject:show];
-        residueMinutes -= minute;
-    }
-
-    if ( residueMinutes > 0 ){
-        HourlyRecordModel *preModel = [data objectAtInde:0];
-        minute = [preModel.endDate minutesIntervalSinceDate:[preModel.endDate endOfDay]];
-        HourlyRecordDataShow *show = [HourlyRecordDataShow createUnknownShowWitMinute:minute startDate:preModel.endDate endDate:[preModel.endDate endOfDay]];
-        [timeArray addObject:show];
-    }
-    
-    _data = [NSArray arrayWithArray:timeArray];
+    _data = [AnalyzeData hourlyRecordAnalyzeData:data];
 }
 
+#pragma mark - add subView
+//添加统计图表
 - (void)addPieChart
 {
     _pieChartRadius = MIN(self.height/4, self.width/4);
@@ -163,16 +74,16 @@ static NSInteger allMinutes = 24 * 60;
     [_pieChart strokePath];
     [self addSubview:_pieChart];
     [self drawClock];
-    _pieChart.center = CGPointMake(self.width/2, _pieChartRadius + 50);
+    _pieChart.center = CGPointMake(self.width/2, self.height / 2); //有待改进
 }
 
-
+//添加时钟指针，24小时制
 - (void)drawClock
 {
     CGRect frame = CGRectMake(_pieChart.x,_pieChart.y, _pieChart.width+10, _pieChart.height+10);
     CAReplicatorLayer *clockLayer = [CAReplicatorLayer new];
     clockLayer.bounds = frame;
-    clockLayer.position = CGPointMake(self.width/2, _pieChartRadius+50);
+    clockLayer.position = CGPointMake(self.width/2, self.height/2);
     
     [self.layer addSublayer:clockLayer];
     
@@ -186,9 +97,9 @@ static NSInteger allMinutes = 24 * 60;
     clockLayer.instanceCount = 24;
     clockLayer.instanceTransform = CATransform3DMakeRotation((2*M_PI)/24, 0, 0, 1.0);
     
-    
     CGPoint center = clockLayer.position;
     
+    //添加时钟显示数字
     for ( int i = 0; i < 4; ++i ){
         CATextLayer *textLayer = [CATextLayer layer];
         textLayer.frame = CGRectMake(0, 0, 15, 14);
@@ -212,24 +123,47 @@ static NSInteger allMinutes = 24 * 60;
     }
 }
 
+//添加一些信息展示的view，例如标题，选中的任务详情，使用时间
+- (void)addShowInfoView
+{
+    _infoShowLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, self.width, 15)];
+    _infoShowLabel.textAlignment = NSTextAlignmentCenter;
+    _infoShowLabel.font = [UIFont systemFontOfSize:15.0f];
+    _infoShowLabel.textColor = COLOR_666666;
+    [self addSubview:_infoShowLabel];
+    
+    _timeShowLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _pieChartRadius/ 2 + 20, 14)];
+    _timeShowLabel.center = _pieChart.center;
+    _timeShowLabel.textAlignment = NSTextAlignmentCenter;
+    _timeShowLabel.font = [UIFont systemFontOfSize:12.0f];
+    _timeShowLabel.textColor = COLOR_666666;
+    [self addSubview:_timeShowLabel];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, self.height - 15, self.width, 15)];
+    label.text = @"时间记录分布";
+    label.font = [UIFont boldSystemFontOfSize:16.0f];
+    label.textColor = COLOR_333333;
+    label.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:label];
+}
+
 #pragma mark - ZFPieChartDataSource
 
-- (NSArray *)valueArrayInPieChart:(ZFPieChart *)chart{
+- (NSArray *)valueArrayInPieChart:(ZFPieChart *)chart
+{
     NSMutableArray *value = [NSMutableArray array];
     for ( HourlyRecordDataShow *show in _data ){
-        NSLog(@"minettt: -----  %@",show.minuteStr);
         [value addObject:show.minuteStr];
     }
     
     return [NSArray arrayWithArray:value];
 }
 
-- (NSArray *)colorArrayInPieChart:(ZFPieChart *)chart{
+- (NSArray *)colorArrayInPieChart:(ZFPieChart *)chart
+{
     NSMutableArray *value = [NSMutableArray array];
     for ( HourlyRecordDataShow *show in _data ){
         [value addObject:show.eventTypeModel.color];
-        
-        NSLog(@"colorr: -----  %@",[show.eventTypeModel.color hexString]);
 
     }
     return [NSArray arrayWithArray:value];
@@ -237,8 +171,21 @@ static NSInteger allMinutes = 24 * 60;
 
 #pragma mark - ZFPieChartDelegate
 
-- (void)pieChart:(ZFPieChart *)pieChart didSelectPathAtIndex:(NSInteger)index{
-    NSLog(@"第%ld个",(long)index);
+- (void)pieChart:(ZFPieChart *)pieChart didSelectPathAtIndex:(NSInteger)index
+{
+    HourlyRecordDataShow *show = _data[index];
+    _infoShowLabel.text = [NSString stringWithFormat:@"%@ -- (%@)%@ -- %@",show.startTime, show.eventTypeModel.title,show.content,show.endTime];
+    _infoShowLabel.textColor = show.eventTypeModel.color;
+    
+    if ( show.showMinute / 60 > 0 ){
+        if ( show.showMinute % 60 != 0 ){
+            _timeShowLabel.text = [NSString stringWithFormat:@"%d 时 %d 分",(int)show.showMinute/60,(int)show.showMinute % 60];
+        }else{
+            _timeShowLabel.text = [NSString stringWithFormat:@"%d 时",(int)show.showMinute/60];
+        }
+    }else{
+         _timeShowLabel.text = [NSString stringWithFormat:@"%d 分",(int)show.showMinute];
+    }
 }
 
 - (CGFloat)allowToShowMinLimitPercent:(ZFPieChart *)pieChart{

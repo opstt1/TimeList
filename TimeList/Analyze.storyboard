@@ -51,6 +51,7 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="OP0-XT-HjQ" id="uGs-xn-4V9"/>
+                        <outlet property="contentViewHeight" destination="6qH-hd-JgS" id="XC8-pu-ahx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QuI-94-6XV" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -63,6 +63,7 @@
 		E2143BD81E1BA20300F0F09C /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2143BD71E1BA20300F0F09C /* CalendarViewController.m */; };
 		E2166D7A1E0116E40096C821 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2166D791E0116E40096C821 /* EditableTableViewCell.m */; };
 		E22840C11E1E38C000FC6B07 /* HourlyRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = E22840C01E1E38C000FC6B07 /* HourlyRecordView.m */; };
+		E2390DD41E30955700074CFB /* HourlyRecordEventTypeShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2390DD31E30955700074CFB /* HourlyRecordEventTypeShowView.m */; };
 		E23C954A1E1507D000CEBFAF /* HourlyRecordModel+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E23C95491E1507D000CEBFAF /* HourlyRecordModel+FMDB.m */; };
 		E25A71991E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = E25A71981E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.m */; };
 		E29F406C1E07B7ED0044D961 /* TaskDataSource+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = E29F406B1E07B7ED0044D961 /* TaskDataSource+Sort.m */; };
@@ -101,6 +102,8 @@
 		E2EC9F601E162FA1002214B8 /* TaskAlwaysUseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC9F5F1E162FA1002214B8 /* TaskAlwaysUseManager.m */; };
 		E2EC9F631E1631A2002214B8 /* TaskAlwaysUseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC9F621E1631A2002214B8 /* TaskAlwaysUseViewController.m */; };
 		E2ECCD501E24CAC5001A3433 /* RectAnimationTransitionPop.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ECCD4F1E24CAC5001A3433 /* RectAnimationTransitionPop.m */; };
+		E2EDDB111E3063C800A93BF4 /* EventTpyeShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EDDB101E3063C800A93BF4 /* EventTpyeShowView.m */; };
+		E2EDDB141E30848B00A93BF4 /* AnalyzeData.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EDDB131E30848B00A93BF4 /* AnalyzeData.m */; };
 		E2EE330C1E12565200D6C0EB /* HourlyRecordCreateView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EE330B1E12565200D6C0EB /* HourlyRecordCreateView.m */; };
 		E2EE330E1E125B4600D6C0EB /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EE330D1E125B4600D6C0EB /* RevealServer.framework */; };
 		E2EF36F51DFA9DA0001247BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EF36F41DFA9DA0001247BE /* main.m */; };
@@ -196,8 +199,8 @@
 		E20B5D3C1E2F1960008911CC /* ZFWave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFWave.m; sourceTree = "<group>"; };
 		E20B5D3D1E2F1960008911CC /* ZFWaveChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFWaveChart.h; sourceTree = "<group>"; };
 		E20B5D3E1E2F1960008911CC /* ZFWaveChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFWaveChart.m; sourceTree = "<group>"; };
-		E20B5D5F1E2F391E008911CC /* ClockPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockPieChartView.h; sourceTree = "<group>"; };
-		E20B5D601E2F391E008911CC /* ClockPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockPieChartView.m; sourceTree = "<group>"; };
+		E20B5D5F1E2F391E008911CC /* ClockPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClockPieChartView.h; path = ZFChart/ZFPieChart/ClockPieChartView.h; sourceTree = "<group>"; };
+		E20B5D601E2F391E008911CC /* ClockPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClockPieChartView.m; path = ZFChart/ZFPieChart/ClockPieChartView.m; sourceTree = "<group>"; };
 		E20B5D631E2F3DBF008911CC /* Analyze.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Analyze.storyboard; sourceTree = "<group>"; };
 		E20B5D651E2F3E0B008911CC /* HourlyRecordAnalyzeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyRecordAnalyzeViewController.h; sourceTree = "<group>"; };
 		E20B5D661E2F3E0B008911CC /* HourlyRecordAnalyzeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordAnalyzeViewController.m; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 		E2166D791E0116E40096C821 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
 		E22840BF1E1E38C000FC6B07 /* HourlyRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyRecordView.h; sourceTree = "<group>"; };
 		E22840C01E1E38C000FC6B07 /* HourlyRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordView.m; sourceTree = "<group>"; };
+		E2390DD21E30955700074CFB /* HourlyRecordEventTypeShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyRecordEventTypeShowView.h; sourceTree = "<group>"; };
+		E2390DD31E30955700074CFB /* HourlyRecordEventTypeShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordEventTypeShowView.m; sourceTree = "<group>"; };
 		E23C95481E1507D000CEBFAF /* HourlyRecordModel+FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HourlyRecordModel+FMDB.h"; sourceTree = "<group>"; };
 		E23C95491E1507D000CEBFAF /* HourlyRecordModel+FMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HourlyRecordModel+FMDB.m"; sourceTree = "<group>"; };
 		E25A71971E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailPushAnimatedTransitioning.h; sourceTree = "<group>"; };
@@ -304,6 +309,10 @@
 		E2EC9F621E1631A2002214B8 /* TaskAlwaysUseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskAlwaysUseViewController.m; sourceTree = "<group>"; };
 		E2ECCD4E1E24CAC5001A3433 /* RectAnimationTransitionPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectAnimationTransitionPop.h; sourceTree = "<group>"; };
 		E2ECCD4F1E24CAC5001A3433 /* RectAnimationTransitionPop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectAnimationTransitionPop.m; sourceTree = "<group>"; };
+		E2EDDB0F1E3063C800A93BF4 /* EventTpyeShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTpyeShowView.h; sourceTree = "<group>"; };
+		E2EDDB101E3063C800A93BF4 /* EventTpyeShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTpyeShowView.m; sourceTree = "<group>"; };
+		E2EDDB121E30848B00A93BF4 /* AnalyzeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyzeData.h; sourceTree = "<group>"; };
+		E2EDDB131E30848B00A93BF4 /* AnalyzeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyzeData.m; sourceTree = "<group>"; };
 		E2EE330A1E12565200D6C0EB /* HourlyRecordCreateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyRecordCreateView.h; sourceTree = "<group>"; };
 		E2EE330B1E12565200D6C0EB /* HourlyRecordCreateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordCreateView.m; sourceTree = "<group>"; };
 		E2EE330D1E125B4600D6C0EB /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
@@ -560,8 +569,6 @@
 				E20B5D301E2F1960008911CC /* ZFPieChart.m */,
 				E20B5D311E2F1960008911CC /* ZFTranslucencePath.h */,
 				E20B5D321E2F1960008911CC /* ZFTranslucencePath.m */,
-				E20B5D5F1E2F391E008911CC /* ClockPieChartView.h */,
-				E20B5D601E2F391E008911CC /* ClockPieChartView.m */,
 			);
 			path = ZFPieChart;
 			sourceTree = "<group>";
@@ -596,6 +603,14 @@
 				E20B5D631E2F3DBF008911CC /* Analyze.storyboard */,
 				E20B5D651E2F3E0B008911CC /* HourlyRecordAnalyzeViewController.h */,
 				E20B5D661E2F3E0B008911CC /* HourlyRecordAnalyzeViewController.m */,
+				E2EDDB0F1E3063C800A93BF4 /* EventTpyeShowView.h */,
+				E2EDDB101E3063C800A93BF4 /* EventTpyeShowView.m */,
+				E2390DD21E30955700074CFB /* HourlyRecordEventTypeShowView.h */,
+				E2390DD31E30955700074CFB /* HourlyRecordEventTypeShowView.m */,
+				E20B5D5F1E2F391E008911CC /* ClockPieChartView.h */,
+				E20B5D601E2F391E008911CC /* ClockPieChartView.m */,
+				E2EDDB121E30848B00A93BF4 /* AnalyzeData.h */,
+				E2EDDB131E30848B00A93BF4 /* AnalyzeData.m */,
 			);
 			name = dataAnalyze;
 			sourceTree = "<group>";
@@ -1007,9 +1022,11 @@
 				E23C954A1E1507D000CEBFAF /* HourlyRecordModel+FMDB.m in Sources */,
 				E2EBB5AB1DFFDA6E00686D70 /* UIView+Geometry.m in Sources */,
 				E20B5D4F1E2F1960008911CC /* ZFGenericAxis.m in Sources */,
+				E2EDDB141E30848B00A93BF4 /* AnalyzeData.m in Sources */,
 				E20B5D521E2F1960008911CC /* ZFHorizontalBar.m in Sources */,
 				E20B5D5B1E2F1960008911CC /* ZFRadar.m in Sources */,
 				E20CAAD81E13B0C300DA07C7 /* HourlyRecordCell.m in Sources */,
+				E2EDDB111E3063C800A93BF4 /* EventTpyeShowView.m in Sources */,
 				E20B5D5D1E2F1960008911CC /* ZFWave.m in Sources */,
 				E22840C11E1E38C000FC6B07 /* HourlyRecordView.m in Sources */,
 				E2B98EE51E02783F00405C14 /* SheetMaskView.m in Sources */,
@@ -1056,6 +1073,7 @@
 				E20B5D591E2F1960008911CC /* ZFTranslucencePath.m in Sources */,
 				E2B98EE81E027C6800405C14 /* PickerSheetView.m in Sources */,
 				E2EF37101DFAA3E0001247BE /* BaseNavigationViewController.m in Sources */,
+				E2390DD41E30955700074CFB /* HourlyRecordEventTypeShowView.m in Sources */,
 				E20F95831E26277C0094B190 /* UIViewController+BackButtonHandler.m in Sources */,
 				E20CC4351E03ADDD0013BEC7 /* NSArray+Toolkit.m in Sources */,
 				E20B5D441E2F1960008911CC /* ZFPopoverLabel.m in Sources */,

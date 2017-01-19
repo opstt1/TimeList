@@ -64,16 +64,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimeList/ZFChart/ZFPieChart/ClockPieChartView.m"
-            timestampString = "506424064.257063"
+            timestampString = "506498591.890369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "-calculateData:"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-drawClock"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
