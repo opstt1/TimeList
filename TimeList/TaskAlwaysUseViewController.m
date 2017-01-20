@@ -36,8 +36,16 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.delegate = self;
+    self.navigationController.delegate = nil;
+    self.useCustomAnimation = YES;
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.navigationController.delegate = nil;
+}
+
 #pragma mark -
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -143,5 +151,13 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+
+#pragma mark - back
+
+- (BOOL)navigationShouldPopOnBackButton
+{
+    self.navigationController.delegate = self;
+    return YES;
+}
 
 @end

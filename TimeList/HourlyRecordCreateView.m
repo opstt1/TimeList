@@ -14,6 +14,7 @@
 #import "EventTypeModel.h"
 #import "EventTypeListViewController.h"
 #import "EventTypeSelectView.h"
+#import "UIView+Toast.h"
 
 @interface HourlyRecordCreateView()
 
@@ -35,11 +36,22 @@
 
 @property (nonatomic, readwrite, strong) EventTypeSelectView *selectTypeView;
 
+/**
+ 允许最早的开始时间
+ */
+@property (nonatomic, readwrite, strong) NSDate *allowEarlyStartDate;
+
 @end
 
 
 @implementation HourlyRecordCreateView
 
++ (HourlyRecordCreateView *)editWithModel:(HourlyRecordModel *)model allowEarlyStartDate:(NSDate *)allowEarlyStartDate complete:(HourlyRecordCreateBlock)complete
+{
+    HourlyRecordCreateView *view = [self editWithModel:model complete:complete];
+    view.allowEarlyStartDate = allowEarlyStartDate;
+    return view;
+}
 
 + (HourlyRecordCreateView *)editWithModel:(HourlyRecordModel *)model complete:(HourlyRecordCreateBlock)complete
 {
@@ -53,6 +65,7 @@
 {
     HourlyRecordCreateView *view = [self createWithComplete:complete];
     if ( startDate ){
+        view.allowEarlyStartDate = startDate;
         view.startDate = startDate;
         view.startPicker.date = startDate;
     }
@@ -105,7 +118,7 @@
 //创建一个内容编写view
 - (void)creatTextView
 {
-    _textView = [[UITextView alloc] initWithFrame:CGRectMake(15, 64+ 60, UISCREEN_WIDTH - (15 * 2), 150)];
+    _textView = [[UITextView alloc] initWithFrame:CGRectMake(15, 64+ 60, UISCREEN_WIDTH - (15 * 2), 100)];
     _textView.layer.borderColor = [UIColor blackColor].CGColor;
     _textView.layer.borderWidth = 0.5f;
     _textView.font = [UIFont systemFontOfSize:16.0f];
@@ -162,20 +175,27 @@
 
 - (void)creatSaveAndCloseButton
 {
+    UIView *backLayer = [UIView new];
+    backLayer.backgroundColor = [UIColor whiteColor];
+    backLayer.frame = CGRectMake(0, 0, self.width, 49);
+    [self addSubview:backLayer];
+    
     UIButton *saveButton = [[UIButton alloc] initWithFrame:CGRectMake(15, 0, 60, 49)];
     [saveButton setTitle:@"Save" forState:UIControlStateNormal];
     [saveButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [saveButton.titleLabel setFont:[UIFont boldSystemFontOfSize:17.0f]];
     [saveButton addTarget:self action:@selector(didTapSaveButton:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH-15-60, 0, 60, 49)];
     [closeButton setTitle:@"Close" forState:UIControlStateNormal];
     [closeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [closeButton.titleLabel setFont:[UIFont boldSystemFontOfSize:17.0f]];
     [closeButton addTarget:self action:@selector(didTapCloseButton:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:saveButton];
     [self addSubview:closeButton];
+    
 }
-
 
 - (void)createEventTypeSelectView
 {
@@ -326,6 +346,13 @@
     _model.startDate = _startDate?:[NSDate date];
     _model.endDate = _endDate?:[NSDate date];
     _model.eventTypeModel = _eventTypeModel?:[[EventTypeModel alloc] init];
+    
+    NSError *error = [_model dataIntegrityWithAllowEarlyStartDate:_allowEarlyStartDate];
+    
+    if ( error ){
+        [self makeToast:error.userInfo[@"info"]?:@"填写内容有错误" duration:1.5 position:[NSValue valueWithCGPoint:self.center]];
+        return;
+    }
     
     if ( !_model.createDate ){
         _model.createDate = [NSDate date];

@@ -30,6 +30,35 @@ NSString * const HourlyRecordModelStartDateKey = @"startDate";
     return self;
 }
 
+- (NSError *)dataIntegrityWithAllowEarlyStartDate:(NSDate *)date
+{
+    NSError *error;
+    
+    if ( (int)[_endDate timeIntervalSinceDate:_startDate] / 60 < 0 ){
+        error = [NSError errorWithDomain:@"" code:0 userInfo:@{@"info":@"结束时间不能早于开始时间"}];
+        return error;
+    }
+    
+    if ( (int)[_endDate timeIntervalSinceDate:_startDate] / 60 == 0 ){
+        error = [NSError errorWithDomain:@"" code:0 userInfo:@{@"info":@"结束时间不能等于开始时间"}];
+        return error;
+    }
+    
+    if ( !_content || _content.length <= 0  ){
+        error = [NSError errorWithDomain:@"" code:0 userInfo:@{@"info":@"内容不能为空"}];
+        return error;
+    }
+    
+    if ( date != nil && (int)[_startDate timeIntervalSinceDate:date]/60 < 0 ){
+        NSString *timeStr = [NSDate stringFromDay:date formatStr:@"HH:mm"];
+        error = [NSError errorWithDomain:@"" code:0 userInfo:@{@"info":[NSString stringWithFormat:@"开始时间不能早于%@",timeStr]}];
+        return error;
+    }
+    
+    return nil;
+}
+#pragma mark - set
+
 - (void)setContent:(NSString *)content
 {
     _content = content;
@@ -55,6 +84,9 @@ NSString * const HourlyRecordModelStartDateKey = @"startDate";
     _identifier = [NSDate stringFromDay:createDate formatStr:@"yyy-MMM-dd HH:mm:ss"];
     NSLog(@"hourly Model identifier : %@", _identifier);
 }
+
+
+
 @end
 
 

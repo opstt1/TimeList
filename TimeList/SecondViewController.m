@@ -121,7 +121,7 @@
     } editBlock:^(id result) {
         STRONG_OBJ_REF(weak_self);
         if  ( strong_weak_self){
-            [strong_weak_self editHourlyRecordWithModel:[strong_weak_self.dataSource objectAtInde:indexPath.section]];
+            [strong_weak_self editHourlyRecordWitIndex:indexPath.section];
         }
     }];
     
@@ -131,12 +131,16 @@
 
 #pragma mark - 
 
-- (void)editHourlyRecordWithModel:(HourlyRecordModel *)model
+- (void)editHourlyRecordWitIndex:(NSInteger)index
 {
-    [HourlyRecordCreateView editWithModel:model complete:^(HourlyRecordModel *model) {
+    HourlyRecordModel *model = [_dataSource objectAtInde:index];
+    
+    NSDate *lastEndDate = (index == _dataSource.count - 1 ) ? nil :((HourlyRecordModel*)[self.dataSource objectAtInde:index+1]).endDate;
+    [HourlyRecordCreateView editWithModel:model allowEarlyStartDate:lastEndDate complete:^(HourlyRecordModel *model) {
         [model upadteSQL];
         [self tableViewReload];
     }];
+    
 }
 
 #pragma mark - TLDataSourceDelegate

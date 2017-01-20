@@ -61,7 +61,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.delegate = self;
+    self.navigationController.delegate = nil;
     self.useCustomAnimation = YES;
 }
 
@@ -127,21 +127,7 @@
     [_contentView addSubview:_importanceView];
     [_contentView addSubview:view2];
     [_contentView addSubview:summaryView];
-    
-    /////////////////////////////////
-    UIButton *buuuu = [[UIButton alloc] initWithFrame:CGRectMake(100, UISCREEN_HEIGHT-200, 80, 80)];
-    buuuu.backgroundColor = [UIColor purpleColor];
-    [buuuu setTitle:@"不要点我" forState:UIControlStateNormal];
-    [buuuu addTarget:self action:@selector(ssss) forControlEvents:UIControlEventTouchUpInside];
-    [_contentView addSubview:buuuu];
 }
-
-- (void)ssss
-{
-    EventTypeListViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"EventTypeListViewController"];
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
 
 #pragma mark - interface select type
 
@@ -196,11 +182,6 @@
         [self.navigationController popViewControllerAnimated:YES];
     });
 
-}
-
-- (void)backButtonClicked:(id)sender
-{
-    NSLog(@"bakkkkk");
 }
 
 - (BOOL)navigationShouldPopOnBackButton

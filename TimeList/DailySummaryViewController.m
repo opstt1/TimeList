@@ -9,8 +9,9 @@
 #import "DailySummaryViewController.h"
 #import "Constants.h"
 #import "DailySummaryDataSource+FMDB.h"
+#import "RectAnimationTransitionPop.h"
 
-@interface DailySummaryViewController()<UITextViewDelegate>
+@interface DailySummaryViewController()<UITextViewDelegate,UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
@@ -37,11 +38,22 @@
     _textView.layer.borderWidth = 0.5f;
     _textView.layer.borderColor = [UIColor blackColor].CGColor;
     _textView.delegate = self;
+    
+    self.popAnimationTransition = [RectAnimationTransitionPop new];
+    self.useCustomAnimation = YES;
+    [self addBackGestureRecognizer];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.delegate = self;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
+    self.navigationController.delegate = nil;
     [_dataSource upadteSQL];
 }
 
@@ -62,6 +74,7 @@
 {
     _dataSource.summaryContent = textView.text;
 }
+
 
 
 @end

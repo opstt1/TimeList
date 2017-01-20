@@ -20,7 +20,7 @@ typedef void(^HourlyRecordCreateBlock)(HourlyRecordModel *model);
 
 + (HourlyRecordCreateView *)create;
 
-
++ (HourlyRecordCreateView *)editWithModel:(HourlyRecordModel *)model allowEarlyStartDate:(NSDate *)allowEarlyStartDate complete:(HourlyRecordCreateBlock)complete;
 + (HourlyRecordCreateView *)editWithModel:(HourlyRecordModel *)model complete:(HourlyRecordCreateBlock)complete;
 
 + (HourlyRecordCreateView *)createWithStartDate:(NSDate *)startDate complete:(HourlyRecordCreateBlock)complete;

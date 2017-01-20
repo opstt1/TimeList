@@ -35,6 +35,9 @@
 @property (nonatomic, readonly, assign) CGFloat cellHeight;
 
 
+- (NSError *)dataIntegrityWithAllowEarlyStartDate:(NSDate *)date;
+
+
 @end
 
 extern NSString *const HourlyRecordModelStartDateKey;
@@ -42,8 +45,6 @@ extern NSString *const HourlyRecordModelStartDateKey;
 @interface HourlyRecordDataSource : TLDataSource
 
 + (HourlyRecordDataSource *)createWithDate:(NSDate *)date;
-
-
 
 @end
 
