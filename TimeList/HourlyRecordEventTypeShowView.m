@@ -112,18 +112,9 @@
 {
     NSLog(@"popopopop");
     HourlyRecordEventTypeShow *show = _data[index];
-    _showLabel.text = [NSString stringWithFormat:@"%@\n%@",show.title,show.minuteStr];
     _showLabel.textColor = show.color;
-    
-    if ( show.showMinute / 60 > 0 ){
-        if ( show.showMinute % 60 != 0 ){
-            _showLabel.text = [NSString stringWithFormat:@"%@\n%d 小时 %d 分钟",show.title,(int)show.showMinute/60,(int)show.showMinute % 60];
-        }else{
-            _showLabel.text = [NSString stringWithFormat:@"%@\n%d 小时",show.title,(int)show.showMinute/60];
-        }
-    }else{
-        _showLabel.text = [NSString stringWithFormat:@"%@\n%d 分种",show.title,(int)show.showMinute];
-    }
+    _showLabel.text = [NSString stringWithFormat:@"%@\n%@",show.title,show.timeShow];
+
 }
 
 - (CGFloat)allowToShowMinLimitPercent:(ZFPieChart *)pieChart{

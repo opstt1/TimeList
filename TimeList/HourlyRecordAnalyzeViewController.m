@@ -12,6 +12,7 @@
 #import "HourlyRecordModel.h"
 #import "EventTpyeShowView.h"
 #import "HourlyRecordEventTypeShowView.h"
+#import "HourlyRecordDetailView.h"
 
 @interface HourlyRecordAnalyzeViewController ()
 
@@ -41,7 +42,12 @@
     
     [self.contentView addSubview:hourlyRecordEventTypeShowView];
     
-    _contentViewHeight.constant = hourlyRecordEventTypeShowView.y + hourlyRecordEventTypeShowView.height + 10;
+    
+    HourlyRecordDetailView *hourlyRecordDetailView = [HourlyRecordDetailView createWithData:dataSource];
+    hourlyRecordDetailView.frame = CGRectMake(0, hourlyRecordEventTypeShowView.y + hourlyRecordEventTypeShowView.height + 20.0f, UISCREEN_WIDTH, hourlyRecordDetailView.height);
+    [self.contentView addSubview:hourlyRecordDetailView];
+    
+    _contentViewHeight.constant = hourlyRecordDetailView.y + hourlyRecordDetailView.height + 10;
 }
 
 - (void)viewWillAppear:(BOOL)animated

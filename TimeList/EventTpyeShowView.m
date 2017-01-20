@@ -49,7 +49,6 @@ static CGFloat fontFloat = 13.0f;
 {
     CGFloat pointX = 15.0f;
     CGFloat pointY = 0.0f;
-    CGFloat labelHeight = 0.0f;
     CGFloat hasWithd = UISCREEN_WIDTH-30;
     
     for ( EventTypeModel *model in _types ){

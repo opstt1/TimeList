@@ -13,14 +13,17 @@
 @interface HourlyRecordDataShow :HourlyRecordModel
 
 @property (nonatomic, readonly, assign) NSInteger showMinute;
-@property (nonatomic, readonly, strong) NSString *minuteStr;
+@property (nonatomic, readonly, copy) NSString *minuteStr;
+@property (nonatomic, readonly, copy) NSString *timeShow;
 
 @end
 
 @interface HourlyRecordEventTypeShow : EventTypeModel
 
 @property (nonatomic, readonly, assign) NSInteger showMinute;
-@property (nonatomic, readonly, strong) NSString *minuteStr;
+@property (nonatomic, readonly, copy) NSString *minuteStr;
+@property (nonatomic, readonly, copy) NSString *timeShow;
+
 
 @end
 

@@ -9,14 +9,13 @@
 #import "AnalyzeData.h"
 #import "Constants.h"
 
-static NSInteger allMinutes = 24 * 60;
-
 #pragma mark - HourlyRecordDataShow
 
 @interface HourlyRecordDataShow()
 
 @property (nonatomic, readwrite, assign) NSInteger showMinute;
-@property (nonatomic, readwrite, strong) NSString *minuteStr;
+@property (nonatomic, readwrite, copy) NSString *minuteStr;
+@property (nonatomic, readwrite, copy) NSString *timeShow;
 
 + (HourlyRecordDataShow *)createUnknownShowWitMinute:(NSInteger)minute startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 + (HourlyRecordDataShow *)createShowWithMinute:(NSInteger)minute model:(HourlyRecordModel *)model;
@@ -66,6 +65,25 @@ static NSInteger allMinutes = 24 * 60;
     self.minuteStr = [NSString stringWithFormat:@"%d",(int)minute];
 }
 
+- (void)setShowMinute:(NSInteger)showMinute
+{
+    _showMinute = showMinute;
+    
+    NSString *str = @"";
+    
+    if ( _showMinute / 60 > 0 ){
+        if ( _showMinute % 60 != 0 ){
+            str = [NSString stringWithFormat:@"%d 小时 %d 分种",(int)_showMinute/60,(int)_showMinute % 60];
+        }else{
+            str = [NSString stringWithFormat:@"%d 小时",(int)_showMinute/60];
+        }
+    }else{
+        str = [NSString stringWithFormat:@"%d 分种",(int)_showMinute];
+    }
+    
+    _timeShow = str;
+}
+
 @end
 
 #pragma mark - HourlyRecordEventTypeShow
@@ -73,7 +91,8 @@ static NSInteger allMinutes = 24 * 60;
 @interface HourlyRecordEventTypeShow ()
 
 @property (nonatomic, readwrite, assign) NSInteger showMinute;
-@property (nonatomic, readwrite, strong) NSString *minuteStr;
+@property (nonatomic, readwrite, copy) NSString *minuteStr;
+@property (nonatomic, readwrite, copy) NSString *timeShow;
 
 @end
 
@@ -93,8 +112,20 @@ static NSInteger allMinutes = 24 * 60;
 {
     _showMinute = showMinute;
     _minuteStr = [NSString stringWithFormat:@"%d",(int)showMinute];
+    NSString *str = @"";
+    
+    if ( _showMinute / 60 > 0 ){
+        if ( _showMinute % 60 != 0 ){
+            str = [NSString stringWithFormat:@"%d 小时 %d 分种",(int)_showMinute/60,(int)_showMinute % 60];
+        }else{
+            str = [NSString stringWithFormat:@"%d 小时",(int)_showMinute/60];
+        }
+    }else{
+        str = [NSString stringWithFormat:@"%d 分种",(int)_showMinute];
+    }
+    
+    _timeShow = str;
 }
-
 
 @end
 

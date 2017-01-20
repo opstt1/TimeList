@@ -47,7 +47,7 @@ static CGFloat defautlCellHeight = 44.0f;
 
 static const CGFloat normCellHeight = 44.0f;
 static NSString *const defaultNumberString = @"---";
-
+static const NSInteger allMinutes = 24 * 60;
 
 
 #ifndef weakify

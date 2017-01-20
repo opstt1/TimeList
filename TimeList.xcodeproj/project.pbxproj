@@ -124,6 +124,7 @@
 		E2F819671E1C989B00F7F9BF /* DailyTaskRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F819661E1C989B00F7F9BF /* DailyTaskRecordView.m */; };
 		E2F9FE771E0A32FF00AA7C1A /* libToast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F9FE761E0A32FF00AA7C1A /* libToast.a */; };
 		E2F9FE7A1E0A5D1900AA7C1A /* TaskDetailSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F9FE791E0A5D1900AA7C1A /* TaskDetailSubView.m */; };
+		E2FC48AE1E31DA9E00920036 /* HourlyRecordDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FC48AD1E31DA9E00920036 /* HourlyRecordDetailView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -349,6 +350,8 @@
 		E2F9FE761E0A32FF00AA7C1A /* libToast.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libToast.a; path = "../../Library/Developer/Xcode/DerivedData/TimeList-akiumsedqafylxekndmczvklrzut/Build/Products/Debug-iphoneos/Toast/libToast.a"; sourceTree = "<group>"; };
 		E2F9FE781E0A5D1900AA7C1A /* TaskDetailSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailSubView.h; sourceTree = "<group>"; };
 		E2F9FE791E0A5D1900AA7C1A /* TaskDetailSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailSubView.m; sourceTree = "<group>"; };
+		E2FC48AC1E31DA9E00920036 /* HourlyRecordDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourlyRecordDetailView.h; sourceTree = "<group>"; };
+		E2FC48AD1E31DA9E00920036 /* HourlyRecordDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordDetailView.m; sourceTree = "<group>"; };
 		F8DCE3FBECE9C33A57FD72D5 /* Pods-TimeList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeList/Pods-TimeList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -611,6 +614,8 @@
 				E20B5D601E2F391E008911CC /* ClockPieChartView.m */,
 				E2EDDB121E30848B00A93BF4 /* AnalyzeData.h */,
 				E2EDDB131E30848B00A93BF4 /* AnalyzeData.m */,
+				E2FC48AC1E31DA9E00920036 /* HourlyRecordDetailView.h */,
+				E2FC48AD1E31DA9E00920036 /* HourlyRecordDetailView.m */,
 			);
 			name = dataAnalyze;
 			sourceTree = "<group>";
@@ -1094,6 +1099,7 @@
 				E20B5D5A1E2F1960008911CC /* ZFPolygon.m in Sources */,
 				E2EF36FB1DFA9DA0001247BE /* FirstViewController.m in Sources */,
 				E2EC9F631E1631A2002214B8 /* TaskAlwaysUseViewController.m in Sources */,
+				E2FC48AE1E31DA9E00920036 /* HourlyRecordDetailView.m in Sources */,
 				E20B5D581E2F1960008911CC /* ZFPieChart.m in Sources */,
 				E2166D7A1E0116E40096C821 /* EditableTableViewCell.m in Sources */,
 				E2A814A41E110E260068B88C /* DailySummaryDataSource+FMDB.m in Sources */,

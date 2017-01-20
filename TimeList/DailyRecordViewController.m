@@ -94,6 +94,14 @@
         view.frame = CGRectMake(0, _pointY, UISCREEN_WIDTH, view.viewHeight);
         [self.contentView addSubview:view];
         _pointY += view.viewHeight;
+        
+        if ( i == _hourlyDataSource.count - 1 ){
+            HourlyRecordView *view = [HourlyRecordView createWithDate:model.endDate content:@"end"];
+            view.frame = CGRectMake(0, _pointY, UISCREEN_WIDTH, view.viewHeight);
+            [self.contentView addSubview:view];
+            _pointY += view.viewHeight;
+
+        }
     }
     
     _contentViewHeight.constant = _pointY;
