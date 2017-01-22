@@ -11,6 +11,9 @@
 #import "TLDataSource.h"
 #import "EventTypeModel.h"
 
+
+#define contentLabelWidth UISCREEN_WIDTH - 15 * 2  - 10 - 14
+
 @interface HourlyRecordModel : NSObject
 
 

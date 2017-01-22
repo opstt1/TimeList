@@ -39,7 +39,7 @@
     _showRecordView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, UISCREEN_WIDTH, 1)];
     _showRecordView.backgroundColor = [UIColor whiteColor];
     
-    _showRecordLabel = [[UILabel alloc] initWithFrame:CGRectMake(14+15+10, 5, UISCREEN_WIDTH-15*2, 1)];
+    _showRecordLabel = [[UILabel alloc] initWithFrame:CGRectMake(14+15+10, 5, contentLabelWidth, 1)];
     _showRecordLabel.font = [UIFont systemFontOfSize:16.0f];
     _showRecordLabel.textColor = COLOR_333333;
     _showRecordLabel.numberOfLines = 0;

@@ -39,6 +39,9 @@
                                     <constraint firstItem="OP0-XT-HjQ" firstAttribute="top" secondItem="a9W-Yw-zln" secondAttribute="top" id="Pk3-uR-h2l"/>
                                     <constraint firstItem="OP0-XT-HjQ" firstAttribute="leading" secondItem="a9W-Yw-zln" secondAttribute="leading" id="oQP-Gg-VNJ"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="Ev2-EU-M0r" id="Qwp-fX-CdY"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

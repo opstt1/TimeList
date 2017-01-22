@@ -10,4 +10,6 @@
 
 @interface HourlyRecordAnalyzeViewController : BaseViewController
 
+@property (nonatomic, readwrite, strong) NSDate *date;
+
 @end

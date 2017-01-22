@@ -55,6 +55,9 @@
 {
     HourlyRecordAnalyzeViewController *vc = [[UIStoryboard storyboardWithName:@"Analyze" bundle:nil] instantiateViewControllerWithIdentifier:@"HourlyRecordAnalyzeViewController"];
     [self.navigationController pushViewController:vc animated:YES];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        vc.date = [NSDate date];
+    });
 }
 #pragma mark - tableView
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

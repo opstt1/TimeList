@@ -10,6 +10,8 @@
 #import "Constants.h"
 #import "HourlyRecordModel+FMDB.h"
 
+
+
 @interface HourlyRecordModel()
 
 @end
@@ -62,7 +64,7 @@ NSString * const HourlyRecordModelStartDateKey = @"startDate";
 - (void)setContent:(NSString *)content
 {
     _content = content;
-    _cellHeight = [content sizeWithFont:[UIFont systemFontOfSize:16.0f] width:UISCREEN_WIDTH-30 height:MAXFLOAT].height + 30 + 10;
+    _cellHeight = [content sizeWithFont:[UIFont systemFontOfSize:16.0f] width:contentLabelWidth height:MAXFLOAT].height + 30 + 10;
     
 }
 
@@ -82,7 +84,6 @@ NSString * const HourlyRecordModelStartDateKey = @"startDate";
 {
     _createDate = createDate;
     _identifier = [NSDate stringFromDay:createDate formatStr:@"yyy-MMM-dd HH:mm:ss"];
-    NSLog(@"hourly Model identifier : %@", _identifier);
 }
 
 

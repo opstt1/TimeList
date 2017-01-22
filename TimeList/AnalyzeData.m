@@ -144,8 +144,8 @@
     NSInteger residueMinutes = allMinutes;
     
     HourlyRecordModel *first = [data objectAtInde:data.count-1];
-    NSLog(@"secont: ----%@ %d",first.startTime,(int)[first.startDate timeIntervalSinceDate:[first.startDate beginningOfDay]]/60);
     NSInteger minute = [first.startDate minutesIntervalSinceDate:[first.startDate beginningOfDay]];
+    
     if( minute > 0 ){
         //如果每天00:00开始到第一条记录之间有空隙，计为未知
         HourlyRecordDataShow *show = [[HourlyRecordDataShow alloc] init];
@@ -219,11 +219,7 @@
         model.identifier = [[UIColor grayColor] hexString];
         [array addObject:model];
     }
-    
-    for ( EventTypeModel *data in array ){
-        NSLog(@"ddd: %@ %@",data.identifier, data.title);
-    }
-    
+        
     return [NSArray arrayWithArray:array];
 }
 

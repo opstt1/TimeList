@@ -41,7 +41,7 @@
     DailyRecordViewController *vc = [[UIStoryboard storyboardWithName:@"Calendar" bundle:nil] instantiateViewControllerWithIdentifier:@"DailyRecordViewController"];
     [vc initWithDate:date];
     
-    [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationController pushViewController:vc animated:NO];
 }
 
 

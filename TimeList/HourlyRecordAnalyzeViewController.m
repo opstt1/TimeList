@@ -14,7 +14,7 @@
 #import "HourlyRecordEventTypeShowView.h"
 #import "HourlyRecordDetailView.h"
 
-@interface HourlyRecordAnalyzeViewController ()
+@interface HourlyRecordAnalyzeViewController ()<UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
@@ -27,7 +27,41 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    HourlyRecordDataSource *dataSource = [HourlyRecordDataSource createWithDate:[NSDate date]];
+    
+    [self initView];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    UIView *barImageView = self.navigationController.navigationBar.subviews.firstObject;
+    barImageView.backgroundColor = [UIColor blueColor];
+    barImageView.alpha = 0.0f;
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    UIView *barImageView = self.navigationController.navigationBar.subviews.firstObject;
+    barImageView.alpha = 1.0f;
+}
+
+
+- (void)setDate:(NSDate *)date
+{
+    if ( _date ) return;
+    _date = date;
+    
+}
+
+
+- (void)initView
+{
+    if ( !_date ){
+        _date = [NSDate date];
+    }
+    HourlyRecordDataSource *dataSource = [HourlyRecordDataSource createWithDate:_date?:[NSDate date]];
     
     ClockPieChartView *view = [ClockPieChartView creatWithFrame:CGRectMake(0, 0, UISCREEN_WIDTH, UISCREEN_WIDTH) hourlyRecordData:dataSource];
     [self.contentView addSubview:view];
@@ -48,21 +82,15 @@
     [self.contentView addSubview:hourlyRecordDetailView];
     
     _contentViewHeight.constant = hourlyRecordDetailView.y + hourlyRecordDetailView.height + 10;
+
 }
 
-- (void)viewWillAppear:(BOOL)animated
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    [super viewWillAppear:animated];
     UIView *barImageView = self.navigationController.navigationBar.subviews.firstObject;
-    barImageView.alpha = 0.0f;
-    
-}
+    barImageView.alpha = (CGFloat)(scrollView.contentOffset.y + 64) / 64;
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    UIView *barImageView = self.navigationController.navigationBar.subviews.firstObject;
-    barImageView.alpha = 1.0f;
 }
-
 @end
