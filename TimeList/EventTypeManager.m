@@ -59,7 +59,7 @@
 //初始化颜色数组
 - (void)initColos
 {
-    NSMutableArray *colors = [NSMutableArray arrayWithObjects:color(0x0000FF),color(0x996633),color(0x00FFFF),color(0x00FF00),color(0xFF00FF),color(0xFF7F00),color(0x7F007F),color(0xFF0000),color(0xFFFF00), nil];
+    NSMutableArray *colors = [NSMutableArray arrayWithObjects:color(0x0000FF),color(0x996633),color(0x00FFFF),color(0x00FF00),color(0xFF00FF),color(0xFF7F00),color(0x7F007F),color(0xFF0000),color(0xFFFF00),color(0x000000),color(0x006600),color(0x6666CC),color(0xFF6699), nil];
 
     _colors = [NSArray arrayWithArray:colors];
     _unUseColors = [NSArray arrayWithArray:colors];
