@@ -65,6 +65,9 @@
 		E22840C11E1E38C000FC6B07 /* HourlyRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = E22840C01E1E38C000FC6B07 /* HourlyRecordView.m */; };
 		E2390DD41E30955700074CFB /* HourlyRecordEventTypeShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2390DD31E30955700074CFB /* HourlyRecordEventTypeShowView.m */; };
 		E23C954A1E1507D000CEBFAF /* HourlyRecordModel+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E23C95491E1507D000CEBFAF /* HourlyRecordModel+FMDB.m */; };
+		E25339AF1E6845490037AF2B /* finalCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E25339AE1E6845490037AF2B /* finalCardViewController.m */; };
+		E25339B31E6910010037AF2B /* TaskCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = E25339B21E6910010037AF2B /* TaskCardView.m */; };
+		E25339B61E69114D0037AF2B /* TaskFinalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E25339B51E69114D0037AF2B /* TaskFinalViewController.m */; };
 		E25A71991E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = E25A71981E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.m */; };
 		E29F406C1E07B7ED0044D961 /* TaskDataSource+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = E29F406B1E07B7ED0044D961 /* TaskDataSource+Sort.m */; };
 		E2A0A4AE1E03F93F009621A2 /* libKVNProgress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A0A4AD1E03F93F009621A2 /* libKVNProgress.a */; };
@@ -238,6 +241,12 @@
 		E2390DD31E30955700074CFB /* HourlyRecordEventTypeShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourlyRecordEventTypeShowView.m; sourceTree = "<group>"; };
 		E23C95481E1507D000CEBFAF /* HourlyRecordModel+FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HourlyRecordModel+FMDB.h"; sourceTree = "<group>"; };
 		E23C95491E1507D000CEBFAF /* HourlyRecordModel+FMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HourlyRecordModel+FMDB.m"; sourceTree = "<group>"; };
+		E25339AD1E6845490037AF2B /* finalCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = finalCardViewController.h; sourceTree = "<group>"; };
+		E25339AE1E6845490037AF2B /* finalCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = finalCardViewController.m; sourceTree = "<group>"; };
+		E25339B11E6910010037AF2B /* TaskCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCardView.h; sourceTree = "<group>"; };
+		E25339B21E6910010037AF2B /* TaskCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCardView.m; sourceTree = "<group>"; };
+		E25339B41E69114D0037AF2B /* TaskFinalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskFinalViewController.h; sourceTree = "<group>"; };
+		E25339B51E69114D0037AF2B /* TaskFinalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskFinalViewController.m; sourceTree = "<group>"; };
 		E25A71971E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailPushAnimatedTransitioning.h; sourceTree = "<group>"; };
 		E25A71981E239FA4004040C1 /* TaskDetailPushAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailPushAnimatedTransitioning.m; sourceTree = "<group>"; };
 		E29F406A1E07B7ED0044D961 /* TaskDataSource+Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TaskDataSource+Sort.h"; sourceTree = "<group>"; };
@@ -665,6 +674,17 @@
 			name = BaseView;
 			sourceTree = "<group>";
 		};
+		E25339B01E6846840037AF2B /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				E25339B11E6910010037AF2B /* TaskCardView.h */,
+				E25339B21E6910010037AF2B /* TaskCardView.m */,
+				E25339B41E69114D0037AF2B /* TaskFinalViewController.h */,
+				E25339B51E69114D0037AF2B /* TaskFinalViewController.m */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		E2A814991E1109370068B88C /* Summary */ = {
 			isa = PBXGroup;
 			children = (
@@ -823,6 +843,7 @@
 				E2EC4B4F1DFE89190067C0EC /* Task */,
 				E2EF37171DFAB225001247BE /* Toolkit */,
 				E2EF370D1DFAA3AB001247BE /* BaseVC */,
+				E25339B01E6846840037AF2B /* New Group */,
 				E2EF36F61DFA9DA0001247BE /* AppDelegate.h */,
 				E2EF36F71DFA9DA0001247BE /* AppDelegate.m */,
 				E2EF36F91DFA9DA0001247BE /* FirstViewController.h */,
@@ -831,6 +852,8 @@
 				E2EF36FD1DFA9DA0001247BE /* SecondViewController.m */,
 				E2143BD11E1B851400F0F09C /* ThirdViewController.h */,
 				E2143BD21E1B851400F0F09C /* ThirdViewController.m */,
+				E25339AD1E6845490037AF2B /* finalCardViewController.h */,
+				E25339AE1E6845490037AF2B /* finalCardViewController.m */,
 				E2EF36FF1DFA9DA0001247BE /* Main.storyboard */,
 				E2EF37021DFA9DA0001247BE /* Assets.xcassets */,
 				E2EF37041DFA9DA0001247BE /* LaunchScreen.storyboard */,
@@ -1052,6 +1075,7 @@
 				E2EF36FE1DFA9DA0001247BE /* SecondViewController.m in Sources */,
 				E2A0A4B11E03FB68009621A2 /* NSDate+Day.m in Sources */,
 				E2EF371A1DFAB239001247BE /* UIColor+TAToolkit.m in Sources */,
+				E25339B61E69114D0037AF2B /* TaskFinalViewController.m in Sources */,
 				E2EC4B521DFE896D0067C0EC /* TaskModel.m in Sources */,
 				E20B5D511E2F1960008911CC /* ZFHorizontalAxis.m in Sources */,
 				E20B5D481E2F1960008911CC /* ZFWaveAttribute.m in Sources */,
@@ -1081,6 +1105,7 @@
 				E2390DD41E30955700074CFB /* HourlyRecordEventTypeShowView.m in Sources */,
 				E20F95831E26277C0094B190 /* UIViewController+BackButtonHandler.m in Sources */,
 				E20CC4351E03ADDD0013BEC7 /* NSArray+Toolkit.m in Sources */,
+				E25339B31E6910010037AF2B /* TaskCardView.m in Sources */,
 				E20B5D441E2F1960008911CC /* ZFPopoverLabel.m in Sources */,
 				E20B5D4E1E2F1960008911CC /* ZFCirqueChart.m in Sources */,
 				E2B98ED21E02668B00405C14 /* BaseView.m in Sources */,
@@ -1103,6 +1128,7 @@
 				E20B5D581E2F1960008911CC /* ZFPieChart.m in Sources */,
 				E2166D7A1E0116E40096C821 /* EditableTableViewCell.m in Sources */,
 				E2A814A41E110E260068B88C /* DailySummaryDataSource+FMDB.m in Sources */,
+				E25339AF1E6845490037AF2B /* finalCardViewController.m in Sources */,
 				E2B98EDB1E02670700405C14 /* TaskTitleTwoSelectView.m in Sources */,
 				E20B5D4A1E2F1960008911CC /* ZFMethod.m in Sources */,
 				E2EAB4661E27724800DA2A95 /* EventTypeModel+FMDB.m in Sources */,
