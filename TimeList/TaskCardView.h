@@ -8,6 +8,15 @@
 
 #import "BaseView.h"
 
+@class TaskCardView;
+
+@protocol TasckCardViewDelegate <NSObject>
+
+@optional
+- (void)taskCardView:(TaskCardView *)taskCardView changeCenter:(CGPoint)center;
+
+@end
+
 typedef NS_ENUM(NSInteger, TaskCardMoveDirection)
 {
     TaskCardMoveUp,
@@ -18,6 +27,7 @@ typedef NS_ENUM(NSInteger, TaskCardMoveDirection)
 
 typedef NS_ENUM(NSInteger, TaskCardStatusDirection)
 {
+    TaskCardInTheCenter,
     TaskCardInTheUp,
     TaskCardInTheRight,
     TaskCardInTheDowm,
@@ -26,5 +36,7 @@ typedef NS_ENUM(NSInteger, TaskCardStatusDirection)
 @interface TaskCardView : BaseView
 
 @property (nonatomic, readonly, assign) TaskCardMoveDirection cardDirection;
+
+@property (nonatomic, readwrite, weak) id<TasckCardViewDelegate> taskCardViewDelegate;
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j1L-SQ-G6W">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,7 +29,7 @@
         <!--每日任务管理-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -39,16 +39,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7j0-ky-W0T">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="568"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7j0-ky-W0T" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="8Ea-bk-mt3"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="7j0-ky-W0T" secondAttribute="bottom" id="BZM-J5-30G"/>
                             <constraint firstItem="7j0-ky-W0T" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="SYf-AA-RDi"/>
                             <constraint firstItem="7j0-ky-W0T" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="i7a-l0-fYD"/>
-                            <constraint firstItem="7j0-ky-W0T" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" id="xnu-IE-eMe"/>
+                            <constraint firstItem="7j0-ky-W0T" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="35" id="mMh-4P-QbJ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="每日任务管理" image="first" id="acW-dT-cKf"/>
@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvA-Qi-k6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1857" y="1225"/>
+            <point key="canvasLocation" x="1857" y="1401"/>
         </scene>
         <!--Task Final View Controller-->
         <scene sceneID="bjR-nd-ZvA">
@@ -187,6 +187,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NUo-mP-ktc"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -198,7 +199,7 @@
         <!--每小时任务记录-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -245,12 +246,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="nbA-mi-pIo" kind="relationship" relationship="viewControllers" id="OGg-zr-w8Q"/>
-                        <segue destination="00u-BL-gId" kind="relationship" relationship="viewControllers" id="Zgi-Tn-1Vk"/>
-                        <segue destination="DmE-zN-81X" kind="relationship" relationship="viewControllers" id="BDS-2J-7OV"/>
-                        <segue destination="j1L-SQ-G6W" kind="relationship" relationship="viewControllers" id="t7T-uA-Qef"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
@@ -283,12 +278,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="8W5-AW-z92" kind="relationship" relationship="rootViewController" id="MK6-Lx-zUM"/>
+                        <segue destination="AwE-mf-RJz" kind="relationship" relationship="rootViewController" id="4he-h7-dRT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9n-IC-gvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1858" y="526"/>
+            <point key="canvasLocation" x="2780" y="296"/>
         </scene>
         <!--Item-->
         <scene sceneID="sAn-Iv-bmc">
@@ -313,4 +308,7 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4he-h7-dRT"/>
+    </inferredMetricsTieBreakers>
 </document>

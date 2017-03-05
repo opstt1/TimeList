@@ -19,7 +19,7 @@
 #import "TaskAlwaysUseViewController.h"
 #import "TaskListTableViewCell.h"
 
-@interface FirstViewController ()<UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource,TaskListTableViewCellDelegate,TaskDataSourceDelegate>
+@interface FirstViewController ()<UITableViewDelegate,UITableViewDataSource,TaskListTableViewCellDelegate,TaskDataSourceDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -110,6 +110,7 @@
 - (void)didTapAlawysUseTasButton:(UIButton *)sender
 {
     TaskAlwaysUseViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskAlwaysUseViewController"];
+    
     WEAK_OBJ_REF(self);
     vc.selectCompelet = ^(id result){
         STRONG_OBJ_REF(weak_self);
