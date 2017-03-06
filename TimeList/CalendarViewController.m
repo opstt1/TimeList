@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    FSCalendar *calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(0, 64, UISCREEN_WIDTH, 250)];
+    FSCalendar *calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(50.0f, 64, UISCREEN_WIDTH-50.0f, 250)];
     calendar.dataSource = self;
     calendar.delegate = self;
 //    calendar.appearance.headerDateFormat = @"yyyy年MM月";

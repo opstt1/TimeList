@@ -88,7 +88,7 @@
             _cardStatusDirection = TaskCardInTheCenter;
         }
     
-        if ( _responsChangeCenterDelegate ){
+        if ( _responsChangeCenterDelegate && _cardStatusDirection != TaskCardInTheCenter ){
             [_taskCardViewDelegate taskCardView:self changeCenter:CGPointMake(centerX, centerY)];
         }
         
@@ -103,7 +103,9 @@
         self.centerX = centerX;
         self.centerY = centerY;
     } completion:^(BOOL finished) {
-        
+        if ( finished && _responsChangeCenterDelegate && _cardStatusDirection == TaskCardInTheCenter ){
+            [_taskCardViewDelegate taskCardView:self changeCenter:CGPointMake(centerX, centerY)];
+        }
     }];
 }
 //手势开始时

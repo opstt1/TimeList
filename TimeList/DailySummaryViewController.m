@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UITextView *fortunatelyTextView;
 
 @property (nonatomic, readwrite, strong) DailySummaryDataSource *dataSource;
 
@@ -34,10 +35,15 @@
         _dataSource = [[DailySummaryDataSource alloc] init];
         [_dataSource insertSQL];
     }
+    
     _textView.text = _dataSource.summaryContent;
     _textView.layer.borderWidth = 0.5f;
     _textView.layer.borderColor = [UIColor blackColor].CGColor;
     _textView.delegate = self;
+    
+    _fortunatelyTextView.layer.borderWidth = 0.5f;
+    _fortunatelyTextView.layer.borderColor = [UIColor blackColor].CGColor;
+    _fortunatelyTextView.delegate = self;
     
     self.popAnimationTransition = [RectAnimationTransitionPop new];
     self.useCustomAnimation = YES;
@@ -54,6 +60,7 @@
 {
     [super viewDidDisappear:animated];
     self.navigationController.delegate = nil;
+    NSLog(@"总结消失！");
     [_dataSource upadteSQL];
 }
 

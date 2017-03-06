@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j1L-SQ-G6W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j1L-SQ-G6W">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -209,7 +209,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Nm-de-EOx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="124" width="375" height="499"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8rJ-Kc-sve" id="x7J-Wu-VpL"/>
@@ -219,21 +219,23 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9Nm-de-EOx" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="OMH-RB-thp"/>
-                            <constraint firstItem="9Nm-de-EOx" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" id="RPA-Ss-cjL"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="9Nm-de-EOx" secondAttribute="bottom" id="0sV-E3-AZT"/>
+                            <constraint firstItem="9Nm-de-EOx" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="60" id="HXX-jr-zMG"/>
                             <constraint firstItem="9Nm-de-EOx" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="TSj-8F-1bi"/>
                             <constraint firstItem="9Nm-de-EOx" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="qOz-uF-zDp"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="每小时任务记录" image="second" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="i2o-7Q-oHe"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="9Nm-de-EOx" id="py5-aJ-mNb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-98" y="1252"/>
+            <point key="canvasLocation" x="-98" y="1358"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

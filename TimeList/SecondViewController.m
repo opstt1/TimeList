@@ -12,6 +12,7 @@
 #import "HourlyRecordCell.h"
 #import "Constants.h"
 #import "HourlyRecordAnalyzeViewController.h"
+#import "EventTypeListViewController.h"
 
 @interface SecondViewController ()<UITableViewDelegate,UITableViewDataSource,TLDataSourceDelegate>
 
@@ -29,6 +30,19 @@
     self.dataSource = [HourlyRecordDataSource createWithDate:[NSDate date]];
     
     self.dataSource.delegate = self;
+    
+    UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 60, 100, 50)];
+    [addButton addTarget:self action:@selector(didTapAddRecordButton:) forControlEvents:UIControlEventTouchUpInside];
+    [addButton setTitle:@"+" forState:UIControlStateNormal];
+    addButton.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:addButton];
+    
+    UIButton *typeButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 60, 100, 50)];
+    [typeButton addTarget:self action:@selector(didTapRecordTypeManagerButton:) forControlEvents:UIControlEventTouchUpInside];
+    [typeButton setTitle:@"类型" forState:UIControlStateNormal];
+    typeButton.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:typeButton];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -37,7 +51,7 @@
     [self.tabBarController.tabBar setHidden:NO];
 }
 
-- (void)leftNavigationButtonTapped:(id)sender
+- (void)didTapAddRecordButton:(id)sender
 {
     NSDate *lastEndDate =((HourlyRecordModel*)[self.dataSource objectAtInde:0]).endDate;
     WEAK_OBJ_REF(self);
@@ -51,6 +65,11 @@
     }];;
 }
 
+- (void)didTapRecordTypeManagerButton:(id)sender
+{
+    EventTypeListViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"EventTypeListViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (void)rightNavigationButtonTapped:(id)sender
 {
     HourlyRecordAnalyzeViewController *vc = [[UIStoryboard storyboardWithName:@"Analyze" bundle:nil] instantiateViewControllerWithIdentifier:@"HourlyRecordAnalyzeViewController"];

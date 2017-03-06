@@ -12,6 +12,7 @@
 #import "FirstViewController.h"
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
+#import "DailySummaryViewController.h"
 
 @interface TaskFinalViewController ()<TasckCardViewDelegate>
 
@@ -107,6 +108,15 @@
         _dislpayViewController = vc;
     }
     
+    if ( _cardStatusDirection == TaskCardInTheLeft ){
+        UIViewController *vc = [[UIStoryboard storyboardWithName:@"Calendar" bundle:nil] instantiateViewControllerWithIdentifier:@"CalendarViewController"];
+        _dislpayViewController = vc;
+    }
+    
+    if ( _cardStatusDirection == TaskCardInTheDowm ){
+        DailySummaryViewController *vc = [[UIStoryboard storyboardWithName:@"Summary" bundle:nil] instantiateViewControllerWithIdentifier:@"DailySummaryViewController"];
+        _dislpayViewController = vc;
+    }
     if ( _dislpayViewController == nil ){
         return;
     }
