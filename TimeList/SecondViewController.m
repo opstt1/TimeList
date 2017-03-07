@@ -25,8 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setUpLeftNavigationButtonWithTitle:@"+" tintColor:nil];
-    [self setUpRightNavigationButtonWithTitle:@"统计" tintColor:nil];
+//    [self setUpLeftNavigationButtonWithTitle:@"+" tintColor:nil];
+//    [self setUpRightNavigationButtonWithTitle:@"统计" tintColor:nil];
     self.dataSource = [HourlyRecordDataSource createWithDate:[NSDate date]];
     
     self.dataSource.delegate = self;
@@ -37,20 +37,30 @@
     addButton.backgroundColor = [UIColor blackColor];
     [self.view addSubview:addButton];
     
-    UIButton *typeButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 60, 100, 50)];
+    UIButton *typeButton = [[UIButton alloc] initWithFrame:CGRectMake(230, 60, 100, 50)];
     [typeButton addTarget:self action:@selector(didTapRecordTypeManagerButton:) forControlEvents:UIControlEventTouchUpInside];
     [typeButton setTitle:@"类型" forState:UIControlStateNormal];
     typeButton.backgroundColor = [UIColor blackColor];
     [self.view addSubview:typeButton];
     
+    UIButton *analyeutton = [[UIButton alloc] initWithFrame:CGRectMake(115, 60, 100, 50)];
+    [analyeutton addTarget:self action:@selector(didTapDataAnalyeButton:) forControlEvents:UIControlEventTouchUpInside];
+    [analyeutton setTitle:@"分析" forState:UIControlStateNormal];
+    analyeutton.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:analyeutton];
+    
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.tabBarController.tabBar setHidden:NO];
 }
 
+//添加记录
 - (void)didTapAddRecordButton:(id)sender
 {
     NSDate *lastEndDate =((HourlyRecordModel*)[self.dataSource objectAtInde:0]).endDate;
@@ -65,12 +75,8 @@
     }];;
 }
 
-- (void)didTapRecordTypeManagerButton:(id)sender
-{
-    EventTypeListViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"EventTypeListViewController"];
-    [self.navigationController pushViewController:vc animated:YES];
-}
-- (void)rightNavigationButtonTapped:(id)sender
+//数据分析
+- (void)didTapDataAnalyeButton:(id)sender
 {
     HourlyRecordAnalyzeViewController *vc = [[UIStoryboard storyboardWithName:@"Analyze" bundle:nil] instantiateViewControllerWithIdentifier:@"HourlyRecordAnalyzeViewController"];
     [self.navigationController pushViewController:vc animated:YES];
@@ -78,6 +84,15 @@
         vc.date = [NSDate date];
     });
 }
+
+
+//添加事件类型
+- (void)didTapRecordTypeManagerButton:(id)sender
+{
+    EventTypeListViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"EventTypeListViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 #pragma mark - tableView
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {

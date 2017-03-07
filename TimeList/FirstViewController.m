@@ -70,44 +70,27 @@
 //添加每日总结button
 - (void)p_addDailySummaryButtton
 {
-    UIButton *dailySummaryButton = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH-70, UISCREEN_HEIGHT-125, 50, 50)];
-    dailySummaryButton.layer.cornerRadius = 25.0f;
-    dailySummaryButton.layer.shadowColor = [UIColor blackColor].CGColor;
-    dailySummaryButton.layer.shadowOffset =  CGSizeMake(1, 0.5);
-    dailySummaryButton.layer.shadowOpacity = 0.8;
-    dailySummaryButton.backgroundColor = [UIColor redColor];
-    [dailySummaryButton setTitle:@"总结" forState:UIControlStateNormal];
-    [dailySummaryButton addTarget:self action:@selector(didTapDailySummaryButton:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:dailySummaryButton];
-    
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(70, UISCREEN_HEIGHT-125, 40, 40)];
-    button.layer.cornerRadius = 20.0f;
-    button.layer.shadowColor = [UIColor blackColor].CGColor;
-    button.layer.shadowOffset =  CGSizeMake(1, 0.5);
-    button.layer.shadowOpacity = 0.8;
-    [button.titleLabel setFont:[UIFont systemFontOfSize:13.0f]];
-    [button.titleLabel setNumberOfLines:2];
-    button.backgroundColor = [UIColor purpleColor];
-    [button setTitle:@"添加\n常用" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(didTapAlawysUseTasButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *addTaskButton = [[UIButton alloc] initWithFrame:CGRectMake(0, UISCREEN_HEIGHT-60, UISCREEN_WIDTH/3, 60)];
+    addTaskButton.backgroundColor = [UIColor blackColor];
+    [addTaskButton setTitle:@"添加任务" forState:UIControlStateNormal];
+    [addTaskButton addTarget:self action:@selector(didTapAddTaskButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:addTaskButton];
+
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH/3, UISCREEN_HEIGHT-60, UISCREEN_WIDTH/3, 60)];
+    button.backgroundColor = [UIColor blackColor];
+    [button setTitle:@"常用任务" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(didTapAlawysUseTaskButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
+    UIButton *daysTaskButton = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH/3*2, UISCREEN_HEIGHT-60.0f, UISCREEN_WIDTH/3, 60.0f)];
+    daysTaskButton.backgroundColor = [UIColor blackColor];
+    [daysTaskButton setTitle:@"每日任务列表" forState:UIControlStateNormal];
+    [self.view addSubview:daysTaskButton];
+    
 }
-
-//跳转到每天总结
-- (void)didTapDailySummaryButton:(id)sender
-{
-    DailySummaryViewController *vc = [[UIStoryboard storyboardWithName:@"Summary" bundle:nil] instantiateViewControllerWithIdentifier:@"DailySummaryViewController"];
-    [vc data:_dailySummaryDataSource complete:^(BOOL complete) {
-        
-    }];
-    self.selectRect = ((UIButton *)sender).frame;
-    [self pushViewController:vc animated:YES useCustomAnimation:YES];
-}
-
 
 //跳转到常使用任务
-- (void)didTapAlawysUseTasButton:(UIButton *)sender
+- (void)didTapAlawysUseTaskButton:(UIButton *)sender
 {
     TaskAlwaysUseViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskAlwaysUseViewController"];
     
@@ -126,20 +109,13 @@
         return YES;
     };
     self.selectRect = sender.frame;
-    [self pushViewController:vc animated:YES useCustomAnimation:YES];
+    [self pushViewController:vc animated:YES useCustomAnimation:NO];
 }
 
-
-
-
-- (void)rightNavigationButtonTapped:(id)sender
-{
-    [[[TaskListSessionManager sharedManager] dataSource] sortDefault];
-}
 #pragma mark - action
 
 //点击创建一个任务
-- (void)leftNavigationButtonTapped:(id)sender
+- (void)didTapAddTaskButton:(id)sender
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Task" bundle:nil];
     
@@ -153,7 +129,7 @@
         }
     }];
     self.selectRect = CGRectMake(30, 30, 5, 5);
-    [self pushViewController:vc animated:YES useCustomAnimation:YES];
+    [self pushViewController:vc animated:YES useCustomAnimation:NO];
 }
 
 #pragma mark - UITable

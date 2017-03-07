@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-1457" y="526"/>
         </scene>
-        <!--每日任务管理-->
+        <!--First View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController storyboardIdentifier="FirstViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
@@ -39,19 +39,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="7j0-ky-W0T">
-                                <rect key="frame" x="0.0" y="99" width="375" height="568"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="508"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="7j0-ky-W0T" secondAttribute="bottom" id="BZM-J5-30G"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="7j0-ky-W0T" secondAttribute="bottom" constant="60" id="BZM-J5-30G"/>
                             <constraint firstItem="7j0-ky-W0T" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="SYf-AA-RDi"/>
                             <constraint firstItem="7j0-ky-W0T" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="i7a-l0-fYD"/>
                             <constraint firstItem="7j0-ky-W0T" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="35" id="mMh-4P-QbJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="每日任务管理" image="first" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="C2p-49-woJ"/>
                     <connections>
                         <outlet property="tableView" destination="7j0-ky-W0T" id="0uW-WR-ijc"/>
@@ -148,7 +147,7 @@
         <!--Final Card View Controller-->
         <scene sceneID="KRy-b9-iDW">
             <objects>
-                <viewController id="8W5-AW-z92" customClass="finalCardViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="8W5-AW-z92" customClass="finalCardViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xkn-GZ-TB0"/>
                         <viewControllerLayoutGuide type="bottom" id="2Nv-lh-xla"/>
@@ -169,6 +168,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="EiJ-82-8h3"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvA-Qi-k6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,10 +197,10 @@
             </objects>
             <point key="canvasLocation" x="2822" y="1211"/>
         </scene>
-        <!--每小时任务记录-->
+        <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -209,7 +210,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Nm-de-EOx">
-                                <rect key="frame" x="0.0" y="124" width="375" height="499"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8rJ-Kc-sve" id="x7J-Wu-VpL"/>
@@ -220,14 +221,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="9Nm-de-EOx" secondAttribute="bottom" id="0sV-E3-AZT"/>
-                            <constraint firstItem="9Nm-de-EOx" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="60" id="HXX-jr-zMG"/>
+                            <constraint firstItem="9Nm-de-EOx" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="64" id="HXX-jr-zMG"/>
                             <constraint firstItem="9Nm-de-EOx" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="TSj-8F-1bi"/>
                             <constraint firstItem="9Nm-de-EOx" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="qOz-uF-zDp"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="每小时任务记录" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="i2o-7Q-oHe"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="9Nm-de-EOx" id="py5-aJ-mNb"/>
@@ -307,10 +308,8 @@
     </scenes>
     <resources>
         <image name="IQButtonBarArrowUp.png" width="21" height="12"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4he-h7-dRT"/>
+        <segue reference="YgL-zG-C15"/>
     </inferredMetricsTieBreakers>
 </document>

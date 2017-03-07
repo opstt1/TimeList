@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -78,6 +78,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFN-vj-tjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-362" y="650"/>
+        </scene>
+        <!--Every Day Task View Controller-->
+        <scene sceneID="VAv-pd-Jag">
+            <objects>
+                <viewController storyboardIdentifier="EveryDayTaskViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fl4-MV-byf" customClass="EveryDayTaskViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ha1-N8-Ag0"/>
+                        <viewControllerLayoutGuide type="bottom" id="PP6-cD-ni9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Skl-cW-Nc0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="66U-4w-bUM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PP6-cD-ni9" firstAttribute="top" secondItem="66U-4w-bUM" secondAttribute="bottom" constant="60" id="EO7-XA-uFi"/>
+                            <constraint firstItem="66U-4w-bUM" firstAttribute="centerX" secondItem="Skl-cW-Nc0" secondAttribute="centerX" id="JAq-ME-muC"/>
+                            <constraint firstItem="66U-4w-bUM" firstAttribute="width" secondItem="Skl-cW-Nc0" secondAttribute="width" id="LSQ-wo-bK5"/>
+                            <constraint firstItem="66U-4w-bUM" firstAttribute="top" secondItem="ha1-N8-Ag0" secondAttribute="bottom" constant="-20" id="a8f-uh-9ZI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="66U-4w-bUM" id="lKf-bH-1hH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1KF-mX-FHA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="414" y="643"/>
         </scene>
         <!--Task Detail View Controller-->
         <scene sceneID="WwD-c8-thR">

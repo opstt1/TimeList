@@ -13,6 +13,7 @@
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
 #import "DailySummaryViewController.h"
+#import "TaskListSessionManager.h"
 
 @interface TaskFinalViewController ()<TasckCardViewDelegate>
 
@@ -25,6 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     TaskCardView *cardView = [[TaskCardView alloc] init];
     cardView.taskCardViewDelegate = self;
     [self.view addSubview:cardView];
@@ -115,6 +118,7 @@
     
     if ( _cardStatusDirection == TaskCardInTheDowm ){
         DailySummaryViewController *vc = [[UIStoryboard storyboardWithName:@"Summary" bundle:nil] instantiateViewControllerWithIdentifier:@"DailySummaryViewController"];
+        [vc data:[[TaskListSessionManager sharedManager] dailySummaryDataSource] complete:nil];
         _dislpayViewController = vc;
     }
     if ( _dislpayViewController == nil ){
@@ -125,10 +129,27 @@
     [self.view insertSubview:_dislpayViewController.view atIndex:0];
     [self addChildViewController:_dislpayViewController];
     [_dislpayViewController didMoveToParentViewController:self];
+    [self layoutWithController:_dislpayViewController];
     
     
 }
 
+- (void)layoutWithController:(UIViewController *)pageController
+{
+    UIView *pageView = pageController.view;
+    if ( [pageView respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]){
+        pageView.preservesSuperviewLayoutMargins = YES;
+    }
+    pageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [pageView setAutoresizingMask:UIViewAutoresizingNone];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:pageView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:pageView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+    
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:pageView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1 constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:pageView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1 constant:0]];
+    
+}
 
 - (void)addViewController:(UIViewController *)addViewController removeViewController:(UIViewController *)removeViewController
 {
