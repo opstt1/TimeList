@@ -82,7 +82,7 @@
         <!--Every Day Task View Controller-->
         <scene sceneID="VAv-pd-Jag">
             <objects>
-                <viewController storyboardIdentifier="EveryDayTaskViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fl4-MV-byf" customClass="EveryDayTaskViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EveryDayTaskViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fl4-MV-byf" customClass="EveryDayTaskViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ha1-N8-Ag0"/>
                         <viewControllerLayoutGuide type="bottom" id="PP6-cD-ni9"/>

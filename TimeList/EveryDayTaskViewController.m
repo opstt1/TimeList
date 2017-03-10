@@ -7,8 +7,9 @@
 //
 
 #import "EveryDayTaskViewController.h"
+#import "TaskDetailViewController.h"
 
-@interface EveryDayTaskViewController ()
+@interface EveryDayTaskViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -16,8 +17,17 @@
 
 @implementation EveryDayTaskViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    
+    [self setUpRightNavigationButtonWithTitle:@"添加" tintColor:nil];
+}
+
+- (void)rightNavigationButtonTapped:(id)sender
+{
+    TaskDetailViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"TaskDetailViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

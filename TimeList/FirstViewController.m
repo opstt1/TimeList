@@ -18,6 +18,7 @@
 #import "DailySummaryDataSource+FMDB.h"
 #import "TaskAlwaysUseViewController.h"
 #import "TaskListTableViewCell.h"
+#import "EveryDayTaskViewController.h"
 
 @interface FirstViewController ()<UITableViewDelegate,UITableViewDataSource,TaskListTableViewCellDelegate,TaskDataSourceDelegate>
 
@@ -85,8 +86,15 @@
     UIButton *daysTaskButton = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH/3*2, UISCREEN_HEIGHT-60.0f, UISCREEN_WIDTH/3, 60.0f)];
     daysTaskButton.backgroundColor = [UIColor blackColor];
     [daysTaskButton setTitle:@"每日任务列表" forState:UIControlStateNormal];
+    [daysTaskButton addTarget:self action:@selector(didTapDaysTaskButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:daysTaskButton];
     
+}
+
+- (void)didTapDaysTaskButton:(UIButton *)button
+{
+    EveryDayTaskViewController *vc = [[UIStoryboard storyboardWithName:@"Task" bundle:nil] instantiateViewControllerWithIdentifier:@"EveryDayTaskViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 //跳转到常使用任务
