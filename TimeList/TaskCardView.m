@@ -65,27 +65,30 @@
     if ( recongizer.state == UIGestureRecognizerStateEnded ){
         CGFloat centerX = self.centerX;
         CGFloat centerY = self.centerY;
-        
-        if ( self.centerX >= UISCREEN_WIDTH - 10.0f ){
-            centerX = UISCREEN_WIDTH / 2 * 3 - 50.0f;
-            _cardStatusDirection = TaskCardInTheRight;
-        }else if ( self.centerX < 0 ){
-            centerX = -UISCREEN_WIDTH/2 + 50.0f;
-            _cardStatusDirection = TaskCardInTheLeft;
-        }else{
-            centerX= UISCREEN_WIDTH / 2;
-            _cardStatusDirection = TaskCardInTheCenter;
+        if ( _cardStatusDirection != TaskCardInTheUp && _cardStatusDirection != TaskCardInTheDowm ){
+            if ( self.centerX >= UISCREEN_WIDTH - 10.0f ){
+                centerX = UISCREEN_WIDTH / 2 * 3 - 50.0f;
+                _cardStatusDirection = TaskCardInTheRight;
+            }else if ( self.centerX < 0 ){
+                centerX = -UISCREEN_WIDTH/2 + 50.0f;
+                _cardStatusDirection = TaskCardInTheLeft;
+            }else{
+                centerX= UISCREEN_WIDTH / 2;
+                _cardStatusDirection = TaskCardInTheCenter;
+            }
         }
     
-        if ( self.centerY > UISCREEN_HEIGHT /2 + 50.0f && _cardMoveDirection == TaskCardMoveDowm ){
-            centerY = UISCREEN_HEIGHT / 2 * 3 - 100.0f;
-            _cardStatusDirection = TaskCardInTheDowm;
-        }else if ( self.centerY < UISCREEN_HEIGHT / 2 - 50.0f && _cardMoveDirection == TaskCardMoveUp ){
-            centerY = - (UISCREEN_HEIGHT / 2) + 100.0f;
-            _cardStatusDirection = TaskCardInTheUp;
-        }else{
-            centerY = UISCREEN_HEIGHT / 2;
-            _cardStatusDirection = TaskCardInTheCenter;
+        if ( _cardStatusDirection != TaskCardInTheLeft && _cardStatusDirection != TaskCardInTheRight ){
+            if ( self.centerY > UISCREEN_HEIGHT /2 + 50.0f && _cardMoveDirection == TaskCardMoveDowm ){
+                centerY = UISCREEN_HEIGHT / 2 * 3 - 100.0f;
+                _cardStatusDirection = TaskCardInTheDowm;
+            }else if ( self.centerY < UISCREEN_HEIGHT / 2 - 50.0f && _cardMoveDirection == TaskCardMoveUp ){
+                centerY = - (UISCREEN_HEIGHT / 2) + 100.0f;
+                _cardStatusDirection = TaskCardInTheUp;
+            }else{
+                centerY = UISCREEN_HEIGHT / 2;
+                _cardStatusDirection = TaskCardInTheCenter;
+            }
         }
     
         if ( _responsChangeCenterDelegate && _cardStatusDirection != TaskCardInTheCenter ){
