@@ -12,6 +12,7 @@
 @class TaskTitleButtonView;
 @class TaskTitleTwoSelectView;
 @class TaskTitleLongTextView;
+@class TaskImportaceView;
 
 typedef NS_ENUM(NSInteger, TaskDetailType){
     TaskDetail_Creat,     //创建
@@ -25,7 +26,7 @@ typedef NS_ENUM(NSInteger, TaskDetailType){
 
 + (TaskTitleTextView *)creatTaskTitleViewWithFrame:(CGRect)frame type:(TaskDetailType)type content:(NSString *)content actionHandler:(TaskTitleViewHandler)actionHandler;
 
-+ (TaskTitleButtonView *)creatImportanceViewWithFrame:(CGRect)frame type:(TaskDetailType)type content:(NSString *)content actionHandler:(TaskTitleViewHandler)actionHandler;
++ (TaskImportaceView *)creatImportanceViewWithFrame:(CGRect)frame type:(TaskDetailType)type content:(NSString *)content actionHandler:(TaskTitleViewHandler)actionHandler;
 
 + (TaskTitleTwoSelectView *)creatIsCompleteTaskViewWithFrame:(CGRect)frame type:(TaskDetailType)type hasDone:(BOOL)hasDone actionHandler:(TaskTitleViewHandler)actionHandler;
 

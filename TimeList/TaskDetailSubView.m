@@ -13,6 +13,7 @@
 #import "TaskTitleButtonView.h"
 #import "TaskTitleTwoSelectView.h"
 #import "TaskTitleLongTextView.h"
+#import "TaskImportaceView.h"
 
 @implementation TaskDetailSubView
 
@@ -30,9 +31,9 @@
 
 }
 
-+ (TaskTitleButtonView *)creatImportanceViewWithFrame:(CGRect)frame type:(TaskDetailType)type content:(NSString *)content actionHandler:(TaskTitleViewHandler)actionHandler
++ (TaskImportaceView *)creatImportanceViewWithFrame:(CGRect)frame type:(TaskDetailType)type content:(NSString *)content actionHandler:(TaskTitleViewHandler)actionHandler
 {
-    TaskTitleButtonView *view = [TaskTitleButtonView creatWithTitle:@"任务重要度"
+    TaskImportaceView *view = [TaskImportaceView creatWithTitle:@"任务重要度"
                                                          isMust:YES
                                                           frame:frame
                                                         content:content

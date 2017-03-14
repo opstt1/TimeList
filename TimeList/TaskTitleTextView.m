@@ -27,31 +27,33 @@
 + (id)creatWithTitle:(NSString *)title isMust:(BOOL)isMust frame:(CGRect)frame content:(NSString *)content
 {
     TaskTitleTextView *taskTitleTextView = [[TaskTitleTextView alloc] initWithFrame:frame];
-    [taskTitleTextView creatPublicViewWithTitle:title isMust:isMust];
-    [taskTitleTextView creatTextViewWithContent:content];
+    [taskTitleTextView creatTextViewWithContent:content placeholder:title];
     return taskTitleTextView;
 }
 
-- (void)creatTextViewWithContent:(NSString *)content
+- (void)creatTextViewWithContent:(NSString *)content placeholder:(NSString *)placeholder
 {
-    CGFloat pointX = 15+kTitleLableWidth+10;
+    [self addBottomLineWithFrame:CGRectMake(15, self.frame.size.height-3, UISCREEN_WIDTH - 15, 0.5)];
     
-    [self addBottomLineWithFrame:CGRectMake(pointX, self.frame.size.height-3, UISCREEN_WIDTH- pointX - 15, 0.5)];
-    
-    UITextField *textFiled = [[UITextField alloc] initWithFrame:CGRectMake(pointX, self.frame.size.height-3-30-3, UISCREEN_WIDTH-pointX-15, 30)];
+    UITextField *textFiled = [[UITextField alloc] initWithFrame:CGRectMake(30, self.frame.size.height-3-30-3, UISCREEN_WIDTH- 60, 30)];
     textFiled.textAlignment = NSTextAlignmentCenter;
     textFiled.delegate = self;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
     textFiled.text = content;
+    
+    textFiled.placeholder = placeholder?:@"";
+    
     [self addSubview:textFiled];
 }
 
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-
     if ( self.handler ){
         self.handler(textField.text);
     }
 }
+
+
+
 @end

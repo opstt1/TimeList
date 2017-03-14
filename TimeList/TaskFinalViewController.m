@@ -34,6 +34,7 @@
     
     _cardStatusDirection = TaskCardInTheCenter;
     
+    self.view.backgroundColor = [UIColor blackColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated

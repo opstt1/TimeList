@@ -85,23 +85,38 @@
 //添加每日总结button
 - (void)p_addDailySummaryButtton
 {
-    UIButton *addTaskButton = [[UIButton alloc] initWithFrame:CGRectMake(0, UISCREEN_HEIGHT-60, UISCREEN_WIDTH/3, 60)];
-    addTaskButton.backgroundColor = [UIColor blackColor];
+    NSMutableArray *buttonArray = [NSMutableArray array];
+    CGFloat pointY = UISCREEN_HEIGHT - 60.0f;
+    CGFloat width = UISCREEN_WIDTH / 4;
+    CGFloat height = 60.0f;
+    
+    UIButton *addTaskButton = [[UIButton alloc] initWithFrame:CGRectMake(0, pointY, width, height)];
     [addTaskButton setTitle:@"添加任务" forState:UIControlStateNormal];
     [addTaskButton addTarget:self action:@selector(didTapAddTaskButton:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:addTaskButton];
+    [buttonArray addObject:addTaskButton];
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH/3, UISCREEN_HEIGHT-60, UISCREEN_WIDTH/3, 60)];
-    button.backgroundColor = [UIColor blackColor];
-    [button setTitle:@"常用任务" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(didTapAlawysUseTaskButton:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    UIButton *taskButton = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH/4, pointY, width, height)];
+    [taskButton setTitle:@"常用任务s" forState:UIControlStateNormal];
+    [taskButton addTarget:self action:@selector(didTapAlawysUseTaskButton:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonArray addObject:taskButton];
     
-    UIButton *daysTaskButton = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH/3*2, UISCREEN_HEIGHT-60.0f, UISCREEN_WIDTH/3, 60.0f)];
-    daysTaskButton.backgroundColor = [UIColor blackColor];
-    [daysTaskButton setTitle:@"每日任务列表" forState:UIControlStateNormal];
+    UIButton *daysTaskButton = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH/2, pointY, width, height)];
+    [daysTaskButton setTitle:@"每日任务s" forState:UIControlStateNormal];
     [daysTaskButton addTarget:self action:@selector(didTapDaysTaskButton:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:daysTaskButton];
+    [buttonArray addObject:daysTaskButton];
+    
+    UIButton *stepTaskButton = [[UIButton alloc] initWithFrame:CGRectMake(UISCREEN_WIDTH/4*3, pointY, width, height)];
+    [stepTaskButton setTitle:@"分步任务s" forState:UIControlStateNormal];
+    [stepTaskButton addTarget:self action:@selector(didTapStepTaskButton:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonArray addObject:stepTaskButton];
+    
+    [buttonArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIButton *button = (UIButton *)obj;
+        button.backgroundColor = [UIColor blackColor];
+        button.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.view addSubview:button];
+    }];
     
 }
 
@@ -154,6 +169,10 @@
     [self pushViewController:vc animated:YES useCustomAnimation:NO];
 }
 
+- (void)didTapStepTaskButton:(id)sender
+{
+    
+}
 #pragma mark - UITable
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

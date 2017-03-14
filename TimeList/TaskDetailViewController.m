@@ -21,7 +21,7 @@
 #import "RectAnimationTransitionPop.h"
 #import "EventTypeManager.h"
 #import "EventTypeListViewController.h"
-
+#import "TaskImportaceView.h"
 @interface TaskDetailViewController ()<UINavigationControllerDelegate>
 
 @property (nonatomic, readwrite, copy) TaskDetailBlock detailBlock;
@@ -29,7 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewHeight;
 
-@property (nonatomic, readwrite, strong) TaskTitleButtonView *importanceView;
+@property (nonatomic, readwrite, strong) TaskImportaceView *importanceView;
 @property (nonatomic, readwrite, strong) TaskModel *model;
 
 
@@ -70,7 +70,7 @@
     WEAK_OBJ_REF(self);
     
     //填写任务名称
-    TaskTitleTextView *view1 = [TaskDetailSubView creatTaskTitleViewWithFrame:CGRectMake(0,20,UISCREEN_WIDTH,40)
+    TaskTitleTextView *view1 = [TaskDetailSubView creatTaskTitleViewWithFrame:CGRectMake(0, 40+10+20, UISCREEN_WIDTH, 40)
                                                                          type:_type
                                                                       content:_model.title
                                                                 actionHandler:^(id result) {
@@ -82,7 +82,7 @@
     }];
     
     //填写任务重要度
-    _importanceView = [TaskDetailSubView creatImportanceViewWithFrame:CGRectMake(0, 40+10+20, UISCREEN_WIDTH, 40)
+    _importanceView = [TaskDetailSubView creatImportanceViewWithFrame:CGRectMake(0,20,UISCREEN_WIDTH,40)
                                                                  type:_type
                                                               content:(_model.importance < 0) ? @"" :[NSString stringWithFormat:@"%d",(int)_model.importance]
                                                         actionHandler:^(id result) {
@@ -92,7 +92,7 @@
                                 NSInteger importance = [result integerValue];
                                 STRONG_OBJ_REF(weak_self);
                                 if ( strong_weak_self ){
-                                    [_importanceView setupLabel:[NSString stringWithFormat:@"%d",(int)importance]];
+                                    [_importanceView setupImportance:[NSString stringWithFormat:@"%d",(int)importance]];
                                     _model.importance = importance;
                                 }
                                 
