@@ -102,7 +102,6 @@
 		E2EBB5AB1DFFDA6E00686D70 /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EBB5AA1DFFDA6E00686D70 /* UIView+Geometry.m */; };
 		E2EC4B521DFE896D0067C0EC /* TaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC4B511DFE896D0067C0EC /* TaskModel.m */; };
 		E2EC4B561DFE8C7D0067C0EC /* TaskDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC4B551DFE8C7D0067C0EC /* TaskDataSource.m */; };
-		E2EC4B591DFE904A0067C0EC /* TaskListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC4B581DFE904A0067C0EC /* TaskListTableViewController.m */; };
 		E2EC4B5B1DFE90770067C0EC /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2EC4B5A1DFE90770067C0EC /* Task.storyboard */; };
 		E2EC9F5C1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC9F5B1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.m */; };
 		E2EC9F601E162FA1002214B8 /* TaskAlwaysUseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EC9F5F1E162FA1002214B8 /* TaskAlwaysUseManager.m */; };
@@ -317,8 +316,6 @@
 		E2EC4B511DFE896D0067C0EC /* TaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskModel.m; sourceTree = "<group>"; };
 		E2EC4B541DFE8C7D0067C0EC /* TaskDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDataSource.h; sourceTree = "<group>"; };
 		E2EC4B551DFE8C7D0067C0EC /* TaskDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDataSource.m; sourceTree = "<group>"; };
-		E2EC4B571DFE904A0067C0EC /* TaskListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListTableViewController.h; sourceTree = "<group>"; };
-		E2EC4B581DFE904A0067C0EC /* TaskListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListTableViewController.m; sourceTree = "<group>"; };
 		E2EC4B5A1DFE90770067C0EC /* Task.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
 		E2EC9F5A1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TaskModel+AlwaysUseFMDB.h"; sourceTree = "<group>"; };
 		E2EC9F5B1E162CFD002214B8 /* TaskModel+AlwaysUseFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TaskModel+AlwaysUseFMDB.m"; sourceTree = "<group>"; };
@@ -793,8 +790,6 @@
 				E2B924881E08D9B400E1D3AE /* TaskDataSource+Func.m */,
 				E29F406A1E07B7ED0044D961 /* TaskDataSource+Sort.h */,
 				E29F406B1E07B7ED0044D961 /* TaskDataSource+Sort.m */,
-				E2EC4B571DFE904A0067C0EC /* TaskListTableViewController.h */,
-				E2EC4B581DFE904A0067C0EC /* TaskListTableViewController.m */,
 				E2EBB5A21DFFA04700686D70 /* TaskListTableViewCell.h */,
 				E2EBB5A31DFFA04700686D70 /* TaskListTableViewCell.m */,
 				E2EC4B5A1DFE90770067C0EC /* Task.storyboard */,
@@ -1144,7 +1139,6 @@
 				E20B5D471E2F1960008911CC /* ZFGradientAttribute.m in Sources */,
 				E2B98ECE1E0262F200405C14 /* TaskDetailViewController.m in Sources */,
 				E2F819671E1C989B00F7F9BF /* DailyTaskRecordView.m in Sources */,
-				E2EC4B591DFE904A0067C0EC /* TaskListTableViewController.m in Sources */,
 				E2EF36F81DFA9DA0001247BE /* AppDelegate.m in Sources */,
 				E20B5D421E2F1960008911CC /* UIView+Zirkfied.m in Sources */,
 				E20B5D5A1E2F1960008911CC /* ZFPolygon.m in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -91,8 +91,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="66U-4w-bUM">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKA-hC-Y2c">
+                                <rect key="frame" x="-0.5" y="607" width="375" height="60"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="1" blue="0.0" alpha="0.34801897321428571" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="SFT-Bn-ZJa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="添加新的任务到每日任务列表">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="66U-4w-bUM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="587"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -101,11 +112,15 @@
                             <constraint firstItem="PP6-cD-ni9" firstAttribute="top" secondItem="66U-4w-bUM" secondAttribute="bottom" constant="60" id="EO7-XA-uFi"/>
                             <constraint firstItem="66U-4w-bUM" firstAttribute="centerX" secondItem="Skl-cW-Nc0" secondAttribute="centerX" id="JAq-ME-muC"/>
                             <constraint firstItem="66U-4w-bUM" firstAttribute="width" secondItem="Skl-cW-Nc0" secondAttribute="width" id="LSQ-wo-bK5"/>
-                            <constraint firstItem="66U-4w-bUM" firstAttribute="top" secondItem="ha1-N8-Ag0" secondAttribute="bottom" constant="-20" id="a8f-uh-9ZI"/>
+                            <constraint firstItem="PP6-cD-ni9" firstAttribute="top" secondItem="uKA-hC-Y2c" secondAttribute="bottom" id="Qa9-iK-Ud3"/>
+                            <constraint firstItem="66U-4w-bUM" firstAttribute="top" secondItem="ha1-N8-Ag0" secondAttribute="bottom" id="a8f-uh-9ZI"/>
+                            <constraint firstItem="uKA-hC-Y2c" firstAttribute="width" secondItem="Skl-cW-Nc0" secondAttribute="width" id="jZm-yq-OZz"/>
+                            <constraint firstItem="uKA-hC-Y2c" firstAttribute="centerX" secondItem="Skl-cW-Nc0" secondAttribute="centerX" id="zqq-9T-APZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="66U-4w-bUM" id="lKf-bH-1hH"/>
+                        <outlet property="tableViewBottom" destination="EO7-XA-uFi" id="651-wu-duH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KF-mX-FHA" userLabel="First Responder" sceneMemberID="firstResponder"/>

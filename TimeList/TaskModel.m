@@ -45,7 +45,7 @@ NSString * const TaskModelLocalIdKey = @"localId";
     _createDate = [NSDate date];
     _desc = @"";
     _summarize = @"";
-    _startTime = [NSDate date];
+    _startTime = nil;
     _leftLimitMargin = 75+75.0f;
     _rightLimitMargin = 75.0f;
     return self;
@@ -62,7 +62,9 @@ NSString * const TaskModelLocalIdKey = @"localId";
     model.status = _status;
     model.desc = [_desc mutableCopy];
     model.summarize = [_summarize mutableCopy];
-    model.startTime = [[NSDate alloc] initWithTimeInterval:0.0 sinceDate:_startTime];
+    if ( _startTime != nil ){
+        model.startTime = [[NSDate alloc] initWithTimeInterval:0.0 sinceDate:_startTime];
+    }
     return model;
 }
 

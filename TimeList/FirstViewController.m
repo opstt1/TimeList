@@ -7,7 +7,6 @@
 //
 
 #import "FirstViewController.h"
-#import "TaskListTableViewController.h"
 #import "TaskListSessionManager.h"
 #import "TaskDetailViewController.h"
 #import "Constants.h"
@@ -19,6 +18,8 @@
 #import "TaskAlwaysUseViewController.h"
 #import "TaskListTableViewCell.h"
 #import "EveryDayTaskViewController.h"
+#import "EveryDayTaskManager.h"
+#import "TaskModel+EveryDayUseFMDB.h"
 
 @interface FirstViewController ()<UITableViewDelegate,UITableViewDataSource,TaskListTableViewCellDelegate,TaskDataSourceDelegate>
 
@@ -38,6 +39,19 @@
     
     _dailySummaryDataSource = [[TaskListSessionManager sharedManager] dailySummaryDataSource];
     _dataSource = [[TaskListSessionManager sharedManager] dataSource];
+    
+    
+    for ( int i = 0; i < [EveryDayTaskManager shareManager].dataSource.count; ++i ){
+        TaskModel *model = [[EveryDayTaskManager shareManager].dataSource objectAtInde:i];
+        if ( model.startTime == nil || ![model.startTime isSameDay:[NSDate date]]){
+            TaskModel *tempModel = [model copy];
+            model.startTime = [NSDate date];
+            [model everyDayTaskUpadteSQL];
+            [tempModel createSuccess];
+            [_dataSource insertModel:tempModel];
+            
+        }
+    }
     _dataSource.delegate = self;
     
     _tableView.delegate = self;
