@@ -29,4 +29,6 @@ typedef void(^TaskDetailBlock) (TaskModel *model);
 - (void)updateTask:(TaskModel *)task complete:(TaskDetailBlock)complete;
 - (void)showTask:(TaskModel *)task;
 
+- (void)addBlockTaskView;
+
 @end

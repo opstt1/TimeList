@@ -46,24 +46,9 @@
         _model.status = TaskUndone;
     }
     [self p_addSubView];
-    self.navigationController.delegate = nil;
-    
-    self.popAnimationTransition = [RectAnimationTransitionPop new];
-    [self addBackGestureRecognizer];
+    [self addBlockTaskView];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    self.navigationController.delegate = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.navigationController.delegate = nil;
-    self.useCustomAnimation = YES;
-}
 
 - (void)p_addSubView
 {
@@ -100,20 +85,6 @@
 
     }];
     
-    //选择任务是否完成
-    TaskTitleTwoSelectView *view2 = [TaskDetailSubView creatIsCompleteTaskViewWithFrame:CGRectMake(0, (40+10) * 2 +20, UISCREEN_WIDTH, 40)
-                                                                                   type:_type
-                                                                                hasDone:(BOOL)_model.status == TaskHasBeenDone
-                                                                          actionHandler:^(id result) {
-        STRONG_OBJ_REF(weak_self);
-        if( strong_weak_self && result ){
-            if ( [result isEqualToString:@"done"] ){
-                _model.status = TaskHasBeenDone;
-            }else{
-                _model.status = TaskUndone;
-            }
-        }
-    }];
 
     TaskTitleLongTextView *summaryView = [TaskDetailSubView creatTaskSummaryViewWithFrame:CGRectMake(0, (40+10) * 3 + 20, UISCREEN_WIDTH, 150) type:_type content:_model.summarize actionHandler:^(id result) {
         NSLog(@"");
@@ -125,8 +96,36 @@
     
     [_contentView addSubview:view1];
     [_contentView addSubview:_importanceView];
-    [_contentView addSubview:view2];
-    [_contentView addSubview:summaryView];
+//    [_contentView addSubview:summaryView];
+}
+
+
+- (void)addBlockTaskView
+{
+    TaskTitleTextView *daysCountView = [TaskDetailSubView createBlockTaskDaysViewWithFrame:CGRectMake(0, _importanceView.y+100, 30+60+30, 40.0f) type:_type content:@"" actionHandler:^(id result) {
+        printf("days  %d",((NSString *)result).integerValue);
+    }];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(daysCountView.right, daysCountView.y, 20, 40.0f)];
+    label.text = @"天";
+    [_contentView addSubview:label];
+    [_contentView addSubview:daysCountView];
+    
+    UILabel *needSturdayLabel = [[UILabel alloc] initWithFrame:CGRectMake(label.right + 5, label.y, 80, 12)];
+    needSturdayLabel.font = [UIFont systemFontOfSize:13.0f];
+    needSturdayLabel.text = @"是否周六进行";
+    needSturdayLabel.backgroundColor = [UIColor redColor];
+    [_contentView addSubview:needSturdayLabel];
+    
+    UISwitch *needSturdaySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(needSturdayLabel.x, needSturdayLabel.y+ 15.0f, needSturdayLabel.width, 25.0f)];
+    [_contentView addSubview:needSturdaySwitch];
+    
+    UILabel *needWeekDayLabel = [[UILabel alloc] initWithFrame:CGRectMake(needSturdayLabel.right + 5, needSturdayLabel.y, 80, 12)];
+    needWeekDayLabel.font = [UIFont systemFontOfSize:13.0f];
+    needWeekDayLabel.text = @"是否周日进行";
+    [_contentView addSubview:needWeekDayLabel];
+    
+    UISwitch *needWeekDaySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(needWeekDayLabel.x, needWeekDayLabel.y+15.0f, needWeekDayLabel.width, 25.0f)];
+    [_contentView addSubview:needWeekDaySwitch];
 }
 
 #pragma mark - interface select type
@@ -184,9 +183,9 @@
 
 }
 
-- (BOOL)navigationShouldPopOnBackButton
-{
-    self.navigationController.delegate = self;
-    return YES;
-}
+//- (BOOL)navigationShouldPopOnBackButton
+//{
+//    self.navigationController.delegate = self;
+//    return YES;
+//}
 @end

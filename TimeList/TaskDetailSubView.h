@@ -23,7 +23,6 @@ typedef NS_ENUM(NSInteger, TaskDetailType){
 
 @interface TaskDetailSubView : NSObject
 
-
 + (TaskTitleTextView *)creatTaskTitleViewWithFrame:(CGRect)frame type:(TaskDetailType)type content:(NSString *)content actionHandler:(TaskTitleViewHandler)actionHandler;
 
 + (TaskImportaceView *)creatImportanceViewWithFrame:(CGRect)frame type:(TaskDetailType)type content:(NSString *)content actionHandler:(TaskTitleViewHandler)actionHandler;
@@ -31,5 +30,7 @@ typedef NS_ENUM(NSInteger, TaskDetailType){
 + (TaskTitleTwoSelectView *)creatIsCompleteTaskViewWithFrame:(CGRect)frame type:(TaskDetailType)type hasDone:(BOOL)hasDone actionHandler:(TaskTitleViewHandler)actionHandler;
 
 + (TaskTitleLongTextView *)creatTaskSummaryViewWithFrame:(CGRect)frame type:(TaskDetailType)type content:(NSString *)content actionHandler:(TaskTitleViewHandler)actionHandler;
+
++ (TaskTitleTextView *)createBlockTaskDaysViewWithFrame:(CGRect)frame type:(TaskDetailType)type content:(NSString *)content actionHandler:(TaskTitleViewHandler)actionHandler;
 
 @end

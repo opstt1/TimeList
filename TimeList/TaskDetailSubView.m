@@ -69,4 +69,18 @@
     return view;
 }
 
++ (TaskTitleTextView *)createBlockTaskDaysViewWithFrame:(CGRect)frame type:(TaskDetailType)type content:(NSString *)content actionHandler:(TaskTitleViewHandler)actionHandler
+{
+    TaskTitleTextView *view = [TaskTitleTextView creatWithTitle:@"任务总天数"
+                                                         isMust:YES
+                                                          frame:frame
+                                                        content:content
+                                                  actionHandler:actionHandler];
+    view.textField.keyboardType = UIKeyboardTypeNumberPad;
+    if ( type == TaskDetail_Show || type == TaskDetail_Summary ){
+        view.canEdit = NO;
+    }
+    return view;
+
+}
 @end

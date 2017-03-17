@@ -10,5 +10,5 @@
 
 @interface TaskTitleTextView : TaskTitleView
 
-
+@property (nonatomic, readwrite, strong) UITextField *textField;
 @end

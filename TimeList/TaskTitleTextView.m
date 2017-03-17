@@ -33,17 +33,25 @@
 
 - (void)creatTextViewWithContent:(NSString *)content placeholder:(NSString *)placeholder
 {
-    [self addBottomLineWithFrame:CGRectMake(15, self.frame.size.height-3, UISCREEN_WIDTH - 15, 0.5)];
+    [self addBottomLineWithFrame:CGRectMake(15, self.frame.size.height-3, self.width - 15, 0.5)];
     
-    UITextField *textFiled = [[UITextField alloc] initWithFrame:CGRectMake(30, self.frame.size.height-3-30-3, UISCREEN_WIDTH- 60, 30)];
-    textFiled.textAlignment = NSTextAlignmentCenter;
-    textFiled.delegate = self;
+    _textField = [[UITextField alloc] initWithFrame:CGRectMake(15, self.frame.size.height-3-30-3, self.width- 30, 30)];
+    _textField.textAlignment = NSTextAlignmentCenter;
+    _textField.delegate = self;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
-    textFiled.text = content;
+    _textField.text = content;
     
-    textFiled.placeholder = placeholder?:@"";
+    placeholder = placeholder ?:@"";
+    NSMutableAttributedString *mPlaceholder = [[NSMutableAttributedString alloc] initWithString:placeholder];
+    [mPlaceholder addAttribute:NSForegroundColorAttributeName
+                        value:[UIColor grayColor]
+                        range:NSMakeRange(0, placeholder.length)];
+    [mPlaceholder addAttribute:NSFontAttributeName
+                        value:[UIFont boldSystemFontOfSize:14]
+                        range:NSMakeRange(0, placeholder.length)];
+    _textField.attributedPlaceholder = mPlaceholder;
     
-    [self addSubview:textFiled];
+    [self addSubview:_textField];
 }
 
 
